@@ -54,7 +54,7 @@ Animated textures are vertical strips of square frames; only frame 0 is used.
 | placeholder | 435 (2.2%) |
 | payload | ~15 MB of PNG, 2.4 MB index |
 
-The 671 placeholders are `builtin/entity` items — chests, beds, banners, shulkers,
+The 435 placeholders are `builtin/entity` items — chests, beds, banners, shulkers,
 skulls — which are rendered by entity code and have no model to composite.
 
 ## Known rough edges
