@@ -104,6 +104,13 @@ canvas{display:block;width:100%;height:100%}
   border-radius:4px;background:var(--accent-dim);color:var(--accent);
 }
 #closePanel{color:var(--muted);font-size:1.3rem;line-height:1;padding:0 4px}
+.dep{
+  display:block;width:100%;text-align:left;background:var(--panel-2);
+  border:1px solid var(--line);border-radius:6px;padding:7px 10px;font-size:.85rem;
+}
+.dep:hover{border-color:var(--accent);color:var(--accent)}
+.dep .miss{font-family:var(--mono);font-size:.78rem;color:var(--muted)}
+.field .deps{display:flex;flex-direction:column;gap:5px}
 </style>
 </head>
 <body>
@@ -436,7 +443,27 @@ function select(q) {
 
   body.appendChild(field('id', q.id));
   body.appendChild(field('position', `${q.x}, ${q.y}`));
-  if (q.deps.length) body.appendChild(field('depends on', q.deps.join(', ')));
+
+  // Show what a dependency is, not its id. A 16-hex number tells a human nothing,
+  // and the whole point of the panel is to be readable at a glance.
+  if (q.deps.length) {
+    const all = questsOf(current());
+    const byId = Object.fromEntries(all.map(x => [x.id, x]));
+    const d = document.createElement('div');
+    d.className = 'field';
+    d.innerHTML = `<label>depends on</label>`;
+    for (const id of q.deps) {
+      const dep = byId[id];
+      const row = document.createElement('button');
+      row.className = 'dep';
+      row.innerHTML = dep
+        ? `<span>${esc(dep.title || 'Untitled quest')}</span>`
+        : `<span class="miss">${esc(id)}</span>`;
+      if (dep) row.onclick = () => { select(dep); centreOn(dep); };
+      d.appendChild(row);
+    }
+    body.appendChild(d);
+  }
 
   const h = document.createElement('div');
   h.className = 'field';
@@ -463,7 +490,13 @@ function field(label, value) {
   return d;
 }
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-const closePanel = () => $('#panel').classList.remove('open');
+function centreOn(q) {
+  const r = cv.getBoundingClientRect();
+  view.x = r.width / 2 - q.x * view.scale;
+  view.y = r.height / 2 - q.y * view.scale;
+  draw();
+}
+const closePanel = () => $("#panel").classList.remove("open");
 $('#closePanel').onclick = () => { selected = null; closePanel(); draw(); };
 </script>
 </body>

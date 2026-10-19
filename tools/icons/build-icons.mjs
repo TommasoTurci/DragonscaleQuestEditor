@@ -20,6 +20,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import AdmZip from 'adm-zip';
 import { PNG } from 'pngjs';
+import { renderModel } from './render3d.mjs';
 
 // ---------------------------------------------------------------- arguments --
 const args = Object.fromEntries(
@@ -32,6 +33,7 @@ const MODS = args.mods;
 const OUT = path.resolve(args.out ?? path.join(import.meta.dirname, '..', '..', 'app', 'public', 'icons'));
 const SIZE = Number(args.size ?? 32);      // isometric cube canvas
 const MAX_FLAT = Number(args.maxFlat ?? 64); // cap for flat sprites; most are 16
+const SUPERSAMPLE = Number(args.ss ?? 4);   // rotated edges alias badly without this
 
 if (!MODS || !fs.existsSync(MODS)) {
   console.error('usage: node build-icons.mjs --mods "<mods folder>" --vanilla "<minecraft-client.jar>" [--out <dir>] [--size 32]');
@@ -75,7 +77,7 @@ const norm = s => (String(s).includes(':') ? String(s) : `minecraft:${s}`);
 // Walk child -> parent, collecting the texture map (child wins) and the root model.
 function resolve(key, depth = 0) {
   const seen = [];
-  let cur = key, tex = {}, model = null;
+  let cur = key, tex = {}, model = null, elements = null, display = {};
   while (cur && depth++ < 16) {
     const m = models.get(cur);
     seen.push(cur);
@@ -84,16 +86,28 @@ function resolve(key, depth = 0) {
     // NeoForge's separate_transforms loader nests the real model under "base",
     // leaving the top level with no textures at all.
     tex = { ...(m.base?.textures ?? {}), ...(m.textures ?? {}), ...tex };
+    // Geometry is usually inherited: cube_all declares only textures, and its
+    // parent block/cube carries the box. Nearest definition wins.
+    if (!elements && Array.isArray(m.elements) && m.elements.length) elements = m.elements;
+    if (!elements && Array.isArray(m.base?.elements) && m.base.elements.length) elements = m.base.elements;
+    display = { ...(m.display ?? {}), ...display };
     if (!m.parent) break;
     cur = norm(m.parent);
   }
-  return { root: cur, chain: seen, textures: tex, model };
+  return { root: cur, chain: seen, textures: tex, model, elements, display };
 }
 
 // "#side" indirections can chain; resolve to a real ns:path.
 function texRef(tex, name, depth = 0) {
   let v = tex[name];
   while (typeof v === 'string' && v.startsWith('#') && depth++ < 8) v = tex[v.slice(1)];
+  return typeof v === 'string' ? norm(v) : null;
+}
+
+/** Resolves a face's '#name' reference to a namespaced texture id. */
+function resolveRef(tex, ref) {
+  let v = ref, guard = 0;
+  while (typeof v === 'string' && v.startsWith('#') && guard++ < 8) v = tex[v.slice(1)];
   return typeof v === 'string' ? norm(v) : null;
 }
 
@@ -237,7 +251,7 @@ console.error(`  ${jarCount} jars, ${models.size} models, ${textures.size} textu
 
 fs.mkdirSync(OUT, { recursive: true });
 const index = {};
-const stats = { flat: 0, block: 0, placeholder: 0, failed: 0 };
+const stats = { flat: 0, model: 0, block: 0, placeholder: 0, failed: 0 };
 
 const itemKeys = [...models.keys()].filter(k => k.includes(':item/'));
 let done = 0;
@@ -245,7 +259,7 @@ let done = 0;
 for (const key of itemKeys) {
   const [ns, rest] = [key.slice(0, key.indexOf(':')), key.slice(key.indexOf(':') + 1)];
   const id = `${ns}:${rest.replace(/^item\//, '')}`;
-  const { textures: tex } = resolve(key);
+  const { textures: tex, elements, display } = resolve(key);
 
   let img = null, kind = null;
 
@@ -260,6 +274,23 @@ for (const key of itemKeys) {
     kind = 'flat';
   }
 
+  // Real geometry: rasterize the model the way the game does. This is what makes
+  // stairs look like stairs and a Create machine look like itself, rather than
+  // every block collapsing to the same cube.
+  if (!img && elements) {
+    const rendered = renderModel(
+      { elements, textures: tex, display },
+      ref => readTexture(resolveRef(tex, ref)),
+      SIZE, SUPERSAMPLE);
+    if (rendered) {
+      const p = new PNG({ width: rendered.width, height: rendered.height });
+      p.data = rendered.data;
+      img = p;
+      kind = 'model';
+    }
+  }
+
+  // No geometry anywhere in the chain: approximate with a cube of its faces.
   if (!img) {
     for (const [t, l, r] of FACE_SETS) {
       const ti = readTexture(texRef(tex, t));

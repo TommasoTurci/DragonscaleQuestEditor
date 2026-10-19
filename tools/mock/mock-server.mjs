@@ -29,7 +29,10 @@ const TOKEN = args.token ?? 'mock';
 function* balancedBlocks(text, start) {
   const m = text.match(start);
   if (!m) return;
-  let i = text.indexOf('\n', m.index);
+  // Start right after the `[`, not at the next newline: a single-task quest is
+  // written `tasks: [{` with the brace on the same line, and skipping to the
+  // newline walked straight past it. That dropped a task from most quests.
+  let i = m.index + m[0].length;
   while (i >= 0 && i < text.length) {
     const open = text.indexOf('{', i);
     if (open < 0) return;
