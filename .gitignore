@@ -1,0 +1,17 @@
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
+
+# bridge (NeoForge) build output
+bridge/build/
+bridge/.gradle/
+bridge/run/
+
+# editor build output
+app/dist/
+app/.vite/
+
+# scratch
+_*.mjs
+_*.png

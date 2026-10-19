@@ -1,0 +1,14 @@
+{
+  "name": "dragonscale-icon-builder",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Generates the editor's item icon set from the pack's mod jars.",
+  "scripts": {
+    "build": "node build-icons.mjs"
+  },
+  "dependencies": {
+    "adm-zip": "0.5.16",
+    "pngjs": "7.0.0"
+  }
+}

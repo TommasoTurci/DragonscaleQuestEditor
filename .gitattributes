@@ -1,0 +1,11 @@
+# FTB Quests writes with the host platform's line ending: LF on the Linux server,
+# CRLF on a Windows client. Without this, every round trip between the two rewrites
+# every line of every file and produces conflicts that are not real.
+*.snbt   text eol=lf
+*.json   text eol=lf
+*.md     text eol=lf
+*.mjs    text eol=lf
+*.java   text eol=lf
+
+# Generated icon sprites
+*.png    binary
