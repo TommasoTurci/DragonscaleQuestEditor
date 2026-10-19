@@ -199,4 +199,4 @@ docs/     format research and design notes
 | API contract | drafted, this file |
 | Icon pipeline | done — 19,344 icons, 435 placeholders |
 | Bridge | `/health`, `/book`, `/types`, `/changes` build and compile; untested on a real server |
-| Editor | not started |
+| Editor | renders the real book: chapter tabs, quest graph, icons, inspector |

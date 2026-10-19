@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<meta name="theme-color" content="#14171d">
+<title>Dragonscale Quests</title>
+<style>
+:root{
+  --bg:#14171d; --panel:#1b1f27; --panel-2:#222732; --line:#2d333f;
+  --fg:#e3e7ee; --muted:#939cad; --accent:#e0a84a; --accent-dim:#6b4f1d;
+  --ok:#5fcf9e; --bad:#e8857a;
+  --font:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+/* An id selector setting display beats the [hidden] attribute, so say it louder.
+   Without this, hiding the login gate leaves it covering the app. */
+[hidden]{display:none!important}
+html,body{height:100%;margin:0}
+body{
+  background:var(--bg);color:var(--fg);font-family:var(--font);font-size:15px;
+  overflow:hidden;-webkit-text-size-adjust:100%;
+}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+#app{display:flex;flex-direction:column;height:100%}
+
+/* ---------- gate ---------- */
+#gate{
+  position:fixed;inset:0;display:grid;place-items:center;background:var(--bg);z-index:50;
+  padding:max(20px,env(safe-area-inset-left));
+}
+#gate form{display:flex;flex-direction:column;gap:14px;width:min(360px,100%)}
+#gate h1{margin:0;font-size:1.3rem;letter-spacing:-.01em}
+#gate p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.5}
+#gate input{
+  background:var(--panel);border:1px solid var(--line);border-radius:7px;
+  padding:12px 13px;color:var(--fg);font-family:var(--mono);font-size:.9rem;width:100%;
+}
+#gate input:focus{outline:2px solid var(--accent-dim);border-color:var(--accent)}
+#gate button{
+  background:var(--accent);color:#1a1405;border-radius:7px;padding:12px;font-weight:600;
+}
+#gateErr{color:var(--bad);font-size:.85rem;min-height:1.2em}
+
+/* ---------- top bar ---------- */
+header{
+  display:flex;align-items:center;gap:10px;flex-shrink:0;
+  padding:calc(8px + env(safe-area-inset-top)) max(12px,env(safe-area-inset-right)) 8px max(12px,env(safe-area-inset-left));
+  border-bottom:1px solid var(--line);background:var(--panel);
+}
+header .brand{font-weight:650;letter-spacing:-.01em;white-space:nowrap}
+header .spacer{flex:1}
+#status{display:flex;align-items:center;gap:6px;font-size:.78rem;color:var(--muted);white-space:nowrap}
+#dot{width:8px;height:8px;border-radius:50%;background:var(--muted);flex-shrink:0}
+#dot.live{background:var(--ok);box-shadow:0 0 0 3px rgba(95,207,158,.15)}
+#dot.off{background:var(--bad)}
+
+#chapters{
+  display:flex;gap:6px;overflow-x:auto;flex-shrink:0;scrollbar-width:none;
+  padding:8px max(12px,env(safe-area-inset-right)) 8px max(12px,env(safe-area-inset-left));
+  border-bottom:1px solid var(--line);background:var(--panel);
+}
+#chapters::-webkit-scrollbar{display:none}
+#chapters button{
+  padding:6px 12px;border-radius:999px;border:1px solid var(--line);
+  color:var(--muted);font-size:.85rem;white-space:nowrap;background:var(--panel-2);
+}
+#chapters button[aria-selected="true"]{background:var(--accent);color:#1a1405;border-color:var(--accent);font-weight:600}
+
+/* ---------- canvas ---------- */
+main{flex:1;position:relative;overflow:hidden;touch-action:none}
+canvas{display:block;width:100%;height:100%}
+#hint{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  color:var(--muted);font-size:.9rem;text-align:center;pointer-events:none;
+}
+
+/* ---------- inspector ---------- */
+#panel{
+  position:absolute;right:0;top:0;bottom:0;width:min(330px,86vw);
+  background:var(--panel);border-left:1px solid var(--line);
+  transform:translateX(100%);transition:transform .18s ease;
+  display:flex;flex-direction:column;
+  padding-bottom:env(safe-area-inset-bottom);
+}
+#panel.open{transform:none}
+#panel header{background:none;border-bottom:1px solid var(--line);padding:12px 14px}
+#panel .body{overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:14px}
+#panel h2{margin:0;font-size:1rem}
+.field{display:flex;flex-direction:column;gap:5px}
+.field label{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.field .val{font-family:var(--mono);font-size:.82rem;word-break:break-all;color:var(--fg)}
+.task{
+  display:flex;align-items:center;gap:9px;background:var(--panel-2);
+  border:1px solid var(--line);border-radius:7px;padding:8px 10px;
+}
+.task img{width:26px;height:26px;image-rendering:pixelated;flex-shrink:0}
+.task .t{display:flex;flex-direction:column;gap:2px;min-width:0}
+.task .t b{font-size:.85rem;font-weight:600}
+.task .t span{font-size:.72rem;color:var(--muted);font-family:var(--mono);overflow:hidden;text-overflow:ellipsis}
+.pill{
+  display:inline-block;font-size:.68rem;font-family:var(--mono);padding:2px 6px;
+  border-radius:4px;background:var(--accent-dim);color:var(--accent);
+}
+#closePanel{color:var(--muted);font-size:1.3rem;line-height:1;padding:0 4px}
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <form id="gateForm">
+    <h1>Dragonscale Quests</h1>
+    <p>Paste the token from <code>config/questbridge.properties</code> on the server. It is remembered on this device.</p>
+    <input id="token" type="password" placeholder="token" autocomplete="current-password" spellcheck="false">
+    <button type="submit">Connect</button>
+    <div id="gateErr"></div>
+  </form>
+</div>
+
+<div id="app" hidden>
+  <header>
+    <span class="brand">Dragonscale Quests</span>
+    <span class="spacer"></span>
+    <span id="status"><span id="dot"></span><span id="statusText">connecting</span></span>
+  </header>
+  <nav id="chapters"></nav>
+  <main>
+    <canvas id="map"></canvas>
+    <div id="hint" hidden></div>
+    <aside id="panel">
+      <header style="display:flex;align-items:center;gap:8px">
+        <h2 id="qTitle">Quest</h2>
+        <span class="spacer"></span>
+        <button id="closePanel" aria-label="Close">&times;</button>
+      </header>
+      <div class="body" id="qBody"></div>
+    </aside>
+  </main>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const TOKEN_KEY = 'dragonscale.token';
+
+let token = null, book = null, icons = {}, chapterIdx = 0, selected = null;
+const view = { x: 0, y: 0, scale: 48 };   // world units -> px
+
+// ---------------------------------------------------------------- transport --
+async function api(path, opts = {}) {
+  const r = await fetch('/api' + path, {
+    ...opts,
+    headers: { ...(opts.headers || {}), Authorization: 'Bearer ' + token }
+  });
+  if (r.status === 401) throw new Error('unauthorized');
+  if (!r.ok) throw new Error(await r.text().catch(() => r.status));
+  return r.json();
+}
+
+function setStatus(state, text) {
+  $('#dot').className = state;
+  $('#statusText').textContent = text;
+}
+
+// ------------------------------------------------------------------- start --
+try { token = localStorage.getItem(TOKEN_KEY); } catch {}
+if (token) connect(token); else $('#gate').hidden = false;
+
+$('#gateForm').addEventListener('submit', e => {
+  e.preventDefault();
+  connect($('#token').value.trim());
+});
+
+async function connect(t) {
+  token = t;
+  $('#gateErr').textContent = '';
+  try {
+    await api('/health');
+  } catch (err) {
+    $('#gate').hidden = false;
+    $('#gateErr').textContent = err.message === 'unauthorized'
+      ? 'That token was rejected.'
+      : 'Could not reach the server.';
+    return;
+  }
+  try { localStorage.setItem(TOKEN_KEY, token); } catch {}
+  $('#gate').hidden = true;
+  $('#app').hidden = false;
+  await loadAll();
+  listen();
+}
+
+async function loadAll() {
+  setStatus('', 'loading');
+  const [b, idx] = await Promise.all([
+    api('/book'),
+    fetch('/icons/index.json').then(r => r.ok ? r.json() : { icons: {} }).catch(() => ({ icons: {} }))
+  ]);
+  book = b;
+  icons = idx.icons || {};
+  renderChapters();
+  fit();
+  draw();
+  setStatus('live', 'v' + book.version);
+}
+
+function listen() {
+  const es = new EventSource('/api/changes?token=' + encodeURIComponent(token));
+  es.onopen = () => setStatus('live', 'live');
+  es.onerror = () => setStatus('off', 'reconnecting');
+  es.onmessage = e => {
+    try {
+      const msg = JSON.parse(e.data);
+      if (msg.version) setStatus('live', 'v' + msg.version);
+      loadAll();                       // small book; a full refetch is simplest and safe
+    } catch {}
+  };
+}
+
+// ----------------------------------------------------------------- chapters --
+const chapters = () => (book?.chapterGroups || []).flatMap(g => g.chapters || []);
+
+function renderChapters() {
+  const nav = $('#chapters');
+  nav.innerHTML = '';
+  chapters().forEach((c, i) => {
+    const b = document.createElement('button');
+    b.textContent = c.text?.title || c.data?.filename || c.id;
+    b.setAttribute('aria-selected', i === chapterIdx);
+    b.onclick = () => { chapterIdx = i; selected = null; closePanel(); renderChapters(); fit(); draw(); };
+    nav.appendChild(b);
+  });
+  const n = chapters().length;
+  $('#hint').hidden = n > 0;
+  if (!n) $('#hint').textContent = 'No chapters in the book yet.';
+}
+
+const current = () => chapters()[chapterIdx] || null;
+const questsOf = c => (c?.quests || []).map(q => ({
+  id: q.id,
+  title: q.text?.title || '',
+  x: Number(q.data?.x ?? 0),
+  y: Number(q.data?.y ?? 0),
+  size: Number(q.data?.size ?? 1),
+  shape: q.data?.shape || 'circle',
+  deps: q.data?.dependencies || [],
+  tasks: q.data?.tasks || [],
+  raw: q
+}));
+
+// ------------------------------------------------------------------- canvas --
+const cv = $('#map'), ctx = cv.getContext('2d');
+const imgCache = new Map();
+
+/**
+ * A task's own icon wins over its item. Item tasks frequently point at
+ * ftbfiltersystem:smart_filter rather than a real item — the filter carries the
+ * match expression and has no meaningful icon, so FTB stores the display icon on
+ * the task itself.
+ */
+function iconIdOf(task) {
+  return task?.icon?.id || task?.item?.id || (typeof task?.item === 'string' ? task.item : null);
+}
+
+function iconFor(task) {
+  const id = iconIdOf(task);
+  if (typeof id !== 'string') return null;
+  const rec = icons[id];
+  if (!rec) return null;
+  if (imgCache.has(id)) return imgCache.get(id);
+  const img = new Image();
+  img.onload = draw;
+  img.src = '/icons/' + rec.file;
+  imgCache.set(id, img);
+  return img;
+}
+
+function resize() {
+  const r = cv.getBoundingClientRect(), dpr = Math.min(devicePixelRatio || 1, 2);
+  cv.width = Math.max(1, r.width * dpr);
+  cv.height = Math.max(1, r.height * dpr);
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+new ResizeObserver(() => { resize(); draw(); }).observe(document.querySelector('main'));
+
+function fit() {
+  const qs = questsOf(current());
+  const r = cv.getBoundingClientRect();
+  if (!qs.length) { view.x = r.width / 2; view.y = r.height / 2; return; }
+  const xs = qs.map(q => q.x), ys = qs.map(q => q.y);
+  const minX = Math.min(...xs), maxX = Math.max(...xs);
+  const minY = Math.min(...ys), maxY = Math.max(...ys);
+  const pad = 1.5;
+  const sx = r.width / ((maxX - minX) + pad * 2 || 1);
+  const sy = r.height / ((maxY - minY) + pad * 2 || 1);
+  view.scale = Math.max(16, Math.min(90, Math.min(sx, sy)));
+  view.x = r.width / 2 - ((minX + maxX) / 2) * view.scale;
+  view.y = r.height / 2 - ((minY + maxY) / 2) * view.scale;
+}
+
+const toScreen = (x, y) => [x * view.scale + view.x, y * view.scale + view.y];
+
+function draw() {
+  resize();
+  const r = cv.getBoundingClientRect();
+  ctx.clearRect(0, 0, r.width, r.height);
+  const qs = questsOf(current());
+  if (!qs.length) return;
+  const byId = Object.fromEntries(qs.map(q => [q.id, q]));
+
+  // dependency edges first, so nodes sit on top
+  ctx.strokeStyle = '#39414f';
+  ctx.lineWidth = Math.max(1, view.scale / 26);
+  for (const q of qs) {
+    const [x2, y2] = toScreen(q.x, q.y);
+    for (const d of q.deps) {
+      const p = byId[d];
+      if (!p) continue;
+      const [x1, y1] = toScreen(p.x, p.y);
+      ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+    }
+  }
+
+  for (const q of qs) {
+    const [x, y] = toScreen(q.x, q.y);
+    const rad = (view.scale * 0.42) * (q.size || 1);
+    if (x + rad < -40 || x - rad > r.width + 40 || y + rad < -40 || y - rad > r.height + 40) continue;
+
+    ctx.beginPath();
+    if (q.shape === 'square' || q.shape === 'rsquare') ctx.rect(x - rad, y - rad, rad * 2, rad * 2);
+    else ctx.arc(x, y, rad, 0, Math.PI * 2);
+    ctx.fillStyle = selected === q.id ? '#3a3524' : '#242a35';
+    ctx.fill();
+    ctx.strokeStyle = selected === q.id ? '#e0a84a' : '#39414f';
+    ctx.lineWidth = selected === q.id ? 2.5 : 1.5;
+    ctx.stroke();
+
+    const img = iconFor(q.tasks[0]);
+    if (img && img.complete && img.naturalWidth) {
+      const s = rad * 1.15;
+      ctx.imageSmoothingEnabled = false;
+      ctx.drawImage(img, x - s / 2, y - s / 2, s, s);
+    }
+    // Labels only once there is room for them. Quest grids are dense, and drawing
+    // every title at low zoom turns the map into unreadable overlapping text.
+    if (view.scale > 46 && q.title) {
+      ctx.font = '11px system-ui,sans-serif';
+      ctx.textAlign = 'center';
+      const label = q.title.length > 20 ? q.title.slice(0, 19) + '…' : q.title;
+      const w = ctx.measureText(label).width;
+      ctx.fillStyle = 'rgba(20,23,29,.82)';
+      ctx.fillRect(x - w / 2 - 3, y + rad + 4, w + 6, 14);
+      ctx.fillStyle = selected === q.id ? '#e0a84a' : '#aab3c2';
+      ctx.fillText(label, x, y + rad + 14);
+    }
+  }
+}
+
+// ------------------------------------------------------------ pan and zoom --
+let drag = null;
+const pointers = new Map();
+
+cv.addEventListener('pointerdown', e => {
+  cv.setPointerCapture(e.pointerId);
+  pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  if (pointers.size === 1) drag = { x: e.clientX, y: e.clientY, vx: view.x, vy: view.y, moved: false };
+});
+
+cv.addEventListener('pointermove', e => {
+  if (!pointers.has(e.pointerId)) return;
+  pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+
+  if (pointers.size >= 2) {                       // pinch
+    const [a, b] = [...pointers.values()];
+    const dist = Math.hypot(a.x - b.x, a.y - b.y);
+    if (drag?.pinch) {
+      const k = dist / drag.pinch;
+      const mid = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
+      const rect = cv.getBoundingClientRect();
+      zoomAt(mid.x - rect.left, mid.y - rect.top, k);
+    }
+    drag = { ...(drag || {}), pinch: dist, moved: true };
+    draw();
+    return;
+  }
+  if (!drag) return;
+  view.x = drag.vx + (e.clientX - drag.x);
+  view.y = drag.vy + (e.clientY - drag.y);
+  if (Math.hypot(e.clientX - drag.x, e.clientY - drag.y) > 4) drag.moved = true;
+  draw();
+});
+
+function endPointer(e) {
+  const wasDrag = drag;
+  pointers.delete(e.pointerId);
+  if (pointers.size === 0) {
+    if (wasDrag && !wasDrag.moved) pick(e);
+    drag = null;
+  }
+}
+cv.addEventListener('pointerup', endPointer);
+cv.addEventListener('pointercancel', endPointer);
+
+function zoomAt(px, py, k) {
+  const next = Math.max(10, Math.min(140, view.scale * k));
+  const r = next / view.scale;
+  view.x = px - (px - view.x) * r;
+  view.y = py - (py - view.y) * r;
+  view.scale = next;
+}
+
+cv.addEventListener('wheel', e => {
+  e.preventDefault();
+  const r = cv.getBoundingClientRect();
+  zoomAt(e.clientX - r.left, e.clientY - r.top, e.deltaY < 0 ? 1.12 : 1 / 1.12);
+  draw();
+}, { passive: false });
+
+// ---------------------------------------------------------------- selection --
+function pick(e) {
+  const r = cv.getBoundingClientRect();
+  const mx = e.clientX - r.left, my = e.clientY - r.top;
+  for (const q of questsOf(current())) {
+    const [x, y] = toScreen(q.x, q.y);
+    const rad = (view.scale * 0.42) * (q.size || 1);
+    if (Math.hypot(mx - x, my - y) <= rad + 3) { select(q); return; }
+  }
+  selected = null; closePanel(); draw();
+}
+
+function select(q) {
+  selected = q.id;
+  $('#qTitle').textContent = q.title || 'Untitled quest';
+  const body = $('#qBody');
+  body.innerHTML = '';
+
+  body.appendChild(field('id', q.id));
+  body.appendChild(field('position', `${q.x}, ${q.y}`));
+  if (q.deps.length) body.appendChild(field('depends on', q.deps.join(', ')));
+
+  const h = document.createElement('div');
+  h.className = 'field';
+  h.innerHTML = `<label>tasks (${q.tasks.length})</label>`;
+  for (const t of q.tasks) {
+    const id = t.item?.id || t.item || '';
+    const row = document.createElement('div');
+    row.className = 'task';
+    const rec = icons[id];
+    row.innerHTML =
+      (rec ? `<img src="/icons/${rec.file}" alt="">` : `<span class="pill">${esc(t.type || '?')}</span>`) +
+      `<div class="t"><b>${esc(t.type || 'task')}</b><span>${esc(String(id) || t.id || '')}</span></div>`;
+    h.appendChild(row);
+  }
+  body.appendChild(h);
+  $('#panel').classList.add('open');
+  draw();
+}
+
+function field(label, value) {
+  const d = document.createElement('div');
+  d.className = 'field';
+  d.innerHTML = `<label>${esc(label)}</label><div class="val">${esc(value)}</div>`;
+  return d;
+}
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const closePanel = () => $('#panel').classList.remove('open');
+$('#closePanel').onclick = () => { selected = null; closePanel(); draw(); };
+</script>
+</body>
+</html>

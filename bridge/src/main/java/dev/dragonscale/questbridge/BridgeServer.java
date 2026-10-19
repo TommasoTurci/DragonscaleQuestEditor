@@ -71,10 +71,16 @@ public final class BridgeServer {
     public void start() throws IOException {
         http = HttpServer.create(new InetSocketAddress(bind, port), BACKLOG);
         http.setExecutor(Executors.newVirtualThreadPerTaskExecutor());
-        http.createContext("/health", authed(this::health));
-        http.createContext("/book", authed(this::book));
-        http.createContext("/types", authed(this::types));
-        http.createContext("/changes", authed(feed::subscribe));
+        // API: token required.
+        http.createContext("/api/health", authed(this::health));
+        http.createContext("/api/book", authed(this::book));
+        http.createContext("/api/types", authed(this::types));
+        http.createContext("/api/changes", authed(feed::subscribe));
+
+        // The editor and its icons. No token: the shell is not secret, the data is.
+        Path web = mc.getServerDirectory().resolve("config").resolve("questbridge");
+        http.createContext("/icons/", new StaticFiles(web.resolve("icons"), "/questbridge/icons", "/icons", false));
+        http.createContext("/", new StaticFiles(web.resolve("www"), "/questbridge/www", "", true));
         http.start();
         DragonscaleBridge.LOG.info("[questbridge] listening on {}:{}", bind, port);
     }

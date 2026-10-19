@@ -149,10 +149,27 @@ Quest fields in use include `dependencies`, `icon`, `shape`, `size`, `icon_scale
 `invisible`, `hide_until_deps_complete`, `hide_details_until_startable`. Task fields
 include `item`, `count`, `value`, `optional_task`, `block_tag`.
 
-No FTB filter appears anywhere yet. If one shows up, `FilterParser`,
-`ExpressionFilter` and the compound filters (`AndFilter`, `OrFilter`, `NotFilter`,
-`OnlyOneFilter`, `RootFilter`) in FTB Filter System suggest a parsed expression
-serialized to a single string — treat it as opaque text.
+### FTB filters are in use
+
+An earlier pass over a two-quest copy of the book concluded no filter appeared
+anywhere. The real book uses them heavily — 11 of the tasks sampled. An item task
+often matches a filter rather than a literal item:
+
+```
+item: { components: { "ftbfiltersystem:filter": "ftbfiltersystem:item_tag(another_furniture:chairs)" }, count: 1, id: "ftbfiltersystem:smart_filter" }
+icon: { id: "another_furniture:oak_chair" }
+```
+
+Two consequences:
+
+- The filter is **a parsed expression serialized to one string**, as the presence of
+  `FilterParser` and `ExpressionFilter` in that mod suggested. The editor can treat
+  it as opaque text and add validation later; it does not need a nested model.
+- **A task's icon comes from its own `icon` field, not from its item.** The item
+  here is `ftbfiltersystem:smart_filter`, which carries the match expression and has
+  no meaningful icon of its own, so FTB stores the display icon on the task. Any UI
+  that derives an icon from `item.id` shows a filter sprite for a large share of the
+  book.
 
 ## Item registry
 

@@ -205,3 +205,12 @@ idea {
         downloadJavadoc = true
     }
 }
+
+// The editor ships inside the jar so a fresh install needs nothing but the jar.
+// StaticFiles prefers config/questbridge/www on disk when it exists, so the app can
+// still be edited on the server and refreshed without a rebuild.
+tasks.named('processResources', ProcessResources).configure {
+    from(rootProject.file('../app/www')) {
+        into 'questbridge/www'
+    }
+}
