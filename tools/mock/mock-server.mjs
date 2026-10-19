@@ -169,6 +169,27 @@ const newId = () => Array.from({ length: 16 },
 
 class BadEdit extends Error {}
 
+/**
+ * A stand-in for the bridge's git history: a deep copy of the book before each
+ * batch, kept in memory. The real thing commits to a repository in the quest
+ * folder, which is the only place a history can live that the server will not
+ * overwrite. This exists so the history and restore screens can be built.
+ */
+const hex = n => Array.from({ length: n },
+  () => '0123456789abcdef'[Math.floor(Math.random() * 16)]).join('');
+
+const commits = [{ id: hex(40), author: 'Quest Bridge', when: new Date().toISOString(),
+                   message: 'Quest book as it stood when the bridge first ran',
+                   book: structuredClone(book) }];
+
+/** Newest first, holding the book as it stood after the change — as git does. */
+function record(message) {
+  commits.unshift({
+    id: hex(40), author: 'Quest Bridge', when: new Date().toISOString(),
+    message, book: structuredClone(book)
+  });
+}
+
 function at(obj, dotted, value) {
   const path = dotted.split('.');
   let cur = obj;
@@ -246,6 +267,7 @@ function applyEdits(edits) {
   }
 
   book.version++;
+  record(applied + ' edit' + (applied === 1 ? '' : 's') + ' to ' + [...touched].join(', '));
   return { version: book.version, applied, touched: [...touched], created };
 }
 
@@ -285,6 +307,31 @@ http.createServer(async (req, res) => {
       subscribers.add(res);
       req.on('close', () => subscribers.delete(res));
       return;
+    }
+
+    if (p === '/api/history') {
+      return json(res, 200, {
+        enabled: true,
+        commits: commits.map(({ book, ...c }) => c),
+        snapshots: []
+      });
+    }
+
+    if (p === '/api/restore') {
+      if (req.method !== 'POST') return json(res, 405, { error: 'POST only' });
+      let body;
+      try { body = JSON.parse(await readBody(req)); }
+      catch { return json(res, 400, { error: 'body is not JSON' }); }
+      const found = commits.find(c => c.id === body.commit);
+      if (!found) return json(res, 400, { error: 'no such commit: ' + body.commit });
+
+      const version = book.version + 1;
+      book = structuredClone(found.book);
+      book.version = version;
+      record('Restored to ' + String(body.commit).slice(0, 8));
+      const change = { version, source: 'restore', commit: body.commit };
+      publish(change);
+      return json(res, 200, change);
     }
 
     if (p === '/api/edit') {

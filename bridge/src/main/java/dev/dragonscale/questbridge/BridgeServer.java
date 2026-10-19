@@ -6,7 +6,10 @@ import com.google.gson.JsonParser;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
+import dev.ftb.mods.ftbquests.net.SyncQuestsMessage;
+import dev.ftb.mods.ftbquests.quest.ServerQuestFile;
 import net.minecraft.server.MinecraftServer;
+import net.neoforged.neoforge.network.PacketDistributor;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -83,6 +86,8 @@ public final class BridgeServer {
         http.createContext("/api/types", authed(this::types));
         http.createContext("/api/changes", authed(feed::subscribe));
         http.createContext("/api/edit", authed(this::edit));
+        http.createContext("/api/history", authed(this::historyLog));
+        http.createContext("/api/restore", authed(this::restore));
 
         // The editor and its icons. No token: the shell is not secret, the data is.
         Path web = mc.getServerDirectory().resolve("config").resolve("questbridge");
@@ -182,6 +187,94 @@ public final class BridgeServer {
         change.addProperty("applied", result.applied());
         change.add("touched", GSON.toJsonTree(result.touched()));
         change.add("created", GSON.toJsonTree(result.created()));
+        feed.publish(change);
+        send(x, 200, change.toString());
+    }
+
+    private void historyLog(HttpExchange x) throws IOException {
+        JsonObject out = new JsonObject();
+        if (history == null || !history.enabled()) {
+            out.addProperty("enabled", false);
+            send(x, 200, out.toString());
+            return;
+        }
+        out.addProperty("enabled", true);
+        out.add("commits", GSON.toJsonTree(history.log(100)));
+        out.add("snapshots", GSON.toJsonTree(history.snapshots()));
+        send(x, 200, out.toString());
+    }
+
+    /**
+     * Put the book back to a commit.
+     *
+     * <p>Two threads, deliberately. Git is shelled out to from the HTTP thread,
+     * because a subprocess has no business on the server thread; the game then
+     * re-reads the files and resyncs clients on the server thread, because that
+     * walks FTB's live object graph.
+     *
+     * <p>{@code readDataFull} rather than {@code load()}: it re-reads the quest
+     * structure and leaves team progress alone, which is what a restore of the book
+     * means. Clients get a whole new copy, since after this almost anything may
+     * have changed.
+     */
+    private void restore(HttpExchange x) throws IOException {
+        if (!"POST".equals(x.getRequestMethod())) {
+            send(x, 405, "{\"error\":\"POST only\"}");
+            return;
+        }
+        if (history == null || !history.enabled()) {
+            send(x, 503, "{\"error\":\"no history to restore from\"}");
+            return;
+        }
+        var file = BookReader.file();
+        if (file.isEmpty()) {
+            send(x, 503, "{\"error\":\"quest file not loaded yet\"}");
+            return;
+        }
+
+        String commit;
+        try {
+            JsonObject body = JsonParser.parseString(
+                new String(x.getRequestBody().readAllBytes(), StandardCharsets.UTF_8)).getAsJsonObject();
+            commit = body.get("commit").getAsString();
+        } catch (Exception e) {
+            send(x, 400, "{\"error\":\"expected {\\\"commit\\\": \\\"<id>\\\"}\"}");
+            return;
+        }
+
+        try {
+            history.restore(commit);
+        } catch (IllegalArgumentException e) {
+            send(x, 400, "{\"error\":" + GSON.toJson(e.getMessage()) + "}");
+            return;
+        } catch (Exception e) {
+            DragonscaleBridge.LOG.error("[questbridge] restore failed before touching the game", e);
+            send(x, 500, "{\"error\":\"the files could not be restored; the book is untouched\"}");
+            return;
+        }
+
+        try {
+            mc.submit(() -> {
+                ServerQuestFile f = file.get();
+                f.readDataFull(f.getFolder(), f.holderLookup());
+                f.clearCachedData();
+                PacketDistributor.sendToAllPlayers(new SyncQuestsMessage(f));
+                watch.sync(f);
+                return null;
+            }).get();
+        } catch (Exception e) {
+            // The files on disk are the restored ones; the book in memory is
+            // whatever survived. Say so plainly rather than reporting success.
+            DragonscaleBridge.LOG.error("[questbridge] the files were restored but the server could not re-read them", e);
+            send(x, 500, "{\"error\":\"the files were restored but the server could not re-read them; restart it\"}");
+            return;
+        }
+
+        history.commitRestore(commit);
+        JsonObject change = new JsonObject();
+        change.addProperty("version", BookVersion.bump());
+        change.addProperty("source", "restore");
+        change.addProperty("commit", commit);
         feed.publish(change);
         send(x, 200, change.toString());
     }

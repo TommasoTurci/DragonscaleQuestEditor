@@ -218,10 +218,37 @@ pack with a picture for each, which is what an item picker needs; a second list 
 no pictures would be strictly worse. Tags are not enumerated — item tasks match tags
 through FTB Filter System expressions, which the editor edits as text.
 
-### Not built yet
+### `GET /api/history` and `POST /api/restore`
 
-`GET /api/history` and `POST /api/restore`. The git history is written (see below)
-but nothing exposes it, so rolling back means `git` on the server.
+`/api/history` returns the commit log of the quest folder, newest first, plus the
+full directory copies the bridge takes before the first edit of each session.
+
+```json
+{ "enabled": true,
+  "commits": [ { "id": "4f2a…", "author": "Quest Bridge",
+                 "when": "2026-10-20T01:14:09+02:00", "message": "2 edits to 4E2B…" } ],
+  "snapshots": ["ftbquests.before-20261020-011409"] }
+```
+
+`/api/restore` takes `{ "commit": "<id>" }` and puts the book back, live: no
+restart, and every client is resynced. Three things make that safe enough to put
+behind a button.
+
+- **HEAD does not move.** `git read-tree -u --reset` makes the working tree exactly
+  that tree — deleting files added since, where `checkout -- .` would leave them —
+  and the restore then lands as a new commit *on top of* the history. Undoing a
+  restore is just another restore.
+- **The state being replaced is committed first**, and a full directory copy is
+  taken as well, because this is the one operation here that can destroy a book and
+  it should not depend on the machinery it is undoing.
+- **The game re-reads with `readDataFull`, not `load()`** — the quest structure
+  comes back, team progress is left alone. If that re-read fails the response says
+  so rather than claiming success: the files are restored, the memory is not, and a
+  restart fixes it.
+
+Git work runs on the HTTP thread (a subprocess has no business on the server
+thread); the re-read and the resync run on the server thread (they walk FTB's live
+object graph).
 
 
 ## History
@@ -230,7 +257,7 @@ The bridge owns the files, so the bridge owns the commits.
 
 1. An edit arrives (or someone edits in game).
 2. It is applied to the live book and broadcast. No save, no reload, no restart.
-3. After a short idle gap the bridge flushes the book with `writeDataFull`, commits
+3. After a short idle gap the bridge flushes the book with `saveNow`, commits
    with the editor's name and the quest title, and pushes.
 
 Debounce matters — a commit per keystroke makes the history useless. A few seconds of
@@ -272,7 +299,8 @@ destructive control disabled until someone means it. With it on:
   never heard of included: the form is generated from what the object actually
   carries, plus the type's full field list from `/api/types`, so a field FTB omitted
   at its default can still be set on purpose;
-- pick items from all 19,344 in the pack, searched by id, each shown as its icon.
+- pick items from all 19,344 in the pack, searched by id, each shown as its icon;
+- open **History** and put the whole book back to any earlier point.
 
 Everything updates live for everyone else; the camera stays where you left it, and
 the inspector is left alone while you have a field open.
@@ -284,7 +312,6 @@ the inspector is left alone while you have a field open.
 | Format research | done — see [`docs/format.md`](docs/format.md) |
 | API contract | matches the implementation, this file |
 | Icon pipeline | done — 19,344 icons at 64px, 6,272 rendered from real geometry |
-| Bridge | read and write endpoints, in-game change detection, git history — compiles; **has never run against a real server** |
-| Editor | reads and edits the whole book; exercised end to end against the mock |
-| `/api/history`, `/api/restore` | not built |
+| Bridge | read, write, history and restore; in-game change detection — compiles; **has never run against a real server** |
+| Editor | reads and edits the whole book, and restores from history; exercised end to end against the mock |
 | Deployment | not done — nothing here has run on the VM |
