@@ -49,9 +49,9 @@ Animated textures are vertical strips of square frames; only frame 0 is used.
 | | |
 |---|---|
 | items | 19,344 |
-| flat | 12,035 |
-| isometric cube | 6,638 |
-| placeholder | 671 (3.5%) |
+| flat | 12,123 |
+| isometric cube | 6,786 |
+| placeholder | 435 (2.2%) |
 | payload | ~15 MB of PNG, 2.4 MB index |
 
 The 671 placeholders are `builtin/entity` items — chests, beds, banners, shulkers,

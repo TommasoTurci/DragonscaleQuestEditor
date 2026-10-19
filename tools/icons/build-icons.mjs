@@ -81,7 +81,9 @@ function resolve(key, depth = 0) {
     seen.push(cur);
     if (!m) break;                       // vanilla parents are not in mod jars
     model = m;
-    tex = { ...(m.textures ?? {}), ...tex };
+    // NeoForge's separate_transforms loader nests the real model under "base",
+    // leaving the top level with no textures at all.
+    tex = { ...(m.base?.textures ?? {}), ...(m.textures ?? {}), ...tex };
     if (!m.parent) break;
     cur = norm(m.parent);
   }
@@ -96,6 +98,22 @@ function texRef(tex, name, depth = 0) {
 }
 
 // ------------------------------------------------------------------ pixels ---
+/**
+ * pngjs refuses any file with bytes after the IEND chunk ("unrecognised content at
+ * end of stream"), and a surprising number of mod textures have them — 13 of 92 in
+ * one Malum folder. The image itself is fine, so trim to the end of IEND and retry.
+ */
+function decodePng(buf) {
+  try {
+    return PNG.sync.read(buf);
+  } catch (err) {
+    if (!/end of stream/i.test(err.message)) throw err;
+    const at = buf.lastIndexOf('IEND');
+    if (at < 0) throw err;
+    return PNG.sync.read(buf.subarray(0, at + 8));   // IEND + its 4-byte CRC
+  }
+}
+
 const decoded = new Map();
 function readTexture(ref) {
   if (!ref) return null;
@@ -104,7 +122,7 @@ function readTexture(ref) {
   let img = null;
   if (rec) {
     try {
-      const png = PNG.sync.read(rec.zip.readFile(rec.entry));
+      const png = decodePng(rec.zip.readFile(rec.entry));
       // Animated textures are vertical strips of square frames; take frame 0.
       img = png.height > png.width && png.height % png.width === 0
         ? crop(png, 0, 0, png.width, png.width)
