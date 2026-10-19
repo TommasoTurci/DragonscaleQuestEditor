@@ -7,6 +7,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartedEvent;
 import net.neoforged.neoforge.event.server.ServerStoppingEvent;
+import net.neoforged.neoforge.event.tick.ServerTickEvent;
 import org.slf4j.Logger;
 
 /**
@@ -18,8 +19,10 @@ import org.slf4j.Logger;
  * serialization, addon fields and the lang-file split stay FTB's problem rather
  * than ours.
  *
- * <p>Read-only for now. {@code /ops} does not exist yet, so nothing external can
- * modify the book until the read path is proven.
+ * <p>Edits arrive at {@code /api/edit} and are applied through FTB's own history
+ * events, which makes them indistinguishable from edits made in the quest book:
+ * the same broadcast, the same translation handling, the same undo stack. Changes
+ * made in game travel the other way through {@link BookWatch}.
  */
 @Mod(DragonscaleBridge.MOD_ID)
 public class DragonscaleBridge {
@@ -31,7 +34,12 @@ public class DragonscaleBridge {
     public DragonscaleBridge(IEventBus modBus, ModContainer container) {
         NeoForge.EVENT_BUS.addListener(this::onServerStarted);
         NeoForge.EVENT_BUS.addListener(this::onServerStopping);
+        NeoForge.EVENT_BUS.addListener(this::onServerTick);
         LOG.info("[questbridge] loaded");
+    }
+
+    private void onServerTick(ServerTickEvent.Post event) {
+        if (server != null) server.tick();
     }
 
     private void onServerStarted(ServerStartedEvent event) {

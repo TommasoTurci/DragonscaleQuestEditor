@@ -9,7 +9,7 @@
 :root{
   --bg:#14171d; --panel:#1b1f27; --panel-2:#222732; --line:#2d333f;
   --fg:#e3e7ee; --muted:#939cad; --accent:#e0a84a; --accent-dim:#6b4f1d;
-  --ok:#5fcf9e; --bad:#e8857a;
+  --ok:#5fcf9e; --bad:#e8857a; --edit:#7aa2f7;
   --font:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --mono:ui-monospace,Menlo,Consolas,monospace;
 }
@@ -23,6 +23,7 @@ body{
   overflow:hidden;-webkit-text-size-adjust:100%;
 }
 button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+input,select,textarea{font:inherit;color:inherit}
 #app{display:flex;flex-direction:column;height:100%}
 
 /* ---------- gate ---------- */
@@ -35,12 +36,10 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 #gate p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.5}
 #gate input{
   background:var(--panel);border:1px solid var(--line);border-radius:7px;
-  padding:12px 13px;color:var(--fg);font-family:var(--mono);font-size:.9rem;width:100%;
+  padding:12px 13px;font-family:var(--mono);font-size:.9rem;width:100%;
 }
 #gate input:focus{outline:2px solid var(--accent-dim);border-color:var(--accent)}
-#gate button{
-  background:var(--accent);color:#1a1405;border-radius:7px;padding:12px;font-weight:600;
-}
+#gate button{background:var(--accent);color:#1a1405;border-radius:7px;padding:12px;font-weight:600}
 #gateErr{color:var(--bad);font-size:.85rem;min-height:1.2em}
 
 /* ---------- top bar ---------- */
@@ -55,6 +54,12 @@ header .spacer{flex:1}
 #dot{width:8px;height:8px;border-radius:50%;background:var(--muted);flex-shrink:0}
 #dot.live{background:var(--ok);box-shadow:0 0 0 3px rgba(95,207,158,.15)}
 #dot.off{background:var(--bad)}
+#dot.busy{background:var(--accent)}
+#editToggle{
+  border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:.82rem;
+  background:var(--panel-2);color:var(--muted);white-space:nowrap;
+}
+#editToggle[aria-pressed="true"]{background:var(--edit);border-color:var(--edit);color:#0d1424;font-weight:600}
 
 #chapters{
   display:flex;gap:6px;overflow-x:auto;flex-shrink:0;scrollbar-width:none;
@@ -73,49 +78,122 @@ main{flex:1;position:relative;overflow:hidden;touch-action:none}
 canvas{display:block;width:100%;height:100%}
 #hint{
   position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
-  color:var(--muted);font-size:.9rem;text-align:center;pointer-events:none;
+  color:var(--muted);font-size:.9rem;text-align:center;pointer-events:none;max-width:70%;
 }
+#tools{
+  position:absolute;left:max(12px,env(safe-area-inset-left));display:flex;gap:8px;
+  bottom:calc(14px + env(safe-area-inset-bottom));
+}
+#tools button{
+  background:var(--panel);border:1px solid var(--line);border-radius:999px;
+  padding:9px 15px;font-size:.86rem;box-shadow:0 2px 10px rgba(0,0,0,.35);
+}
+#tools button[aria-pressed="true"]{background:var(--edit);border-color:var(--edit);color:#0d1424;font-weight:600}
+#banner{
+  position:absolute;left:50%;transform:translateX(-50%);top:12px;
+  background:var(--panel);border:1px solid var(--edit);border-radius:8px;
+  padding:8px 14px;font-size:.84rem;box-shadow:0 2px 14px rgba(0,0,0,.4);
+  display:flex;align-items:center;gap:10px;max-width:92%;
+}
+#banner.bad{border-color:var(--bad);color:var(--bad)}
+#banner button{color:var(--muted);font-size:1.1rem;line-height:1}
 
 /* ---------- inspector ---------- */
 #panel{
-  position:absolute;right:0;top:0;bottom:0;width:min(330px,86vw);
+  position:absolute;right:0;top:0;bottom:0;width:min(370px,92vw);
   background:var(--panel);border-left:1px solid var(--line);
-  transform:translateX(100%);transition:transform .18s ease;
+  transform:translateX(101%);transition:transform .18s ease;
   display:flex;flex-direction:column;
-  padding-bottom:env(safe-area-inset-bottom);
 }
 #panel.open{transform:none}
-#panel header{background:none;border-bottom:1px solid var(--line);padding:12px 14px}
-#panel .body{overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:14px}
-#panel h2{margin:0;font-size:1rem}
-.field{display:flex;flex-direction:column;gap:5px}
-.field label{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
-.field .val{font-family:var(--mono);font-size:.82rem;word-break:break-all;color:var(--fg)}
-.task{
-  display:flex;align-items:center;gap:9px;background:var(--panel-2);
-  border:1px solid var(--line);border-radius:7px;padding:8px 10px;
+#panel>header{background:none;border-bottom:1px solid var(--line);padding:12px 14px;align-items:flex-start}
+#panel .body{
+  overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:12px;
+  padding-bottom:calc(24px + env(safe-area-inset-bottom));
 }
-.task img{width:26px;height:26px;image-rendering:pixelated;flex-shrink:0}
-.task .t{display:flex;flex-direction:column;gap:2px;min-width:0}
-.task .t b{font-size:.85rem;font-weight:600}
-.task .t span{font-size:.72rem;color:var(--muted);font-family:var(--mono);overflow:hidden;text-overflow:ellipsis}
+#panel h2{margin:0;font-size:1rem;line-height:1.3;min-width:0;word-break:break-word}
+#panel h2 .sub{display:block;font-size:.72rem;color:var(--muted);font-family:var(--mono);font-weight:400;margin-top:3px}
+#closePanel{color:var(--muted);font-size:1.4rem;line-height:1;padding:0 4px}
+
+.field{display:flex;flex-direction:column;gap:5px;min-width:0}
+.field>label{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.field .val{font-family:var(--mono);font-size:.82rem;word-break:break-all}
+.field .note{font-size:.72rem;color:var(--muted);line-height:1.4}
+.row{display:flex;gap:8px}
+.row>*{flex:1;min-width:0}
+input[type=text],input[type=number],select,textarea{
+  background:var(--panel-2);border:1px solid var(--line);border-radius:6px;
+  padding:8px 9px;width:100%;font-size:.88rem;
+}
+textarea{font-family:var(--mono);font-size:.8rem;line-height:1.45;resize:vertical;min-height:62px}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
+input:disabled,select:disabled,textarea:disabled{opacity:.55}
+.check{display:flex;align-items:center;gap:8px;font-size:.86rem}
+.check input{width:16px;height:16px;accent-color:var(--edit);flex:none}
+.bad{color:var(--bad);font-size:.75rem}
+
+details{border:1px solid var(--line);border-radius:8px;background:var(--panel-2)}
+details>summary{
+  padding:9px 11px;font-size:.84rem;cursor:pointer;list-style:none;
+  display:flex;align-items:center;gap:8px;
+}
+details>summary::-webkit-details-marker{display:none}
+details>summary::after{content:"\25be";margin-left:auto;color:var(--muted);font-size:.8rem}
+details[open]>summary::after{content:"\25b4"}
+details>summary .count{color:var(--muted);font-size:.76rem;font-family:var(--mono)}
+details .inner{padding:0 11px 11px;display:flex;flex-direction:column;gap:11px}
+
+.item{
+  display:flex;align-items:center;gap:9px;background:var(--bg);
+  border:1px solid var(--line);border-radius:7px;padding:7px 9px;width:100%;text-align:left;
+}
+.item>img{width:26px;height:26px;image-rendering:pixelated;flex:none}
+.item .t{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1;text-align:left}
+.item .t b{font-size:.84rem;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.item .t span{font-size:.71rem;color:var(--muted);font-family:var(--mono);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.item .x{color:var(--muted);font-size:1.1rem;line-height:1;padding:2px 5px;flex:none}
+.item .x:hover{color:var(--bad)}
+.item.dep:hover{border-color:var(--accent)}
 .pill{
-  display:inline-block;font-size:.68rem;font-family:var(--mono);padding:2px 6px;
-  border-radius:4px;background:var(--accent-dim);color:var(--accent);
+  display:inline-grid;place-items:center;width:26px;height:26px;flex:none;
+  font-size:.68rem;font-family:var(--mono);border-radius:4px;
+  background:var(--accent-dim);color:var(--accent);
 }
-#closePanel{color:var(--muted);font-size:1.3rem;line-height:1;padding:0 4px}
-.dep{
-  display:block;width:100%;text-align:left;background:var(--panel-2);
-  border:1px solid var(--line);border-radius:6px;padding:7px 10px;font-size:.85rem;
+.btn{border:1px solid var(--line);border-radius:6px;padding:7px 11px;font-size:.84rem;background:var(--panel-2)}
+.btn:hover:enabled{border-color:var(--accent);color:var(--accent)}
+.btn.danger:hover:enabled{border-color:var(--bad);color:var(--bad)}
+.btn.go{background:var(--edit);border-color:var(--edit);color:#0d1424;font-weight:600}
+.btn.go:hover:enabled{color:#0d1424}
+.btn:disabled{opacity:.45;cursor:default}
+
+/* ---------- item picker ---------- */
+#picker{
+  position:fixed;inset:0;z-index:60;background:rgba(8,10,14,.82);display:flex;
+  padding:max(14px,env(safe-area-inset-top)) max(14px,env(safe-area-inset-right)) max(14px,env(safe-area-inset-bottom)) max(14px,env(safe-area-inset-left));
 }
-.dep:hover{border-color:var(--accent);color:var(--accent)}
-.dep .miss{font-family:var(--mono);font-size:.78rem;color:var(--muted)}
-.field .deps{display:flex;flex-direction:column;gap:5px}
+#pickerBox{
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  display:flex;flex-direction:column;overflow:hidden;
+  width:min(640px,100%);max-height:100%;margin:auto;
+}
+#pickerBox .top{display:flex;gap:8px;padding:12px;border-bottom:1px solid var(--line)}
+#pickerGrid{
+  overflow-y:auto;padding:10px;display:grid;gap:6px;
+  grid-template-columns:repeat(auto-fill,minmax(64px,1fr));
+}
+#pickerGrid button{
+  display:flex;flex-direction:column;align-items:center;gap:3px;padding:7px 3px;
+  border-radius:7px;border:1px solid transparent;
+}
+#pickerGrid button:hover{border-color:var(--accent);background:var(--panel-2)}
+#pickerGrid img{width:32px;height:32px;image-rendering:pixelated}
+#pickerGrid span{font-size:.62rem;color:var(--muted);text-align:center;line-height:1.2;word-break:break-all}
+#pickerCount{padding:0 12px 10px;font-size:.75rem;color:var(--muted)}
 </style>
 </head>
 <body>
 
-<div id="gate">
+<div id="gate" hidden>
   <form id="gateForm">
     <h1>Dragonscale Quests</h1>
     <p>Paste the token from <code>config/questbridge.properties</code> on the server. It is remembered on this device.</p>
@@ -127,16 +205,21 @@ canvas{display:block;width:100%;height:100%}
 
 <div id="app" hidden>
   <header>
-    <span class="brand">Dragonscale Quests</span>
+    <span class="brand">Dragonscale</span>
     <span class="spacer"></span>
+    <button id="editToggle" aria-pressed="false">Editing off</button>
     <span id="status"><span id="dot"></span><span id="statusText">connecting</span></span>
   </header>
   <nav id="chapters"></nav>
   <main>
     <canvas id="map"></canvas>
     <div id="hint" hidden></div>
+    <div id="banner" hidden><span id="bannerText"></span><button id="bannerX" aria-label="Dismiss">&times;</button></div>
+    <div id="tools" hidden>
+      <button id="addQuest" aria-pressed="false">+ Quest</button>
+    </div>
     <aside id="panel">
-      <header style="display:flex;align-items:center;gap:8px">
+      <header>
         <h2 id="qTitle">Quest</h2>
         <span class="spacer"></span>
         <button id="closePanel" aria-label="Close">&times;</button>
@@ -146,32 +229,124 @@ canvas{display:block;width:100%;height:100%}
   </main>
 </div>
 
+<div id="picker" hidden>
+  <div id="pickerBox">
+    <div class="top">
+      <input id="pickerSearch" type="text" placeholder="Search items&hellip;" spellcheck="false" autocomplete="off">
+      <button class="btn" id="pickerCancel">Cancel</button>
+    </div>
+    <div id="pickerGrid"></div>
+    <div id="pickerCount"></div>
+  </div>
+</div>
+
 <script>
+'use strict';
 const $ = s => document.querySelector(s);
 const TOKEN_KEY = 'dragonscale.token';
 
-let token = null, book = null, icons = {}, chapterIdx = 0, selected = null;
-const view = { x: 0, y: 0, scale: 48 };   // world units -> px
+/** The quest shapes FTB ships, from its own texture folder. "" means chapter default. */
+const SHAPES = ['', 'circle', 'square', 'rsquare', 'diamond', 'hexagon', 'octagon',
+                'pentagon', 'gear', 'heart', 'none'];
+/** The grid FTB's own editor snaps to. */
+const SNAP = 0.5;
+
+const S = {
+  token: null,
+  book: null,
+  types: { tasks: {}, rewards: {} },
+  icons: {},
+  chapterId: null,
+  sel: null,
+  edit: false,
+  placing: false,
+  linking: false,
+  live: false,
+  saving: 0,
+  open: new Set(['tasks']),
+};
+const view = { x: 0, y: 0, scale: 48 };    // world units -> px
 
 // ---------------------------------------------------------------- transport --
+
+class ApiError extends Error {
+  constructor(status, body) {
+    super(body && body.error ? body.error : 'HTTP ' + status);
+    this.status = status;
+  }
+}
+
 async function api(path, opts = {}) {
   const r = await fetch('/api' + path, {
     ...opts,
-    headers: { ...(opts.headers || {}), Authorization: 'Bearer ' + token }
+    headers: { ...(opts.headers || {}), Authorization: 'Bearer ' + S.token }
   });
-  if (r.status === 401) throw new Error('unauthorized');
-  if (!r.ok) throw new Error(await r.text().catch(() => r.status));
-  return r.json();
+  let body = null;
+  try { body = await r.json(); } catch {}
+  if (!r.ok) throw new ApiError(r.status, body);
+  return body;
 }
 
-function setStatus(state, text) {
-  $('#dot').className = state;
-  $('#statusText').textContent = text;
+/**
+ * Sends a batch of edits. The book carries a version, and the server rejects a
+ * batch built on a stale one rather than letting it overwrite what it never saw —
+ * that is what stops a tablet stomping a rename someone made in game seconds ago.
+ *
+ * A rejection is retried exactly once against fresh data. These edits are
+ * field-level, so replaying them is last-write-wins per field, which is the right
+ * granularity; retrying forever would not be.
+ */
+async function send(edits, retried = false) {
+  if (!edits.length) return null;
+  S.saving++; status();
+  try {
+    const res = await api('/edit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ baseVersion: S.book.version, edits })
+    });
+    // Adopt the new version straight away: waiting for the change feed to tell us
+    // would make a quick second edit arrive stale and need a pointless retry.
+    // Then resync shortly after, because the local copy was changed optimistically
+    // and the server is the one that decides what a value became.
+    if (res && res.version) S.book.version = res.version;
+    resyncSoon();
+    return res;
+  } catch (e) {
+    if (e.status === 409 && !retried) {
+      await reload().catch(() => {});
+      return send(edits, true);
+    }
+    // The optimistic local change is now a lie. The truth is on the server.
+    banner(e.message || 'The edit was refused.', true);
+    await reload().catch(() => {});
+    return null;
+  } finally {
+    S.saving--; status();
+  }
 }
 
-// ------------------------------------------------------------------- start --
-try { token = localStorage.getItem(TOKEN_KEY); } catch {}
-if (token) connect(token); else $('#gate').hidden = false;
+function status() {
+  const dot = $('#dot'), text = $('#statusText');
+  if (S.saving) { dot.className = 'busy'; text.textContent = 'saving'; return; }
+  dot.className = S.live ? 'live' : 'off';
+  text.textContent = S.live ? 'v' + (S.book ? S.book.version : '?') : 'offline';
+}
+
+let bannerTimer = null;
+function banner(msg, bad = false) {
+  $('#bannerText').textContent = msg;
+  $('#banner').classList.toggle('bad', bad);
+  $('#banner').hidden = false;
+  clearTimeout(bannerTimer);
+  if (!bad) bannerTimer = setTimeout(() => { $('#banner').hidden = true; }, 3200);
+}
+$('#bannerX').onclick = () => { $('#banner').hidden = true; };
+
+// -------------------------------------------------------------------- start --
+
+try { S.token = localStorage.getItem(TOKEN_KEY); } catch {}
+if (S.token) connect(S.token); else $('#gate').hidden = false;
 
 $('#gateForm').addEventListener('submit', e => {
   e.preventDefault();
@@ -179,108 +354,180 @@ $('#gateForm').addEventListener('submit', e => {
 });
 
 async function connect(t) {
-  token = t;
+  S.token = t;
   $('#gateErr').textContent = '';
   try {
     await api('/health');
   } catch (err) {
     $('#gate').hidden = false;
-    $('#gateErr').textContent = err.message === 'unauthorized'
+    $('#gateErr').textContent = err.status === 401
       ? 'That token was rejected.'
       : 'Could not reach the server.';
     return;
   }
-  try { localStorage.setItem(TOKEN_KEY, token); } catch {}
+  try { localStorage.setItem(TOKEN_KEY, S.token); } catch {}
   $('#gate').hidden = true;
   $('#app').hidden = false;
-  await loadAll();
+  await first();
   listen();
 }
 
-async function loadAll() {
-  setStatus('', 'loading');
-  const [b, idx] = await Promise.all([
+async function first() {
+  const [book, types, idx] = await Promise.all([
     api('/book'),
+    api('/types').catch(() => ({ tasks: {}, rewards: {} })),
     fetch('/icons/index.json').then(r => r.ok ? r.json() : { icons: {} }).catch(() => ({ icons: {} }))
   ]);
-  book = b;
-  icons = idx.icons || {};
+  S.book = book;
+  S.types = types && types.tasks ? types : { tasks: {}, rewards: {} };
+  S.icons = idx.icons || {};
+  if (!S.chapterId) S.chapterId = (chapters()[0] || {}).id || null;
   renderChapters();
-  fit();
-  draw();
-  setStatus('live', 'v' + book.version);
+  fitView();
+  drawMap();
+  status();
 }
 
+/**
+ * Refetches the book without disturbing what the user is doing: the camera stays
+ * put, the selection survives, and the inspector is left alone while a field in it
+ * has focus. An editor that scrolled away from you on every remote change would be
+ * unusable with two people working at once.
+ */
+async function reload() {
+  S.book = await api('/book');
+  if (!chapters().some(c => c.id === S.chapterId)) S.chapterId = (chapters()[0] || {}).id || null;
+  renderChapters();
+  drawMap();
+  if (!panelHasFocus()) renderPanel();
+  status();
+}
+
+let resyncTimer = null;
+/** Debounced, so a run of keystroke-sized edits costs one refetch, not five. */
+function resyncSoon() {
+  clearTimeout(resyncTimer);
+  resyncTimer = setTimeout(() => {
+    if (!S.saving) reload().catch(() => {});
+  }, 500);
+}
+
+const panelHasFocus = () => document.activeElement
+  && document.activeElement !== document.body
+  && $('#panel').contains(document.activeElement);
+
 function listen() {
-  const es = new EventSource('/api/changes?token=' + encodeURIComponent(token));
-  es.onopen = () => setStatus('live', 'live');
-  es.onerror = () => setStatus('off', 'reconnecting');
+  const es = new EventSource('/api/changes?token=' + encodeURIComponent(S.token));
+  es.onopen = () => { S.live = true; status(); };
+  es.onerror = () => { S.live = false; status(); };
   es.onmessage = e => {
-    try {
-      const msg = JSON.parse(e.data);
-      if (msg.version) setStatus('live', 'v' + msg.version);
-      loadAll();                       // small book; a full refetch is simplest and safe
-    } catch {}
+    S.live = true;
+    let msg = null;
+    try { msg = JSON.parse(e.data); } catch { return; }
+    // Every applied edit is announced, our own included, so one refetch path
+    // serves both and there is no second code path to keep correct.
+    if (msg.version && S.book && msg.version !== S.book.version) reload().catch(() => {});
+    else status();
   };
 }
 
-// ----------------------------------------------------------------- chapters --
-const chapters = () => (book?.chapterGroups || []).flatMap(g => g.chapters || []);
+// ----------------------------------------------------------------- the book --
+
+const chapters = () => (S.book && S.book.chapterGroups || []).flatMap(g => g.chapters || []);
+const chapter = () => chapters().find(c => c.id === S.chapterId) || null;
+const quests = () => (chapter() || {}).quests || [];
+
+function byId(id) {
+  for (const c of chapters()) {
+    if (c.id === id) return { kind: 'chapter', obj: c };
+    for (const q of c.quests || []) {
+      if (q.id === id) return { kind: 'quest', obj: q, chapter: c };
+      for (const t of q.tasks || []) if (t.id === id) return { kind: 'task', obj: t, quest: q };
+      for (const r of q.rewards || []) if (r.id === id) return { kind: 'reward', obj: r, quest: q };
+    }
+  }
+  return null;
+}
+const selected = () => (S.sel ? byId(S.sel) : null);
+
+const num = (v, dflt = 0) => {
+  const n = typeof v === 'number' ? v : Number(v);
+  return Number.isFinite(n) ? n : dflt;
+};
+const qx = q => num(q.data && q.data.x, 0);
+const qy = q => num(q.data && q.data.y, 0);
+const qsize = q => num(q.data && q.data.size, 1) || 1;
+const qshape = q => (q.data && q.data.shape)
+  || ((chapter() || {}).data || {}).default_quest_shape || 'circle';
+const deps = q => (q.data && q.data.dependencies) || [];
+const titleOf = o => (o && o.text && (o.text.title || o.text.rawTitle)) || '';
 
 function renderChapters() {
   const nav = $('#chapters');
   nav.innerHTML = '';
-  chapters().forEach((c, i) => {
+  for (const c of chapters()) {
     const b = document.createElement('button');
-    b.textContent = c.text?.title || c.data?.filename || c.id;
-    b.setAttribute('aria-selected', i === chapterIdx);
-    b.onclick = () => { chapterIdx = i; selected = null; closePanel(); renderChapters(); fit(); draw(); };
+    b.textContent = titleOf(c) || (c.data || {}).filename || c.id;
+    b.setAttribute('aria-selected', c.id === S.chapterId);
+    b.onclick = () => {
+      S.chapterId = c.id;
+      S.sel = null; closePanel();
+      renderChapters(); fitView(); drawMap();
+    };
     nav.appendChild(b);
-  });
-  const n = chapters().length;
+  }
+  const n = quests().length;
   $('#hint').hidden = n > 0;
-  if (!n) $('#hint').textContent = 'No chapters in the book yet.';
+  if (!n) {
+    $('#hint').textContent = chapters().length
+      ? (S.edit ? 'Empty chapter. Tap “+ Quest”, then tap the map.' : 'No quests in this chapter.')
+      : 'No chapters in the book yet.';
+  }
 }
 
-const current = () => chapters()[chapterIdx] || null;
-const questsOf = c => (c?.quests || []).map(q => ({
-  id: q.id,
-  title: q.text?.title || '',
-  x: Number(q.data?.x ?? 0),
-  y: Number(q.data?.y ?? 0),
-  size: Number(q.data?.size ?? 1),
-  shape: q.data?.shape || 'circle',
-  deps: q.data?.dependencies || [],
-  tasks: q.data?.tasks || [],
-  raw: q
-}));
-
-// ------------------------------------------------------------------- canvas --
-const cv = $('#map'), ctx = cv.getContext('2d');
-const imgCache = new Map();
+// --------------------------------------------------------------------- icons --
 
 /**
- * A task's own icon wins over its item. Item tasks frequently point at
- * ftbfiltersystem:smart_filter rather than a real item — the filter carries the
- * match expression and has no meaningful icon, so FTB stores the display icon on
- * the task itself.
+ * A task's own icon wins over its item: an item task often points at
+ * ftbfiltersystem:smart_filter, which carries the match expression and has no
+ * meaningful icon, so FTB stores the display icon on the task itself.
  */
-function iconIdOf(task) {
-  return task?.icon?.id || task?.item?.id || (typeof task?.item === 'string' ? task.item : null);
+function taskIconId(t) {
+  const d = (t && t.data) || {};
+  const tries = [d.icon && d.icon.id, d.item && d.item.id,
+                 typeof d.item === 'string' ? d.item : null];
+  for (const id of tries) {
+    // ftbquests:custom_icon is a placeholder whose real picture is a texture path
+    // in its components, and a texture path has no item id to look up. Keep going.
+    if (id && id !== 'ftbquests:custom_icon' && S.icons[id]) return id;
+  }
+  return null;
 }
 
-function iconFor(task) {
-  const id = iconIdOf(task);
-  if (typeof id !== 'string') return null;
-  const rec = icons[id];
-  if (!rec) return null;
+function questIconId(q) {
+  const own = q.data && q.data.icon && q.data.icon.id;
+  if (own && own !== 'ftbquests:custom_icon' && S.icons[own]) return own;
+  for (const t of q.tasks || []) {
+    const id = taskIconId(t);
+    if (id) return id;
+  }
+  return null;
+}
+
+const imgCache = new Map();
+function imageFor(id) {
+  if (!id || !S.icons[id]) return null;
   if (imgCache.has(id)) return imgCache.get(id);
   const img = new Image();
-  img.onload = draw;
-  img.src = '/icons/' + rec.file;
+  img.onload = drawMap;
+  img.src = '/icons/' + S.icons[id].file;
   imgCache.set(id, img);
   return img;
 }
+
+// -------------------------------------------------------------------- canvas --
+
+const cv = $('#map'), ctx = cv.getContext('2d');
 
 function resize() {
   const r = cv.getBoundingClientRect(), dpr = Math.min(devicePixelRatio || 1, 2);
@@ -288,13 +535,13 @@ function resize() {
   cv.height = Math.max(1, r.height * dpr);
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 }
-new ResizeObserver(() => { resize(); draw(); }).observe(document.querySelector('main'));
+new ResizeObserver(() => { resize(); drawMap(); }).observe($('main'));
 
-function fit() {
-  const qs = questsOf(current());
+function fitView() {
+  const qs = quests();
   const r = cv.getBoundingClientRect();
-  if (!qs.length) { view.x = r.width / 2; view.y = r.height / 2; return; }
-  const xs = qs.map(q => q.x), ys = qs.map(q => q.y);
+  if (!qs.length) { view.x = r.width / 2; view.y = r.height / 2; view.scale = 48; return; }
+  const xs = qs.map(qx), ys = qs.map(qy);
   const minX = Math.min(...xs), maxX = Math.max(...xs);
   const minY = Math.min(...ys), maxY = Math.max(...ys);
   const pad = 1.5;
@@ -306,110 +553,195 @@ function fit() {
 }
 
 const toScreen = (x, y) => [x * view.scale + view.x, y * view.scale + view.y];
+const toWorld = (px, py) => [(px - view.x) / view.scale, (py - view.y) / view.scale];
+const snap = v => Math.round(v / SNAP) * SNAP;
 
-function draw() {
+/** Shape outlines, as polygons wherever FTB uses one. */
+function shapePath(shape, x, y, rad) {
+  ctx.beginPath();
+  const poly = n => {
+    // Flat-topped, which is how FTB draws its hexagons and octagons.
+    const turn = Math.PI / 2 + (n % 2 ? 0 : Math.PI / n);
+    for (let i = 0; i < n; i++) {
+      const a = turn + i * 2 * Math.PI / n;
+      const px = x + Math.cos(a) * rad, py = y - Math.sin(a) * rad;
+      i ? ctx.lineTo(px, py) : ctx.moveTo(px, py);
+    }
+    ctx.closePath();
+  };
+  switch (shape) {
+    case 'square': ctx.rect(x - rad, y - rad, rad * 2, rad * 2); break;
+    case 'rsquare': ctx.roundRect(x - rad, y - rad, rad * 2, rad * 2, rad * 0.28); break;
+    case 'diamond': poly(4); break;
+    case 'pentagon': poly(5); break;
+    case 'hexagon': poly(6); break;
+    case 'octagon': poly(8); break;
+    // gear and heart are drawn as circles: the editor needs each quest located and
+    // sized, not its silhouette reproduced.
+    default: ctx.arc(x, y, rad, 0, Math.PI * 2);
+  }
+}
+
+function drawMap() {
   resize();
   const r = cv.getBoundingClientRect();
   ctx.clearRect(0, 0, r.width, r.height);
-  const qs = questsOf(current());
-  if (!qs.length) return;
-  const byId = Object.fromEntries(qs.map(q => [q.id, q]));
+  const qs = quests();
 
-  // dependency edges first, so nodes sit on top
+  if (S.edit) drawGrid(r);
+  if (!qs.length) return;
+  const index = Object.fromEntries(qs.map(q => [q.id, q]));
+
+  // Dependency edges first, so nodes sit on top.
   ctx.strokeStyle = '#39414f';
   ctx.lineWidth = Math.max(1, view.scale / 26);
   for (const q of qs) {
-    const [x2, y2] = toScreen(q.x, q.y);
-    for (const d of q.deps) {
-      const p = byId[d];
+    const [x2, y2] = toScreen(qx(q), qy(q));
+    for (const d of deps(q)) {
+      const p = index[d];
       if (!p) continue;
-      const [x1, y1] = toScreen(p.x, p.y);
+      const [x1, y1] = toScreen(qx(p), qy(p));
       ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
     }
   }
 
   for (const q of qs) {
-    const [x, y] = toScreen(q.x, q.y);
-    const rad = (view.scale * 0.42) * (q.size || 1);
+    const [x, y] = toScreen(qx(q), qy(q));
+    const rad = (view.scale * 0.42) * qsize(q);
     if (x + rad < -40 || x - rad > r.width + 40 || y + rad < -40 || y - rad > r.height + 40) continue;
+    const isSel = S.sel === q.id;
 
-    ctx.beginPath();
-    if (q.shape === 'square' || q.shape === 'rsquare') ctx.rect(x - rad, y - rad, rad * 2, rad * 2);
-    else ctx.arc(x, y, rad, 0, Math.PI * 2);
-    ctx.fillStyle = selected === q.id ? '#3a3524' : '#242a35';
+    shapePath(qshape(q), x, y, rad);
+    ctx.fillStyle = isSel ? '#3a3524' : '#242a35';
     ctx.fill();
-    ctx.strokeStyle = selected === q.id ? '#e0a84a' : '#39414f';
-    ctx.lineWidth = selected === q.id ? 2.5 : 1.5;
+    ctx.strokeStyle = isSel ? '#e0a84a' : '#39414f';
+    ctx.lineWidth = isSel ? 2.5 : 1.5;
     ctx.stroke();
 
-    const img = iconFor(q.tasks[0]);
+    const img = imageFor(questIconId(q));
     if (img && img.complete && img.naturalWidth) {
       const s = rad * 1.15;
       ctx.imageSmoothingEnabled = false;
       ctx.drawImage(img, x - s / 2, y - s / 2, s, s);
     }
-    // Labels only once there is room for them. Quest grids are dense, and drawing
-    // every title at low zoom turns the map into unreadable overlapping text.
-    if (view.scale > 46 && q.title) {
+    // Labels only once there is room. Quest grids are dense, and drawing every
+    // title at low zoom turns the map into unreadable overlapping text.
+    const label = titleOf(q);
+    if (view.scale > 46 && label) {
       ctx.font = '11px system-ui,sans-serif';
       ctx.textAlign = 'center';
-      const label = q.title.length > 20 ? q.title.slice(0, 19) + '…' : q.title;
-      const w = ctx.measureText(label).width;
+      const short = label.length > 20 ? label.slice(0, 19) + '…' : label;
+      const w = ctx.measureText(short).width;
       ctx.fillStyle = 'rgba(20,23,29,.82)';
       ctx.fillRect(x - w / 2 - 3, y + rad + 4, w + 6, 14);
-      ctx.fillStyle = selected === q.id ? '#e0a84a' : '#aab3c2';
-      ctx.fillText(label, x, y + rad + 14);
+      ctx.fillStyle = isSel ? '#e0a84a' : '#aab3c2';
+      ctx.fillText(short, x, y + rad + 14);
     }
   }
 }
 
-// ------------------------------------------------------------ pan and zoom --
-let drag = null;
+function drawGrid(r) {
+  const step = view.scale * SNAP;
+  if (step < 7) return;
+  ctx.strokeStyle = 'rgba(122,162,247,.09)';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  for (let x = view.x % step; x < r.width; x += step) { ctx.moveTo(x, 0); ctx.lineTo(x, r.height); }
+  for (let y = view.y % step; y < r.height; y += step) { ctx.moveTo(0, y); ctx.lineTo(r.width, y); }
+  ctx.stroke();
+}
+
+function questAt(px, py) {
+  // Last first: later quests are drawn on top, so they should be hit first.
+  const qs = quests();
+  for (let i = qs.length - 1; i >= 0; i--) {
+    const q = qs[i];
+    const [x, y] = toScreen(qx(q), qy(q));
+    const rad = (view.scale * 0.42) * qsize(q);
+    if (Math.abs(px - x) <= rad + 3 && Math.abs(py - y) <= rad + 3) return q;
+  }
+  return null;
+}
+
+// -------------------------------------------------------- pan, zoom and drag --
+
+let gesture = null;
 const pointers = new Map();
 
 cv.addEventListener('pointerdown', e => {
   cv.setPointerCapture(e.pointerId);
   pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
-  if (pointers.size === 1) drag = { x: e.clientX, y: e.clientY, vx: view.x, vy: view.y, moved: false };
+  if (pointers.size !== 1) return;
+
+  const r = cv.getBoundingClientRect();
+  const hit = questAt(e.clientX - r.left, e.clientY - r.top);
+
+  // In edit mode a press on a quest moves it; anywhere else pans. Moving a node
+  // and panning the map share one gesture, so they must not be ambiguous.
+  if (S.edit && hit && !S.linking && !S.placing) {
+    gesture = { kind: 'node', q: hit, moved: false,
+                ox: qx(hit), oy: qy(hit), sx: e.clientX, sy: e.clientY };
+  } else {
+    gesture = { kind: 'pan', moved: false, sx: e.clientX, sy: e.clientY, vx: view.x, vy: view.y };
+  }
 });
 
 cv.addEventListener('pointermove', e => {
   if (!pointers.has(e.pointerId)) return;
   pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
 
-  if (pointers.size >= 2) {                       // pinch
+  if (pointers.size >= 2) {                                   // pinch
     const [a, b] = [...pointers.values()];
     const dist = Math.hypot(a.x - b.x, a.y - b.y);
-    if (drag?.pinch) {
-      const k = dist / drag.pinch;
-      const mid = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
-      const rect = cv.getBoundingClientRect();
-      zoomAt(mid.x - rect.left, mid.y - rect.top, k);
+    if (gesture && gesture.pinch) {
+      const r = cv.getBoundingClientRect();
+      zoomAt((a.x + b.x) / 2 - r.left, (a.y + b.y) / 2 - r.top, dist / gesture.pinch);
     }
-    drag = { ...(drag || {}), pinch: dist, moved: true };
-    draw();
+    gesture = { kind: 'pan', pinch: dist, moved: true };
+    drawMap();
     return;
   }
-  if (!drag) return;
-  view.x = drag.vx + (e.clientX - drag.x);
-  view.y = drag.vy + (e.clientY - drag.y);
-  if (Math.hypot(e.clientX - drag.x, e.clientY - drag.y) > 4) drag.moved = true;
-  draw();
+  if (!gesture) return;
+  const dx = e.clientX - gesture.sx, dy = e.clientY - gesture.sy;
+  if (Math.hypot(dx, dy) > 4) gesture.moved = true;
+
+  if (gesture.kind === 'node') {
+    if (!gesture.moved) return;
+    gesture.q.data.x = snap(gesture.ox + dx / view.scale);
+    gesture.q.data.y = snap(gesture.oy + dy / view.scale);
+  } else {
+    view.x = gesture.vx + dx;
+    view.y = gesture.vy + dy;
+  }
+  drawMap();
 });
 
 function endPointer(e) {
-  const wasDrag = drag;
+  const g = gesture;
   pointers.delete(e.pointerId);
-  if (pointers.size === 0) {
-    if (wasDrag && !wasDrag.moved) pick(e);
-    drag = null;
+  if (pointers.size) return;
+  gesture = null;
+  if (!g) return;
+
+  if (g.kind === 'node' && g.moved) {
+    // The local book already moved; tell the server where it landed. Two ops in
+    // one batch so they share a single history entry, with an explicit type: FTB
+    // stores these as doubles, and a bare 2 would go back as an int.
+    const t = g.q.id;
+    send([
+      { op: 'set', target: t, path: 'data.x', value: g.q.data.x, type: 'double' },
+      { op: 'set', target: t, path: 'data.y', value: g.q.data.y, type: 'double' }
+    ]);
+    if (S.sel === t && !panelHasFocus()) renderPanel();
+    return;
   }
+  if (!g.moved) tap(e);
 }
 cv.addEventListener('pointerup', endPointer);
 cv.addEventListener('pointercancel', endPointer);
 
 function zoomAt(px, py, k) {
-  const next = Math.max(10, Math.min(140, view.scale * k));
+  const next = Math.max(8, Math.min(160, view.scale * k));
   const r = next / view.scale;
   view.x = px - (px - view.x) * r;
   view.y = py - (py - view.y) * r;
@@ -420,84 +752,653 @@ cv.addEventListener('wheel', e => {
   e.preventDefault();
   const r = cv.getBoundingClientRect();
   zoomAt(e.clientX - r.left, e.clientY - r.top, e.deltaY < 0 ? 1.12 : 1 / 1.12);
-  draw();
+  drawMap();
 }, { passive: false });
 
-// ---------------------------------------------------------------- selection --
-function pick(e) {
+// --------------------------------------------------------- tap: select, add --
+
+function tap(e) {
   const r = cv.getBoundingClientRect();
-  const mx = e.clientX - r.left, my = e.clientY - r.top;
-  for (const q of questsOf(current())) {
-    const [x, y] = toScreen(q.x, q.y);
-    const rad = (view.scale * 0.42) * (q.size || 1);
-    if (Math.hypot(mx - x, my - y) <= rad + 3) { select(q); return; }
+  const px = e.clientX - r.left, py = e.clientY - r.top;
+  const hit = questAt(px, py);
+
+  if (S.linking) {
+    if (hit && hit.id !== S.sel) addDependency(hit.id);
+    else banner('Tap the quest this one should depend on.');
+    return;
   }
-  selected = null; closePanel(); draw();
+  if (S.placing && !hit) {
+    const [wx, wy] = toWorld(px, py);
+    createQuest(snap(wx), snap(wy));
+    return;
+  }
+  if (hit) { select(hit.id); return; }
+  S.sel = null; closePanel(); drawMap();
 }
 
-function select(q) {
-  selected = q.id;
-  $('#qTitle').textContent = q.title || 'Untitled quest';
-  const body = $('#qBody');
-  body.innerHTML = '';
-
-  body.appendChild(field('id', q.id));
-  body.appendChild(field('position', `${q.x}, ${q.y}`));
-
-  // Show what a dependency is, not its id. A 16-hex number tells a human nothing,
-  // and the whole point of the panel is to be readable at a glance.
-  if (q.deps.length) {
-    const all = questsOf(current());
-    const byId = Object.fromEntries(all.map(x => [x.id, x]));
-    const d = document.createElement('div');
-    d.className = 'field';
-    d.innerHTML = `<label>depends on</label>`;
-    for (const id of q.deps) {
-      const dep = byId[id];
-      const row = document.createElement('button');
-      row.className = 'dep';
-      row.innerHTML = dep
-        ? `<span>${esc(dep.title || 'Untitled quest')}</span>`
-        : `<span class="miss">${esc(id)}</span>`;
-      if (dep) row.onclick = () => { select(dep); centreOn(dep); };
-      d.appendChild(row);
-    }
-    body.appendChild(d);
-  }
-
-  const h = document.createElement('div');
-  h.className = 'field';
-  h.innerHTML = `<label>tasks (${q.tasks.length})</label>`;
-  for (const t of q.tasks) {
-    const id = t.item?.id || t.item || '';
-    const row = document.createElement('div');
-    row.className = 'task';
-    const rec = icons[id];
-    row.innerHTML =
-      (rec ? `<img src="/icons/${rec.file}" alt="">` : `<span class="pill">${esc(t.type || '?')}</span>`) +
-      `<div class="t"><b>${esc(t.type || 'task')}</b><span>${esc(String(id) || t.id || '')}</span></div>`;
-    h.appendChild(row);
-  }
-  body.appendChild(h);
+function select(id, centre = false) {
+  S.sel = id;
+  const f = byId(id);
+  if (centre && f && f.kind === 'quest') centreOn(f.obj);
+  renderPanel();
   $('#panel').classList.add('open');
-  draw();
+  drawMap();
 }
 
-function field(label, value) {
-  const d = document.createElement('div');
-  d.className = 'field';
-  d.innerHTML = `<label>${esc(label)}</label><div class="val">${esc(value)}</div>`;
-  return d;
-}
-const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 function centreOn(q) {
   const r = cv.getBoundingClientRect();
-  view.x = r.width / 2 - q.x * view.scale;
-  view.y = r.height / 2 - q.y * view.scale;
-  draw();
+  view.x = r.width / 2 - qx(q) * view.scale;
+  view.y = r.height / 2 - qy(q) * view.scale;
+  drawMap();
 }
-const closePanel = () => $("#panel").classList.remove("open");
-$('#closePanel').onclick = () => { selected = null; closePanel(); draw(); };
+
+const closePanel = () => $('#panel').classList.remove('open');
+$('#closePanel').onclick = () => { S.sel = null; closePanel(); drawMap(); };
+
+// ----------------------------------------------------------------- edit mode --
+
+$('#editToggle').onclick = () => {
+  S.edit = !S.edit;
+  S.placing = S.linking = false;
+  $('#editToggle').setAttribute('aria-pressed', S.edit);
+  $('#editToggle').textContent = S.edit ? 'Editing on' : 'Editing off';
+  $('#tools').hidden = !S.edit;
+  $('#addQuest').setAttribute('aria-pressed', 'false');
+  $('#banner').hidden = true;
+  renderChapters();
+  if (S.sel) renderPanel();
+  drawMap();
+};
+
+$('#addQuest').onclick = () => {
+  S.placing = !S.placing;
+  S.linking = false;
+  $('#addQuest').setAttribute('aria-pressed', S.placing);
+  if (S.placing) banner('Tap the map to place the quest.');
+  else $('#banner').hidden = true;
+};
+
+async function createQuest(x, y) {
+  S.placing = false;
+  $('#addQuest').setAttribute('aria-pressed', 'false');
+  $('#banner').hidden = true;
+  const res = await send([{ op: 'create', kind: 'quest', parent: S.chapterId, data: { x, y } }]);
+  if (!res || !res.created || !res.created.length) return;
+  await reload();
+  select(res.created[0]);
+  // The first thing anyone wants to do with a new quest is name it.
+  const first = $('#qBody').querySelector('input[data-autofocus]');
+  if (first) first.focus();
+}
+
+async function addDependency(id) {
+  S.linking = false;
+  const f = selected();
+  if (!f || f.kind !== 'quest') return;
+  const next = deps(f.obj).slice();
+  if (next.includes(id)) { banner('Already depends on that one.'); renderPanel(); return; }
+  next.push(id);
+  f.obj.data.dependencies = next;
+  renderPanel(); drawMap();
+  await send([{ op: 'set', target: f.obj.id, path: 'data.dependencies', value: next }]);
+}
+
+// ------------------------------------------------------------------ widgets --
+
+function field(label, el, note) {
+  const d = document.createElement('div');
+  d.className = 'field';
+  const l = document.createElement('label');
+  l.textContent = label;
+  d.append(l, el);
+  if (note) {
+    const n = document.createElement('div');
+    n.className = 'note';
+    n.textContent = note;
+    d.append(n);
+  }
+  return d;
+}
+
+function readOnly(label, value) {
+  const v = document.createElement('div');
+  v.className = 'val';
+  v.textContent = value;
+  return field(label, v);
+}
+
+/**
+ * Inputs commit on change, not on every keystroke: one edit per meaningful change
+ * keeps the git history readable and the server quiet.
+ */
+function textBox(value, onCommit, opts = {}) {
+  const el = document.createElement(opts.area ? 'textarea' : 'input');
+  if (!opts.area) el.type = 'text';
+  el.value = value == null ? '' : value;
+  el.disabled = !S.edit;
+  if (opts.autofocus) el.dataset.autofocus = '1';
+  el.onchange = () => onCommit(el.value);
+  return el;
+}
+
+function numBox(value, onCommit, step = 0.5) {
+  const el = document.createElement('input');
+  el.type = 'number';
+  el.step = step;
+  el.value = value;
+  el.disabled = !S.edit;
+  el.onchange = () => { if (el.value !== '') onCommit(Number(el.value)); };
+  return el;
+}
+
+function checkBox(label, value, onCommit) {
+  const wrap = document.createElement('label');
+  wrap.className = 'check';
+  const el = document.createElement('input');
+  el.type = 'checkbox';
+  el.checked = !!value;
+  el.disabled = !S.edit;
+  el.onchange = () => onCommit(el.checked);
+  wrap.append(el, document.createTextNode(label));
+  return wrap;
+}
+
+function selectBox(value, options, onCommit) {
+  const el = document.createElement('select');
+  el.disabled = !S.edit;
+  for (const o of options) {
+    const opt = document.createElement('option');
+    const v = Array.isArray(o) ? o[0] : o;
+    const text = Array.isArray(o) ? o[1] : o;
+    opt.value = v;
+    opt.textContent = text === '' ? '(chapter default)' : text;
+    el.append(opt);
+  }
+  el.value = value == null ? '' : value;
+  if (onCommit) el.onchange = () => onCommit(el.value);
+  return el;
+}
+
+function button(label, onClick, cls = 'btn', enabled = S.edit) {
+  const b = document.createElement('button');
+  b.className = cls;
+  b.textContent = label;
+  b.onclick = onClick;
+  b.disabled = !enabled;
+  return b;
+}
+
+function section(name, label, count, build) {
+  const d = document.createElement('details');
+  d.open = S.open.has(name);
+  d.ontoggle = () => d.open ? S.open.add(name) : S.open.delete(name);
+  const s = document.createElement('summary');
+  s.innerHTML = '<span>' + esc(label) + '</span>'
+    + (count == null || count === '' ? '' : '<span class="count">' + esc(count) + '</span>');
+  const inner = document.createElement('div');
+  inner.className = 'inner';
+  build(inner);
+  d.append(s, inner);
+  return d;
+}
+
+const esc = s => String(s).replace(/[&<>"]/g,
+  c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+const iconTag = id => id && S.icons[id]
+  ? '<img src="/icons/' + S.icons[id].file + '" alt="">'
+  : '<span class="pill">?</span>';
+
+// ---------------------------------------------------------------- inspector --
+
+/**
+ * Only the heading, so renaming something can update it without rebuilding the
+ * form underneath and throwing away the cursor.
+ */
+function refreshHeading() {
+  const f = selected();
+  if (!f) return;
+  $('#qTitle').innerHTML = esc(titleOf(f.obj) || 'Untitled ' + f.kind)
+    + '<span class="sub">' + esc(f.kind) + ' ' + esc(f.obj.id) + '</span>';
+}
+
+function renderPanel() {
+  const f = selected();
+  if (!f) { closePanel(); return; }
+  const body = $('#qBody');
+  body.innerHTML = '';
+  refreshHeading();
+  if (f.kind === 'quest') questPanel(body, f.obj);
+  else if (f.kind === 'chapter') chapterPanel(body, f.obj);
+  else childPanel(body, f.obj, f.kind, f.quest);
+}
+
+// --- a quest ---
+
+function questPanel(body, q) {
+  const set = (path, value, type) =>
+    send([{ op: 'set', target: q.id, path, value, ...(type ? { type } : {}) }]);
+  const setText = (key, value) => send([{ op: 'setText', target: q.id, key, value }]);
+
+  body.append(field('title', textBox((q.text || {}).rawTitle || '', v => {
+    q.text.rawTitle = v; q.text.title = v; setText('title', v); refreshHeading(); drawMap();
+  }, { autofocus: true }),
+    (q.text || {}).rawTitle ? null : 'Empty: FTB shows the first task’s item name instead.'));
+
+  body.append(field('subtitle', textBox((q.text || {}).subtitle || '', v => {
+    q.text.subtitle = v; setText('subtitle', v);
+  })));
+
+  body.append(field('description',
+    textBox(((q.text || {}).description || []).join('\n'), v => {
+      q.text.description = v.split('\n'); setText('description', v);
+    }, { area: true }),
+    'One line per entry. FTB directives such as {image:…} work here.'));
+
+  const row = document.createElement('div');
+  row.className = 'row';
+  row.append(
+    field('x', numBox(qx(q), v => { q.data.x = v; set('data.x', v, 'double'); drawMap(); })),
+    field('y', numBox(qy(q), v => { q.data.y = v; set('data.y', v, 'double'); drawMap(); })),
+    field('size', numBox(qsize(q), v => { q.data.size = v; set('data.size', v, 'double'); drawMap(); }, 0.25))
+  );
+  body.append(row);
+
+  body.append(field('shape', selectBox((q.data || {}).shape || '', SHAPES, v => {
+    q.data.shape = v; set('data.shape', v, 'string'); drawMap();
+  })));
+
+  body.append(section('icon', 'Icon', (q.data || {}).icon ? 'set' : 'from task', inner => {
+    const current = ((q.data || {}).icon || {}).id || null;
+    const shown = current && current !== 'ftbquests:custom_icon' && S.icons[current] ? current : null;
+    const pick = document.createElement('button');
+    pick.className = 'item';
+    pick.disabled = !S.edit;
+    pick.innerHTML = iconTag(shown)
+      + '<div class="t"><b>' + esc(current ? 'Set on the quest' : 'Taken from the first task')
+      + '</b><span>' + esc(current || questIconId(q) || 'none') + '</span></div>';
+    pick.onclick = () => openPicker(id => {
+      q.data.icon = { id };
+      set('data.icon', { id });
+    });
+    inner.append(pick);
+    const components = ((q.data || {}).icon || {}).components;
+    if (components) {
+      inner.append(readOnly('components', JSON.stringify(components)));
+    }
+    if (current) {
+      inner.append(button('Clear, use the first task', () => {
+        delete q.data.icon;
+        set('data.icon', null);
+      }, 'btn danger'));
+    }
+  }));
+
+  const list = deps(q);
+  body.append(section('deps', 'Depends on', list.length, inner => {
+    const here = Object.fromEntries(quests().map(x => [x.id, x]));
+    for (const id of list) {
+      const dep = here[id];
+      const row = document.createElement('div');
+      row.className = 'item dep';
+      const go = document.createElement('button');
+      go.className = 't';
+      // A 16-hex number tells a human nothing; the point of the panel is to read.
+      go.innerHTML = dep
+        ? '<b>' + esc(titleOf(dep) || 'Untitled quest') + '</b><span>' + esc(id) + '</span>'
+        : '<b>Not in this chapter</b><span>' + esc(id) + '</span>';
+      go.onclick = () => dep ? select(id, true) : banner('That quest is in another chapter.');
+      row.append(go);
+      const x = document.createElement('button');
+      x.className = 'x';
+      x.textContent = '×';
+      x.title = 'Remove';
+      x.disabled = !S.edit;
+      x.onclick = () => {
+        const next = list.filter(d => d !== id);
+        q.data.dependencies = next;
+        renderPanel(); drawMap();
+        set('data.dependencies', next);
+      };
+      row.append(x);
+      inner.append(row);
+    }
+    inner.append(button(S.linking ? 'Now tap a quest on the map' : '+ Add dependency', () => {
+      S.linking = !S.linking;
+      S.placing = false;
+      $('#addQuest').setAttribute('aria-pressed', 'false');
+      if (S.linking) banner('Tap the quest this one should depend on.');
+      else $('#banner').hidden = true;
+      renderPanel();
+    }, S.linking ? 'btn go' : 'btn'));
+  }));
+
+  body.append(childSection(q, 'tasks', 'Tasks', S.types.tasks));
+  body.append(childSection(q, 'rewards', 'Rewards', S.types.rewards));
+
+  body.append(section('raw', 'All fields', null, inner =>
+    dataEditor(inner, q, q.id, ['id', 'x', 'y', 'size', 'shape', 'icon', 'dependencies'])));
+
+  body.append(section('danger', 'Delete', null, inner => {
+    inner.append(button('Delete this quest', () => {
+      if (!window.confirm('Delete “' + (titleOf(q) || q.id) + '” and its tasks?')) return;
+      send([{ op: 'delete', target: q.id }]).then(() => {
+        S.sel = null; closePanel();
+      });
+    }, 'btn danger'));
+  }));
+}
+
+function childSection(q, key, label, catalogue) {
+  const children = q[key] || [];
+  const kind = key.slice(0, -1);
+  return section(key, label, children.length, inner => {
+    for (const c of children) {
+      const row = document.createElement('div');
+      row.className = 'item dep';
+      const iconId = key === 'tasks' ? taskIconId(c) : null;
+      if (iconId) {
+        const img = document.createElement('img');
+        img.src = '/icons/' + S.icons[iconId].file;
+        img.alt = '';
+        row.append(img);
+      }
+      const go = document.createElement('button');
+      go.className = 't';
+      go.innerHTML = '<b>' + esc(shortType(c)) + '</b><span>' + esc(summarise(c)) + '</span>';
+      go.onclick = () => select(c.id);
+      row.append(go);
+      const x = document.createElement('button');
+      x.className = 'x';
+      x.textContent = '×';
+      x.disabled = !S.edit;
+      x.onclick = () => {
+        if (!window.confirm('Delete this ' + shortType(c) + ' ' + kind + '?')) return;
+        send([{ op: 'delete', target: c.id }]);
+      };
+      row.append(x);
+      inner.append(row);
+    }
+    const entries = Object.values(catalogue || {});
+    if (!entries.length) return;
+    const add = document.createElement('div');
+    add.className = 'row';
+    const picker = selectBox(kind === 'task' ? 'ftbquests:item' : 'ftbquests:item',
+      entries.map(t => [t.id, t.label || t.id.replace(/^ftbquests:/, '')]), null);
+    add.append(picker, button('Add', () => {
+      send([{ op: 'create', kind, parent: q.id, type: picker.value }]).then(async res => {
+        if (res && res.created && res.created.length) {
+          await reload();
+          select(res.created[0]);
+        }
+      });
+    }, 'btn go'));
+    inner.append(add);
+  });
+}
+
+const shortType = c => String(c.typeId || (c.data || {}).type || '?').replace(/^ftbquests:/, '');
+
+/** One line that says what this task or reward actually is. */
+function summarise(c) {
+  const d = c.data || {};
+  const filter = d.item && d.item.components && d.item.components['ftbfiltersystem:filter'];
+  if (filter) return filter;
+  for (const k of ['item', 'fluid', 'entity', 'advancement', 'dimension', 'biome',
+                   'structure', 'stage', 'stat', 'command', 'table', 'to_observe', 'scene']) {
+    const v = d[k];
+    if (typeof v === 'string' && v) return v;
+    if (v && typeof v === 'object' && v.id) {
+      return v.id + (num(d.count, 1) > 1 ? ' ×' + d.count : '');
+    }
+  }
+  if (d.value != null) return String(d.value);
+  // A freshly added task has nothing but an id and a type, and showing the id
+  // tells a human nothing about what is missing.
+  return Object.keys(d).some(k => k !== 'id' && k !== 'type' && k !== '$types')
+    ? c.id : 'nothing set yet';
+}
+
+// --- a task or a reward ---
+
+function childPanel(body, c, kind, quest) {
+  const catalogue = (kind === 'task' ? S.types.tasks : S.types.rewards)[c.typeId];
+  body.append(readOnly('type', c.typeId || (c.data || {}).type || '?'));
+
+  if (quest) {
+    body.append(button('↑ ' + (titleOf(quest) || 'the quest'),
+      () => select(quest.id, true), 'btn', true));
+  }
+
+  body.append(field('title',
+    textBox((c.text || {}).rawTitle || '', v => {
+      c.text.rawTitle = v; c.text.title = v;
+      refreshHeading();
+      send([{ op: 'setText', target: c.id, key: 'title', value: v }]);
+    }),
+    'Optional. FTB names most ' + kind + 's from their contents.'));
+
+  // An item field is the one thing worth a real control: picking from 19,000 ids
+  // by typing them is how a quest ends up asking for something that does not exist.
+  const hasItem = (c.data && c.data.item !== undefined)
+    || (catalogue && catalogue.fields && catalogue.fields.item);
+  if (hasItem) {
+    body.append(section('item', 'Item', null, inner => {
+      const raw = c.data ? c.data.item : null;
+      const cur = typeof raw === 'string' ? raw : (raw || {}).id;
+      const pick = document.createElement('button');
+      pick.className = 'item';
+      pick.disabled = !S.edit;
+      pick.innerHTML = iconTag(cur)
+        + '<div class="t"><b>' + esc(cur || 'none') + '</b><span>tap to change</span></div>';
+      pick.onclick = () => openPicker(id => {
+        const next = raw && typeof raw === 'object' ? { ...raw, id } : { id, count: 1 };
+        c.data.item = next;
+        send([{ op: 'set', target: c.id, path: 'data.item', value: next }]);
+      });
+      inner.append(pick);
+
+      const filter = raw && raw.components && raw.components['ftbfiltersystem:filter'];
+      if (filter !== undefined) {
+        inner.append(field('filter', textBox(filter, v => {
+          const next = { ...raw, components: { ...raw.components, 'ftbfiltersystem:filter': v } };
+          c.data.item = next;
+          send([{ op: 'set', target: c.id, path: 'data.item', value: next }]);
+        }), 'FTB Filter System expression. The item above is only its holder.'));
+      }
+    }));
+  }
+
+  body.append(section('raw', 'All fields', null, inner =>
+    dataEditor(inner, c, c.id, ['id', 'type', 'item'], catalogue && catalogue.fields)));
+
+  body.append(section('danger', 'Delete', null, inner => {
+    inner.append(button('Delete this ' + kind, () => {
+      if (!window.confirm('Delete this ' + kind + '?')) return;
+      S.sel = quest ? quest.id : null;
+      send([{ op: 'delete', target: c.id }]);
+    }, 'btn danger'));
+  }));
+}
+
+// --- a chapter ---
+
+function chapterPanel(body, c) {
+  const setText = (key, value) => send([{ op: 'setText', target: c.id, key, value }]);
+  body.append(field('title', textBox((c.text || {}).rawTitle || '', v => {
+    c.text.rawTitle = v; c.text.title = v; setText('title', v); refreshHeading(); renderChapters();
+  })));
+  body.append(field('subtitle',
+    textBox(((c.text || {}).subtitle || []).join('\n'), v => {
+      c.text.subtitle = v.split('\n'); setText('subtitle', v);
+    }, { area: true }), 'One line per entry.'));
+  body.append(field('default quest shape',
+    selectBox((c.data || {}).default_quest_shape || '', SHAPES, v => {
+      c.data.default_quest_shape = v;
+      send([{ op: 'set', target: c.id, path: 'data.default_quest_shape', value: v, type: 'string' }]);
+      drawMap();
+    })));
+  body.append(section('raw', 'All fields', null, inner =>
+    dataEditor(inner, c, c.id, ['id', 'default_quest_shape', 'images', 'quest_links'])));
+}
+
+// --- the generic field editor ---
+
+/**
+ * Edits whatever the object happens to carry. This is the part that makes the app
+ * work with every task type and every addon: the bridge reports each object's own
+ * serialized fields, and the form is built from those rather than from a list
+ * somebody has to keep up to date here.
+ *
+ * `catalogue` is the type's full field list from /types, used to offer the fields
+ * FTB left out because they sit at their default — which is most of them.
+ */
+function dataEditor(host, obj, target, skip, catalogue) {
+  const data = obj.data || {};
+  const nbt = data.$types || {};
+  const keys = Object.keys(data).filter(k => k !== '$types' && !skip.includes(k)).sort();
+  for (const key of keys) host.append(valueField(key, data[key], nbt[key], target, obj, key));
+
+  const missing = Object.keys(catalogue || {})
+    .filter(k => !(k in data) && !skip.includes(k)).sort();
+  if (!missing.length) {
+    if (!keys.length) {
+      const n = document.createElement('div');
+      n.className = 'note';
+      n.textContent = 'Nothing else is stored on this object.';
+      host.append(n);
+    }
+    return;
+  }
+
+  host.append(section('unset', 'Unset fields', missing.length, inner => {
+    const note = document.createElement('div');
+    note.className = 'note';
+    note.textContent = 'FTB omits a field that sits at its default. Changing one here writes it.';
+    inner.append(note);
+    for (const key of missing) {
+      const spec = catalogue[key];
+      inner.append(valueField(key, spec.default, spec.type, target, obj, key));
+    }
+  }));
+}
+
+function valueField(label, value, nbtType, target, obj, key) {
+  const path = 'data.' + key;
+  const commit = v => {
+    if (obj.data) obj.data[key] = v;
+    send([{ op: 'set', target, path, value: v, ...(nbtType ? { type: nbtType } : {}) }]);
+  };
+
+  if (typeof value === 'boolean' || nbtType === 'boolean') {
+    return field(label, checkBox(key, value, commit));
+  }
+  if (value !== null && typeof value === 'object') {
+    // A compound or a list, edited as JSON. Generating a form for arbitrary nested
+    // NBT is a rabbit hole, and the two cases that matter — item and icon — have
+    // real controls above.
+    const el = document.createElement('textarea');
+    el.value = JSON.stringify(stripTypes(value), null, 1);
+    el.disabled = !S.edit;
+    const err = document.createElement('div');
+    err.className = 'bad';
+    el.onchange = () => {
+      try {
+        const parsed = JSON.parse(el.value);
+        err.textContent = '';
+        commit(parsed);
+      } catch {
+        err.textContent = 'Not valid JSON — nothing was saved.';
+      }
+    };
+    const wrap = field(label + (Array.isArray(value) ? ' (list)' : ' (compound)'), el);
+    wrap.append(err);
+    return wrap;
+  }
+  if (typeof value === 'number') {
+    const step = nbtType === 'double' || nbtType === 'float' ? 0.5 : 1;
+    return field(label + (nbtType ? ' · ' + nbtType : ''), numBox(value, commit, step));
+  }
+  return field(label, textBox(value == null ? '' : value, commit));
+}
+
+const stripTypes = v => {
+  if (Array.isArray(v)) return v.map(stripTypes);
+  if (v && typeof v === 'object') {
+    return Object.fromEntries(Object.entries(v)
+      .filter(([k]) => k !== '$types').map(([k, x]) => [k, stripTypes(x)]));
+  }
+  return v;
+};
+
+// -------------------------------------------------------------- item picker --
+
+let pickerPick = null;
+
+function openPicker(onPick) {
+  pickerPick = onPick;
+  $('#picker').hidden = false;
+  $('#pickerSearch').value = '';
+  renderPicker('');
+  $('#pickerSearch').focus();
+}
+
+const closePicker = () => { $('#picker').hidden = true; pickerPick = null; };
+$('#pickerCancel').onclick = closePicker;
+$('#picker').addEventListener('click', e => { if (e.target.id === 'picker') closePicker(); });
+$('#pickerSearch').addEventListener('input', e => renderPicker(e.target.value));
+
+/**
+ * 19,000 items is too many to put in the DOM and far too many to scroll. Search,
+ * cap the result at a screenful or two, and say how many were left out.
+ */
+function renderPicker(query) {
+  const grid = $('#pickerGrid');
+  grid.innerHTML = '';
+  const q = query.trim().toLowerCase();
+  const ids = Object.keys(S.icons);
+  const hits = q ? ids.filter(id => id.toLowerCase().includes(q)) : ids;
+  // Shortest first, so "oak_log" puts minecraft:oak_log above stripped_oak_log
+  // and a search for "iron" does not bury the ingot.
+  hits.sort((a, b) => a.length - b.length || a.localeCompare(b));
+  const shown = hits.slice(0, 240);
+
+  for (const id of shown) {
+    const b = document.createElement('button');
+    b.innerHTML = '<img src="/icons/' + S.icons[id].file + '" alt="" loading="lazy">'
+      + '<span>' + esc(id.split(':').pop()) + '</span>';
+    b.title = id;
+    b.onclick = () => { const f = pickerPick; closePicker(); if (f) f(id); };
+    grid.append(b);
+  }
+  $('#pickerCount').textContent = hits.length > shown.length
+    ? shown.length + ' of ' + hits.length + ' matches — keep typing'
+    : hits.length + (hits.length === 1 ? ' match' : ' matches');
+}
+
+// --------------------------------------------------------------------- keys --
+
+addEventListener('keydown', e => {
+  if (e.target.matches && e.target.matches('input,textarea,select')) {
+    if (e.key === 'Escape') e.target.blur();
+    return;
+  }
+  if (e.key === 'Escape') {
+    if (!$('#picker').hidden) { closePicker(); return; }
+    if (S.placing || S.linking) {
+      S.placing = S.linking = false;
+      $('#addQuest').setAttribute('aria-pressed', 'false');
+      $('#banner').hidden = true;
+      if (S.sel) renderPanel();
+      return;
+    }
+    S.sel = null; closePanel(); drawMap();
+    return;
+  }
+  if ((e.key === 'e' || e.key === 'E') && !e.metaKey && !e.ctrlKey && !e.altKey) {
+    $('#editToggle').click();
+  }
+});
 </script>
 </body>
 </html>

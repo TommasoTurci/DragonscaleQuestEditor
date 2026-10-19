@@ -3,7 +3,7 @@
 An external editor for the Dragonscale quest book. Two halves:
 
 - **`bridge/`** — a NeoForge mod running inside the dev server. Owns the live quest
-  book, serves it over HTTP/WebSocket, applies edits through FTB's own API, and keeps
+  book, serves it over HTTP, applies edits through FTB's own API, and keeps
   a git history of every change.
 - **`app/`** — a web editor (desktop and tablet) that talks to the bridge. Never reads
   or writes a quest file.
@@ -37,41 +37,67 @@ free:
 ## API contract
 
 Everything is JSON. One shared token in the bridge config, sent as
-`Authorization: Bearer <token>`. It is a dev server, but it is on the public
-internet.
+`Authorization: Bearer <token>` (or `?token=` on the event stream, which cannot
+carry headers). It is a dev server, but it is on the public internet.
 
-### `GET /book`
+### `GET /api/book`
 
-The whole book. Quest data is passed through verbatim as NBT-shaped JSON — the
+The whole book. Object data is passed through verbatim as NBT-shaped JSON — the
 bridge models nothing, so addon fields survive by construction.
+
+Three shapes are worth knowing before reading the sample:
+
+- **Tasks and rewards are siblings of `data`, not fields in it.** `Quest.writeData`
+  does not write them; `writeTasks` and `writeRewards` are separate methods. Each
+  task is a quest object in its own right with its own id, which is also what makes
+  it editable by id with no extra machinery.
+- **`text` carries both forms of a title.** `title` is what FTB displays; `rawTitle`
+  is what is stored. They differ for an untitled quest, where FTB falls back to the
+  name of the first task's item. An edit writes `rawTitle`.
+- **`$types` records the NBT type of each numeric leaf**, because JSON has one
+  number type and NBT has six. An edit may quote the type back; see `/api/edit`.
 
 ```json
 {
   "version": 412,
-  "chapterGroups": [],
-  "chapters": [
+  "chapterGroups": [
     {
-      "id": "3D94C1963CD045BB",
-      "filename": "the_beginnings",
-      "text": { "title": "The Beginnings" },
-      "data": { "order_index": 0, "icon": { "id": "ftbquests:custom_icon" } },
-      "quests": [
+      "id": "0000000000000000",
+      "title": "",
+      "chapters": [
         {
-          "id": "345900C71CE2A226",
-          "text": {
-            "title": "Obtain Wood",
-            "subtitle": "The wood is wooding out...",
-            "description": ["The wood is something crazy..."]
-          },
-          "data": {
-            "x": 0.0, "y": 0.5,
-            "dependencies": [],
-            "tasks": [
-              { "id": "578281D6ED6FC5E6", "type": "item",
-                "item": { "count": 1, "id": "minecraft:oak_log" } }
-            ],
-            "rewards": []
-          }
+          "id": "3D94C1963CD045BB",
+          "text": { "title": "The Beginnings", "rawTitle": "The Beginnings", "subtitle": [] },
+          "data": { "order_index": 0, "filename": "the_beginnings" },
+          "quests": [
+            {
+              "id": "4E2B7CEFE64694E7",
+              "chapter": "3D94C1963CD045BB",
+              "text": {
+                "title": "Timberrr!", "rawTitle": "Timberrr!",
+                "subtitle": "", "description": []
+              },
+              "data": {
+                "x": 8.5, "y": 1.0,
+                "dependencies": ["6BF5FD03DA10CEAD"],
+                "icon": { "id": "minecraft:oak_sapling" },
+                "$types": { "x": "double", "y": "double" }
+              },
+              "tasks": [
+                {
+                  "id": "78FC2707E33D2BAF",
+                  "typeId": "ftbquests:item",
+                  "text": { "rawTitle": "" },
+                  "data": {
+                    "type": "item",
+                    "item": { "id": "minecraft:oak_log", "count": 1 },
+                    "icon": { "id": "minecraft:oak_log" }
+                  }
+                }
+              ],
+              "rewards": []
+            }
+          ]
         }
       ]
     }
@@ -79,9 +105,10 @@ bridge models nothing, so addon fields survive by construction.
 }
 ```
 
-`version` increments on every applied change and is what `/edit` checks against.
+`version` increments on every applied change, whatever its source, and is what
+`/api/edit` checks against.
 
-### `GET /types`
+### `GET /api/types`
 
 Every registered task and reward type, with its fields discovered at runtime rather
 than hard-coded. The bridge constructs a default instance of each type, serializes
@@ -90,77 +117,112 @@ it, and reports the resulting keys and value types.
 ```json
 {
   "tasks": {
-    "item":        { "fields": { "item": "item_stack", "count": "long",
-                                 "consume_items": "tristate",
-                                 "only_from_crafting": "tristate" } },
-    "checkmark":   { "fields": {} },
-    "break_block": { "fields": { "block_tag": "string", "value": "long" } }
+    "ftbquests:item": {
+      "id": "ftbquests:item", "nbtType": "item", "namespace": "ftbquests",
+      "label": "Item",
+      "fields": {
+        "count":              { "type": "long",    "default": 1 },
+        "only_from_crafting": { "type": "byte",    "default": false },
+        "item":               { "type": "compound", "default": { "id": "minecraft:air" } }
+      }
+    },
+    "ftbquests:checkmark": { "id": "ftbquests:checkmark", "nbtType": "checkmark", "fields": {} }
   },
-  "rewards": {
-    "item": { "fields": { "item": "item_stack", "count": "int" } },
-    "xp":   { "fields": { "xp": "int" } }
-  }
+  "rewards": { }
 }
 ```
 
-Fields absent from a default instance are optional and default to whatever FTB uses
-when the key is missing. The editor must treat a missing key as a default, never as
-null, and must never write a value back that equals the default.
+`typeId` on a task is the registry id; `data.type` is the short name FTB writes to
+NBT. Both are reported so a client can map between them.
 
-### `GET /items`
+A field absent from a default instance is one FTB omits at its default value, which
+is most of them. The editor treats a missing key as a default rather than as null,
+and offers the full field list from here so a default can be written deliberately.
 
-Registry ids and tags, read live from the server. No export step, nothing to
-regenerate after a pack update.
-
-```json
-{ "items": ["minecraft:oak_log", "create:andesite_alloy"],
-  "tags":  { "c:ingots/steel": ["createbigcannons:steel_ingot"] } }
-```
-
-### `GET /changes`
+### `GET /api/changes`
 
 Server-sent events, not a WebSocket. Traffic only flows one way — edits arrive by
 POST and changes go out — so a socket buys nothing and costs a hand-rolled
 handshake and frame codec inside a game server. SSE is plain HTTP, reconnects on
 its own in every browser, and survives proxies that mangle upgrades. Consume it
-with `new EventSource(...)`.
+with `new EventSource('/api/changes?token=…')`.
 
-The bridge pushes every applied change, whatever its source — the web editor, a
-player editing in game, or a `/restore`.
+Every applied change is pushed, whatever its source: the web editor, or a player
+editing in game.
 
 ```json
-{ "version": 413,
-  "changes": [ { "op": "set", "target": "quest:345900C71CE2A226",
-                 "path": "data.x", "value": 3.5 } ] }
+{ "version": 413, "applied": 2, "touched": ["4E2B7CEFE64694E7"], "created": [] }
+{ "version": 414, "source": "game" }
 ```
 
-Clients apply these without reloading, and without stealing focus from whatever the
-user is currently typing.
+A client that sees a version other than its own refetches `/api/book`. The payload
+is deliberately not a diff: the book is small, a refetch is simple and always
+correct, and there is then one code path to get right rather than two. Clients
+apply the result without moving the camera or stealing focus from whatever the user
+is typing.
 
-### `POST /edit`
+**In-game edits have no event to hook.** FTB fires nothing when a quest object is
+edited, and its `markDirty` only sets a private flag, so the bridge fingerprints the
+book every two seconds and compares. That only runs while somebody has the editor
+open; with nobody connected it costs one branch per tick.
 
-Apply an edit. Rejected with `409` and the current version if `baseVersion` is stale,
-so a client that has fallen behind re-syncs rather than clobbering.
+### `POST /api/edit`
+
+Apply a batch. Rejected with `409` and the current version if `baseVersion` is
+stale, so a client that has fallen behind re-syncs rather than clobbering. A bad
+edit is rejected with `400` and a message meant to be shown.
 
 ```json
 { "baseVersion": 412,
   "edits": [
-    { "op": "set",     "target": "quest:345900C71CE2A226", "path": "data.x", "value": 3.5 },
-    { "op": "setText", "target": "quest:345900C71CE2A226", "key": "title", "value": "Obtain Wood" },
-    { "op": "create",  "kind": "quest", "parent": "3D94C1963CD045BB", "data": { "x": 0, "y": 0 } },
-    { "op": "delete",  "target": "quest:4A9AB09E647E7B4C" }
+    { "op": "set",     "target": "4E2B7CEFE64694E7", "path": "data.x", "value": 3.5, "type": "double" },
+    { "op": "set",     "target": "4E2B7CEFE64694E7", "fields": { "data.size": 2.0, "data.shape": "hexagon" } },
+    { "op": "setText", "target": "4E2B7CEFE64694E7", "key": "title", "value": "Timberrr!" },
+    { "op": "create",  "kind": "quest", "parent": "3D94C1963CD045BB",
+                       "data": { "x": 0, "y": 0 }, "text": { "title": "New" } },
+    { "op": "create",  "kind": "task", "parent": "4E2B7CEFE64694E7", "type": "ftbquests:item" },
+    { "op": "delete",  "target": "4A9AB09E647E7B4C" }
   ] }
 ```
 
-Ops in one request are applied as a batch and produce one commit.
+| | |
+|---|---|
+| `target` | an object id, bare or prefixed (`quest:4E2B…`) — quest, task, reward or chapter |
+| `path` | always under `data.`, dotted for nesting (`data.item.id`) |
+| `type` | optional NBT type: `byte`, `short`, `int`, `long`, `float`, `double`, `string`, `boolean` |
+| `key` | `setText` only: `title`, `subtitle` or `description` |
+| `kind` | `create` only: `quest`, `task` or `reward` |
 
-### `GET /history` and `POST /restore`
+The response is the same object the change feed publishes, with `created` carrying
+the ids of anything new so the client can select it.
 
-`/history` returns the commit log — who, when, what changed. `/restore` takes a
-commit id, checks the files out at that point, has the server re-read the book, and
-pushes a full resync to every client. The word "git" never appears in the UI.
+**The `type` hint matters.** A field FTB omitted at its default has no existing tag
+to copy the type from, and a bare `2` would be written as an int where FTB wants a
+double. With no hint the bridge keeps the type already on disk, and guesses only
+when there is nothing to keep.
 
----
+Field edits for the same object are coalesced into one history event: dragging a
+quest sends `x` and `y` as two ops but costs one undo step and one broadcast.
+
+**Edits go through FTB's own history events** — `ModifyQuestObjects`,
+`CreateQuestObjects`, `DeleteQuestObjects`, `UpdateTranslation` — rather than being
+applied by hand. That is what makes an edit from the web app indistinguishable from
+one made in the quest book: the same broadcast to the players actually in edit
+mode, the same `editedFromGUIOnServer` hook each type expects, text written through
+the translation manager *and* synced to clients, and a place on the same undo stack.
+
+### Items
+
+There is no `/api/items`. `/icons/index.json` already lists every item id in the
+pack with a picture for each, which is what an item picker needs; a second list with
+no pictures would be strictly worse. Tags are not enumerated — item tasks match tags
+through FTB Filter System expressions, which the editor edits as text.
+
+### Not built yet
+
+`GET /api/history` and `POST /api/restore`. The git history is written (see below)
+but nothing exposes it, so rolling back means `git` on the server.
+
 
 ## History
 
@@ -184,7 +246,7 @@ repository, written only by the bridge.
 ## Layout
 
 ```
-bridge/   NeoForge mod: HTTP + WS server, FTB API calls, git history
+bridge/   NeoForge mod: HTTP server, FTB API calls, git history
 app/      web editor: canvas, inspector, item picker
 tools/    build scripts that run on a desktop, not the server
   icons/  generates the icon set from the pack mod jars (gitignored output;
@@ -193,12 +255,36 @@ tools/    build scripts that run on a desktop, not the server
 docs/     format research and design notes
 ```
 
+---
+
+## The editor
+
+Read-only until the **Editing** switch is on, which keeps every input and every
+destructive control disabled until someone means it. With it on:
+
+- drag a quest to move it, snapped to FTB's own half-unit grid, over a grid overlay;
+- tap an empty spot after **+ Quest** to create one — it opens with the name field
+  focused, because naming it is the next thing anyone does;
+- edit title, subtitle, description, position, size, shape and icon;
+- add and remove dependencies by tapping the other quest on the map, rather than by
+  copying a sixteen-digit id around;
+- add, edit and delete tasks and rewards of **any** type, addon types the app has
+  never heard of included: the form is generated from what the object actually
+  carries, plus the type's full field list from `/api/types`, so a field FTB omitted
+  at its default can still be set on purpose;
+- pick items from all 19,344 in the pack, searched by id, each shown as its icon.
+
+Everything updates live for everyone else; the camera stays where you left it, and
+the inspector is left alone while you have a field open.
+
 ## Status
 
 | | |
 |---|---|
 | Format research | done — see [`docs/format.md`](docs/format.md) |
-| API contract | drafted, this file |
+| API contract | matches the implementation, this file |
 | Icon pipeline | done — 19,344 icons at 64px, 6,272 rendered from real geometry |
-| Bridge | read endpoints, `/edit` and git history build and compile; untested on a real server |
-| Editor | renders the real book: chapter tabs, quest graph, icons, inspector |
+| Bridge | read and write endpoints, in-game change detection, git history — compiles; **has never run against a real server** |
+| Editor | reads and edits the whole book; exercised end to end against the mock |
+| `/api/history`, `/api/restore` | not built |
+| Deployment | not done — nothing here has run on the VM |

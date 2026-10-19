@@ -33,6 +33,7 @@ public final class BridgeServer {
     private final String bind;
     private HttpServer http;
     private final ChangeFeed feed = new ChangeFeed();
+    private final BookWatch watch = new BookWatch();
     private static final Gson GSON = new Gson();
     private GitHistory history;
 
@@ -92,6 +93,19 @@ public final class BridgeServer {
         DragonscaleBridge.LOG.info("[questbridge] listening on {}:{}", bind, port);
     }
 
+    /**
+     * Called every server tick. Cheap while nobody has the editor open; see
+     * {@link BookWatch}.
+     */
+    public void tick() {
+        if (!watch.poll(feed.count() > 0)) return;
+        JsonObject change = new JsonObject();
+        change.addProperty("version", BookVersion.bump());
+        change.addProperty("source", "game");
+        feed.publish(change);
+        if (history != null) history.touched("Edited in game");
+    }
+
     public void stop() {
         feed.stop();
         if (history != null) history.stop();
@@ -140,7 +154,13 @@ public final class BridgeServer {
 
         EditApplier.Result result;
         try {
-            result = mc.submit(() -> EditApplier.apply(file.get(), body.getAsJsonArray("edits"))).get();
+            result = mc.submit(() -> {
+                EditApplier.Result r = EditApplier.apply(file.get(), body.getAsJsonArray("edits"));
+                // Fingerprint our own work before the watcher can see it, so this
+                // edit is not reported a second time as if it came from in game.
+                watch.sync(file.get());
+                return r;
+            }).get();
         } catch (Exception e) {
             Throwable cause = e.getCause() == null ? e : e.getCause();
             if (cause instanceof EditApplier.BadEdit) {
@@ -159,7 +179,9 @@ public final class BridgeServer {
 
         JsonObject change = new JsonObject();
         change.addProperty("version", result.version());
+        change.addProperty("applied", result.applied());
         change.add("touched", GSON.toJsonTree(result.touched()));
+        change.add("created", GSON.toJsonTree(result.created()));
         feed.publish(change);
         send(x, 200, change.toString());
     }

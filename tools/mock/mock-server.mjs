@@ -1,17 +1,25 @@
 #!/usr/bin/env node
 /**
- * Serves the editor against a fake bridge, so the app can be developed without a
- * running Minecraft server.
+ * Serves the editor against a fake bridge, so the app can be developed and the edit
+ * loop exercised without a running Minecraft server.
  *
  *   node mock-server.mjs --book "<path to config/ftbquests/quests>" [--icons <dir>] [--port 25580]
  *
- * The book is parsed out of the real SNBT with a deliberately crude reader — just
- * enough structure to render: ids, coordinates, dependencies and tasks. The real
- * bridge gets this JSON from FTB itself and does not share any of this code.
+ * It speaks the same API as the real bridge and produces the same JSON shape, so
+ * what works here works there. Two deliberate differences:
+ *
+ *   - Edits are applied in memory and never written back. Restarting the mock
+ *     restores the book as it is on disk. Writing SNBT correctly is the real
+ *     bridge's job, and it does it by asking FTB to save.
+ *   - /api/types is derived from the task and reward types this book happens to
+ *     use, with field defaults taken from the data actually present. The real
+ *     bridge asks the registries, so it reports every installed type including the
+ *     unused ones. Nothing here is invented either way.
  */
 import fs from 'node:fs';
 import http from 'node:http';
 import path from 'node:path';
+import { parse } from './snbt.mjs';
 
 const args = Object.fromEntries(process.argv.slice(2).reduce((a, v, i, arr) => {
   if (v.startsWith('--')) a.push([v.slice(2), arr[i + 1]]);
@@ -24,121 +32,282 @@ const ICONS = path.resolve(args.icons ?? path.join(import.meta.dirname, '..', '.
 const PORT = Number(args.port ?? 25580);
 const TOKEN = args.token ?? 'mock';
 
-// ------------------------------------------------------------- crude SNBT ---
-/** Yields the text of each `{ ... }` block inside the list that `start` opens. */
-function* balancedBlocks(text, start) {
-  const m = text.match(start);
-  if (!m) return;
-  // Start right after the `[`, not at the next newline: a single-task quest is
-  // written `tasks: [{` with the brace on the same line, and skipping to the
-  // newline walked straight past it. That dropped a task from most quests.
-  let i = m.index + m[0].length;
-  while (i >= 0 && i < text.length) {
-    const open = text.indexOf('{', i);
-    if (open < 0) return;
-    // A `]` before the next `{` means the list has ended.
-    const close = text.indexOf(']', i);
-    if (close >= 0 && close < open) return;
-    let depth = 0, j = open;
-    for (; j < text.length; j++) {
-      if (text[j] === '{') depth++;
-      else if (text[j] === '}' && --depth === 0) break;
-    }
-    yield text.slice(open, j + 1);
-    i = j + 1;
+// ------------------------------------------------------------------- naming --
+// Used by both the loader and the edit path, so declared before either.
+
+const lines = v => Array.isArray(v) ? v.map(String) : String(v ?? '').split('\n');
+const normalise = t => String(t).includes(':') ? String(t).split(':').pop() : String(t);
+const short = t => (t ?? 'item').split(':').pop();
+const full = t => !t ? 'ftbquests:item' : (t.includes(':') ? t : 'ftbquests:' + t);
+
+// ------------------------------------------------------------------ loading --
+
+/** Titles, subtitles and descriptions live in the lang file, keyed by object id. */
+function loadText() {
+  const file = path.join(BOOK, 'lang', 'en_us.snbt');
+  if (!fs.existsSync(file)) return {};
+  const flat = parse(fs.readFileSync(file, 'utf8'));
+  const out = {};
+  for (const [key, value] of Object.entries(flat)) {
+    const m = /^(?:chapter|quest|task|reward)\.([0-9A-F]{16})\.(title|quest_subtitle|quest_desc|chapter_subtitle)$/.exec(key);
+    if (!m) continue;
+    const field = { title: 'title', quest_subtitle: 'subtitle',
+                    quest_desc: 'description', chapter_subtitle: 'subtitle' }[m[2]];
+    (out[m[1]] ??= {})[field] = value;
   }
+  return out;
 }
 
-/** Reads the subset the renderer needs. Not a general parser; see docs/format.md. */
-function parseChapter(text) {
-  const str = k => (text.match(new RegExp(`^\\t${k}: "([^"]*)"`, 'm')) || [])[1] ?? '';
-  const chapter = { id: str('id'), filename: str('filename'), quests: [] };
+const strip = (o, ...keys) => {
+  const out = { ...o };
+  for (const k of keys) delete out[k];
+  return out;
+};
 
-  // Quests start at exactly three tabs of indentation inside the quests: [ ... ] list.
-  const body = text.split(/^\tquests: \[$/m)[1] ?? '';
-  for (const block of body.split(/^\t\t\{$/m).slice(1)) {
-    const chunk = block.split(/^\t\t\}$/m)[0];
-    const g = (re) => (chunk.match(re) || [])[1];
-    const id = g(/^\t\t\tid: "([0-9A-F]{16})"/m);
-    if (!id) continue;
-    const deps = (g(/^\t\t\tdependencies: \[(.*?)\]/ms) || '')
-      .match(/"[0-9A-F]{16}"/g)?.map(s => s.slice(1, -1)) ?? [];
-    // Tasks nest two levels deep in practice -- item: { components: { ... } } -- so
-    // a regex over braces does not survive. Scan with a brace counter instead.
-    const tasks = [];
-    for (const body of balancedBlocks(chunk, /^\t\t\ttasks: \[/m)) {
-      const type = (body.match(/^\t+type: "([a-z_]+)"/m) || [])[1];
-      if (!type) continue;
-      // The task's own icon wins: an item task may point at a filter rather than a
-      // real item, and the filter has no icon of its own.
-      const icon = (body.match(/icon: \{\s*id: "([^"]+)"/s) || [])[1];
-      const itemLine = (body.match(/^\t+item: (\{.*\}|"[^"]+")$/m) || [])[1] ?? '';
-      const item = (itemLine.match(/id: "([^"]+)"/) || itemLine.match(/^"([^"]+)"$/) || [])[1];
-      const filter = (itemLine.match(/"ftbfiltersystem:filter": "([^"]+)"/) || [])[1];
-      tasks.push({
-        type,
-        ...(item ? { item: { id: item, count: Number((itemLine.match(/count: (\d+)/) || [])[1] ?? 1) } } : {}),
-        ...(icon ? { icon: { id: icon } } : {}),
-        ...(filter ? { filter } : {})
-      });
-    }
-    chapter.quests.push({
-      id,
-      text: {},
-      data: {
-        x: Number(g(/^\t\t\tx: ([-0-9.]+)d/m) ?? 0),
-        y: Number(g(/^\t\t\ty: ([-0-9.]+)d/m) ?? 0),
-        size: Number(g(/^\t\t\tsize: ([0-9.]+)d/m) ?? 1),
-        shape: g(/^\t\t\tshape: "([a-z]+)"/m) ?? 'circle',
-        dependencies: deps,
-        tasks
-      }
-    });
-  }
-  return chapter;
+/** A task or a reward, in the shape BookReader reports. */
+function child(raw, text) {
+  const t = text[raw.id] ?? {};
+  return {
+    id: raw.id,
+    typeId: full(raw.type),
+    text: { rawTitle: t.title ?? '', ...(t.title ? { title: t.title } : {}) },
+    data: raw
+  };
 }
 
 function loadBook() {
+  const text = loadText();
   const dir = path.join(BOOK, 'chapters');
-  const chapters = fs.readdirSync(dir).filter(f => f.endsWith('.snbt'))
-    .map(f => parseChapter(fs.readFileSync(path.join(dir, f), 'utf8')));
+  const chapters = fs.readdirSync(dir).filter(f => f.endsWith('.snbt')).map(f => {
+    const raw = parse(fs.readFileSync(path.join(dir, f), 'utf8'));
+    const ct = text[raw.id] ?? {};
+    return {
+      id: raw.id,
+      text: { rawTitle: ct.title ?? '', title: ct.title ?? raw.filename,
+              subtitle: ct.subtitle ?? [] },
+      data: strip(raw, 'quests'),
+      quests: (raw.quests ?? []).map(q => {
+        const qt = text[q.id] ?? {};
+        return {
+          id: q.id,
+          chapter: raw.id,
+          text: { rawTitle: qt.title ?? '', ...(qt.title ? { title: qt.title } : {}),
+                  subtitle: qt.subtitle ?? '', description: qt.description ?? [] },
+          data: strip(q, 'tasks', 'rewards'),
+          tasks: (q.tasks ?? []).map(t => child(t, text)),
+          rewards: (q.rewards ?? []).map(r => child(r, text))
+        };
+      })
+    };
+  });
 
-  // Titles live in the lang file, keyed by object id.
-  const langPath = path.join(BOOK, 'lang', 'en_us.snbt');
-  const titles = {};
-  if (fs.existsSync(langPath)) {
-    for (const m of fs.readFileSync(langPath, 'utf8')
-      .matchAll(/^\t(chapter|quest)\.([0-9A-F]{16})\.title: "([^"]*)"/gm)) titles[m[2]] = m[3];
-  }
-  for (const c of chapters) {
-    c.text = { title: titles[c.id] ?? c.filename };
-    for (const q of c.quests) q.text = { title: titles[q.id] ?? '' };
-  }
+  // Chapter order is the book's own, not the directory listing's.
+  chapters.sort((a, b) => (a.data.order_index ?? 0) - (b.data.order_index ?? 0));
   return { version: 1, chapterGroups: [{ id: '0'.repeat(16), title: '', chapters }] };
 }
 
-// ---------------------------------------------------------------- serving ---
+let book = loadBook();
+
+// ------------------------------------------------------------------- lookup --
+
+/** id -> { kind, obj, parent, list }, rebuilt per edit rather than kept in sync. */
+function index() {
+  const map = new Map();
+  for (const g of book.chapterGroups) {
+    for (const c of g.chapters) {
+      map.set(c.id, { kind: 'chapter', obj: c, list: g.chapters });
+      for (const q of c.quests) {
+        map.set(q.id, { kind: 'quest', obj: q, parent: c, list: c.quests });
+        for (const t of q.tasks) map.set(t.id, { kind: 'task', obj: t, parent: q, list: q.tasks });
+        for (const r of q.rewards) map.set(r.id, { kind: 'reward', obj: r, parent: q, list: q.rewards });
+      }
+    }
+  }
+  return map;
+}
+
+/**
+ * The type catalogue, from what the book uses. A field's default is the first value
+ * seen for that key, standing in for the registry default the real bridge reports —
+ * close enough to build a form against.
+ */
+function types() {
+  const out = { tasks: {}, rewards: {} };
+  for (const { kind, obj } of index().values()) {
+    if (kind !== 'task' && kind !== 'reward') continue;
+    const bucket = kind === 'task' ? out.tasks : out.rewards;
+    const entry = bucket[obj.typeId] ??= {
+      id: obj.typeId, nbtType: short(obj.data.type), label: '',
+      namespace: obj.typeId.split(':')[0], fields: {}
+    };
+    const declared = obj.data.$types ?? {};
+    for (const [key, value] of Object.entries(obj.data)) {
+      if (key === 'id' || key === 'type' || key === '$types') continue;
+      entry.fields[key] ??= { type: declared[key] ?? inferred(value), default: value };
+    }
+  }
+  return out;
+}
+
+const inferred = v => Array.isArray(v) ? 'list'
+  : v === null ? 'string'
+  : typeof v === 'object' ? 'compound'
+  : typeof v === 'boolean' ? 'boolean'
+  : typeof v === 'number' ? 'number' : 'string';
+
+// -------------------------------------------------------------------- edits --
+
+const subscribers = new Set();
+
+function publish(change) {
+  const line = `data: ${JSON.stringify(change)}\n\n`;
+  for (const res of subscribers) { try { res.write(line); } catch {} }
+}
+
+const newId = () => Array.from({ length: 16 },
+  () => '0123456789ABCDEF'[Math.floor(Math.random() * 16)]).join('');
+
+class BadEdit extends Error {}
+
+function at(obj, dotted, value) {
+  const path = dotted.split('.');
+  let cur = obj;
+  for (const key of path.slice(0, -1)) cur = (cur[key] ??= {});
+  const leaf = path[path.length - 1];
+  if (value === null) delete cur[leaf];
+  else cur[leaf] = value;
+}
+
+function applyEdits(edits) {
+  const touched = new Set(), created = [];
+  let applied = 0;
+
+  for (const edit of edits) {
+    const map = index();
+    const found = edit.target ? map.get(normalise(edit.target)) : null;
+    if (edit.target && !found) throw new BadEdit(`no such object: ${edit.target}`);
+
+    switch (edit.op) {
+      case 'set': {
+        const fields = edit.fields ?? { [edit.path]: edit.value };
+        for (const [p, v] of Object.entries(fields)) {
+          if (!p.startsWith('data.')) throw new BadEdit(`set path must start with 'data.' (got ${p})`);
+          at(found.obj, p, v);
+        }
+        touched.add(found.obj.id);
+        break;
+      }
+      case 'setText': {
+        if (!['title', 'subtitle', 'description'].includes(edit.key)) {
+          throw new BadEdit(`unknown text key: ${edit.key}`);
+        }
+        const listVal = edit.key === 'description'
+          || (found.kind === 'chapter' && edit.key === 'subtitle');
+        if (edit.key === 'title') {
+          found.obj.text.rawTitle = String(edit.value ?? '');
+          found.obj.text.title = String(edit.value ?? '');
+        } else {
+          found.obj.text[edit.key] = listVal ? lines(edit.value) : String(edit.value ?? '');
+        }
+        touched.add(found.obj.id);
+        break;
+      }
+      case 'create': {
+        const parent = map.get(normalise(edit.parent));
+        if (!parent) throw new BadEdit(`no such parent: ${edit.parent}`);
+        const id = newId();
+        const made = edit.kind === 'quest'
+          ? { id, chapter: parent.obj.id, text: { rawTitle: '', subtitle: '', description: [] },
+              data: { id, ...(edit.data ?? {}) }, tasks: [], rewards: [] }
+          : { id, typeId: full(edit.type), text: { rawTitle: '' },
+              data: { id, type: short(edit.type), ...(edit.data ?? {}) } };
+        if (edit.kind === 'quest') parent.obj.quests.push(made);
+        else if (edit.kind === 'task') parent.obj.tasks.push(made);
+        else if (edit.kind === 'reward') parent.obj.rewards.push(made);
+        else throw new BadEdit(`cannot create a ${edit.kind}`);
+        for (const [key, value] of Object.entries(edit.text ?? {})) {
+          if (key === 'title') { made.text.rawTitle = value; made.text.title = value; }
+          else made.text[key] = value;
+        }
+        created.push(id);
+        touched.add(id);
+        break;
+      }
+      case 'delete': {
+        // Deleting a quest takes its tasks with it, which the index handles by
+        // being rebuilt; nothing else refers to them.
+        found.list.splice(found.list.indexOf(found.obj), 1);
+        touched.add(found.obj.id);
+        break;
+      }
+      default: throw new BadEdit(`unsupported op: ${edit.op}`);
+    }
+    applied++;
+  }
+
+  book.version++;
+  return { version: book.version, applied, touched: [...touched], created };
+}
+
+// ------------------------------------------------------------------ serving --
 const TYPES = { html: 'text/html; charset=utf-8', js: 'text/javascript', css: 'text/css',
-                json: 'application/json', png: 'image/png' };
+                json: 'application/json', png: 'image/png', svg: 'image/svg+xml' };
 const send = (res, code, type, body) => { res.writeHead(code, { 'Content-Type': type }); res.end(body); };
+const json = (res, code, body) => send(res, code, 'application/json', JSON.stringify(body));
 const authed = req => (req.headers.authorization === 'Bearer ' + TOKEN)
   || new URL(req.url, 'http://x').searchParams.get('token') === TOKEN;
 
-http.createServer((req, res) => {
+const readBody = req => new Promise((resolve, reject) => {
+  let buf = '';
+  req.on('data', c => { buf += c; if (buf.length > 1e7) reject(new Error('too big')); });
+  req.on('end', () => resolve(buf));
+  req.on('error', reject);
+});
+
+http.createServer(async (req, res) => {
   const url = new URL(req.url, 'http://x');
   const p = url.pathname;
 
   if (p.startsWith('/api/')) {
-    if (!authed(req)) return send(res, 401, 'application/json', '{"error":"unauthorized"}');
-    if (p === '/api/health') return send(res, 200, 'application/json', JSON.stringify({ ok: true, mock: true }));
-    if (p === '/api/book') return send(res, 200, 'application/json', JSON.stringify(loadBook()));
-    if (p === '/api/types') return send(res, 200, 'application/json', '{"tasks":{},"rewards":{}}');
-    if (p === '/api/changes') {
-      res.writeHead(200, { 'Content-Type': 'text/event-stream', 'Cache-Control': 'no-cache' });
-      res.write('event: hello\ndata: {"version":1}\n\n');
-      return;                                  // held open, nothing pushed
+    if (!authed(req)) return json(res, 401, { error: 'unauthorized' });
+
+    if (p === '/api/health') {
+      return json(res, 200, { ok: true, mock: true, bookVersion: book.version,
+                              editors: subscribers.size, bookLoaded: true });
     }
-    return send(res, 404, 'application/json', '{"error":"not found"}');
+    if (p === '/api/book') return json(res, 200, book);
+    if (p === '/api/types') return json(res, 200, types());
+
+    if (p === '/api/changes') {
+      res.writeHead(200, { 'Content-Type': 'text/event-stream', 'Cache-Control': 'no-cache',
+                           'Connection': 'keep-alive' });
+      res.write(`data: ${JSON.stringify({ version: book.version })}\n\n`);
+      subscribers.add(res);
+      req.on('close', () => subscribers.delete(res));
+      return;
+    }
+
+    if (p === '/api/edit') {
+      if (req.method !== 'POST') return json(res, 405, { error: 'POST only' });
+      let body;
+      try { body = JSON.parse(await readBody(req)); }
+      catch { return json(res, 400, { error: 'body is not JSON' }); }
+
+      if (body.baseVersion >= 0 && body.baseVersion !== book.version) {
+        return json(res, 409, { error: 'stale', version: book.version });
+      }
+      if (!Array.isArray(body.edits)) return json(res, 400, { error: 'expected an edits array' });
+      try {
+        const change = applyEdits(body.edits);
+        publish(change);
+        return json(res, 200, change);
+      } catch (e) {
+        if (e instanceof BadEdit) return json(res, 400, { error: e.message });
+        console.error(e);
+        return json(res, 500, { error: 'edit failed' });
+      }
+    }
+    return json(res, 404, { error: 'not found' });
   }
 
   const base = p.startsWith('/icons/') ? ICONS : WWW;
@@ -149,8 +318,11 @@ http.createServer((req, res) => {
     ? send(res, 404, 'text/plain', 'not found')
     : send(res, 200, TYPES[file.split('.').pop()] ?? 'application/octet-stream', buf));
 }).listen(PORT, '127.0.0.1', () => {
-  const b = loadBook();
-  const n = b.chapterGroups[0].chapters.reduce((s, c) => s + c.quests.length, 0);
+  const chapters = book.chapterGroups.flatMap(g => g.chapters);
+  const quests = chapters.reduce((s, c) => s + c.quests.length, 0);
+  const tasks = chapters.reduce((s, c) => s + c.quests.reduce((n, q) => n + q.tasks.length, 0), 0);
   console.log(`mock bridge on http://127.0.0.1:${PORT}  token=${TOKEN}`);
-  console.log(`  ${b.chapterGroups[0].chapters.length} chapter(s), ${n} quests`);
+  console.log(`  ${chapters.length} chapter(s), ${quests} quests, ${tasks} tasks`);
+  console.log(`  task types in use: ${Object.keys(types().tasks).join(', ') || 'none'}`);
+  console.log('  edits are in memory only; restart to get the book back');
 });
