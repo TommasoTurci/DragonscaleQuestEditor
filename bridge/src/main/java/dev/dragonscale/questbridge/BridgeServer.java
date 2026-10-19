@@ -28,6 +28,7 @@ public final class BridgeServer {
     private final int port;
     private final String token;
     private HttpServer http;
+    private final ChangeFeed feed = new ChangeFeed();
 
     public BridgeServer(MinecraftServer mc) throws IOException {
         this.mc = mc;
@@ -66,11 +67,14 @@ public final class BridgeServer {
         http.setExecutor(Executors.newVirtualThreadPerTaskExecutor());
         http.createContext("/health", authed(this::health));
         http.createContext("/book", authed(this::book));
+        http.createContext("/types", authed(this::types));
+        http.createContext("/changes", authed(feed::subscribe));
         http.start();
         DragonscaleBridge.LOG.info("[questbridge] listening on :{}", port);
     }
 
     public void stop() {
+        feed.stop();
         if (http != null) {
             http.stop(1);
             DragonscaleBridge.LOG.info("[questbridge] stopped");
@@ -101,10 +105,28 @@ public final class BridgeServer {
         send(x, 200, json);
     }
 
+    private void types(HttpExchange x) throws IOException {
+        var file = BookReader.file();
+        if (file.isEmpty()) {
+            send(x, 503, "{\"error\":\"quest file not loaded yet\"}");
+            return;
+        }
+        String json;
+        try {
+            json = mc.submit(() -> TypeIntrospector.types(file.get()).toString()).get();
+        } catch (Exception e) {
+            DragonscaleBridge.LOG.error("[questbridge] type introspection failed", e);
+            send(x, 500, "{\"error\":\"could not introspect types\"}");
+            return;
+        }
+        send(x, 200, json);
+    }
+
     private void health(HttpExchange x) throws IOException {
         send(x, 200, """
-            {"ok":true,"mcVersion":"%s","players":%d}"""
-            .formatted(mc.getServerVersion(), mc.getPlayerCount()));
+            {"ok":true,"mcVersion":"%s","players":%d,"bookVersion":%d,"editors":%d,"bookLoaded":%b}"""
+            .formatted(mc.getServerVersion(), mc.getPlayerCount(),
+                BookVersion.current(), feed.count(), BookReader.file().isPresent()));
     }
 
     // --------------------------------------------------------------- plumbing --

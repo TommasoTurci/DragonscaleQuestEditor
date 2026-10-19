@@ -79,7 +79,7 @@ bridge models nothing, so addon fields survive by construction.
 }
 ```
 
-`version` increments on every applied change and is what `/ops` checks against.
+`version` increments on every applied change and is what `/edit` checks against.
 
 ### `GET /types`
 
@@ -117,7 +117,13 @@ regenerate after a pack update.
   "tags":  { "c:ingots/steel": ["createbigcannons:steel_ingot"] } }
 ```
 
-### `WS /changes`
+### `GET /changes`
+
+Server-sent events, not a WebSocket. Traffic only flows one way — edits arrive by
+POST and changes go out — so a socket buys nothing and costs a hand-rolled
+handshake and frame codec inside a game server. SSE is plain HTTP, reconnects on
+its own in every browser, and survives proxies that mangle upgrades. Consume it
+with `new EventSource(...)`.
 
 The bridge pushes every applied change, whatever its source — the web editor, a
 player editing in game, or a `/restore`.
@@ -131,14 +137,14 @@ player editing in game, or a `/restore`.
 Clients apply these without reloading, and without stealing focus from whatever the
 user is currently typing.
 
-### `POST /ops`
+### `POST /edit`
 
 Apply an edit. Rejected with `409` and the current version if `baseVersion` is stale,
 so a client that has fallen behind re-syncs rather than clobbering.
 
 ```json
 { "baseVersion": 412,
-  "ops": [
+  "edits": [
     { "op": "set",     "target": "quest:345900C71CE2A226", "path": "data.x", "value": 3.5 },
     { "op": "setText", "target": "quest:345900C71CE2A226", "key": "title", "value": "Obtain Wood" },
     { "op": "create",  "kind": "quest", "parent": "3D94C1963CD045BB", "data": { "x": 0, "y": 0 } },
@@ -191,6 +197,6 @@ docs/     format research and design notes
 |---|---|
 | Format research | done — see [`docs/format.md`](docs/format.md) |
 | API contract | drafted, this file |
-| Icon pipeline | in progress |
-| Bridge | not started |
+| Icon pipeline | done — 19,344 icons, 435 placeholders |
+| Bridge | `/health`, `/book`, `/types`, `/changes` build and compile; untested on a real server |
 | Editor | not started |
