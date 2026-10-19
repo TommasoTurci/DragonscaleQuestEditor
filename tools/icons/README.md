@@ -59,7 +59,7 @@ Animated textures are vertical strips of square frames; only frame 0 is used.
 | rendered model | 6,272 |
 | isometric cube (no geometry found) | 516 |
 | placeholder | 433 (2.2%) |
-| payload | ~15 MB of PNG, 2.4 MB index |
+| payload | ~34 MB of PNG, 2.4 MB index (64px, not committed) |
 
 The 435 placeholders are `builtin/entity` items — chests, beds, banners, shulkers,
 skulls — which are rendered by entity code and have no model to composite.
@@ -73,7 +73,32 @@ the game.
 - All 316 spawn eggs render identically, since their colours are defined in entity
   code rather than in a texture.
 
-## Regenerating
+## Not in git
 
-Re-run after a pack update. The output is committed, because the person editing on a
-tablet has no mods folder to build from.
+The icon set is **derived from the mod jars**, so it is not committed. It cannot be
+lost, only regenerated, and a 34 MB binary payload that changes wholesale on every
+pack update is the worst possible thing to put in a repository's history.
+`app/public/icons/` is gitignored.
+
+The tablet does not need them locally either — the bridge serves them.
+
+## Regenerating and deploying
+
+After a pack update:
+
+```bash
+cd tools/icons && npm install && node build-icons.mjs \
+  --size 64 \
+  --mods    "<instance>/minecraft/mods" \
+  --vanilla "<prism>/libraries/com/mojang/minecraft/1.21.1/minecraft-1.21.1-client.jar"
+```
+
+Then copy `app/public/icons/` to the server at:
+
+```
+/home/opc/DevDragonscale/config/questbridge/icons/
+```
+
+The bridge serves that directory at `/icons/` with a long cache lifetime, so every
+editor picks up the new set without anyone installing anything. If the directory is
+missing the editor still works: tasks fall back to showing their type and id.

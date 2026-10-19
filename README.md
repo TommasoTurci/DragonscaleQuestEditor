@@ -187,7 +187,9 @@ repository, written only by the bridge.
 bridge/   NeoForge mod: HTTP + WS server, FTB API calls, git history
 app/      web editor: canvas, inspector, item picker
 tools/    build scripts that run on a desktop, not the server
-  icons/  generates the icon set from the pack's mod jars
+  icons/  generates the icon set from the pack mod jars (gitignored output;
+          upload to config/questbridge/icons on the server)
+  mock/   serves the app against the real SNBT, for working without a server
 docs/     format research and design notes
 ```
 
@@ -197,6 +199,6 @@ docs/     format research and design notes
 |---|---|
 | Format research | done — see [`docs/format.md`](docs/format.md) |
 | API contract | drafted, this file |
-| Icon pipeline | done — 19,344 icons, 435 placeholders |
+| Icon pipeline | done — 19,344 icons at 64px, 6,272 rendered from real geometry |
 | Bridge | `/health`, `/book`, `/types`, `/changes` build and compile; untested on a real server |
 | Editor | renders the real book: chapter tabs, quest graph, icons, inspector |

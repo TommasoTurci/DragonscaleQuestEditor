@@ -1,4 +1,6 @@
 
+# Generated from the mod jars by tools/icons. Derived, not source: regenerate with
+# `npm run build` there, and upload to the server, which serves them to the editor.
 # bridge (NeoForge) build output
 # editor build output
 # scratch
@@ -9,6 +11,7 @@ _*.mjs
 _*.png
 app/.vite/
 app/dist/
+app/public/icons/
 bridge/.gradle/
 bridge/build/
 bridge/run/
