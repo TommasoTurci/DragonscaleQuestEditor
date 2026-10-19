@@ -1,5 +1,8 @@
 package dev.dragonscale.questbridge;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
@@ -30,6 +33,8 @@ public final class BridgeServer {
     private final String bind;
     private HttpServer http;
     private final ChangeFeed feed = new ChangeFeed();
+    private static final Gson GSON = new Gson();
+    private GitHistory history;
 
     public BridgeServer(MinecraftServer mc) throws IOException {
         this.mc = mc;
@@ -76,17 +81,20 @@ public final class BridgeServer {
         http.createContext("/api/book", authed(this::book));
         http.createContext("/api/types", authed(this::types));
         http.createContext("/api/changes", authed(feed::subscribe));
+        http.createContext("/api/edit", authed(this::edit));
 
         // The editor and its icons. No token: the shell is not secret, the data is.
         Path web = mc.getServerDirectory().resolve("config").resolve("questbridge");
         http.createContext("/icons/", new StaticFiles(web.resolve("icons"), "/questbridge/icons", "/icons", false));
         http.createContext("/", new StaticFiles(web.resolve("www"), "/questbridge/www", "", true));
+        history = new GitHistory(mc, mc.getServerDirectory().resolve("config").resolve("ftbquests"));
         http.start();
         DragonscaleBridge.LOG.info("[questbridge] listening on {}:{}", bind, port);
     }
 
     public void stop() {
         feed.stop();
+        if (history != null) history.stop();
         if (http != null) {
             http.stop(1);
             DragonscaleBridge.LOG.info("[questbridge] stopped");
@@ -94,6 +102,67 @@ public final class BridgeServer {
     }
 
     // ------------------------------------------------------------- handlers --
+
+    /**
+     * The write path. Edits are applied on the server thread as one batch, and only
+     * if the client has seen the current version — a stale client re-syncs rather
+     * than overwriting whatever it missed.
+     */
+    private void edit(HttpExchange x) throws IOException {
+        if (!"POST".equals(x.getRequestMethod())) {
+            send(x, 405, "{\"error\":\"POST only\"}");
+            return;
+        }
+        var file = BookReader.file();
+        if (file.isEmpty()) {
+            send(x, 503, "{\"error\":\"quest file not loaded yet\"}");
+            return;
+        }
+
+        JsonObject body;
+        try {
+            body = JsonParser.parseString(
+                new String(x.getRequestBody().readAllBytes(), StandardCharsets.UTF_8)).getAsJsonObject();
+        } catch (Exception e) {
+            send(x, 400, "{\"error\":\"body is not JSON\"}");
+            return;
+        }
+
+        long base = body.has("baseVersion") ? body.get("baseVersion").getAsLong() : -1;
+        if (base >= 0 && base != BookVersion.current()) {
+            send(x, 409, "{\"error\":\"stale\",\"version\":" + BookVersion.current() + "}");
+            return;
+        }
+        if (!body.has("edits") || !body.get("edits").isJsonArray()) {
+            send(x, 400, "{\"error\":\"expected an edits array\"}");
+            return;
+        }
+
+        EditApplier.Result result;
+        try {
+            result = mc.submit(() -> EditApplier.apply(file.get(), body.getAsJsonArray("edits"))).get();
+        } catch (Exception e) {
+            Throwable cause = e.getCause() == null ? e : e.getCause();
+            if (cause instanceof EditApplier.BadEdit) {
+                send(x, 400, "{\"error\":" + GSON.toJson(cause.getMessage()) + "}");
+            } else {
+                DragonscaleBridge.LOG.error("[questbridge] edit failed", cause);
+                send(x, 500, "{\"error\":\"edit failed\"}");
+            }
+            return;
+        }
+
+        if (history != null) {
+            history.touched(result.applied() + " edit" + (result.applied() == 1 ? "" : "s")
+                + " to " + String.join(", ", result.touched()));
+        }
+
+        JsonObject change = new JsonObject();
+        change.addProperty("version", result.version());
+        change.add("touched", GSON.toJsonTree(result.touched()));
+        feed.publish(change);
+        send(x, 200, change.toString());
+    }
 
     /**
      * Reading the book touches FTB's live object graph, so it runs on the server

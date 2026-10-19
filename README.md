@@ -200,5 +200,5 @@ docs/     format research and design notes
 | Format research | done — see [`docs/format.md`](docs/format.md) |
 | API contract | drafted, this file |
 | Icon pipeline | done — 19,344 icons at 64px, 6,272 rendered from real geometry |
-| Bridge | `/health`, `/book`, `/types`, `/changes` build and compile; untested on a real server |
+| Bridge | read endpoints, `/edit` and git history build and compile; untested on a real server |
 | Editor | renders the real book: chapter tabs, quest graph, icons, inspector |
