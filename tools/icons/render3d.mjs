@@ -75,9 +75,12 @@ export function renderModel(model, resolve, size = 32, ss = 4) {
   const view = (v) => {
     let p = [v[0] - 8, v[1] - 8, v[2] - 8];               // rotate about the centre
     p = [p[0] * scl[0], p[1] * scl[1], p[2] * scl[2]];
-    p = rotateAxis(p, 'y', rot[1]);                        // Y then X matches MC's
-    p = rotateAxis(p, 'x', rot[0]);                        // inventory orientation
-    if (rot[2]) p = rotateAxis(p, 'z', rot[2]);
+    p = rotateAxis(p, 'y', rot[1]);
+    // Negated: the camera looks along +Z with nearer = smaller z, so a positive
+    // rotation about X tips the top face away and the icon is seen from below.
+    // Minecraft's convention is the opposite sign to this one.
+    p = rotateAxis(p, 'x', -rot[0]);
+    if (rot[2]) p = rotateAxis(p, 'z', -rot[2]);
     return [p[0] + tr[0], p[1] + tr[1], p[2] + tr[2]];
   };
 
