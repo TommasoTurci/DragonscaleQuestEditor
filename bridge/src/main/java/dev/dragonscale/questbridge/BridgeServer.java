@@ -27,6 +27,7 @@ public final class BridgeServer {
     private final MinecraftServer mc;
     private final int port;
     private final String token;
+    private final String bind;
     private HttpServer http;
     private final ChangeFeed feed = new ChangeFeed();
 
@@ -36,6 +37,10 @@ public final class BridgeServer {
         Properties p = loadOrCreate(cfg);
         this.port = Integer.parseInt(p.getProperty("port", "25580"));
         this.token = p.getProperty("token", "");
+        // Loopback by default. This server has a public IP, and the bridge speaks
+        // plain HTTP: bound to 0.0.0.0 the token crosses the internet in the clear
+        // on every request. Widen it only behind TLS or a tunnel.
+        this.bind = p.getProperty("bind", "127.0.0.1");
     }
 
     /**
@@ -53,6 +58,7 @@ public final class BridgeServer {
         byte[] buf = new byte[24];
         new SecureRandom().nextBytes(buf);
         p.setProperty("port", p.getProperty("port", "25580"));
+        p.setProperty("bind", p.getProperty("bind", "127.0.0.1"));
         p.setProperty("token", HexFormat.of().formatHex(buf));
         Files.createDirectories(cfg.getParent());
         try (var out = Files.newOutputStream(cfg)) {
@@ -63,14 +69,14 @@ public final class BridgeServer {
     }
 
     public void start() throws IOException {
-        http = HttpServer.create(new InetSocketAddress(port), BACKLOG);
+        http = HttpServer.create(new InetSocketAddress(bind, port), BACKLOG);
         http.setExecutor(Executors.newVirtualThreadPerTaskExecutor());
         http.createContext("/health", authed(this::health));
         http.createContext("/book", authed(this::book));
         http.createContext("/types", authed(this::types));
         http.createContext("/changes", authed(feed::subscribe));
         http.start();
-        DragonscaleBridge.LOG.info("[questbridge] listening on :{}", port);
+        DragonscaleBridge.LOG.info("[questbridge] listening on {}:{}", bind, port);
     }
 
     public void stop() {
