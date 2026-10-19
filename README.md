@@ -279,7 +279,7 @@ tools/    build scripts that run on a desktop, not the server
   icons/  generates the icon set from the pack mod jars (gitignored output;
           upload to config/questbridge/icons on the server)
   mock/   serves the app against the real SNBT, for working without a server
-docs/     format research and design notes
+docs/     format research, design notes and the deployment plan
 ```
 
 ---
@@ -314,4 +314,4 @@ the inspector is left alone while you have a field open.
 | Icon pipeline | done — 19,344 icons at 64px, 6,272 rendered from real geometry |
 | Bridge | read, write, history and restore; in-game change detection — compiles; **has never run against a real server** |
 | Editor | reads and edits the whole book, and restores from history; exercised end to end against the mock |
-| Deployment | not done — nothing here has run on the VM |
+| Deployment | not done — nothing here has run on the VM; the plan is [`docs/deploy.md`](docs/deploy.md) |
