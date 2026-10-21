@@ -89,6 +89,7 @@ public final class BridgeServer {
         http.createContext("/api/changes", authed(feed::subscribe));
         http.createContext("/api/edit", authed(this::edit));
         http.createContext("/api/registry", authed(this::registry));
+        http.createContext("/api/recipes", authed(this::recipes));
         http.createContext("/api/history", authed(this::historyLog));
         http.createContext("/api/restore", authed(this::restore));
 
@@ -215,6 +216,25 @@ public final class BridgeServer {
         }
         // Registries change only when the server reloads, and a client that asked
         // once should not ask again for the same screenful.
+        x.getResponseHeaders().add("Cache-Control", "private, max-age=300");
+        send(x, 200, json);
+    }
+
+    /** What makes this item, and what it is used in. See {@link RecipeReader}. */
+    private void recipes(HttpExchange x) throws IOException {
+        String item = query(x.getRequestURI().getRawQuery()).get("item");
+        if (item == null) {
+            send(x, 400, "{\"error\":\"expected ?item=<id>\"}");
+            return;
+        }
+        String json;
+        try {
+            json = mc.submit(() -> RecipeReader.forItem(mc, item).toString()).get();
+        } catch (Exception e) {
+            DragonscaleBridge.LOG.error("[questbridge] reading recipes failed", e);
+            send(x, 500, "{\"error\":\"could not read the recipes\"}");
+            return;
+        }
         x.getResponseHeaders().add("Cache-Control", "private, max-age=300");
         send(x, 200, json);
     }

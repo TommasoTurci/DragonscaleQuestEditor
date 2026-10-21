@@ -211,12 +211,39 @@ one made in the quest book: the same broadcast to the players actually in edit
 mode, the same `editedFromGUIOnServer` hook each type expects, text written through
 the translation manager *and* synced to clients, and a place on the same undo stack.
 
+### `GET /api/recipes`
+
+`?item=<id>` returns what makes it and what it is used in, taken from the
+server's own recipe manager.
+
+```json
+{ "item": "minecraft:oak_planks",
+  "makes": [ { "id": "minecraft:oak_planks", "type": "minecraft:crafting_shapeless",
+               "inputs": [["minecraft:oak_log"]], "output": { "id": "minecraft:oak_planks", "count": 4 } } ],
+  "uses":  [ ... ], "total": 41203 }
+```
+
+Nothing here knows about any particular mod: a recipe is asked for its
+ingredients and its result through the interfaces every recipe implements, so
+Create's milling and a vanilla crafting table read the same way. One that
+expresses its inputs some other way reports none, and the editor says so rather
+than pretending the recipe is empty. Both directions are indexed once, on first
+use rather than at startup, and the cost is logged.
+
 ### Items
 
-There is no `/api/items`. `/icons/index.json` already lists every item id in the
-pack with a picture for each, which is what an item picker needs; a second list with
-no pictures would be strictly worse. Tags are not enumerated — item tasks match tags
-through FTB Filter System expressions, which the editor edits as text.
+There is no `/api/items` because there does not need to be: the item list is
+`/api/registry?name=minecraft:item`, the pictures are `/icons/index.json`, and
+the names are `/icons/names.json`, built from the mod jars by
+[`tools/icons/build-names.mjs`](tools/icons/build-names.mjs) because a dedicated
+server has no language file loaded and cannot tell you an item is called "Oak
+Bench".
+
+Those three answer different questions and disagree on purpose. The icon index is
+built by walking model files, which include things that are not items at all —
+`minecraft:bow_pulling_0` is a model for a bow being drawn. The registry decides
+what exists; the index supplies a picture if there is one; the name table
+supplies the word a human would use.
 
 ### `GET /api/registry`
 
@@ -328,7 +355,9 @@ destructive control disabled until someone means it. With it on:
   carries, plus the type's full field list from `/api/types`, so a field FTB omitted
   at its default can still be set on purpose;
 - pick items from all 19,344 in the pack, searched by id, each shown as its icon;
-- open **History** and put the whole book back to any earlier point.
+- open **History** and put the whole book back to any earlier point;
+- open **Items** and browse the pack the way you would the creative menu — by
+  name, with its recipes — then turn what you find into a quest in one click.
 
 Everything updates live for everyone else; the camera stays where you left it, and
 the inspector is left alone while you have a field open.

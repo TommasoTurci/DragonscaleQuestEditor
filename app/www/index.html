@@ -288,6 +288,62 @@ details .inner{padding:0 11px 11px;display:flex;flex-direction:column;gap:11px}
 #pickerGrid.aslist button b{font-size:.88rem;font-weight:500}
 #pickerGrid.aslist button span{font-size:.72rem;color:var(--muted);text-align:left}
 #pickerGrid.aslist .modhead{padding:12px 4px 4px}
+/* ---------- item browser ---------- */
+#browse{
+  position:fixed;inset:0;z-index:59;background:rgba(8,10,14,.82);display:flex;
+  padding:max(14px,env(safe-area-inset-top)) max(14px,env(safe-area-inset-right)) max(14px,env(safe-area-inset-bottom)) max(14px,env(safe-area-inset-left));
+}
+.box.wide{width:min(900px,100%);height:min(720px,100%);max-height:100%}
+#browseTitle{align-self:center;white-space:nowrap;font-size:.95rem}
+#browseSearch{flex:1 1 180px;min-width:0}
+#browseMod{flex:0 1 190px;min-width:0}
+#browseBody{overflow-y:auto;flex:1;padding:10px}
+#browseCount{padding:0 12px 10px;font-size:.75rem;color:var(--muted)}
+#browseGrid{display:grid;gap:6px;grid-template-columns:repeat(auto-fill,minmax(104px,1fr))}
+#browseGrid button{
+  display:flex;flex-direction:column;align-items:center;gap:4px;padding:9px 5px;
+  border-radius:8px;border:1px solid transparent;
+}
+#browseGrid button:hover{border-color:var(--accent);background:var(--panel-2)}
+#browseGrid img{width:36px;height:36px;image-rendering:pixelated}
+#browseGrid b{font-size:.74rem;font-weight:500;text-align:center;line-height:1.25}
+#browseGrid span{font-size:.62rem;color:var(--muted);text-align:center;word-break:break-all}
+
+/* the detail view */
+.detail{display:flex;flex-direction:column;gap:14px}
+.detail .hero{display:flex;align-items:center;gap:14px}
+.detail .hero img{width:56px;height:56px;image-rendering:pixelated;flex:none}
+.detail .hero h3{margin:0;font-size:1.15rem;line-height:1.25}
+.detail .hero .id{font-family:var(--mono);font-size:.76rem;color:var(--muted);word-break:break-all}
+.detail .acts{display:flex;gap:8px;flex-wrap:wrap}
+.detail h4{
+  margin:0;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);
+}
+.recipe{
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  background:var(--panel-2);border:1px solid var(--line);border-radius:8px;padding:9px 10px;
+}
+.recipe .kind{
+  font-size:.66rem;font-family:var(--mono);color:var(--accent);background:var(--accent-dim);
+  padding:3px 6px;border-radius:4px;flex:none;
+}
+.recipe .slots{display:flex;gap:4px;flex-wrap:wrap;align-items:center;flex:1;min-width:0}
+.recipe .slot{position:relative;width:32px;height:32px;flex:none}
+.recipe .slot img{width:32px;height:32px;image-rendering:pixelated}
+.recipe .slot .more{
+  position:absolute;right:-2px;bottom:-3px;font-size:.58rem;background:var(--panel);
+  border-radius:3px;padding:0 2px;color:var(--muted);
+}
+.recipe .arrow{color:var(--muted);flex:none}
+.recipe .out{display:flex;align-items:center;gap:4px;flex:none}
+.recipe .out .n{font-size:.78rem;color:var(--fg)}
+.recipe .none{font-size:.76rem;color:var(--muted)}
+.detail .empty{font-size:.82rem;color:var(--muted)}
+@media (max-width:640px){
+  #browse{padding:0}
+  .box.wide{width:100%;height:100%;border-radius:0;border:none}
+  #browseGrid{grid-template-columns:repeat(auto-fill,minmax(86px,1fr))}
+}
 </style>
 </head>
 <body>
@@ -306,6 +362,7 @@ details .inner{padding:0 11px 11px;display:flex;flex-direction:column;gap:11px}
   <header>
     <span class="brand">Dragonscale</span>
     <span class="spacer"></span>
+    <button id="browseOpen" class="btn">Items</button>
     <button id="histOpen" class="btn">History</button>
     <button id="editToggle" aria-pressed="false">Editing off</button>
     <span id="status"><span id="dot"></span><span id="statusText">connecting</span></span>
@@ -341,6 +398,20 @@ details .inner{padding:0 11px 11px;display:flex;flex-direction:column;gap:11px}
     </div>
     <div id="pickerGrid"></div>
     <div id="pickerCount"></div>
+  </div>
+</div>
+
+<div id="browse" hidden>
+  <div class="box wide">
+    <div class="top">
+      <button class="btn" id="browseBack" hidden>&larr;</button>
+      <strong id="browseTitle">Items</strong>
+      <input id="browseSearch" type="text" placeholder="Search by name or id&hellip;" spellcheck="false" autocomplete="off">
+      <select id="browseMod"></select>
+      <button class="btn" id="browseClose">Close</button>
+    </div>
+    <div id="browseBody"></div>
+    <div id="browseCount"></div>
   </div>
 </div>
 
@@ -382,6 +453,8 @@ const S = {
   saving: 0,
   open: new Set(['tasks', 'rewards', 'raw', 'item']),
   registries: {},          // registry name -> ids, fetched once and kept
+  names: {},               // item id -> the name a human would use
+  items: null,             // the server's item registry, fetched on first browse
 };
 const view = { x: 0, y: 0, scale: 48 };    // world units -> px
 
@@ -507,19 +580,24 @@ async function connect(t) {
 }
 
 async function first() {
-  const [book, types, idx] = await Promise.all([
+  const [book, types, idx, nm] = await Promise.all([
     api('/book'),
     api('/types').catch(() => ({ tasks: {}, rewards: {} })),
-    fetch('/icons/index.json').then(r => r.ok ? r.json() : { icons: {} }).catch(() => ({ icons: {} }))
+    fetch('/icons/index.json').then(r => r.ok ? r.json() : { icons: {} }).catch(() => ({ icons: {} })),
+    fetch('/icons/names.json').then(r => r.ok ? r.json() : { names: {} }).catch(() => ({ names: {} }))
   ]);
   S.book = book;
   S.types = types && types.tasks ? types : { tasks: {}, rewards: {} };
   S.icons = idx.icons || {};
+  S.names = nm.names || {};
   if (!S.chapterId) S.chapterId = (chapters()[0] || {}).id || null;
   renderChapters();
   fitView();
   drawMap();
   status();
+  // Warm the item list in the background: both the picker and the browser want
+  // it, and neither should pause the first time it is opened.
+  loadItems().catch(() => {});
 }
 
 /**
@@ -1383,7 +1461,7 @@ function questPanel(body, q) {
       + '</b><span>' + esc(current || questIconId(q) || 'none') + '</span></div>';
     pick.onclick = () => openChooser({
       label: 'Quest icon', icons: true,
-      values: Object.keys(S.icons), current,
+      values: itemValues(), current,
       onPick: id => { q.data.icon = { id }; set('data.icon', { id }); }
     });
     inner.append(pick);
@@ -1533,7 +1611,7 @@ function childPanel(body, c, kind, quest) {
         + (S.edit ? 'tap to choose from every item in the pack' : 'read only') + '</span></div>';
       pick.onclick = () => openChooser({
         label: 'Item', icons: true,
-        values: Object.keys(S.icons), current: cur,
+        values: itemValues(), current: cur,
         onPick: id => {
           const next = raw && typeof raw === 'object' ? { ...raw, id } : { id, count: 1 };
           c.data.item = next;
@@ -1682,7 +1760,7 @@ function stackRow(value, key, commit) {
     if (!S.edit) return;
     openChooser({
       label: key.replace(/_/g, ' '), icons: true,
-      values: Object.keys(S.icons), current: value.id,
+      values: itemValues(), current: value.id,
       onPick: id => { value = { ...value, id }; draw(); commit(value); }
     });
   };
@@ -1884,7 +1962,10 @@ function renderPicker() {
   const only = $('#pickerMod').value;
   let hits = chooser.values;
   if (only) hits = hits.filter(id => nsOf(id) === only);
-  if (q) hits = hits.filter(id => id.toLowerCase().includes(q));
+  // Match the name as well as the id: nobody searches for
+  // another_furniture:oak_bench, they search for "bench".
+  if (q) hits = hits.filter(id => id.toLowerCase().includes(q)
+    || (S.names[id] || '').toLowerCase().includes(q));
 
   // Within a mod, shortest first: "oak_log" puts minecraft:oak_log above
   // stripped_oak_log, and a search for "iron" does not bury the ingot.
@@ -1936,10 +2017,10 @@ function tile(id, withIcons) {
   if (withIcons) {
     b.innerHTML = (icon ? '<img src="/icons/' + icon.file + '" alt="" loading="lazy">'
                         : '<span class="pill">?</span>')
-      + '<span>' + esc(nameOf(id)) + '</span>';
+      + '<span>' + esc(S.names[id] || nameOf(id)) + '</span>';
   } else {
     const extra = chooser.describe ? chooser.describe(id) : '';
-    b.innerHTML = '<b>' + esc(nameOf(id)) + '</b>'
+    b.innerHTML = '<b>' + esc(S.names[id] || nameOf(id)) + '</b>'
       + (extra ? '<span>' + esc(extra) + '</span>' : '');
   }
   b.title = id;
@@ -2044,6 +2125,291 @@ async function restoreTo(c) {
   }
 }
 
+// ------------------------------------------------------------- item browser --
+
+/**
+ * The half of the workflow the editor was missing.
+ *
+ * Composing a quest book means scrolling the creative menu, finding an item,
+ * looking up how it is made, and writing a quest around that. All of it happened
+ * in the game, in JEI, in another window. The server knows every item it has
+ * registered and every recipe it loaded, so it may as well answer here.
+ *
+ * Items come from the server's item registry rather than from the icon index,
+ * because the icon index is built by walking model files and those include
+ * things that are not items at all — minecraft:bow_pulling_0 is a model for a
+ * bow being drawn, and no quest can ask for one. The index supplies the picture;
+ * the registry decides what exists; the name table built from the mod jars
+ * supplies the word a human would use.
+ */
+let browsing = null;      // null = the list, otherwise the item being looked at
+
+$('#browseOpen').onclick = () => openBrowse();
+$('#browseClose').onclick = () => { $('#browse').hidden = true; };
+$('#browseBack').onclick = () => { browsing = null; renderBrowse(); };
+$('#browse').addEventListener('click', e => { if (e.target.id === 'browse') $('#browse').hidden = true; });
+$('#browseSearch').addEventListener('input', () => { if (!browsing) renderBrowse(); });
+$('#browseMod').addEventListener('change', () => { if (!browsing) renderBrowse(); });
+
+async function openBrowse(item) {
+  $('#browse').hidden = false;
+  browsing = item || null;
+  $('#browseCount').textContent = 'Loading…';
+  await loadItems();
+  fillBrowseMods();
+  renderBrowse();
+  if (!browsing && innerWidth > 640) $('#browseSearch').focus();
+}
+
+/**
+ * The item list, from the server, once. Falls back to the icon index if the
+ * bridge is too old to answer — which costs some entries that are not really
+ * items, and is better than an empty browser.
+ */
+async function loadItems() {
+  if (S.items) return S.items;
+  try {
+    const r = await api('/registry?name=minecraft:item');
+    S.items = (r.values || []).length ? r.values : Object.keys(S.icons);
+  } catch {
+    S.items = Object.keys(S.icons);
+  }
+  return S.items;
+}
+
+const displayName = id => S.names[id] || nameOf(id).replace(/_/g, ' ');
+
+/**
+ * Every item the server has registered, which is not the same as every item the
+ * icon builder found a model for: minecraft:bow_pulling_0 is a model for a bow
+ * being drawn, not something a quest can ask for.
+ */
+const itemValues = () => S.items || Object.keys(S.icons);
+
+function fillBrowseMods() {
+  const sel = $('#browseMod');
+  if (sel.options.length) return;
+  const counts = new Map();
+  for (const id of S.items) counts.set(nsOf(id), (counts.get(nsOf(id)) || 0) + 1);
+  const all = document.createElement('option');
+  all.value = '';
+  all.textContent = 'All mods (' + S.items.length.toLocaleString() + ')';
+  sel.append(all);
+  for (const ns of [...counts.keys()].sort()) {
+    const o = document.createElement('option');
+    o.value = ns;
+    o.textContent = ns + ' (' + counts.get(ns).toLocaleString() + ')';
+    sel.append(o);
+  }
+}
+
+function renderBrowse() {
+  $('#browseBack').hidden = !browsing;
+  if (browsing) return renderDetail(browsing);
+
+  $('#browseTitle').textContent = 'Items';
+  const body = $('#browseBody');
+  body.innerHTML = '';
+  const grid = document.createElement('div');
+  grid.id = 'browseGrid';
+  body.append(grid);
+
+  const q = $('#browseSearch').value.trim().toLowerCase();
+  const only = $('#browseMod').value;
+  let hits = S.items;
+  if (only) hits = hits.filter(id => nsOf(id) === only);
+  // Searching by name is the point: nobody looks for another_furniture:oak_bench,
+  // they look for "bench".
+  if (q) hits = hits.filter(id => id.toLowerCase().includes(q)
+    || displayName(id).toLowerCase().includes(q));
+
+  const sorted = hits.slice().sort((a, b) =>
+    displayName(a).length - displayName(b).length || a.localeCompare(b));
+  const shown = sorted.slice(0, 360);
+
+  for (const id of shown) {
+    const b = document.createElement('button');
+    const icon = S.icons[id];
+    b.innerHTML = (icon ? '<img src="/icons/' + icon.file + '" alt="" loading="lazy">'
+                        : '<span class="pill">?</span>')
+      + '<b>' + esc(displayName(id)) + '</b>'
+      + '<span>' + esc(nsOf(id)) + '</span>';
+    b.title = id;
+    b.onclick = () => { browsing = id; renderBrowse(); };
+    grid.append(b);
+  }
+  $('#browseCount').textContent = shown.length < hits.length
+    ? shown.length.toLocaleString() + ' of ' + hits.length.toLocaleString()
+      + ' — keep typing, or pick a mod'
+    : hits.length.toLocaleString() + (hits.length === 1 ? ' item' : ' items');
+}
+
+// --- one item, with its recipes ---
+
+async function renderDetail(id) {
+  $('#browseTitle').textContent = displayName(id);
+  const body = $('#browseBody');
+  body.innerHTML = '';
+  const wrap = document.createElement('div');
+  wrap.className = 'detail';
+  body.append(wrap);
+
+  const hero = document.createElement('div');
+  hero.className = 'hero';
+  const icon = S.icons[id];
+  hero.innerHTML = (icon ? '<img src="/icons/' + icon.file + '" alt="">'
+                         : '<span class="pill">?</span>')
+    + '<div><h3>' + esc(displayName(id)) + '</h3>'
+    + '<div class="id">' + esc(id) + '</div></div>';
+  wrap.append(hero);
+
+  const acts = document.createElement('div');
+  acts.className = 'acts';
+  const sel = selected();
+  if (S.edit && sel && sel.kind === 'quest') {
+    acts.append(button('Add as a task to “' + (titleOf(sel.obj) || 'this quest') + '”',
+      () => addItemTask(sel.obj.id, id), 'btn go'));
+  }
+  if (S.edit) {
+    acts.append(button('New quest for this item', () => newQuestForItem(id), 'btn'));
+  }
+  if (!S.edit) acts.append(note('Turn Editing on to build a quest from this.'));
+  wrap.append(acts);
+
+  const where = document.createElement('div');
+  where.textContent = 'Looking up recipes…';
+  where.className = 'empty';
+  wrap.append(where);
+  $('#browseCount').textContent = '';
+
+  let data;
+  try {
+    data = await api('/recipes?item=' + encodeURIComponent(id));
+  } catch {
+    where.textContent = 'The server could not look up recipes. It may be running an older bridge.';
+    return;
+  }
+  if (browsing !== id) return;            // they moved on while it loaded
+  where.remove();
+
+  wrap.append(recipeList('Made by', data.makes || [], id,
+    'Nothing in the pack makes this. It is found, dropped, or given.'));
+  wrap.append(recipeList('Used in', data.uses || [], id,
+    'Nothing in the pack uses this as an ingredient.'));
+  $('#browseCount').textContent = (data.makes || []).length + ' making, '
+    + (data.uses || []).length + ' using — out of ' + (data.total || 0).toLocaleString()
+    + ' recipes loaded';
+}
+
+function recipeList(label, list, subject, emptyText) {
+  const sec = document.createElement('div');
+  const h = document.createElement('h4');
+  h.textContent = label + (list.length ? ' (' + list.length + ')' : '');
+  sec.append(h);
+  if (!list.length) {
+    sec.append(Object.assign(document.createElement('div'),
+      { className: 'empty', textContent: emptyText }));
+    return sec;
+  }
+  const box = document.createElement('div');
+  box.style.cssText = 'display:flex;flex-direction:column;gap:6px;margin-top:6px';
+  for (const r of list) box.append(recipeRow(r, subject));
+  sec.append(box);
+  return sec;
+}
+
+function recipeRow(r, subject) {
+  const row = document.createElement('div');
+  row.className = 'recipe';
+
+  const kind = document.createElement('span');
+  kind.className = 'kind';
+  kind.textContent = String(r.type || '?').replace(/^minecraft:crafting_/, '').replace(/^minecraft:/, '');
+  kind.title = r.id || '';
+  row.append(kind);
+
+  const slots = document.createElement('div');
+  slots.className = 'slots';
+  if (!(r.inputs || []).length) {
+    slots.innerHTML = '<span class="none">inputs not readable from here</span>';
+  }
+  for (const slot of r.inputs || []) {
+    slots.append(slotTile(slot, subject));
+  }
+  row.append(slots);
+
+  if (r.output) {
+    const arrow = document.createElement('span');
+    arrow.className = 'arrow';
+    arrow.textContent = '→';
+    row.append(arrow);
+    const out = document.createElement('div');
+    out.className = 'out';
+    out.append(slotTile([r.output.id], subject));
+    if (r.output.count > 1) {
+      const n = document.createElement('span');
+      n.className = 'n';
+      n.textContent = '×' + r.output.count;
+      out.append(n);
+    }
+    row.append(out);
+  }
+  return row;
+}
+
+/**
+ * One slot. A slot driven by a tag accepts many items; showing the first with a
+ * count beside it is what a recipe book does, and the whole list is in the
+ * tooltip for when it matters.
+ */
+function slotTile(ids, subject) {
+  const pick = ids.includes(subject) ? subject : ids[0];
+  const el = document.createElement('button');
+  el.className = 'slot';
+  const icon = S.icons[pick];
+  el.innerHTML = (icon ? '<img src="/icons/' + icon.file + '" alt="">'
+                       : '<span class="pill">?</span>')
+    + (ids.length > 1 ? '<span class="more">+' + (ids.length - 1) + '</span>' : '');
+  el.title = ids.map(displayName).join(', ');
+  el.onclick = () => { browsing = pick; renderBrowse(); };
+  return el;
+}
+
+// --- turning an item into a quest ---
+
+async function addItemTask(questId, item) {
+  const res = await send([{ op: 'create', kind: 'task', parent: questId,
+    type: 'ftbquests:item', data: { item: { id: item, count: 1 } } }]);
+  if (!res) return;
+  banner('Added ' + displayName(item) + ' to the quest.');
+  await reload();
+  if (S.sel === questId && !panelHasFocus()) renderPanel();
+}
+
+/**
+ * A quest for this item, in one step: placed where you are looking, named after
+ * the item, asking for one of it. Renaming it is the next thing anyone does, so
+ * the dialog opens on the title.
+ */
+async function newQuestForItem(item) {
+  const r = cv.getBoundingClientRect();
+  const [wx, wy] = toWorld(r.width / 2, r.height / 2);
+  const res = await send([{
+    op: 'create', kind: 'quest', parent: S.chapterId,
+    data: { x: snap(wx), y: snap(wy) },
+    text: { title: displayName(item) }
+  }]);
+  if (!res || !res.created || !res.created.length) return;
+  const made = res.created[0];
+  await send([{ op: 'create', kind: 'task', parent: made,
+    type: 'ftbquests:item', data: { item: { id: item, count: 1 } } }]);
+  $('#browse').hidden = true;
+  await reload();
+  select(made, true);
+  const first = $('#qBody').querySelector('input[data-autofocus]');
+  if (first) first.focus();
+}
+
 // --------------------------------------------------------------------- keys --
 
 addEventListener('keydown', e => {
@@ -2053,6 +2419,7 @@ addEventListener('keydown', e => {
   }
   if (e.key === 'Escape') {
     if (!$('#menu').hidden) { closeMenu(); return; }
+    if (!$('#browse').hidden) { $('#browse').hidden = true; return; }
     if (!$('#picker').hidden) { closePicker(); return; }
     if (!$('#history').hidden) { closeHistory(); return; }
     if (S.linking) { endLinking(); return; }

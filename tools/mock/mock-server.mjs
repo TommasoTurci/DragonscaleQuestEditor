@@ -339,6 +339,23 @@ http.createServer(async (req, res) => {
                               values, count: values.length });
     }
 
+    // Fabricated, and the type says so. There is no recipe manager here; this
+    // exists so the recipe rendering can be built and seen.
+    if (p === '/api/recipes') {
+      const item = url.searchParams.get('item');
+      const ids = Object.keys(icons());
+      const pick = n => Array.from({ length: n }, (_, i) =>
+        ids[(item.length * 7919 + i * 104729) % ids.length]);
+      return json(res, 200, {
+        item,
+        makes: [{ id: 'mock:made', type: 'mock:example', inputs: [pick(2), pick(3)],
+                  output: { id: item, count: 4 } }],
+        uses: [{ id: 'mock:used', type: 'mock:example', inputs: [[item], pick(1)],
+                 output: { id: pick(1)[0], count: 1 } }],
+        total: 0
+      });
+    }
+
     if (p === '/api/history') {
       return json(res, 200, {
         enabled: true,
