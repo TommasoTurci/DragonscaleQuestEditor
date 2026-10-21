@@ -221,6 +221,48 @@ details .inner{padding:0 11px 11px;display:flex;flex-direction:column;gap:11px}
 .commit .t span{font-size:.71rem;color:var(--muted);font-family:var(--mono)}
 .commit.now{border-color:var(--accent)}
 #histNote{padding:0 12px 10px;font-size:.75rem;color:var(--muted);line-height:1.45}
+
+/* ---------- context menu ---------- */
+#menu{position:fixed;inset:0;z-index:58}
+#menu .items{
+  position:absolute;min-width:215px;max-width:min(300px,92vw);
+  background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:6px;
+  box-shadow:0 14px 40px rgba(0,0,0,.55);
+}
+#menu .who{
+  padding:7px 10px 8px;font-size:.73rem;color:var(--muted);
+  border-bottom:1px solid var(--line);margin-bottom:5px;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+#menu button{
+  display:block;width:100%;text-align:left;padding:10px 11px;border-radius:7px;
+  font-size:.88rem;
+}
+#menu button:hover{background:var(--panel-2)}
+#menu button.danger:hover{background:rgba(232,133,122,.14);color:var(--bad)}
+/* On a phone it comes up from the bottom, where a thumb is. */
+@media (max-width:640px){
+  #menu{background:rgba(8,10,14,.5)}
+  #menu .items{
+    left:0;right:0;bottom:0;top:auto!important;max-width:none;
+    border-radius:14px 14px 0 0;border-left:none;border-right:none;border-bottom:none;
+    padding:8px 8px calc(10px + env(safe-area-inset-bottom));
+  }
+  #menu button{padding:14px 12px;font-size:.95rem}
+  #menu .who{padding:10px 12px 12px;font-size:.8rem}
+}
+
+/* ---------- picker: grouped by mod ---------- */
+.box .top{flex-wrap:wrap}
+#pickerSearch{flex:1 1 180px;min-width:0}
+#pickerMod{flex:0 1 190px;min-width:0}
+.modhead{
+  grid-column:1/-1;display:flex;align-items:baseline;gap:8px;
+  padding:10px 4px 3px;font-size:.78rem;font-weight:600;
+  border-bottom:1px solid var(--line);margin-bottom:2px;
+}
+.modhead span{font-size:.7rem;color:var(--muted);font-family:var(--mono);font-weight:400}
+.modhead:first-child{padding-top:2px}
 </style>
 </head>
 <body>
@@ -268,12 +310,15 @@ details .inner{padding:0 11px 11px;display:flex;flex-direction:column;gap:11px}
   <div class="box">
     <div class="top">
       <input id="pickerSearch" type="text" placeholder="Search items&hellip;" spellcheck="false" autocomplete="off">
+      <select id="pickerMod"></select>
       <button class="btn" id="pickerCancel">Cancel</button>
     </div>
     <div id="pickerGrid"></div>
     <div id="pickerCount"></div>
   </div>
 </div>
+
+<div id="menu" hidden><div class="items"></div></div>
 
 <div id="history" hidden>
   <div class="box">
@@ -830,8 +875,115 @@ function tap(e) {
     createQuest(snap(wx), snap(wy));
     return;
   }
-  if (hit) { select(hit.id); return; }
+  if (hit) {
+    // A finger has no second button, so a tap offers the actions a right-click
+    // would. A mouse opens the quest, because that is what a click already meant.
+    if (e.pointerType === 'touch') openMenu(hit, e.clientX, e.clientY);
+    else select(hit.id);
+    return;
+  }
   S.sel = null; closePanel(); drawMap();
+}
+
+cv.addEventListener('contextmenu', e => {
+  const r = cv.getBoundingClientRect();
+  const hit = questAt(e.clientX - r.left, e.clientY - r.top);
+  if (!hit) return;                       // let the browser menu through elsewhere
+  e.preventDefault();
+  openMenu(hit, e.clientX, e.clientY);
+});
+
+// ------------------------------------------------------------- quest menu --
+
+const closeMenu = () => { $('#menu').hidden = true; };
+$('#menu').addEventListener('click', e => { if (e.target.id === 'menu') closeMenu(); });
+addEventListener('resize', closeMenu);
+
+function openMenu(q, cx, cy) {
+  const box = $('#menu').firstElementChild;
+  box.innerHTML = '';
+
+  const who = document.createElement('div');
+  who.className = 'who';
+  who.textContent = titleOf(q) || 'Untitled quest';
+  box.append(who);
+
+  const act = (label, fn, cls) => {
+    const b = document.createElement('button');
+    b.className = cls || '';
+    b.textContent = label;
+    b.onclick = () => { closeMenu(); fn(); };
+    box.append(b);
+  };
+
+  act('Open…', () => select(q.id));
+  if (S.edit) {
+    act('Add dependency…', () => {
+      S.sel = q.id;
+      S.linking = true;
+      S.placing = false;
+      $('#addQuest').setAttribute('aria-pressed', 'false');
+      closePanel(); drawMap();
+      banner('Tap the quest this one should depend on.');
+    });
+    act('Duplicate', () => duplicateQuest(q));
+    act('Delete', () => {
+      if (!window.confirm('Delete “' + (titleOf(q) || q.id) + '” and its tasks?')) return;
+      if (S.sel === q.id) { S.sel = null; closePanel(); }
+      send([{ op: 'delete', target: q.id }]);
+    }, 'danger');
+  }
+
+  $('#menu').hidden = false;
+  // Only positioned on a wide screen; the phone layout pins it to the bottom.
+  if (innerWidth > 640) {
+    const r = box.getBoundingClientRect();
+    box.style.left = Math.min(cx, innerWidth - r.width - 8) + 'px';
+    box.style.top = Math.min(cy, innerHeight - r.height - 8) + 'px';
+  } else {
+    box.style.left = box.style.top = '';
+  }
+}
+
+/**
+ * A quest and everything in it. Quest books are full of near-identical quests —
+ * ten item tasks that differ by one id — and rebuilding one by hand is the tedium
+ * this editor exists to remove.
+ *
+ * Two round trips, because the tasks need the new quest's id and only the server
+ * knows it until it answers.
+ */
+async function duplicateQuest(q) {
+  const data = stripTypes(q.data || {});
+  delete data.id;
+  data.x = qx(q) + 1;
+  data.y = qy(q) + 1;
+
+  const text = {};
+  const t = q.text || {};
+  if (t.rawTitle) text.title = t.rawTitle;
+  if (t.subtitle) text.subtitle = t.subtitle;
+  if ((t.description || []).length) text.description = t.description;
+
+  const res = await send([{ op: 'create', kind: 'quest', parent: S.chapterId, data, text }]);
+  if (!res || !res.created || !res.created.length) return;
+  const made = res.created[0];
+
+  const kids = [...(q.tasks || []).map(c => childCopy('task', made, c)),
+                ...(q.rewards || []).map(c => childCopy('reward', made, c))];
+  if (kids.length) await send(kids);
+
+  await reload();
+  select(made, true);
+}
+
+function childCopy(kind, parent, c) {
+  const data = stripTypes(c.data || {});
+  delete data.id;
+  delete data.type;                        // carried by the op's own type field
+  const op = { op: 'create', kind, parent, type: c.typeId, data };
+  if ((c.text || {}).rawTitle) op.text = { title: c.text.rawTitle };
+  return op;
 }
 
 function select(id, centre = false) {
@@ -1407,41 +1559,127 @@ function openPicker(onPick) {
   pickerPick = onPick;
   $('#picker').hidden = false;
   $('#pickerSearch').value = '';
-  renderPicker('');
+  fillMods();
+  renderPicker();
   $('#pickerSearch').focus();
 }
 
 const closePicker = () => { $('#picker').hidden = true; pickerPick = null; };
 $('#pickerCancel').onclick = closePicker;
 $('#picker').addEventListener('click', e => { if (e.target.id === 'picker') closePicker(); });
-$('#pickerSearch').addEventListener('input', e => renderPicker(e.target.value));
+$('#pickerSearch').addEventListener('input', () => renderPicker());
+$('#pickerMod').addEventListener('change', () => renderPicker());
+
+/** namespace -> count, built once: the icon index does not change while open. */
+let modCounts = null;
+function mods() {
+  if (modCounts) return modCounts;
+  modCounts = new Map();
+  for (const id of Object.keys(S.icons)) {
+    const ns = id.slice(0, id.indexOf(':'));
+    modCounts.set(ns, (modCounts.get(ns) || 0) + 1);
+  }
+  return modCounts;
+}
+
+function fillMods() {
+  const sel = $('#pickerMod');
+  if (sel.options.length) return;
+  const all = document.createElement('option');
+  all.value = '';
+  all.textContent = 'All mods (' + Object.keys(S.icons).length.toLocaleString() + ')';
+  sel.append(all);
+  // Alphabetical: a list of 122 mods is something you look a name up in, not
+  // something you browse, and ranking by size moves the name you want.
+  for (const ns of [...mods().keys()].sort()) {
+    const o = document.createElement('option');
+    o.value = ns;
+    o.textContent = ns + ' (' + mods().get(ns).toLocaleString() + ')';
+    sel.append(o);
+  }
+}
 
 /**
- * 19,000 items is too many to put in the DOM and far too many to scroll. Search,
- * cap the result at a screenful or two, and say how many were left out.
+ * 19,000 items is too many to put in the DOM and far too many to scroll, so the
+ * result is capped. Grouping by mod is what makes the cap bearable: everything
+ * from one mod arrives together under its own heading, and the dropdown narrows
+ * to a single mod when you know where you are going.
  */
-function renderPicker(query) {
+function renderPicker() {
   const grid = $('#pickerGrid');
   grid.innerHTML = '';
-  const q = query.trim().toLowerCase();
-  const ids = Object.keys(S.icons);
-  const hits = q ? ids.filter(id => id.toLowerCase().includes(q)) : ids;
-  // Shortest first, so "oak_log" puts minecraft:oak_log above stripped_oak_log
-  // and a search for "iron" does not bury the ingot.
-  hits.sort((a, b) => a.length - b.length || a.localeCompare(b));
-  const shown = hits.slice(0, 240);
+  const q = $('#pickerSearch').value.trim().toLowerCase();
+  const only = $('#pickerMod').value;
 
-  for (const id of shown) {
-    const b = document.createElement('button');
-    b.innerHTML = '<img src="/icons/' + S.icons[id].file + '" alt="" loading="lazy">'
-      + '<span>' + esc(id.split(':').pop()) + '</span>';
-    b.title = id;
-    b.onclick = () => { const f = pickerPick; closePicker(); if (f) f(id); };
-    grid.append(b);
+  let hits = Object.keys(S.icons);
+  if (only) hits = hits.filter(id => id.startsWith(only + ':'));
+  if (q) hits = hits.filter(id => id.toLowerCase().includes(q));
+
+  // Within a mod, shortest first: "oak_log" puts minecraft:oak_log above
+  // stripped_oak_log, and a search for "iron" does not bury the ingot.
+  const byLength = (a, b) => nameOf(a).length - nameOf(b).length || a.localeCompare(b);
+
+  if (only) {
+    draw(hits.sort(byLength).slice(0, 300), hits.length);
+    return;
   }
-  $('#pickerCount').textContent = hits.length > shown.length
-    ? shown.length + ' of ' + hits.length + ' matches — keep typing'
-    : hits.length + (hits.length === 1 ? ' match' : ' matches');
+
+  // Grouped. Mods whose own name matches what was typed come first — searching
+  // "create" should offer Create's items before every item with "create" in it.
+  const groups = new Map();
+  for (const id of hits) {
+    const ns = id.slice(0, id.indexOf(':'));
+    if (!groups.has(ns)) groups.set(ns, []);
+    groups.get(ns).push(id);
+  }
+  // Then vanilla, which is what a quest book reaches for most and which a mod
+  // with a dozen near-misses would otherwise bury.
+  const rank = ns => (q && ns.includes(q) ? 0 : ns === 'minecraft' ? 1 : 2);
+  const order = [...groups.keys()].sort((a, b) =>
+    rank(a) - rank(b)
+    || groups.get(b).length - groups.get(a).length
+    || a.localeCompare(b));
+
+  let left = 300, shown = 0;
+  for (const ns of order) {
+    if (left <= 0) break;
+    const items = groups.get(ns).sort(byLength);
+    const head = document.createElement('div');
+    head.className = 'modhead';
+    head.innerHTML = esc(ns) + '<span>' + items.length + '</span>';
+    grid.append(head);
+    const take = items.slice(0, Math.min(left, 60));
+    for (const id of take) grid.append(tile(id));
+    shown += take.length;
+    left -= take.length;
+  }
+  count(shown, hits.length, order.length);
+}
+
+function draw(ids, total) {
+  const grid = $('#pickerGrid');
+  for (const id of ids) grid.append(tile(id));
+  count(ids.length, total, 1);
+}
+
+function tile(id) {
+  const b = document.createElement('button');
+  b.innerHTML = '<img src="/icons/' + S.icons[id].file + '" alt="" loading="lazy">'
+    + '<span>' + esc(nameOf(id)) + '</span>';
+  b.title = id;
+  b.onclick = () => { const f = pickerPick; closePicker(); if (f) f(id); };
+  return b;
+}
+
+const nameOf = id => id.slice(id.indexOf(':') + 1);
+
+function count(shown, total, groups) {
+  $('#pickerCount').textContent = shown < total
+    ? shown.toLocaleString() + ' of ' + total.toLocaleString() + ' shown'
+      + (groups > 1 ? ' across ' + groups + ' mods' : '')
+      + ' — keep typing, or pick a mod'
+    : total.toLocaleString() + (total === 1 ? ' match' : ' matches')
+      + (groups > 1 ? ' in ' + groups + ' mods' : '');
 }
 
 // ------------------------------------------------------------------ history --
@@ -1537,6 +1775,7 @@ addEventListener('keydown', e => {
     return;
   }
   if (e.key === 'Escape') {
+    if (!$('#menu').hidden) { closeMenu(); return; }
     if (!$('#picker').hidden) { closePicker(); return; }
     if (!$('#history').hidden) { closeHistory(); return; }
     if (S.placing || S.linking) {
