@@ -1,20 +1,28 @@
 package dev.dragonscale.questbridge;
 
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.JsonOps;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.RegistryOps;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeHolder;
+import net.minecraft.world.item.crafting.ShapedRecipe;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 
 /**
@@ -80,22 +88,76 @@ public final class RecipeReader {
                 out.add("output", res);
             }
 
+            // A shaped recipe's layout is the point of it, so its blank slots are
+            // kept and the grid size is reported. Everything else is a bag of
+            // ingredients and empties would just be noise.
+            boolean shaped = recipe instanceof ShapedRecipe;
+            if (shaped) {
+                ShapedRecipe sr = (ShapedRecipe) recipe;
+                JsonObject grid = new JsonObject();
+                grid.addProperty("w", sr.getWidth());
+                grid.addProperty("h", sr.getHeight());
+                out.add("grid", grid);
+            }
+
             JsonArray inputs = new JsonArray();
             for (Ingredient ing : ingredients(recipe)) {
-                if (ing == null || ing.isEmpty()) continue;
+                boolean blank = ing == null || ing.isEmpty();
+                if (blank && !shaped) continue;
                 JsonArray slot = new JsonArray();
-                ItemStack[] items = ing.getItems();
-                for (int i = 0; i < items.length && i < MAX_PER_SLOT; i++) {
-                    slot.add(idOf(items[i]));
+                if (!blank) {
+                    ItemStack[] items = ing.getItems();
+                    for (int i = 0; i < items.length && i < MAX_PER_SLOT; i++) {
+                        slot.add(idOf(items[i]));
+                    }
+                    if (items.length > MAX_PER_SLOT) out.addProperty("truncated", true);
                 }
-                if (items.length > MAX_PER_SLOT) out.addProperty("truncated", true);
-                if (!slot.isEmpty()) inputs.add(slot);
+                if (shaped || !slot.isEmpty()) inputs.add(slot);
             }
             out.add("inputs", inputs);
+
+            // Smelting and friends: how long, and what it is worth.
+            if (recipe instanceof AbstractCookingRecipe cook) {
+                out.addProperty("time", cook.getCookingTime());
+                out.addProperty("xp", cook.getExperience());
+            }
+
+            // Everything a mod's own recipe says that these fields cannot carry —
+            // Create's processing times and output chances, for instance. Asking
+            // the recipe to serialize itself is the only way to get at that
+            // without a line of code per mod, which is the thing this project has
+            // avoided everywhere else. Vanilla crafting is skipped: the grid above
+            // already says everything, and the JSON would just be noise.
+            if (!shaped && !(recipe instanceof AbstractCookingRecipe)) {
+                raw(mc, recipe).ifPresent(j -> out.add("raw", j));
+            }
             return out;
         } catch (Exception e) {
             // One badly behaved modded recipe must not take the lookup with it.
             return null;
+        }
+    }
+
+    /**
+     * The recipe as its own serializer writes it, which is the datapack JSON. The
+     * registry-aware ops matter: ingredients encode through holder references and
+     * plain JsonOps cannot resolve them.
+     */
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+    private static Optional<JsonElement> raw(MinecraftServer mc, Recipe<?> recipe) {
+        try {
+            MapCodec codec = recipe.getSerializer().codec();
+            var ops = RegistryOps.create(JsonOps.INSTANCE, mc.registryAccess());
+            JsonElement json = ((Codec<Recipe<?>>) codec.codec())
+                .encodeStart(ops, recipe).result().orElse(null);
+            // A recipe that encodes to a novel is not worth sending sixty times
+            // over, and nothing useful is that long.
+            if (json == null || json.toString().length() > 4000) return Optional.empty();
+            return Optional.of(json);
+        } catch (Throwable t) {
+            // Serializers are mod code and some of them are not safe to call out
+            // of context. A missing raw view is a missing detail, not a failure.
+            return Optional.empty();
         }
     }
 

@@ -346,12 +346,23 @@ http.createServer(async (req, res) => {
       const ids = Object.keys(icons());
       const pick = n => Array.from({ length: n }, (_, i) =>
         ids[(item.length * 7919 + i * 104729) % ids.length]);
+      const p = pick(4);
       return json(res, 200, {
         item,
-        makes: [{ id: 'mock:made', type: 'mock:example', inputs: [pick(2), pick(3)],
-                  output: { id: item, count: 4 } }],
-        uses: [{ id: 'mock:used', type: 'mock:example', inputs: [[item], pick(1)],
-                 output: { id: pick(1)[0], count: 1 } }],
+        makes: [
+          // a 3x3 with a hole in the middle, so the layout can be seen
+          { id: 'mock:shaped', type: 'minecraft:crafting_shaped', grid: { w: 3, h: 3 },
+            inputs: [[p[0]], [p[1]], [p[0]], [p[1]], [], [p[1]], [p[0]], [p[1]], [p[0]]],
+            output: { id: item, count: 1 } },
+          { id: 'mock:smelt', type: 'minecraft:smelting', inputs: [pick(1)],
+            output: { id: item, count: 1 }, time: 200, xp: 0.7 },
+          { id: 'mock:modded', type: 'create:milling', inputs: [pick(2)],
+            output: { id: item, count: 2 },
+            raw: { type: 'create:milling', processing_time: 50,
+                   results: [{ id: item, chance: 0.75 }] } }
+        ],
+        uses: [{ id: 'mock:used', type: 'minecraft:crafting_shapeless',
+                 inputs: [[item], pick(1)], output: { id: pick(1)[0], count: 1 } }],
         total: 0
       });
     }
