@@ -319,33 +319,59 @@ details .inner{padding:0 11px 11px;display:flex;flex-direction:column;gap:11px}
 .detail h4{
   margin:0;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);
 }
+/* Recipes are drawn on Minecraft's own slot and arrow textures, pulled out of
+   the client jar by tools/icons/build-ui.mjs. The surrounding panel stays dark
+   like the rest of the editor, which is how JEI looks over a dark background. */
 .recipe{
-  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  --slot:34px;
+  display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;
   background:var(--panel-2);border:1px solid var(--line);border-radius:8px;padding:9px 10px;
 }
 .recipe .kind{
   font-size:.66rem;font-family:var(--mono);color:var(--accent);background:var(--accent-dim);
-  padding:3px 6px;border-radius:4px;flex:none;
+  padding:3px 6px;border-radius:4px;flex:none;margin-top:9px;
 }
-.recipe .slots{display:flex;gap:4px;flex-wrap:wrap;align-items:center;flex:1;min-width:0}
-.recipe .slot{position:relative;width:32px;height:32px;flex:none}
-.recipe .slot img{width:32px;height:32px;image-rendering:pixelated}
-.recipe .slot .more{
-  position:absolute;right:-2px;bottom:-3px;font-size:.58rem;background:var(--panel);
-  border-radius:3px;padding:0 2px;color:var(--muted);
-}
-.recipe .arrow{color:var(--muted);flex:none}
-.recipe .out{display:flex;align-items:center;gap:4px;flex:none}
-.recipe .out .n{font-size:.78rem;color:var(--fg)}
-.recipe .none{font-size:.76rem;color:var(--muted)}
+.recipe .flow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;flex:1;min-width:0}
+.recipe .side{display:flex;align-items:center;gap:3px;flex-wrap:wrap}
+.recipe .mid{display:flex;align-items:center;gap:5px;flex:none}
 .recipe .grid{display:grid;gap:2px}
-.recipe .grid .slot{width:30px;height:30px}
-.recipe .grid .slot img{width:30px;height:30px}
-.recipe .slot.blank{
-  width:30px;height:30px;border-radius:4px;
-  background:rgba(255,255,255,.025);border:1px dashed var(--line);
+.recipe .none{font-size:.76rem;color:var(--muted)}
+
+.recipe .slot{
+  position:relative;width:var(--slot);height:var(--slot);flex:none;padding:0;
+  background:url('/icons/ui/slot.png') center/100% 100% no-repeat;
+  image-rendering:pixelated;border:none;
 }
-.recipe .meta{font-size:.72rem;color:var(--muted);font-family:var(--mono);flex:none}
+.recipe .slot:hover:not(:disabled){filter:brightness(1.25)}
+.recipe .slot.blank{background-image:none;background:rgba(255,255,255,.03);border-radius:3px}
+.recipe .slot>img{
+  position:absolute;inset:14%;width:72%;height:72%;image-rendering:pixelated;
+}
+.recipe .slot .pill{position:absolute;inset:18%;width:64%;height:64%}
+.recipe .slot .more,
+.recipe .slot .count,
+.recipe .slot .chance{
+  position:absolute;font-size:.56rem;font-family:var(--mono);line-height:1;
+  padding:1px 2px;border-radius:2px;background:rgba(12,14,19,.88);
+}
+.recipe .slot .more{right:1px;top:1px;color:var(--muted)}
+.recipe .slot .count{right:1px;bottom:1px;color:var(--fg)}
+.recipe .slot .chance{left:1px;bottom:1px;color:var(--accent)}
+.recipe .slot.fluid{
+  background:linear-gradient(#2b4668,#1d3047);border-radius:3px;
+  display:grid;place-items:center;
+}
+.recipe .slot .fl{font-size:.52rem;text-align:center;color:#9ec3ef;padding:2px;word-break:break-all}
+
+.recipe .arrow{width:30px;height:21px;image-rendering:pixelated;flex:none;opacity:.85}
+.recipe .flame{width:14px;height:14px;image-rendering:pixelated;flex:none}
+.recipe .meta{font-size:.7rem;color:var(--muted);font-family:var(--mono);white-space:nowrap}
+
+/* a sequenced assembly is a list of steps, not a row */
+.recipe .sequence{display:flex;flex-direction:column;gap:5px;width:100%}
+.recipe .step{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.recipe .step .kind{margin-top:0}
+
 .rawrecipe{flex-basis:100%;background:none;border:none;border-radius:0}
 .rawrecipe>summary{padding:4px 0;font-size:.7rem;color:var(--muted)}
 .rawrecipe pre{
@@ -353,6 +379,7 @@ details .inner{padding:0 11px 11px;display:flex;flex-direction:column;gap:11px}
   border-radius:6px;font-size:.68rem;line-height:1.4;overflow-x:auto;
   color:var(--muted);max-height:260px;
 }
+@media (max-width:640px){ .recipe{--slot:30px} }
 .detail .empty{font-size:.82rem;color:var(--muted)}
 @media (max-width:640px){
   #browse{padding:0}
@@ -2333,6 +2360,29 @@ function recipeList(label, list, subject, emptyText) {
   return sec;
 }
 
+/**
+ * How a recipe is laid out, read off the recipe's own JSON.
+ *
+ * JEI draws a modded recipe with a plugin written for that mod: code that knows
+ * a milling recipe has a millstone and where on the screen to put it. None of
+ * that is data the server holds, so it cannot be fetched — but it turns out most
+ * of it does not need to be. Processing recipes across Create and the mods that
+ * follow it agree on their key names: `ingredients`, `results`, `chance`,
+ * `processing_time`, `heat_requirement`. Reading those gets the chances and the
+ * timings — the part that matters when you are writing a tutorial quest — for
+ * every mod that follows the convention, including ones nobody has looked at.
+ *
+ * Where a type is genuinely shaped differently it gets an entry below. That is a
+ * line of data, not a plugin.
+ */
+const numOr = (v, dflt) => (typeof v === 'number' ? v : dflt);
+
+const RECIPE_SHAPES = {
+  'create:sequenced_assembly': 'sequence',
+};
+
+const HEAT = { none: '', heated: 'Heated', superheated: 'Superheated' };
+
 function recipeRow(r, subject) {
   const row = document.createElement('div');
   row.className = 'recipe';
@@ -2344,91 +2394,215 @@ function recipeRow(r, subject) {
   kind.title = r.id || '';
   row.append(kind);
 
-  const slots = document.createElement('div');
-  slots.className = 'slots';
-  if (!(r.inputs || []).length) {
-    slots.innerHTML = '<span class="none">inputs not readable from here</span>';
-  } else if (r.grid) {
-    // The shape of a shaped recipe is the thing worth seeing. Blank slots are
-    // sent as empty lists so the pattern survives the trip.
-    const g = document.createElement('div');
-    g.className = 'grid';
-    g.style.gridTemplateColumns = 'repeat(' + r.grid.w + ', 30px)';
-    for (const slot of r.inputs) {
-      g.append(slot.length ? slotTile(slot, subject) : blankSlot());
-    }
-    slots.append(g);
+  const flow = document.createElement('div');
+  flow.className = 'flow';
+  row.append(flow);
+
+  if (RECIPE_SHAPES[r.type] === 'sequence' && r.raw) {
+    flow.append(sequenceView(r, subject));
   } else {
-    for (const slot of r.inputs) slots.append(slotTile(slot, subject));
-  }
-  row.append(slots);
-
-  if (r.output) {
-    const arrow = document.createElement('span');
-    arrow.className = 'arrow';
-    arrow.textContent = '→';
-    row.append(arrow);
-    const out = document.createElement('div');
-    out.className = 'out';
-    out.append(slotTile([r.output.id], subject));
-    if (r.output.count > 1) {
-      const n = document.createElement('span');
-      n.className = 'n';
-      n.textContent = '×' + r.output.count;
-      out.append(n);
-    }
-    row.append(out);
+    flow.append(inputsView(r, subject));
+    flow.append(arrowView(r));
+    flow.append(outputsView(r, subject));
   }
 
-  // Smelting and friends know how long they take and what they are worth.
-  if (r.time != null) {
-    const t = document.createElement('span');
-    t.className = 'meta';
-    t.textContent = (r.time / 20).toFixed(r.time % 20 ? 1 : 0) + 's'
-      + (r.xp ? ' · ' + r.xp + ' xp' : '');
-    row.append(t);
-  }
-
-  // Whatever the mod's own recipe says that the fields above cannot carry:
-  // Create's processing times, output chances, and so on. It is the recipe's
-  // own JSON, not something modelled here, which is why it works for mods this
-  // editor has never heard of.
-  if (r.raw) {
-    const d = document.createElement('details');
-    d.className = 'rawrecipe';
-    const s = document.createElement('summary');
-    s.innerHTML = '<span>details</span>';
-    const pre = document.createElement('pre');
-    pre.textContent = JSON.stringify(r.raw, null, 1);
-    d.append(s, pre);
-    row.append(d);
-  }
+  if (r.raw) row.append(rawView(r.raw));
   return row;
 }
 
-function blankSlot() {
-  const el = document.createElement('div');
-  el.className = 'slot blank';
-  return el;
+// --- the three parts of an ordinary recipe ---
+
+function inputsView(r, subject) {
+  const box = document.createElement('div');
+  box.className = 'side';
+  if (r.grid) {
+    // The shape of a shaped recipe is the point of it. Blank slots come over as
+    // empty lists so the pattern survives the trip.
+    const g = document.createElement('div');
+    g.className = 'grid';
+    g.style.gridTemplateColumns = 'repeat(' + r.grid.w + ', var(--slot))';
+    for (const slot of r.inputs) g.append(slot.length ? slotTile(slot, subject) : slotTile([], subject));
+    box.append(g);
+    return box;
+  }
+  const fluids = fluidInputs(r.raw);
+  if (!(r.inputs || []).length && !fluids.length) {
+    box.innerHTML = '<span class="none">inputs not readable</span>';
+    return box;
+  }
+  for (const slot of r.inputs || []) box.append(slotTile(slot, subject));
+  for (const f of fluids) box.append(fluidTile(f));
+  return box;
 }
 
+function arrowView(r) {
+  const box = document.createElement('div');
+  box.className = 'mid';
+  const cook = r.time != null && /smelt|blast|smok|campfire|cook/.test(r.type || '');
+  if (cook) box.innerHTML = '<img class="flame" src="/icons/ui/flame.png" alt="">';
+  box.innerHTML += '<img class="arrow" src="/icons/ui/'
+    + (cook ? 'cook_arrow.png' : 'arrow.png') + '" alt="→">';
+
+  // Whatever the recipe says about itself that a picture cannot: how long it
+  // takes, and whether it has to be hot.
+  const bits = [];
+  const time = r.time != null ? r.time : numOr((r.raw || {}).processing_time, null);
+  if (time != null && time > 0) bits.push((time / 20).toFixed(time % 20 ? 1 : 0) + 's');
+  if (r.xp) bits.push(r.xp + ' xp');
+  const heat = (r.raw || {}).heat_requirement;
+  if (heat && HEAT[heat]) bits.push(HEAT[heat]);
+  if ((r.raw || {}).loops > 1) bits.push('×' + r.raw.loops + ' loops');
+  if (bits.length) {
+    const m = document.createElement('span');
+    m.className = 'meta';
+    m.textContent = bits.join(' · ');
+    box.append(m);
+  }
+  return box;
+}
+
+function outputsView(r, subject) {
+  const box = document.createElement('div');
+  box.className = 'side';
+  const extra = chancedResults(r.raw);
+  if (extra.length) {
+    for (const o of extra) box.append(slotTile([o.id], subject, o));
+    return box;
+  }
+  if (r.output) box.append(slotTile([r.output.id], subject, { count: r.output.count }));
+  for (const f of fluidResults(r.raw)) box.append(fluidTile(f));
+  return box;
+}
+
+// --- reading the raw JSON generically ---
+
+/** Results with a chance or a count, as Create and its neighbours write them. */
+function chancedResults(raw) {
+  const list = raw && Array.isArray(raw.results) ? raw.results : [];
+  return list
+    .filter(o => o && typeof o.id === 'string')
+    .map(o => ({ id: o.id, count: numOr(o.count, 1), chance: numOr(o.chance, 1) }));
+}
+
+const fluidResults = raw => fluidsIn(raw && raw.results);
+const fluidInputs = raw => fluidsIn(raw && (raw.ingredients || (raw.ingredient ? [raw.ingredient] : [])));
+
+function fluidsIn(list) {
+  if (!Array.isArray(list)) return [];
+  return list
+    .filter(o => o && typeof o === 'object' && (o.fluid || o.amount != null) && !o.id)
+    .map(o => ({ fluid: o.fluid || o.fluid_tag || '?', amount: numOr(o.amount, null) }));
+}
+
+// --- sequenced assembly, which is genuinely a different shape ---
+
+function sequenceView(r, subject) {
+  const box = document.createElement('div');
+  box.className = 'sequence';
+
+  const head = document.createElement('div');
+  head.className = 'side';
+  const start = (r.raw.ingredient || {}).item || (r.raw.ingredient || {}).id;
+  if (start) head.append(slotTile([start], subject));
+  head.append(arrowImg());
+  for (const o of chancedResults(r.raw)) head.append(slotTile([o.id], subject, o));
+  if (r.raw.loops > 1) {
+    const m = document.createElement('span');
+    m.className = 'meta';
+    m.textContent = '×' + r.raw.loops + ' loops';
+    head.append(m);
+  }
+  box.append(head);
+
+  const steps = Array.isArray(r.raw.sequence) ? r.raw.sequence : [];
+  for (const [i, step] of steps.entries()) {
+    const line = document.createElement('div');
+    line.className = 'step';
+    const n = document.createElement('span');
+    n.className = 'kind';
+    n.textContent = (i + 1) + '. ' + String(step.type || '?').replace(/^create:/, '');
+    line.append(n);
+    // The transitional item is in every step's ingredients and says nothing;
+    // what matters is the one thing being added.
+    for (const ing of step.ingredients || []) {
+      if (ing && (ing.fluid || ing.fluid_tag)) {
+        line.append(fluidTile({ fluid: ing.fluid || ing.fluid_tag, amount: numOr(ing.amount, null) }));
+        continue;
+      }
+      const id = ing.item || ing.id || (ing.tag ? '#' + ing.tag : null);
+      if (!id || id === start) continue;
+      line.append(slotTile([String(id).replace(/^#/, '')], subject));
+    }
+    if (line.children.length === 1) {
+      // A step with nothing added to it — pressing, for instance — still has to
+      // read as a step rather than as a label with a bug behind it.
+      const n = document.createElement('span');
+      n.className = 'meta';
+      n.textContent = 'nothing added';
+      line.append(n);
+    }
+    box.append(line);
+  }
+  return box;
+}
+
+const arrowImg = () => {
+  const i = document.createElement('img');
+  i.className = 'arrow';
+  i.src = '/icons/ui/arrow.png';
+  i.alt = '→';
+  return i;
+};
+
+// --- slots ---
+
 /**
- * One slot. A slot driven by a tag accepts many items; showing the first with a
- * count beside it is what a recipe book does, and the whole list is in the
- * tooltip for when it matters.
+ * One slot, on Minecraft's own slot texture. A slot driven by a tag accepts many
+ * items; showing the first with a count beside it is what a recipe book does,
+ * and the whole list is in the tooltip for when it matters.
  */
-function slotTile(ids, subject) {
-  const pick = ids.includes(subject) ? subject : ids[0];
+function slotTile(ids, subject, extra) {
   const el = document.createElement('button');
   el.className = 'slot';
+  if (!ids.length) { el.classList.add('blank'); el.disabled = true; return el; }
+
+  const pick = ids.includes(subject) ? subject : ids[0];
   const icon = S.icons[pick];
   el.innerHTML = (icon ? '<img src="/icons/' + icon.file + '" alt="">'
                        : '<span class="pill">?</span>')
     + (ids.length > 1 ? '<span class="more">+' + (ids.length - 1) + '</span>' : '');
-  el.title = ids.map(displayName).join(', ');
+  if (extra && extra.count > 1) {
+    el.innerHTML += '<span class="count">' + extra.count + '</span>';
+  }
+  if (extra && extra.chance != null && extra.chance < 1) {
+    el.innerHTML += '<span class="chance">' + Math.round(extra.chance * 100) + '%</span>';
+  }
+  el.title = ids.map(displayName).join(', ')
+    + (extra && extra.chance < 1 ? ' — ' + Math.round(extra.chance * 100) + '% chance' : '');
   el.onclick = () => { browsing = pick; renderBrowse(); };
   return el;
 }
+
+function fluidTile(f) {
+  const el = document.createElement('div');
+  el.className = 'slot fluid';
+  el.innerHTML = '<span class="fl">' + esc(nameOf(String(f.fluid))) + '</span>'
+    + (f.amount ? '<span class="count">' + f.amount + '</span>' : '');
+  el.title = f.fluid + (f.amount ? ' ×' + f.amount + ' mB' : '');
+  return el;
+}
+
+function rawView(raw) {
+  const d = document.createElement('details');
+  d.className = 'rawrecipe';
+  const s = document.createElement('summary');
+  s.innerHTML = '<span>recipe json</span>';
+  const pre = document.createElement('pre');
+  pre.textContent = JSON.stringify(raw, null, 1);
+  d.append(s, pre);
+  return d;
+}
+
 
 // --- turning an item into a quest ---
 

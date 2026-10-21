@@ -359,7 +359,25 @@ http.createServer(async (req, res) => {
           { id: 'mock:modded', type: 'create:milling', inputs: [pick(2)],
             output: { id: item, count: 2 },
             raw: { type: 'create:milling', processing_time: 50,
-                   results: [{ id: item, chance: 0.75 }] } }
+                   ingredients: [{ item: pick(1)[0] }],
+                   results: [{ id: item, count: 2, chance: 1 },
+                             { id: pick(2)[1], chance: 0.35 }] } },
+          { id: 'mock:mix', type: 'create:mixing', inputs: [pick(2)],
+            output: { id: item, count: 1 },
+            raw: { type: 'create:mixing', heat_requirement: 'superheated',
+                   ingredients: [{ item: pick(1)[0] }, { fluid: 'minecraft:lava', amount: 250 }],
+                   results: [{ id: item, count: 1 }] } },
+          { id: 'mock:seq', type: 'create:sequenced_assembly',
+            inputs: [pick(1)], output: { id: item, count: 1 },
+            raw: { type: 'create:sequenced_assembly', loops: 4,
+                   ingredient: { item: pick(1)[0] },
+                   transitional_item: { id: pick(2)[1] },
+                   results: [{ id: item, chance: 0.9 }],
+                   sequence: [
+                     { type: 'create:deploying', ingredients: [{ item: pick(3)[2] }] },
+                     { type: 'create:pressing', ingredients: [] },
+                     { type: 'create:filling', ingredients: [{ fluid: 'minecraft:water', amount: 100 }] }
+                   ] } }
         ],
         uses: [{ id: 'mock:used', type: 'minecraft:crafting_shapeless',
                  inputs: [[item], pick(1)], output: { id: pick(1)[0], count: 1 } }],
