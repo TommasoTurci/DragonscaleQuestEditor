@@ -425,14 +425,18 @@ function status() {
 }
 
 let bannerTimer = null;
-function banner(msg, bad = false) {
+/** `sticky` for a message that describes a mode you are still in. */
+function banner(msg, bad = false, sticky = false) {
   $('#bannerText').textContent = msg;
   $('#banner').classList.toggle('bad', bad);
   $('#banner').hidden = false;
   clearTimeout(bannerTimer);
-  if (!bad) bannerTimer = setTimeout(() => { $('#banner').hidden = true; }, 3200);
+  if (!bad && !sticky) bannerTimer = setTimeout(() => { $('#banner').hidden = true; }, 3200);
 }
-$('#bannerX').onclick = () => { $('#banner').hidden = true; };
+$('#bannerX').onclick = () => {
+  if (S.linking) { endLinking(); return; }    // the banner is the way out of the mode
+  $('#banner').hidden = true;
+};
 
 // -------------------------------------------------------------------- start --
 
@@ -695,15 +699,22 @@ function drawMap() {
   if (!qs.length) return;
   const index = Object.fromEntries(qs.map(q => [q.id, q]));
 
+  // In dependency mode the map has to answer "what is linked right now", or you
+  // are toggling blind.
+  const wiring = S.linking && index[S.sel] ? index[S.sel] : null;
+  const wired = wiring ? new Set(deps(wiring)) : null;
+
   // Dependency edges first, so nodes sit on top.
-  ctx.strokeStyle = '#39414f';
   ctx.lineWidth = Math.max(1, view.scale / 26);
   for (const q of qs) {
     const [x2, y2] = toScreen(qx(q), qy(q));
+    const mine = wiring && q.id === wiring.id;
     for (const d of deps(q)) {
       const p = index[d];
       if (!p) continue;
       const [x1, y1] = toScreen(qx(p), qy(p));
+      ctx.strokeStyle = mine ? '#5fcf9e' : wiring ? '#2b313c' : '#39414f';
+      ctx.lineWidth = mine ? Math.max(2, view.scale / 16) : Math.max(1, view.scale / 26);
       ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
     }
   }
@@ -713,12 +724,17 @@ function drawMap() {
     const rad = (view.scale * 0.42) * qsize(q);
     if (x + rad < -40 || x - rad > r.width + 40 || y + rad < -40 || y - rad > r.height + 40) continue;
     const isSel = S.sel === q.id;
+    const isSubject = wiring && q.id === wiring.id;
+    const isWired = wired && wired.has(q.id);
+
+    // Fade everything that is not part of the question being asked.
+    ctx.globalAlpha = wiring && !isSubject && !isWired ? 0.45 : 1;
 
     shapePath(qshape(q), x, y, rad);
-    ctx.fillStyle = isSel ? '#3a3524' : '#242a35';
+    ctx.fillStyle = isSubject ? '#1e2a3d' : isWired ? '#1e3028' : isSel ? '#3a3524' : '#242a35';
     ctx.fill();
-    ctx.strokeStyle = isSel ? '#e0a84a' : '#39414f';
-    ctx.lineWidth = isSel ? 2.5 : 1.5;
+    ctx.strokeStyle = isSubject ? '#7aa2f7' : isWired ? '#5fcf9e' : isSel ? '#e0a84a' : '#39414f';
+    ctx.lineWidth = isSubject || isWired ? 3 : isSel ? 2.5 : 1.5;
     ctx.stroke();
 
     const img = imageFor(questIconId(q));
@@ -741,6 +757,7 @@ function drawMap() {
       ctx.fillText(short, x, y + rad + 14);
     }
   }
+  ctx.globalAlpha = 1;      // the context outlives the frame
 }
 
 function drawGrid(r) {
@@ -872,8 +889,9 @@ function tap(e) {
   const hit = questAt(px, py);
 
   if (S.linking) {
-    if (hit && hit.id !== S.sel) addDependency(hit.id);
-    else banner('Tap the quest this one should depend on.');
+    if (!hit) endLinking();
+    else if (hit.id !== S.sel) toggleDependency(hit.id);
+    else banner('That is the quest you are wiring up. Tap another one.', false, true);
     return;
   }
   if (S.placing && !hit) {
@@ -902,7 +920,9 @@ cv.addEventListener('contextmenu', e => {
 // ------------------------------------------------------------- quest menu --
 
 const closeMenu = () => { $('#menu').hidden = true; };
-$('#menu').addEventListener('click', e => { if (e.target.id === 'menu') closeMenu(); });
+// pointerdown, not click: a right-click fires no click event, so the menu stayed
+// up and its full-screen scrim swallowed the next right-click on the map.
+$('#menu').addEventListener('pointerdown', e => { if (e.target.id === 'menu') closeMenu(); });
 addEventListener('resize', closeMenu);
 
 function openMenu(q, cx, cy) {
@@ -924,14 +944,8 @@ function openMenu(q, cx, cy) {
 
   act('Open…', () => select(q.id));
   if (S.edit) {
-    act('Add dependency…', () => {
-      S.sel = q.id;
-      S.linking = true;
-      S.placing = false;
-      $('#addQuest').setAttribute('aria-pressed', 'false');
-      closePanel(); drawMap();
-      banner('Tap the quest this one should depend on.');
-    });
+    const n = deps(q).length;
+    act('Dependencies' + (n ? ' (' + n + ')' : '') + '…', () => startLinking(q.id, false));
     act('Duplicate', () => duplicateQuest(q));
     act('Delete', () => {
       if (!window.confirm('Delete “' + (titleOf(q) || q.id) + '” and its tasks?')) return;
@@ -1022,7 +1036,7 @@ $('#panel').addEventListener('click', e => {
 
 $('#editToggle').onclick = () => {
   S.edit = !S.edit;
-  S.placing = S.linking = false;
+  S.placing = S.linking = S.linkReturn = false;
   $('#editToggle').setAttribute('aria-pressed', S.edit);
   $('#editToggle').textContent = S.edit ? 'Editing on' : 'Editing off';
   $('#tools').hidden = !S.edit;
@@ -1035,7 +1049,7 @@ $('#editToggle').onclick = () => {
 
 $('#addQuest').onclick = () => {
   S.placing = !S.placing;
-  S.linking = false;
+  S.linking = S.linkReturn = false;
   $('#addQuest').setAttribute('aria-pressed', S.placing);
   if (S.placing) { closePanel(); banner('Tap the map to place the quest.'); }
   else $('#banner').hidden = true;
@@ -1054,17 +1068,46 @@ async function createQuest(x, y) {
   if (first) first.focus();
 }
 
-async function addDependency(id) {
+/**
+ * Dependency mode. One quest is the subject; tapping another adds it as a
+ * requirement, or removes it if it is already one. It stays on until you say
+ * otherwise, because wiring a quest up is rarely one link, and it opens nothing:
+ * a dialog appearing over the map after every pick is what made this unusable.
+ */
+function startLinking(id, fromDialog) {
+  S.sel = id;
+  S.linking = true;
+  S.linkReturn = !!fromDialog;      // came from the dialog, so go back to it
+  S.placing = false;
+  $('#addQuest').setAttribute('aria-pressed', 'false');
+  closePanel();
+  drawMap();
+  banner('Tap quests to add or remove them as requirements. Tap empty space when done.',
+    false, true);
+}
+
+function endLinking() {
+  if (!S.linking) return;
   S.linking = false;
   $('#banner').hidden = true;
+  drawMap();
+  if (S.linkReturn && S.sel) { renderPanel(); openPanel(); }
+  S.linkReturn = false;
+}
+
+async function toggleDependency(id) {
   const f = selected();
   if (!f || f.kind !== 'quest') return;
-  const next = deps(f.obj).slice();
-  renderPanel(); openPanel();
-  if (next.includes(id)) { banner('Already depends on that one.'); return; }
-  next.push(id);
+  const here = Object.fromEntries(quests().map(q => [q.id, q]));
+  const cur = deps(f.obj);
+  const had = cur.includes(id);
+  const next = had ? cur.filter(d => d !== id) : [...cur, id];
+
   f.obj.data.dependencies = next;
-  renderPanel(); drawMap();
+  drawMap();
+  const name = titleOf(here[id]) || 'that quest';
+  banner((had ? 'Removed ' : 'Added ') + name + '. Tap empty space when done.', false, true);
+
   await send([{ op: 'set', target: f.obj.id, path: 'data.dependencies', value: next }]);
 }
 
@@ -1288,15 +1331,9 @@ function questPanel(body, q) {
       row.append(x);
       inner.append(row);
     }
-    inner.append(button('+ Add dependency', () => {
-      // The map is behind the dialog, so get out of the way and let them tap it.
-      // addDependency brings this back up once they have.
-      S.linking = true;
-      S.placing = false;
-      $('#addQuest').setAttribute('aria-pressed', 'false');
-      closePanel();
-      banner('Tap the quest this one should depend on.');
-    }));
+    // The map is behind the dialog, so this gets out of the way and lets them tap
+    // it; endLinking brings the dialog back when they are finished.
+    inner.append(button('Add or remove on the map…', () => startLinking(q.id, true)));
   }));
 
   body.append(childSection(q, 'tasks', 'Tasks', S.types.tasks));
@@ -1784,13 +1821,11 @@ addEventListener('keydown', e => {
     if (!$('#menu').hidden) { closeMenu(); return; }
     if (!$('#picker').hidden) { closePicker(); return; }
     if (!$('#history').hidden) { closeHistory(); return; }
-    if (S.placing || S.linking) {
-      const wasLinking = S.linking;
-      S.placing = S.linking = false;
+    if (S.linking) { endLinking(); return; }
+    if (S.placing) {
+      S.placing = false;
       $('#addQuest').setAttribute('aria-pressed', 'false');
       $('#banner').hidden = true;
-      // Linking hid the dialog to get at the map; cancelling puts it back.
-      if (wasLinking && S.sel) { renderPanel(); openPanel(); }
       return;
     }
     if ($('#panel').classList.contains('open')) { closePanel(); drawMap(); return; }
