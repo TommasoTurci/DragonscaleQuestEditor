@@ -218,17 +218,27 @@ pack with a picture for each, which is what an item picker needs; a second list 
 no pictures would be strictly worse. Tags are not enumerated — item tasks match tags
 through FTB Filter System expressions, which the editor edits as text.
 
-### 
+### `GET /api/registry`
+
 What the server actually has in it. Without a name it lists every registry with
 its size; with one it returns the ids.
 
-\
-\
+```
+GET /api/registry
+GET /api/registry?name=minecraft:worldgen/biome
+GET /api/registry?name=minecraft:block&tags=1
+```
+
+```json
+{ "name": "minecraft:worldgen/biome", "tags": false, "count": 412,
+  "values": ["biomesoplenty:alps", "minecraft:badlands", "…"] }
+```
+
 Static registries and the world's dynamic ones, with dynamic winning: biomes
 and structures come from the loaded world, not from a frozen default that would
 leave out anything a datapack added. Two things that are not registries are
-served the same way because they answer the same question —
- and .
+served the same way because they answer the same question:
+`questbridge:advancements` and `questbridge:dimensions`.
 
 This is what lets the editor offer a field's real options instead of an empty
 text box. **Which** registry a field draws from is the editor's guess, made from
