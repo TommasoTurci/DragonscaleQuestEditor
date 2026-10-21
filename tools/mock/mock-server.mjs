@@ -175,6 +175,16 @@ class BadEdit extends Error {}
  * folder, which is the only place a history can live that the server will not
  * overwrite. This exists so the history and restore screens can be built.
  */
+/** The icon index doubles as a real item list, so the picker has real data. */
+let iconIndex = null;
+function icons() {
+  if (iconIndex) return iconIndex;
+  try {
+    iconIndex = JSON.parse(fs.readFileSync(path.join(ICONS, 'index.json'), 'utf8')).icons || {};
+  } catch { iconIndex = {}; }
+  return iconIndex;
+}
+
 const hex = n => Array.from({ length: n },
   () => '0123456789abcdef'[Math.floor(Math.random() * 16)]).join('');
 
@@ -307,6 +317,26 @@ http.createServer(async (req, res) => {
       subscribers.add(res);
       req.on('close', () => subscribers.delete(res));
       return;
+    }
+
+    // The real bridge enumerates the running server's registries. There is no
+    // server here, so only the two things this mock genuinely knows are offered;
+    // everything else comes back empty, which is also what the editor must cope
+    // with when a field maps to a registry a pack does not have.
+    if (p === '/api/registry') {
+      const name = url.searchParams.get('name');
+      if (!name) {
+        return json(res, 200, { registries: [
+          { name: 'minecraft:item', size: Object.keys(icons()).length, tags: 0 },
+          { name: 'questbridge:dimensions', size: 3, tags: 0 }
+        ] });
+      }
+      const values = name === 'minecraft:item' ? Object.keys(icons()).sort()
+        : name === 'questbridge:dimensions'
+          ? ['minecraft:overworld', 'minecraft:the_nether', 'minecraft:the_end']
+          : [];
+      return json(res, 200, { name, tags: url.searchParams.get('tags') === '1',
+                              values, count: values.length });
     }
 
     if (p === '/api/history') {

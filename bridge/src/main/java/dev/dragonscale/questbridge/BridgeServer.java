@@ -14,11 +14,13 @@ import net.neoforged.neoforge.network.PacketDistributor;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
+import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.SecureRandom;
 import java.util.HexFormat;
+import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.Executors;
 
@@ -86,6 +88,7 @@ public final class BridgeServer {
         http.createContext("/api/types", authed(this::types));
         http.createContext("/api/changes", authed(feed::subscribe));
         http.createContext("/api/edit", authed(this::edit));
+        http.createContext("/api/registry", authed(this::registry));
         http.createContext("/api/history", authed(this::historyLog));
         http.createContext("/api/restore", authed(this::restore));
 
@@ -189,6 +192,43 @@ public final class BridgeServer {
         change.add("created", GSON.toJsonTree(result.created()));
         feed.publish(change);
         send(x, 200, change.toString());
+    }
+
+    /**
+     * What the server has in it: every biome, entity, structure, advancement. Runs
+     * on the server thread because the dynamic registries belong to the loaded
+     * world, and reads nothing that changes while it looks.
+     */
+    private void registry(HttpExchange x) throws IOException {
+        Map<String, String> q = query(x.getRequestURI().getRawQuery());
+        String name = q.get("name");
+        boolean tags = "1".equals(q.get("tags"));
+        String json;
+        try {
+            json = mc.submit(() -> (name == null
+                ? RegistryReader.list(mc)
+                : RegistryReader.values(mc, name, tags)).toString()).get();
+        } catch (Exception e) {
+            DragonscaleBridge.LOG.error("[questbridge] reading a registry failed", e);
+            send(x, 500, "{\"error\":\"could not read the registry\"}");
+            return;
+        }
+        // Registries change only when the server reloads, and a client that asked
+        // once should not ask again for the same screenful.
+        x.getResponseHeaders().add("Cache-Control", "private, max-age=300");
+        send(x, 200, json);
+    }
+
+    private static Map<String, String> query(String raw) {
+        Map<String, String> out = new java.util.HashMap<>();
+        if (raw == null) return out;
+        for (String pair : raw.split("&")) {
+            int eq = pair.indexOf('=');
+            if (eq <= 0) continue;
+            out.put(URLDecoder.decode(pair.substring(0, eq), StandardCharsets.UTF_8),
+                URLDecoder.decode(pair.substring(eq + 1), StandardCharsets.UTF_8));
+        }
+        return out;
     }
 
     private void historyLog(HttpExchange x) throws IOException {

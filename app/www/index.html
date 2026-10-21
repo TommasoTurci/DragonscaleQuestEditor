@@ -263,6 +263,31 @@ details .inner{padding:0 11px 11px;display:flex;flex-direction:column;gap:11px}
 }
 .modhead span{font-size:.7rem;color:var(--muted);font-family:var(--mono);font-weight:400}
 .modhead:first-child{padding-top:2px}
+.dangerzone{margin-top:6px;padding-top:14px;border-top:1px solid var(--line);display:flex}
+/* Touch targets: 44px is the number every platform guideline lands on, and a
+   delete sitting next to a tap-to-open row is exactly where a near miss hurts. */
+@media (pointer:coarse){
+  .item{padding:10px}
+  .item .x{padding:8px 10px;font-size:1.25rem}
+  .btn{padding:12px 14px}
+  details>summary{padding:13px 11px}
+  #pickerGrid.aslist button{padding:14px 10px}
+}
+.dangerzone .btn{flex:1;color:var(--bad);border-color:rgba(232,133,122,.35)}
+.idrow{display:flex;gap:6px;align-items:stretch}
+.idrow input{flex:1;min-width:0}
+.idrow .btn{flex:none;white-space:nowrap}
+#pickerTitle{align-self:center;white-space:nowrap;font-size:.95rem}
+#pickerGrid button.current{border-color:var(--accent);background:var(--accent-dim)}
+/* Without icons it is a list, not a grid: ids are long and a tile would clip them. */
+#pickerGrid.aslist{grid-template-columns:1fr;gap:3px}
+#pickerGrid.aslist button{
+  flex-direction:row;align-items:baseline;gap:9px;
+  padding:11px 10px;border:1px solid transparent;text-align:left;
+}
+#pickerGrid.aslist button b{font-size:.88rem;font-weight:500}
+#pickerGrid.aslist button span{font-size:.72rem;color:var(--muted);text-align:left}
+#pickerGrid.aslist .modhead{padding:12px 4px 4px}
 </style>
 </head>
 <body>
@@ -309,7 +334,8 @@ details .inner{padding:0 11px 11px;display:flex;flex-direction:column;gap:11px}
 <div id="picker" hidden>
   <div class="box">
     <div class="top">
-      <input id="pickerSearch" type="text" placeholder="Search items&hellip;" spellcheck="false" autocomplete="off">
+      <strong id="pickerTitle">Choose</strong>
+      <input id="pickerSearch" type="text" placeholder="Search&hellip;" spellcheck="false" autocomplete="off">
       <select id="pickerMod"></select>
       <button class="btn" id="pickerCancel">Cancel</button>
     </div>
@@ -354,7 +380,8 @@ const S = {
   linking: false,
   live: false,
   saving: 0,
-  open: new Set(['tasks']),
+  open: new Set(['tasks', 'rewards', 'raw', 'item']),
+  registries: {},          // registry name -> ids, fetched once and kept
 };
 const view = { x: 0, y: 0, scale: 48 };    // world units -> px
 
@@ -519,9 +546,16 @@ function resyncSoon() {
   }, 500);
 }
 
-const panelHasFocus = () => document.activeElement
-  && document.activeElement !== document.body
-  && $('#panel').contains(document.activeElement);
+/**
+ * Only a field being typed into is worth protecting from a re-render. A focused
+ * button is not — and after clicking a task's delete the focus sat on that very
+ * button, so this reported "busy" and the list never refreshed to show it gone.
+ */
+const panelHasFocus = () => {
+  const a = document.activeElement;
+  return !!a && a !== document.body && $('#panel').contains(a)
+    && a.matches('input, textarea, select');
+};
 
 function listen() {
   const es = new EventSource('/api/changes?token=' + encodeURIComponent(S.token));
@@ -1196,6 +1230,24 @@ function button(label, onClick, cls = 'btn', enabled = S.edit) {
   return b;
 }
 
+function note(text) {
+  const n = document.createElement('div');
+  n.className = 'note';
+  n.textContent = text;
+  return n;
+}
+
+/**
+ * A destructive action, on its own at the end with room around it. An accordion
+ * holding a single button was a disclosure that disclosed nothing.
+ */
+function danger(label, onClick) {
+  const wrap = document.createElement('div');
+  wrap.className = 'dangerzone';
+  wrap.append(button(label, onClick, 'btn danger'));
+  return wrap;
+}
+
 function section(name, label, count, build) {
   const d = document.createElement('details');
   d.open = S.open.has(name);
@@ -1243,6 +1295,11 @@ function renderPanel() {
 
 // --- a quest ---
 
+/**
+ * The quest form, ordered the way FTB's own editor is: what the quest *says*,
+ * then what it *asks for*, then what it looks like. Position and shape come last
+ * because dragging the thing on the map is how those actually get set.
+ */
 function questPanel(body, q) {
   const set = (path, value, type) =>
     send([{ op: 'set', target: q.id, path, value, ...(type ? { type } : {}) }]);
@@ -1263,48 +1320,14 @@ function questPanel(body, q) {
     }, { area: true }),
     'One line per entry. FTB directives such as {image:…} work here.'));
 
-  const row = document.createElement('div');
-  row.className = 'row';
-  row.append(
-    field('x', numBox(qx(q), v => { q.data.x = v; set('data.x', v, 'double'); drawMap(); })),
-    field('y', numBox(qy(q), v => { q.data.y = v; set('data.y', v, 'double'); drawMap(); })),
-    field('size', numBox(qsize(q), v => { q.data.size = v; set('data.size', v, 'double'); drawMap(); }, 0.25))
-  );
-  body.append(row);
+  body.append(childSection(q, 'tasks', 'Tasks', S.types.tasks));
+  body.append(childSection(q, 'rewards', 'Rewards', S.types.rewards));
 
-  body.append(field('shape', selectBox((q.data || {}).shape || '', SHAPES, v => {
-    q.data.shape = v; set('data.shape', v, 'string'); drawMap();
-  })));
-
-  body.append(section('icon', 'Icon', (q.data || {}).icon ? 'set' : 'from task', inner => {
-    const current = ((q.data || {}).icon || {}).id || null;
-    const shown = current && current !== 'ftbquests:custom_icon' && S.icons[current] ? current : null;
-    const pick = document.createElement('button');
-    pick.className = 'item';
-    pick.disabled = !S.edit;
-    pick.innerHTML = iconTag(shown)
-      + '<div class="t"><b>' + esc(current ? 'Set on the quest' : 'Taken from the first task')
-      + '</b><span>' + esc(current || questIconId(q) || 'none') + '</span></div>';
-    pick.onclick = () => openPicker(id => {
-      q.data.icon = { id };
-      set('data.icon', { id });
-    });
-    inner.append(pick);
-    const components = ((q.data || {}).icon || {}).components;
-    if (components) {
-      inner.append(readOnly('components', JSON.stringify(components)));
-    }
-    if (current) {
-      inner.append(button('Clear, use the first task', () => {
-        delete q.data.icon;
-        set('data.icon', null);
-      }, 'btn danger'));
-    }
-  }));
-
+  // --- what has to be done first ---
   const list = deps(q);
-  body.append(section('deps', 'Depends on', list.length, inner => {
+  body.append(section('deps', 'Requires first', list.length, inner => {
     const here = Object.fromEntries(quests().map(x => [x.id, x]));
+    if (!list.length) inner.append(note('Nothing. This quest is available from the start.'));
     for (const id of list) {
       const dep = here[id];
       const row = document.createElement('div');
@@ -1333,22 +1356,54 @@ function questPanel(body, q) {
     }
     // The map is behind the dialog, so this gets out of the way and lets them tap
     // it; endLinking brings the dialog back when they are finished.
-    inner.append(button('Add or remove on the map…', () => startLinking(q.id, true)));
+    inner.append(button('Choose on the map…', () => startLinking(q.id, true)));
   }));
 
-  body.append(childSection(q, 'tasks', 'Tasks', S.types.tasks));
-  body.append(childSection(q, 'rewards', 'Rewards', S.types.rewards));
+  // --- how it looks ---
+  body.append(section('look', 'Appearance', null, inner => {
+    const row = document.createElement('div');
+    row.className = 'row';
+    row.append(
+      field('x', numBox(qx(q), v => { q.data.x = v; set('data.x', v, 'double'); drawMap(); })),
+      field('y', numBox(qy(q), v => { q.data.y = v; set('data.y', v, 'double'); drawMap(); })),
+      field('size', numBox(qsize(q), v => { q.data.size = v; set('data.size', v, 'double'); drawMap(); }, 0.25))
+    );
+    inner.append(row);
+    inner.append(field('shape', selectBox((q.data || {}).shape || '', SHAPES, v => {
+      q.data.shape = v; set('data.shape', v, 'string'); drawMap();
+    })));
 
-  body.append(section('raw', 'All fields', null, inner =>
+    const current = ((q.data || {}).icon || {}).id || null;
+    const shown = current && current !== 'ftbquests:custom_icon' && S.icons[current] ? current : null;
+    const pick = document.createElement('button');
+    pick.className = 'item';
+    pick.disabled = !S.edit;
+    pick.innerHTML = iconTag(shown)
+      + '<div class="t"><b>' + esc(current ? 'Icon set on the quest' : 'Icon from the first task')
+      + '</b><span>' + esc(current || questIconId(q) || 'none') + '</span></div>';
+    pick.onclick = () => openChooser({
+      label: 'Quest icon', icons: true,
+      values: Object.keys(S.icons), current,
+      onPick: id => { q.data.icon = { id }; set('data.icon', { id }); }
+    });
+    inner.append(pick);
+    const components = ((q.data || {}).icon || {}).components;
+    if (components) inner.append(readOnly('icon components', JSON.stringify(components)));
+    if (current) {
+      inner.append(button('Clear, use the first task', () => {
+        delete q.data.icon;
+        set('data.icon', null);
+      }, 'btn danger'));
+    }
+  }));
+
+  body.append(section('raw', 'Advanced', null, inner =>
     dataEditor(inner, q, q.id, ['id', 'x', 'y', 'size', 'shape', 'icon', 'dependencies'])));
 
-  body.append(section('danger', 'Delete', null, inner => {
-    inner.append(button('Delete this quest', () => {
-      if (!window.confirm('Delete “' + (titleOf(q) || q.id) + '” and its tasks?')) return;
-      send([{ op: 'delete', target: q.id }]).then(() => {
-        S.sel = null; closePanel();
-      });
-    }, 'btn danger'));
+  body.append(danger('Delete this quest', () => {
+    if (!window.confirm('Delete “' + (titleOf(q) || q.id) + '” and its tasks?')) return;
+    S.sel = null; closePanel();
+    send([{ op: 'delete', target: q.id }]);
   }));
 }
 
@@ -1356,6 +1411,11 @@ function childSection(q, key, label, catalogue) {
   const children = q[key] || [];
   const kind = key.slice(0, -1);
   return section(key, label, children.length, inner => {
+    if (!children.length) {
+      inner.append(note(kind === 'task'
+        ? 'No tasks, so nothing has to be done to complete this quest.'
+        : 'No rewards.'));
+    }
     for (const c of children) {
       const row = document.createElement('div');
       row.className = 'item dep';
@@ -1368,39 +1428,55 @@ function childSection(q, key, label, catalogue) {
       }
       const go = document.createElement('button');
       go.className = 't';
-      go.innerHTML = '<b>' + esc(shortType(c)) + '</b><span>' + esc(summarise(c)) + '</span>';
+      go.innerHTML = '<b>' + esc(typeLabel(c)) + '</b><span>' + esc(summarise(c)) + '</span>';
       go.onclick = () => select(c.id);
       row.append(go);
       const x = document.createElement('button');
       x.className = 'x';
       x.textContent = '×';
+      x.title = 'Delete';
       x.disabled = !S.edit;
       x.onclick = () => {
-        if (!window.confirm('Delete this ' + shortType(c) + ' ' + kind + '?')) return;
+        if (!window.confirm('Delete this ' + typeLabel(c) + ' ' + kind + '?')) return;
+        // Take it out here and now. Waiting for the round trip left the row
+        // sitting there as though the click had missed.
+        const i = children.indexOf(c);
+        if (i >= 0) children.splice(i, 1);
+        renderPanel(); drawMap();
         send([{ op: 'delete', target: c.id }]);
       };
       row.append(x);
       inner.append(row);
     }
+
     const entries = Object.values(catalogue || {});
     if (!entries.length) return;
-    const add = document.createElement('div');
-    add.className = 'row';
-    const picker = selectBox(kind === 'task' ? 'ftbquests:item' : 'ftbquests:item',
-      entries.map(t => [t.id, t.label || t.id.replace(/^ftbquests:/, '')]), null);
-    add.append(picker, button('Add', () => {
-      send([{ op: 'create', kind, parent: q.id, type: picker.value }]).then(async res => {
-        if (res && res.created && res.created.length) {
-          await reload();
-          select(res.created[0]);
-        }
-      });
-    }, 'btn go'));
-    inner.append(add);
+    // A searchable chooser rather than a dropdown: a pack this size has dozens of
+    // task types across a dozen mods, and a <select> of those is a scroll.
+    inner.append(button('+ Add ' + kind, () => openChooser({
+      label: kind === 'task' ? 'Task type' : 'Reward type',
+      icons: false,
+      values: entries.map(t => t.id),
+      describe: id => (catalogue[id] || {}).label || '',
+      onPick: type => {
+        send([{ op: 'create', kind, parent: q.id, type }]).then(async res => {
+          if (res && res.created && res.created.length) {
+            await reload();
+            select(res.created[0]);
+          }
+        });
+      }
+    }), 'btn go'));
   });
 }
 
 const shortType = c => String(c.typeId || (c.data || {}).type || '?').replace(/^ftbquests:/, '');
+
+/** The name FTB shows for the type, falling back to its id. */
+function typeLabel(c) {
+  const cat = (S.types.tasks || {})[c.typeId] || (S.types.rewards || {})[c.typeId];
+  return (cat && cat.label) || shortType(c);
+}
 
 /** One line that says what this task or reward actually is. */
 function summarise(c) {
@@ -1426,12 +1502,12 @@ function summarise(c) {
 
 function childPanel(body, c, kind, quest) {
   const catalogue = (kind === 'task' ? S.types.tasks : S.types.rewards)[c.typeId];
-  body.append(readOnly('type', c.typeId || (c.data || {}).type || '?'));
-
   if (quest) {
-    body.append(button('↑ ' + (titleOf(quest) || 'the quest'),
+    body.append(button('↑ Back to ' + (titleOf(quest) || 'the quest'),
       () => select(quest.id, true), 'btn', true));
   }
+  body.append(readOnly('type', (catalogue && catalogue.label ? catalogue.label + '  ' : '')
+    + (c.typeId || (c.data || {}).type || '?')));
 
   body.append(field('title',
     textBox((c.text || {}).rawTitle || '', v => {
@@ -1453,11 +1529,16 @@ function childPanel(body, c, kind, quest) {
       pick.className = 'item';
       pick.disabled = !S.edit;
       pick.innerHTML = iconTag(cur)
-        + '<div class="t"><b>' + esc(cur || 'none') + '</b><span>tap to change</span></div>';
-      pick.onclick = () => openPicker(id => {
-        const next = raw && typeof raw === 'object' ? { ...raw, id } : { id, count: 1 };
-        c.data.item = next;
-        send([{ op: 'set', target: c.id, path: 'data.item', value: next }]);
+        + '<div class="t"><b>' + esc(cur || 'Nothing chosen') + '</b><span>'
+        + (S.edit ? 'tap to choose from every item in the pack' : 'read only') + '</span></div>';
+      pick.onclick = () => openChooser({
+        label: 'Item', icons: true,
+        values: Object.keys(S.icons), current: cur,
+        onPick: id => {
+          const next = raw && typeof raw === 'object' ? { ...raw, id } : { id, count: 1 };
+          c.data.item = next;
+          send([{ op: 'set', target: c.id, path: 'data.item', value: next }]);
+        }
       });
       inner.append(pick);
 
@@ -1472,15 +1553,19 @@ function childPanel(body, c, kind, quest) {
     }));
   }
 
-  body.append(section('raw', 'All fields', null, inner =>
+  body.append(section('raw', 'Settings', null, inner =>
     dataEditor(inner, c, c.id, ['id', 'type', 'item'], catalogue && catalogue.fields)));
 
-  body.append(section('danger', 'Delete', null, inner => {
-    inner.append(button('Delete this ' + kind, () => {
-      if (!window.confirm('Delete this ' + kind + '?')) return;
-      S.sel = quest ? quest.id : null;
-      send([{ op: 'delete', target: c.id }]);
-    }, 'btn danger'));
+  body.append(danger('Delete this ' + kind, () => {
+    if (!window.confirm('Delete this ' + kind + '?')) return;
+    const list = quest && quest[kind + 's'];
+    if (list) {
+      const i = list.indexOf(c);
+      if (i >= 0) list.splice(i, 1);
+    }
+    S.sel = quest ? quest.id : null;
+    renderPanel(); drawMap();
+    send([{ op: 'delete', target: c.id }]);
   }));
 }
 
@@ -1501,7 +1586,7 @@ function chapterPanel(body, c) {
       send([{ op: 'set', target: c.id, path: 'data.default_quest_shape', value: v, type: 'string' }]);
       drawMap();
     })));
-  body.append(section('raw', 'All fields', null, inner =>
+  body.append(section('raw', 'Advanced', null, inner =>
     dataEditor(inner, c, c.id, ['id', 'default_quest_shape', 'images', 'quest_links'])));
 }
 
@@ -1534,16 +1619,95 @@ function dataEditor(host, obj, target, skip, catalogue) {
     return;
   }
 
-  host.append(section('unset', 'Unset fields', missing.length, inner => {
+  host.append(section('unset', 'Not set', missing.length, inner => {
     const note = document.createElement('div');
     note.className = 'note';
-    note.textContent = 'FTB omits a field that sits at its default. Changing one here writes it.';
+    note.textContent = 'These sit at their default, so FTB does not store them. Change one and it will be.';
     inner.append(note);
     for (const key of missing) {
       const spec = catalogue[key];
       inner.append(valueField(key, spec.default, spec.type, target, obj, key));
     }
   }));
+}
+
+/**
+ * Which registry a field's values come out of, keyed by the name FTB gives the
+ * field.
+ *
+ * This is a guess about meaning — the bridge reports that a biome task has a
+ * field called "biome", not that its contents are biome ids — so it only ever
+ * *offers* a list. The text box underneath still accepts anything. A wrong guess
+ * costs a button nobody presses; no guess at all costs a typo in a quest nobody
+ * can complete.
+ */
+const FIELD_SOURCES = {
+  biome: { registry: 'minecraft:worldgen/biome' },
+  dimension: { registry: 'questbridge:dimensions' },
+  entity: { registry: 'minecraft:entity_type' },
+  structure: { registry: 'minecraft:worldgen/structure' },
+  advancement: { registry: 'questbridge:advancements' },
+  fluid: { registry: 'minecraft:fluid' },
+  block: { registry: 'minecraft:block' },
+  block_item: { registry: 'minecraft:item' },
+  item: { registry: 'minecraft:item' },
+  effect: { registry: 'minecraft:mob_effect' },
+  enchantment: { registry: 'minecraft:enchantment' },
+  stat: { registry: 'minecraft:custom_stat' },
+  to_observe: { registry: 'minecraft:block' },
+};
+
+/** A trailing _tag means the tags of whatever the rest of the name points at. */
+function sourceFor(key) {
+  if (FIELD_SOURCES[key]) return FIELD_SOURCES[key];
+  if (key.endsWith('_tag')) {
+    const base = FIELD_SOURCES[key.slice(0, -4)];
+    if (base) return { registry: base.registry, tags: true };
+    if (key === 'tool_tag') return { registry: 'minecraft:item', tags: true };
+  }
+  return null;
+}
+
+/** An ItemStack-shaped compound: icon, block_item, item. */
+function stackRow(value, key, commit) {
+  const row = document.createElement('div');
+  row.className = 'item';
+  const draw = () => {
+    row.innerHTML = iconTag(S.icons[value.id] ? value.id : null)
+      + '<div class=\"t\"><b>' + esc(value.id) + '</b><span>'
+      + (S.edit ? 'tap to choose' : 'read only') + '</span></div>';
+  };
+  draw();
+  row.onclick = () => {
+    if (!S.edit) return;
+    openChooser({
+      label: key.replace(/_/g, ' '), icons: true,
+      values: Object.keys(S.icons), current: value.id,
+      onPick: id => { value = { ...value, id }; draw(); commit(value); }
+    });
+  };
+  return row;
+}
+
+/** The same value as raw NBT, tucked away for the parts no control covers. */
+function rawDetails(value, commit) {
+  const d = document.createElement('details');
+  const s = document.createElement('summary');
+  s.innerHTML = '<span>Raw</span>';
+  const inner = document.createElement('div');
+  inner.className = 'inner';
+  const el = document.createElement('textarea');
+  el.value = JSON.stringify(stripTypes(value), null, 1);
+  el.disabled = !S.edit;
+  const err = document.createElement('div');
+  err.className = 'bad';
+  el.onchange = () => {
+    try { const parsed = JSON.parse(el.value); err.textContent = ''; commit(parsed); }
+    catch { err.textContent = 'Not valid JSON — nothing was saved.'; }
+  };
+  inner.append(el, err);
+  d.append(s, inner);
+  return d;
 }
 
 function valueField(label, value, nbtType, target, obj, key) {
@@ -1556,10 +1720,18 @@ function valueField(label, value, nbtType, target, obj, key) {
   if (typeof value === 'boolean' || nbtType === 'boolean') {
     return field(label, checkBox(key, value, commit));
   }
+  // A compound holding an id is an ItemStack nine times out of ten — icon,
+  // block_item, the lot. Those deserve the picker, not a JSON box; the JSON stays
+  // underneath for the components nothing else can edit.
+  if (value && typeof value === 'object' && !Array.isArray(value)
+      && typeof value.id === 'string') {
+    const wrap = field(label, stackRow(value, key, commit));
+    wrap.append(rawDetails(value, commit));
+    return wrap;
+  }
   if (value !== null && typeof value === 'object') {
     // A compound or a list, edited as JSON. Generating a form for arbitrary nested
-    // NBT is a rabbit hole, and the two cases that matter — item and icon — have
-    // real controls above.
+    // NBT is a rabbit hole, and the cases that matter have real controls.
     const el = document.createElement('textarea');
     el.value = JSON.stringify(stripTypes(value), null, 1);
     el.disabled = !S.edit;
@@ -1582,7 +1754,29 @@ function valueField(label, value, nbtType, target, obj, key) {
     const step = nbtType === 'double' || nbtType === 'float' ? 0.5 : 1;
     return field(label + (nbtType ? ' · ' + nbtType : ''), numBox(value, commit, step));
   }
+
+  const source = sourceFor(key);
+  if (source) return field(label, idBox(value == null ? '' : String(value), source, key, commit));
   return field(label, textBox(value == null ? '' : value, commit));
+}
+
+/**
+ * A text box with the list behind it. The box still takes anything typed, because
+ * the mapping from a field name to a registry is a guess and a wrong guess must
+ * not lock anyone out of their own field.
+ */
+function idBox(value, source, key, commit) {
+  const row = document.createElement('div');
+  row.className = 'idrow';
+  const input = textBox(value, commit);
+  const browse = button('Browse', () => chooseFromRegistry(source, {
+    label: (source.tags ? 'Tag for ' : '') + key.replace(/_/g, ' '),
+    current: input.value,
+    icons: true,
+    onPick: id => { input.value = id; commit(id); }
+  }), 'btn');
+  row.append(input, browse);
+  return row;
 }
 
 const stripTypes = v => {
@@ -1594,127 +1788,167 @@ const stripTypes = v => {
   return v;
 };
 
-// -------------------------------------------------------------- item picker --
+// ------------------------------------------------------------------ chooser --
 
-let pickerPick = null;
+/**
+ * One dialog for picking an id, whatever kind of id it is: an item, a biome, an
+ * entity, a task type. They are all namespaced ids from a list the server knows,
+ * so they all deserve the same treatment — search, grouped by mod, with an icon
+ * where there is one.
+ *
+ * Typing "minecraft:lush_caves" from memory is how a quest ends up asking for
+ * something that does not exist, and this pack has hundreds of biomes that exist
+ * only because some mod added them.
+ */
+let chooser = null;
 
-function openPicker(onPick) {
-  pickerPick = onPick;
+function openChooser(opts) {
+  chooser = {
+    values: opts.values || [],
+    onPick: opts.onPick,
+    current: opts.current || null,
+    describe: opts.describe || null,
+    icons: opts.icons !== false,
+  };
+  $('#pickerTitle').textContent = opts.label || 'Choose';
   $('#picker').hidden = false;
   $('#pickerSearch').value = '';
+  $('#pickerSearch').placeholder = 'Search ' + (opts.label || '').toLowerCase() + '…';
   fillMods();
   renderPicker();
-  $('#pickerSearch').focus();
+  // A phone keyboard covering the list the moment it opens is not helpful.
+  if (innerWidth > 640) $('#pickerSearch').focus();
 }
 
-const closePicker = () => { $('#picker').hidden = true; pickerPick = null; };
+/** Fetches a registry from the bridge once, then chooses from it. */
+async function chooseFromRegistry(source, opts) {
+  const key = source.registry + (source.tags ? '#tags' : '');
+  let list = S.registries[key];
+  if (!list) {
+    try {
+      const r = await api('/registry?name=' + encodeURIComponent(source.registry)
+        + (source.tags ? '&tags=1' : ''));
+      list = S.registries[key] = r.values || [];
+    } catch {
+      list = S.registries[key] = [];
+    }
+  }
+  if (!list.length) {
+    banner('The server lists nothing for ' + source.registry + '. Type the id instead.', true);
+    return;
+  }
+  openChooser({ ...opts, values: list });
+}
+
+const closePicker = () => { $('#picker').hidden = true; chooser = null; };
 $('#pickerCancel').onclick = closePicker;
 $('#picker').addEventListener('click', e => { if (e.target.id === 'picker') closePicker(); });
 $('#pickerSearch').addEventListener('input', () => renderPicker());
 $('#pickerMod').addEventListener('change', () => renderPicker());
 
-/** namespace -> count, built once: the icon index does not change while open. */
-let modCounts = null;
-function mods() {
-  if (modCounts) return modCounts;
-  modCounts = new Map();
-  for (const id of Object.keys(S.icons)) {
-    const ns = id.slice(0, id.indexOf(':'));
-    modCounts.set(ns, (modCounts.get(ns) || 0) + 1);
-  }
-  return modCounts;
-}
-
+/** namespace -> count, for whatever the chooser is showing right now. */
 function fillMods() {
   const sel = $('#pickerMod');
-  if (sel.options.length) return;
+  const counts = new Map();
+  for (const id of chooser.values) counts.set(nsOf(id), (counts.get(nsOf(id)) || 0) + 1);
+
+  sel.innerHTML = '';
   const all = document.createElement('option');
   all.value = '';
-  all.textContent = 'All mods (' + Object.keys(S.icons).length.toLocaleString() + ')';
+  all.textContent = 'All mods (' + chooser.values.length.toLocaleString() + ')';
   sel.append(all);
-  // Alphabetical: a list of 122 mods is something you look a name up in, not
-  // something you browse, and ranking by size moves the name you want.
-  for (const ns of [...mods().keys()].sort()) {
+  // Alphabetical: a list of a hundred mods is something you look a name up in,
+  // not something you browse, and ranking by size moves the name you want.
+  for (const ns of [...counts.keys()].sort()) {
     const o = document.createElement('option');
     o.value = ns;
-    o.textContent = ns + ' (' + mods().get(ns).toLocaleString() + ')';
+    o.textContent = ns + ' (' + counts.get(ns).toLocaleString() + ')';
     sel.append(o);
   }
+  sel.hidden = counts.size < 2;
 }
 
 /**
- * 19,000 items is too many to put in the DOM and far too many to scroll, so the
- * result is capped. Grouping by mod is what makes the cap bearable: everything
- * from one mod arrives together under its own heading, and the dropdown narrows
- * to a single mod when you know where you are going.
+ * Too many to put in the DOM and far too many to scroll, so the result is capped.
+ * Grouping by mod is what makes the cap bearable: everything from one mod arrives
+ * together under its own heading, and the dropdown narrows to one mod when you
+ * already know where you are going.
  */
 function renderPicker() {
   const grid = $('#pickerGrid');
   grid.innerHTML = '';
+  const withIcons = chooser.icons && chooser.values.some(v => S.icons[v]);
+  grid.classList.toggle('aslist', !withIcons);
+
   const q = $('#pickerSearch').value.trim().toLowerCase();
   const only = $('#pickerMod').value;
-
-  let hits = Object.keys(S.icons);
-  if (only) hits = hits.filter(id => id.startsWith(only + ':'));
+  let hits = chooser.values;
+  if (only) hits = hits.filter(id => nsOf(id) === only);
   if (q) hits = hits.filter(id => id.toLowerCase().includes(q));
 
   // Within a mod, shortest first: "oak_log" puts minecraft:oak_log above
   // stripped_oak_log, and a search for "iron" does not bury the ingot.
   const byLength = (a, b) => nameOf(a).length - nameOf(b).length || a.localeCompare(b);
+  const cap = withIcons ? 300 : 220;
 
   if (only) {
-    draw(hits.sort(byLength).slice(0, 300), hits.length);
+    const take = hits.slice().sort(byLength).slice(0, cap);
+    for (const id of take) grid.append(tile(id, withIcons));
+    count(take.length, hits.length, 1);
     return;
   }
 
-  // Grouped. Mods whose own name matches what was typed come first — searching
-  // "create" should offer Create's items before every item with "create" in it.
   const groups = new Map();
   for (const id of hits) {
-    const ns = id.slice(0, id.indexOf(':'));
+    const ns = nsOf(id);
     if (!groups.has(ns)) groups.set(ns, []);
     groups.get(ns).push(id);
   }
-  // Then vanilla, which is what a quest book reaches for most and which a mod
-  // with a dozen near-misses would otherwise bury.
+  // Mods whose own name matches what was typed first, so "create" offers Create's
+  // own items before everything with create in the name. Then vanilla, which a
+  // quest book reaches for most and which a mod with a dozen near-misses buries.
   const rank = ns => (q && ns.includes(q) ? 0 : ns === 'minecraft' ? 1 : 2);
   const order = [...groups.keys()].sort((a, b) =>
     rank(a) - rank(b)
     || groups.get(b).length - groups.get(a).length
     || a.localeCompare(b));
 
-  let left = 300, shown = 0;
+  let left = cap, shown = 0;
   for (const ns of order) {
     if (left <= 0) break;
     const items = groups.get(ns).sort(byLength);
     const head = document.createElement('div');
     head.className = 'modhead';
-    head.innerHTML = esc(ns) + '<span>' + items.length + '</span>';
+    head.innerHTML = esc(ns || '(no mod)') + '<span>' + items.length + '</span>';
     grid.append(head);
-    const take = items.slice(0, Math.min(left, 60));
-    for (const id of take) grid.append(tile(id));
+    const take = items.slice(0, Math.min(left, withIcons ? 60 : 40));
+    for (const id of take) grid.append(tile(id, withIcons));
     shown += take.length;
     left -= take.length;
   }
   count(shown, hits.length, order.length);
 }
 
-function draw(ids, total) {
-  const grid = $('#pickerGrid');
-  for (const id of ids) grid.append(tile(id));
-  count(ids.length, total, 1);
-}
-
-function tile(id) {
+function tile(id, withIcons) {
   const b = document.createElement('button');
-  b.innerHTML = '<img src="/icons/' + S.icons[id].file + '" alt="" loading="lazy">'
-    + '<span>' + esc(nameOf(id)) + '</span>';
+  if (id === chooser.current) b.className = 'current';
+  const icon = S.icons[id];
+  if (withIcons) {
+    b.innerHTML = (icon ? '<img src="/icons/' + icon.file + '" alt="" loading="lazy">'
+                        : '<span class="pill">?</span>')
+      + '<span>' + esc(nameOf(id)) + '</span>';
+  } else {
+    const extra = chooser.describe ? chooser.describe(id) : '';
+    b.innerHTML = '<b>' + esc(nameOf(id)) + '</b>'
+      + (extra ? '<span>' + esc(extra) + '</span>' : '');
+  }
   b.title = id;
-  b.onclick = () => { const f = pickerPick; closePicker(); if (f) f(id); };
+  b.onclick = () => { const f = chooser.onPick; closePicker(); if (f) f(id); };
   return b;
 }
 
-const nameOf = id => id.slice(id.indexOf(':') + 1);
+const nsOf = id => (id.includes(':') ? id.slice(0, id.indexOf(':')) : '');
+const nameOf = id => (id.includes(':') ? id.slice(id.indexOf(':') + 1) : id);
 
 function count(shown, total, groups) {
   $('#pickerCount').textContent = shown < total

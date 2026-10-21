@@ -218,6 +218,24 @@ pack with a picture for each, which is what an item picker needs; a second list 
 no pictures would be strictly worse. Tags are not enumerated — item tasks match tags
 through FTB Filter System expressions, which the editor edits as text.
 
+### 
+What the server actually has in it. Without a name it lists every registry with
+its size; with one it returns the ids.
+
+\
+\
+Static registries and the world's dynamic ones, with dynamic winning: biomes
+and structures come from the loaded world, not from a frozen default that would
+leave out anything a datapack added. Two things that are not registries are
+served the same way because they answer the same question —
+ and .
+
+This is what lets the editor offer a field's real options instead of an empty
+text box. **Which** registry a field draws from is the editor's guess, made from
+the field's name, so it only ever *offers* the list and the text box underneath
+still accepts anything: a wrong guess costs a button nobody presses, while no
+guess at all costs a typo in a quest nobody can complete.
+
 ### `GET /api/history` and `POST /api/restore`
 
 `/api/history` returns the commit log of the quest folder, newest first, plus the
