@@ -99,14 +99,34 @@ canvas{display:block;width:100%;height:100%}
 #banner button{color:var(--muted);font-size:1.1rem;line-height:1}
 
 /* ---------- inspector ---------- */
+/* A dialog over the map rather than a strip beside it: the inspector is where the
+   work happens, and on a tablet a side panel left neither half usable. */
 #panel{
-  position:absolute;right:0;top:0;bottom:0;width:min(370px,92vw);
-  background:var(--panel);border-left:1px solid var(--line);
-  transform:translateX(101%);transition:transform .18s ease;
-  display:flex;flex-direction:column;
+  position:fixed;inset:0;z-index:55;display:flex;
+  background:rgba(8,10,14,.66);
+  opacity:0;pointer-events:none;transition:opacity .15s ease;
+  padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(16px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));
 }
-#panel.open{transform:none}
-#panel>header{background:none;border-bottom:1px solid var(--line);padding:12px 14px;align-items:flex-start}
+#panel.open{opacity:1;pointer-events:auto}
+#panel .sheet{
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  width:min(460px,100%);max-height:100%;margin:auto;
+  display:flex;flex-direction:column;overflow:hidden;
+  box-shadow:0 18px 50px rgba(0,0,0,.5);
+  transform:translateY(10px);transition:transform .15s ease;
+}
+#panel.open .sheet{transform:none}
+/* On a phone it is the whole screen; a dialog with 16px of map showing round the
+   edge is just a dialog with less room in it. */
+@media (max-width:640px){
+  #panel{padding:0}
+  #panel .sheet{
+    width:100%;height:100%;max-height:none;border:none;border-radius:0;
+    transform:translateY(16px);
+    padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+}
+#panel header{background:none;border-bottom:1px solid var(--line);padding:12px 14px;align-items:flex-start}
 #panel .body{
   overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:12px;
   padding-bottom:calc(24px + env(safe-area-inset-bottom));
@@ -231,15 +251,17 @@ details .inner{padding:0 11px 11px;display:flex;flex-direction:column;gap:11px}
     <div id="tools" hidden>
       <button id="addQuest" aria-pressed="false">+ Quest</button>
     </div>
-    <aside id="panel">
+  </main>
+  <aside id="panel" role="dialog" aria-modal="true">
+    <div class="sheet">
       <header>
         <h2 id="qTitle">Quest</h2>
         <span class="spacer"></span>
         <button id="closePanel" aria-label="Close">&times;</button>
       </header>
       <div class="body" id="qBody"></div>
-    </aside>
-  </main>
+    </div>
+  </aside>
 </div>
 
 <div id="picker" hidden>
@@ -374,9 +396,11 @@ try { S.token = localStorage.getItem(TOKEN_KEY); } catch {}
 // A token in the link beats a token typed on a tablet. Send someone
 // http://host:25580/#token=… and they are in; the hash is dropped from the bar
 // straight afterwards so it does not sit in screenshots or history.
-const linked = /(?:^|[#&])token=([0-9a-fA-F]{8,})/.exec(location.hash || '');
+// Any token the properties file can hold, not just the hex one the bridge
+// generates — someone is eventually going to set their own.
+const linked = /(?:^|[#&])token=([^&\s]+)/.exec(location.hash || '');
 if (linked) {
-  S.token = linked[1];
+  S.token = decodeURIComponent(linked[1]);
   try { history.replaceState(null, '', location.pathname); } catch {}
 }
 
@@ -815,7 +839,7 @@ function select(id, centre = false) {
   const f = byId(id);
   if (centre && f && f.kind === 'quest') centreOn(f.obj);
   renderPanel();
-  $('#panel').classList.add('open');
+  openPanel();
   drawMap();
 }
 
@@ -826,8 +850,15 @@ function centreOn(q) {
   drawMap();
 }
 
+const openPanel = () => $('#panel').classList.add('open');
 const closePanel = () => $('#panel').classList.remove('open');
-$('#closePanel').onclick = () => { S.sel = null; closePanel(); drawMap(); };
+
+// Dismissing the dialog keeps the quest selected, so the map still shows which one
+// you were on and tapping it again picks up where you left off.
+$('#closePanel').onclick = () => { closePanel(); drawMap(); };
+$('#panel').addEventListener('click', e => {
+  if (e.target.id === 'panel') { closePanel(); drawMap(); }
+});
 
 // ----------------------------------------------------------------- edit mode --
 
@@ -848,7 +879,7 @@ $('#addQuest').onclick = () => {
   S.placing = !S.placing;
   S.linking = false;
   $('#addQuest').setAttribute('aria-pressed', S.placing);
-  if (S.placing) banner('Tap the map to place the quest.');
+  if (S.placing) { closePanel(); banner('Tap the map to place the quest.'); }
   else $('#banner').hidden = true;
 };
 
@@ -867,10 +898,12 @@ async function createQuest(x, y) {
 
 async function addDependency(id) {
   S.linking = false;
+  $('#banner').hidden = true;
   const f = selected();
   if (!f || f.kind !== 'quest') return;
   const next = deps(f.obj).slice();
-  if (next.includes(id)) { banner('Already depends on that one.'); renderPanel(); return; }
+  renderPanel(); openPanel();
+  if (next.includes(id)) { banner('Already depends on that one.'); return; }
   next.push(id);
   f.obj.data.dependencies = next;
   renderPanel(); drawMap();
@@ -1097,14 +1130,15 @@ function questPanel(body, q) {
       row.append(x);
       inner.append(row);
     }
-    inner.append(button(S.linking ? 'Now tap a quest on the map' : '+ Add dependency', () => {
-      S.linking = !S.linking;
+    inner.append(button('+ Add dependency', () => {
+      // The map is behind the dialog, so get out of the way and let them tap it.
+      // addDependency brings this back up once they have.
+      S.linking = true;
       S.placing = false;
       $('#addQuest').setAttribute('aria-pressed', 'false');
-      if (S.linking) banner('Tap the quest this one should depend on.');
-      else $('#banner').hidden = true;
-      renderPanel();
-    }, S.linking ? 'btn go' : 'btn'));
+      closePanel();
+      banner('Tap the quest this one should depend on.');
+    }));
   }));
 
   body.append(childSection(q, 'tasks', 'Tasks', S.types.tasks));
@@ -1506,13 +1540,16 @@ addEventListener('keydown', e => {
     if (!$('#picker').hidden) { closePicker(); return; }
     if (!$('#history').hidden) { closeHistory(); return; }
     if (S.placing || S.linking) {
+      const wasLinking = S.linking;
       S.placing = S.linking = false;
       $('#addQuest').setAttribute('aria-pressed', 'false');
       $('#banner').hidden = true;
-      if (S.sel) renderPanel();
+      // Linking hid the dialog to get at the map; cancelling puts it back.
+      if (wasLinking && S.sel) { renderPanel(); openPanel(); }
       return;
     }
-    S.sel = null; closePanel(); drawMap();
+    if ($('#panel').classList.contains('open')) { closePanel(); drawMap(); return; }
+    S.sel = null; drawMap();
     return;
   }
   if ((e.key === 'e' || e.key === 'E') && !e.metaKey && !e.ctrlKey && !e.altKey) {

@@ -312,6 +312,6 @@ the inspector is left alone while you have a field open.
 | Format research | done — see [`docs/format.md`](docs/format.md) |
 | API contract | matches the implementation, this file |
 | Icon pipeline | done — 19,344 icons at 64px, 6,272 rendered from real geometry |
-| Bridge | read, write, history and restore; in-game change detection — compiles; **has never run against a real server** |
+| Bridge | read, write, history and restore; in-game change detection — running on the dev server since 2026-10-21 |
 | Editor | reads and edits the whole book, and restores from history; exercised end to end against the mock |
-| Deployment | not done — nothing here has run on the VM; the plan is [`docs/deploy.md`](docs/deploy.md) |
+| Deployment | done — see [`docs/deploy.md`](docs/deploy.md) |
