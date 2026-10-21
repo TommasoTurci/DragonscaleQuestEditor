@@ -1,4 +1,4 @@
-# Icon builder
+# Icon and name builders
 
 Generates the editor's item icon set from the pack's mod jars. Runs on a desktop
 with the instance installed — never on the server, which has no textures and no
@@ -13,6 +13,25 @@ node build-icons.mjs \
 
 Output goes to `app/public/icons/` — one PNG per item plus `index.json` mapping item
 id to file, kind and dimensions.
+
+## Names
+
+```bash
+node build-names.mjs \
+  --mods    "<instance>/minecraft/mods" \
+  --vanilla "<prism>/libraries/com/mojang/minecraft/1.21.1/minecraft-1.21.1-client.jar"
+```
+
+Writes `names.json` beside the icons, mapping item id to display name, read out of
+`assets/<ns>/lang/en_us.json` in every jar. A dedicated server has no language file
+loaded and cannot tell you an item is called Oak Bench, and nobody composes a quest
+book by reading registry ids.
+
+17,062 names come out of 254 lang files. Only 61% of the icon index matches one,
+which is not a gap in the lang files: the index is built by walking *model* files
+and holds plenty of things that are not items — `minecraft:bow_pulling_0` is a
+model for a bow being drawn. The editor takes its item list from the server's own
+registry for exactly that reason, and uses these two files only to decorate it.
 
 ## Options
 
