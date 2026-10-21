@@ -772,6 +772,11 @@ let gesture = null;
 const pointers = new Map();
 
 cv.addEventListener('pointerdown', e => {
+  // Only the primary button is a gesture. Letting the right button through here
+  // selected the quest on pointerup, which put the dialog over the canvas before
+  // the contextmenu event arrived — so the browser's own menu showed instead of
+  // ours, and the quest opened as well.
+  if (e.button > 0) return;
   cv.setPointerCapture(e.pointerId);
   pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
   if (pointers.size !== 1) return;
@@ -820,6 +825,7 @@ cv.addEventListener('pointermove', e => {
 });
 
 function endPointer(e) {
+  if (!pointers.has(e.pointerId)) return;     // a button we never took down
   const g = gesture;
   pointers.delete(e.pointerId);
   if (pointers.size) return;
