@@ -370,6 +370,16 @@ $('#bannerX').onclick = () => { $('#banner').hidden = true; };
 // -------------------------------------------------------------------- start --
 
 try { S.token = localStorage.getItem(TOKEN_KEY); } catch {}
+
+// A token in the link beats a token typed on a tablet. Send someone
+// http://host:25580/#token=… and they are in; the hash is dropped from the bar
+// straight afterwards so it does not sit in screenshots or history.
+const linked = /(?:^|[#&])token=([0-9a-fA-F]{8,})/.exec(location.hash || '');
+if (linked) {
+  S.token = linked[1];
+  try { history.replaceState(null, '', location.pathname); } catch {}
+}
+
 if (S.token) connect(S.token); else $('#gate').hidden = false;
 
 $('#gateForm').addEventListener('submit', e => {
