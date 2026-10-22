@@ -1,6 +1,7 @@
 package dev.dragonscale.questbridge;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.sun.net.httpserver.HttpExchange;
@@ -8,6 +9,10 @@ import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 import dev.ftb.mods.ftbquests.net.SyncQuestsMessage;
 import dev.ftb.mods.ftbquests.quest.ServerQuestFile;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.neoforged.neoforge.network.PacketDistributor;
 
@@ -39,6 +44,7 @@ public final class BridgeServer {
     private HttpServer http;
     private final ChangeFeed feed = new ChangeFeed();
     private final BookWatch watch = new BookWatch();
+    private final Notes notes;
     private static final Gson GSON = new Gson();
     private GitHistory history;
 
@@ -52,6 +58,7 @@ public final class BridgeServer {
         // plain HTTP: bound to 0.0.0.0 the token crosses the internet in the clear
         // on every request. Widen it only behind TLS or a tunnel.
         this.bind = p.getProperty("bind", "127.0.0.1");
+        this.notes = new Notes(mc.getServerDirectory().resolve("config"));
     }
 
     /**
@@ -90,6 +97,9 @@ public final class BridgeServer {
         http.createContext("/api/edit", authed(this::edit));
         http.createContext("/api/registry", authed(this::registry));
         http.createContext("/api/recipes", authed(this::recipes));
+        http.createContext("/api/item", authed(this::item));
+        http.createContext("/api/notes", authed(this::noteList));
+        http.createContext("/api/note", authed(this::note));
         http.createContext("/api/history", authed(this::historyLog));
         http.createContext("/api/restore", authed(this::restore));
 
@@ -237,6 +247,69 @@ public final class BridgeServer {
         }
         x.getResponseHeaders().add("Cache-Control", "private, max-age=300");
         send(x, 200, json);
+    }
+
+    /**
+     * What the server knows about one item: which mod registered it, and every tag
+     * it carries. Tags are the closest thing to a machine-readable answer to "what
+     * sort of thing is this" — c:ingots/steel says more about an item than most
+     * sentences would.
+     */
+    private void item(HttpExchange x) throws IOException {
+        String id = query(x.getRequestURI().getRawQuery()).get("id");
+        if (id == null) {
+            send(x, 400, "{\"error\":\"expected ?id=<item id>\"}");
+            return;
+        }
+        String json;
+        try {
+            json = mc.submit(() -> {
+                JsonObject out = new JsonObject();
+                out.addProperty("id", id);
+                out.addProperty("mod", id.contains(":") ? id.substring(0, id.indexOf(':')) : "");
+                JsonArray tags = new JsonArray();
+                ResourceLocation rl = ResourceLocation.tryParse(id);
+                if (rl != null) {
+                    BuiltInRegistries.ITEM.getHolder(ResourceKey.create(Registries.ITEM, rl))
+                        .ifPresent(h -> h.tags().forEach(t -> tags.add(t.location().toString())));
+                }
+                out.add("tags", tags);
+                out.addProperty("note", notes.get(id));
+                return out.toString();
+            }).get();
+        } catch (Exception e) {
+            DragonscaleBridge.LOG.error("[questbridge] reading an item failed", e);
+            send(x, 500, "{\"error\":\"could not read the item\"}");
+            return;
+        }
+        send(x, 200, json);
+    }
+
+    /** The whole note table, for the editor to hold while it is open. */
+    private void noteList(HttpExchange x) throws IOException {
+        send(x, 200, notes.all().toString());
+    }
+
+    /** Writes one note. The quest folder's git history covers the file. */
+    private void note(HttpExchange x) throws IOException {
+        if (!"POST".equals(x.getRequestMethod())) {
+            send(x, 405, "{\"error\":\"POST only\"}");
+            return;
+        }
+        try {
+            JsonObject body = JsonParser.parseString(
+                new String(x.getRequestBody().readAllBytes(), StandardCharsets.UTF_8)).getAsJsonObject();
+            String id = body.get("id").getAsString();
+            String text = body.has("text") && !body.get("text").isJsonNull()
+                ? body.get("text").getAsString() : "";
+            notes.set(id, text);
+            JsonObject out = new JsonObject();
+            out.addProperty("id", id);
+            out.addProperty("note", notes.get(id));
+            send(x, 200, out.toString());
+        } catch (Exception e) {
+            send(x, 400, "{\"error\":\"expected {\\\"id\\\": \\\"...\\\", \\\"text\\\": \\\"...\\\"}\"}");
+        }
     }
 
     private static Map<String, String> query(String raw) {

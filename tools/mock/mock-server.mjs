@@ -158,6 +158,7 @@ const inferred = v => Array.isArray(v) ? 'list'
 // -------------------------------------------------------------------- edits --
 
 const subscribers = new Set();
+const mockNotes = {};
 
 function publish(change) {
   const line = `data: ${JSON.stringify(change)}\n\n`;
@@ -383,6 +384,19 @@ http.createServer(async (req, res) => {
                  inputs: [[item], pick(1)], output: { id: pick(1)[0], count: 1 } }],
         total: 0
       });
+    }
+
+    if (p === '/api/item') {
+      const id = url.searchParams.get('id') || '';
+      return json(res, 200, { id, mod: id.split(':')[0],
+        tags: ['c:example_tag', 'minecraft:another_tag'], note: mockNotes[id] || '' });
+    }
+    if (p === '/api/notes') return json(res, 200, { notes: mockNotes, count: Object.keys(mockNotes).length });
+    if (p === '/api/note') {
+      if (req.method !== 'POST') return json(res, 405, { error: 'POST only' });
+      const b = JSON.parse(await readBody(req));
+      if (b.text) mockNotes[b.id] = b.text; else delete mockNotes[b.id];
+      return json(res, 200, { id: b.id, note: mockNotes[b.id] || '' });
     }
 
     if (p === '/api/history') {
