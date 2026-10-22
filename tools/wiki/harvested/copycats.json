@@ -1,0 +1,94 @@
+{
+ "wiki": "github.com/copycats-plus/copycats/wiki",
+ "ns": "copycats",
+ "harvested": "2026-10-22T23:50:57.491Z",
+ "matched": 0,
+ "unmatched": 21,
+ "docs": {},
+ "orphans": {
+  "Creating-copycats: Creating the item model in Blockbench": {
+   "text": "This model is only used as the inventory icon of the copycat, but it is still highly recommended that you model it according to how the textures are actually cut in the dynamic copycat model. This will come in handy later when coding the dynamic model. If your model has a horizontal facing, model it in the facing=south state. If your model can be flipped vertically, model it in the half=bottom state.",
+   "src": "https://github.com/copycats-plus/copycats/wiki/Creating-copycats#creating-the-item-model-in-blockbench"
+  },
+  "Creating-copycats: Implementing CopycatBlock": {
+   "text": "This is the most difficult part of the whole process, but there are ways to cheat this if what you are implementing already has a vanilla counterpart. If your copycat is halfway between vanilla and custom, consider the following to decide which route you should take: Should other mods treat your block the same way as the vanilla variants? Are the vanilla variants free of special quirks that don't fit your copycat? Can the extra features of your block be implemented by inheriting the vanilla block class and only overriding a few methods?",
+   "src": "https://github.com/copycats-plus/copycats/wiki/Creating-copycats#implementing-copycatblock"
+  },
+  "Creating-copycats: With Vanilla Counterpart (Trapdoor, Stairs, ...)": {
+   "text": "The whole idea here is to store a reference to an instance of the vanilla Block class, and forward all block events to that instance for processing. This works because Block classes are singletons that are only loosely related to the block that they are registered with. As long as your copycat has the same set of block state properties, the vanilla class can process your block just fine. 1. Create your WrappedBlock class that inherits from the target vanilla Block class. e.g. class WrappedTrapdoorBlock extends TrapDoorBlock 2. Create your CopycatBlock class that inherits from…",
+   "src": "https://github.com/copycats-plus/copycats/wiki/Creating-copycats#with-vanilla-counterpart-trapdoor-stairs-"
+  },
+  "Creating-copycats: Without Vanilla Counterpart (Bytes, Boards, ...)": {
+   "text": "You are on your own here. This is just a basic list of what's required, but you may need more. 1. Create your CopycatBlock class that inherits from WaterloggedCopycatBlock 2. In your CopycatBlock class: Implement the constructor, createBlockStateDefinition, getStateForPlacement, getShape, rotate, and mirror If your block consists of multiple items being put in the same block space, also implement canBeReplaced, onSneakWrenched (so that you can dismantle individual parts on sneak-wrenching), getRequiredItems (for Schematicannon) I highly recommend you implement block drops with loot tables…",
+   "src": "https://github.com/copycats-plus/copycats/wiki/Creating-copycats#without-vanilla-counterpart-bytes-boards-"
+  },
+  "Creating-copycats: Implementing CopycatModel": {
+   "text": "Create's code is really confusing in this part, but the ISimpleCopycatModel interface provides some helper methods to greatly simplify this process. Copy this boilerplate code to get started (remember to rename the class): Now to actually code the model, you need to understand the ISimpleCopycatModel#assemblePiece method. This method cuts a cuboid shape from the block model of the applied material and pastes it in your copycat model. The parameters are as follows: Now to actually implement your model, simply open your item model in Blockbench, then for each element in Blockbench, add one call…",
+   "src": "https://github.com/copycats-plus/copycats/wiki/Creating-copycats#implementing-copycatmodel"
+  },
+  "Creating-copycats: Register the block in CCBlocks": {
+   "text": "Just copy an existing registration. There's too much boilerplate code to explain here. If your copycat consists of multiple parts in the same block space, define a loot table here. An example can be found in https://github.com/copycats-plus/copycats/blob/134edde1b2371208db37716ae12b12723a6a81ff/src/main/java/com/copycatsplus/copycats/CCBlocks.java#L187-L209 If you copycat contains a WrappedBlock, you need to also register the wrapped block here.",
+   "src": "https://github.com/copycats-plus/copycats/wiki/Creating-copycats#register-the-block-in-ccblocks"
+  },
+  "Creating-copycats: Add mixins for compatibility": {
+   "text": "> This step is only required if the copycat has a vanilla counterpart (such as stairs and trapdoors). Due to how the CopycatBlock is implemented, vanilla is not aware that, for example, our copycat trapdoor is an actual trapdoor. This is because our copycat inherits from CopycatBlock, not TrapDoorBlock, causing instanceof checks to fail. To fix this, do a global search for instanceof TrapDoorBlock and patch all applicable locations with mixins so that the instanceof check is executed against a WrappedTrapdoorBlock instance instead of the outer CopycatTrapdoorBlock instance. The…",
+   "src": "https://github.com/copycats-plus/copycats/wiki/Creating-copycats#add-mixins-for-compatibility"
+  },
+  "Creating-copycats: Edge cases": {
+   "text": "Many of these instanceof checks are located in the vanilla pathfinding algorithm. Extra care needs to be taken when patching those methods, because they are a prime target for optimization by Lithium/Radium. To avoid crashes due to mixin collisions, set your mixin to be optional, increase the priority of your mixin, and write another one that is specific to Lithium/Radium. A example can be found here: https://github.com/copycats-plus/copycats/blob/main/src/main/java/com/copycatsplus/copycats/mixin/copycat/fencegate/WalkNodeEvaluatorMixin.java",
+   "src": "https://github.com/copycats-plus/copycats/wiki/Creating-copycats#edge-cases"
+  },
+  "Creating-copycats: Add tooltips in tooltips.json": {
+   "text": "Add it in src/main/resources/lang/default/tooltips.json, and then run datagen to merge it to src/generated/resources/lang/enus.json.",
+   "src": "https://github.com/copycats-plus/copycats/wiki/Creating-copycats#add-tooltips-in-tooltips-json"
+  },
+  "Creating-copycats: Add crafting recipes in CCStandardRecipes": {
+   "text": "Add a recipe using the copycat method, and then run datagen.",
+   "src": "https://github.com/copycats-plus/copycats/wiki/Creating-copycats#add-crafting-recipes-in-ccstandardrecipes"
+  },
+  "Creating-copycats: Implement getRequiredItems": {
+   "text": "> Only required if your copycat combines multiple items in one block. ISpecialBlockItemRequirement#getRequiredItems specifies the material requirement for a given block state, mainly so that the schematicannon will request for the correct amount rather than the default single item.",
+   "src": "https://github.com/copycats-plus/copycats/wiki/Creating-copycats#implement-getrequireditems"
+  },
+  "Creating-copycats: Register the copycat in CCBlockEntityTypes": {
+   "text": "This does not seem to be essential to the copycat's function, but to follow Create's implementation, it's better to do this regardless.",
+   "src": "https://github.com/copycats-plus/copycats/wiki/Creating-copycats#register-the-copycat-in-ccblockentitytypes"
+  },
+  "v2.0-Refactor: Terminologies": {
+   "text": "| Term | Meaning | |------|---------| | Material | The block state that the copycat is copying, not the state of the copycat itself | | Simple copycats | Copycats that can only accept one material and extends ICopycatBlock, not IMultiStateCopycatBlock | | Multi-state copycats | Copycats that can accept multiple materials and extends IMultiStateCopycatBlock, not ICopycatBlock | | Kinetic copycats | Copycats with moving parts, such as shafts and cogs, that accept materials and are rendered with block entity renderers or with Flywheel instances | | Block space | A value of 1 equals the length of…",
+   "src": "https://github.com/copycats-plus/copycats/wiki/v2.0-Refactor#terminologies"
+  },
+  "v2.0-Refactor: Blocks": {
+   "text": "All copycat blocks, including multi-state copycats and copycats that extend from Create's CopycatBlock class, now implement ICopycatBlock, so this is the recommended way to check for a copycat block. Multi-state copycats implement ICopycatBlock indirectly via IMultiStateCopycatBlock, which implements copycat block methods with reasonable defaults and provides multi-state specific methods. When implementing a copycat with a base class other than CCCopycatBlock or MultiStateCopycatBlock, follow the documentation on ICopycatBlock or IMultiStateCopycatBlock interfaces for implementation…",
+   "src": "https://github.com/copycats-plus/copycats/wiki/v2.0-Refactor#blocks"
+  },
+  "v2.0-Refactor: Block entities": {
+   "text": "All copycat block entities, including multi-state copycats and copycats that extend from Create's CopycatBlockEntity, now implement ICopycatBlockEntity. Multi-state copycats implement ICopycatBlockEntity indirectly via IMultiStateCopycatBlockEntity. When implementing a copycat with a base class other than CCCopycatBlockEntity or MultiStateCopycatBlockEntity, follow the documentation on ICopycatBlockEntity or IMultiStateCopycatBlockEntity interfaces for implementation requirements. Platform-specific implementations of block entity render data are now handled with mixins. If a copycat block…",
+   "src": "https://github.com/copycats-plus/copycats/wiki/v2.0-Refactor#block-entities"
+  },
+  "v2.0-Refactor: Rendering": {
+   "text": "Copycat models have been reworked and are now separate from Create. There are 2 parts in each copycat model, a platform-specific but block-independent foundation which is named CopycatModelForge / CopycatModelFabric, and a block-specific but platform-independent core which is named CopycatModelCore and extends from CopycatModelCore. > Compared with 1.3: SimpleCopycatModel has been merged with CopycatModel, and SimpleCopycatPart has been expanded to become CopycatModelCore. All copycat models must now use the assembly API exposed by CopycatRenderContext to assemble models. Each…",
+   "src": "https://github.com/copycats-plus/copycats/wiki/v2.0-Refactor#rendering"
+  },
+  "v2.0-Refactor: Simple copycats": {
+   "text": "For simple copycats, the API is largely unchanged. You only need to implement emitCopycatQuads like in SimpleCopycatPart:",
+   "src": "https://github.com/copycats-plus/copycats/wiki/v2.0-Refactor#simple-copycats"
+  },
+  "v2.0-Refactor: Multi-state copycats": {
+   "text": "For multi-state copycats, you only need to override registerModels with the provided multi-state helper function, and then assemble the model like in SimpleCopycatPart:",
+   "src": "https://github.com/copycats-plus/copycats/wiki/v2.0-Refactor#multi-state-copycats"
+  },
+  "v2.0-Refactor: Rendering additional models in any copycat": {
+   "text": "You have two choices if you need to render additional models which are not part of the copied material. You can either do it the vanilla way, where you register the model in the block state of the copycat block using Registrate, or do it with Flywheel partial models. For the vanilla method, you should first register your model in the block state: and then use the model in the copycat model core: For the Flywheel PartialModel method, you should first register your model as a partial model (ref Create's AllPartialModels), and then specify it in the copycat model core: In both cases, provide an…",
+   "src": "https://github.com/copycats-plus/copycats/wiki/v2.0-Refactor#rendering-additional-models-in-any-copycat"
+  },
+  "v2.0-Refactor: Kinetic copycats": {
+   "text": "To facilitate caching, copycat models for kinetic copycats should be decomposed into reusable parts so that each part can be cached separately. For example, the shaft in a copycat cogwheel should be implemented in a separate CopycatModelCore so that it can be reused in copycat shafts. To render moving parts for kinetic copycats, first implement a CopycatModelCore for those parts like normal. Then, instead of registering it with Registrate, add your model core to CopycatPartialModel and specify the block state properties that it requires. Finally, render the moving parts using…",
+   "src": "https://github.com/copycats-plus/copycats/wiki/v2.0-Refactor#kinetic-copycats"
+  },
+  "v2.0-Refactor: Misc changes": {
+   "text": "All classes from content.copycat.base are moved to foundation.copycat. APIs in the foundation package are considered public and stable. The multiloader package is removed, with utilities moved to the utility package. GlobalTransform is now renamed to AssemblyTransform. Usage is unchanged. You should now write context.assemblePiece(...) instead of assemblePiece(context, ...). CopycatRenderContext is now an interface with no type arguments, so you can just write CopycatRenderContext instead of CopycatRenderContext. Several variants of assembleQuad are no longer available because they use…",
+   "src": "https://github.com/copycats-plus/copycats/wiki/v2.0-Refactor#misc-changes"
+  }
+ }
+}

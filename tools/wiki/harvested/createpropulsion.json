@@ -1,0 +1,114 @@
+{
+ "wiki": "github.com/Propulsion-Team/create-propulsion-simulated/wiki",
+ "ns": "createpropulsion",
+ "harvested": "2026-10-22T23:50:56.704Z",
+ "matched": 0,
+ "unmatched": 26,
+ "docs": {},
+ "orphans": {
+  "ComputerCraft-peripherals-API: ComputerCraft peripherals API": {
+   "text": "Create Propulsion registers these peripherals when CC: Tweaked is installed. Peripheral types match Create’s SyncedPeripheral pattern (mainThread Lua calls run on the server). Entry point: see also ComputerCraft overview. ---",
+   "src": "https://github.com/Propulsion-Team/create-propulsion-simulated/wiki/ComputerCraft-peripherals-API#computercraft-peripherals-api"
+  },
+  "ComputerCraft-peripherals-API: Throttle control (all thrusters)": {
+   "text": "All thrust readouts and thrust-derived physics use the shared thrustUnitsPerKn physics config value (default 1000) so displayed values match assembled/physics behavior. While any computer is attached to a thruster peripheral: 1. The block uses peripheral throttle (normalized 0.0 … 1.0), driven by Lua (setPower, setThrust, etc.). 2. getPower() returns that peripheral throttle (same scale redstone would use: redstone / 15). 3. World redstone signals next to the block do not drive thrust until the computer disconnects. When the computer detaches, peripheral throttle is cleared and the thruster…",
+   "src": "https://github.com/Propulsion-Team/create-propulsion-simulated/wiki/ComputerCraft-peripherals-API#throttle-control-all-thrusters-"
+  },
+  "ComputerCraft-peripherals-API: Thruster (thruster)": {
+   "text": "Fuel / chemical thrusters only (not ion). | Method | Returns | Notes | |--------|---------|--------| | getObstruction() | number | Returns unobstructed-block count from the obstruction scan | | setPower(redstonePower) | — | redstonePower: 0 … 15; sets peripheral throttle | | setPowerNormalized(power) | — | power: 0.0 … 1.0 | | getPower() | number | Normalized throttle 0.0 … 1.0 | | getCurrentThrustPN() | number | | | getCurrentThrustKN() | number | | | getDisplayedThrustPN() | number | Tooltip-scale thrust | | getDisplayedThrustKN() | number | | | getAirflowMs() | number | | |…",
+   "src": "https://github.com/Propulsion-Team/create-propulsion-simulated/wiki/ComputerCraft-peripherals-API#thruster-thruster-"
+  },
+  "ComputerCraft-peripherals-API: Ion thruster (ionthruster)": {
+   "text": "FE-powered ion thrusters: same throttle and thrust readouts as Thruster, but no fluid API. Internal buffer is exposed as FE: | Method | Returns | Notes | |--------|---------|--------| | setPower / setPowerNormalized | — | Same throttle semantics as Throttle control | | getPower() | number | | | getObstruction() | number | Returns unobstructed-block count from the obstruction scan | | getCurrentThrustPN() / getCurrentThrustKN() | number | | | getDisplayedThrustPN() / getDisplayedThrustKN() | number | | | getAirflowMs() | number | | | getEnergyAmountFe() | number | Stored FE | |…",
+   "src": "https://github.com/Propulsion-Team/create-propulsion-simulated/wiki/ComputerCraft-peripherals-API#ion-thruster-ionthruster-"
+  },
+  "ComputerCraft-peripherals-API: Creative thruster (creativethruster)": {
+   "text": "Same throttle methods as the normal thruster, plus scroll-equivalent thrust configuration. | Method | Returns | Notes | |--------|---------|--------| | setPower / setPowerNormalized | — | Same semantics as Thruster | | getPower() | number | | | setThrustConfig(percent) | — | Scroll step 0 … 99 (matches on-block UI steps; capped internally) | | getThrustConfig() | number | Current step | | getTargetThrustPN() | number | Base thrust target from scroll / config (before throttle & atmosphere) | | getTargetThrustKN() | number | | | getCurrentThrustPN() | number | | | getCurrentThrustKN() | number…",
+   "src": "https://github.com/Propulsion-Team/create-propulsion-simulated/wiki/ComputerCraft-peripherals-API#creative-thruster-creativethruster-"
+  },
+  "ComputerCraft-peripherals-API: Vector thruster (vectorthruster)": {
+   "text": "Standard fuel vector thruster (not liquid fuel cell, not creative). Direction + throttle only; attach/detach follows Throttle control.",
+   "src": "https://github.com/Propulsion-Team/create-propulsion-simulated/wiki/ComputerCraft-peripherals-API#vector-thruster-vectorthruster-"
+  },
+  "ComputerCraft-peripherals-API: Direction (-1 … 1 plane)": {
+   "text": "| Method | Notes | |--------|--------| | getVectorX() / getVectorY() | Current nozzle direction components | | getTargetVectorX() / getTargetVectorY() | Target | | setVectorX(x) | x clamped -1.0 … 1.0 | | setVectorY(y) | y clamped -1.0 … 1.0 | | setVector(x, y) | Both clamped |",
+   "src": "https://github.com/Propulsion-Team/create-propulsion-simulated/wiki/ComputerCraft-peripherals-API#direction-1-1-plane-"
+  },
+  "ComputerCraft-peripherals-API: Throttle (0 … 15 or normalized)": {
+   "text": "| Method | Notes | |--------|--------| | setThrust(power) | power: 0 … 15 → peripheral throttle | | setThrustNormalized(power) | power: 0.0 … 1.0 | | setPower(power) | Alias of setThrust | | setPowerNormalized(power) | Alias of setThrustNormalized | | getThrust() | 0 … 15 scale | | getPower() | Normalized 0.0 … 1.0 |",
+   "src": "https://github.com/Propulsion-Team/create-propulsion-simulated/wiki/ComputerCraft-peripherals-API#throttle-0-15-or-normalized-"
+  },
+  "ComputerCraft-peripherals-API: Liquid vector thruster (liquidvectorthruster)": {
+   "text": "Liquid-fuel vector thruster: same direction and throttle methods as Vector thruster (vectorthruster) above, plus fluid tank passthrough methods. No setThrustOutput / override helpers (those exist only on Creative vector thruster).",
+   "src": "https://github.com/Propulsion-Team/create-propulsion-simulated/wiki/ComputerCraft-peripherals-API#liquid-vector-thruster-liquidvectorthruster-"
+  },
+  "ComputerCraft-peripherals-API: Fluid passthrough (IFluidHandler)": {
+   "text": "| Method | Returns | Notes | |--------|---------|--------| | tanks() | table | | | pushFluid(toName[, limit[, fluidName]]) | number | | | pullFluid(fromName[, limit[, fluidName]]) | number | | ---",
+   "src": "https://github.com/Propulsion-Team/create-propulsion-simulated/wiki/ComputerCraft-peripherals-API#fluid-passthrough-ifluidhandler-"
+  },
+  "ComputerCraft-peripherals-API: Creative vector thruster (creativevectorthruster)": {
+   "text": "Separate peripheral implementation (CreativeVectorThrusterPeripheral): direction + throttle match Vector thruster, plus override APIs below.",
+   "src": "https://github.com/Propulsion-Team/create-propulsion-simulated/wiki/ComputerCraft-peripherals-API#creative-vector-thruster-creativevectorthruster-"
+  },
+  "ComputerCraft-peripherals-API: Base thrust override (creative only)": {
+   "text": "| Method | Returns | Notes | |--------|---------|--------| | setThrustOutput(thrustOutputPn) | — | Base thrust in pN. Clamped to the same maximum as the on-block scroll: creativeVectorThrusterMaxThrust (kN from config) × thrustUnitsPerKn (physics config, default 1000). Pass < 0 (e.g. -1) to clear override and use scroll thrust again. | | clearThrustOutput() | — | Same as setThrustOutput(-1) — removes Lua thrust override | | getMaxThrustOutputPn() | number | Max allowed setThrustOutput in pN from config | | isCustomThrustOutputActive() | boolean | true if a CC thrust override is active | ---",
+   "src": "https://github.com/Propulsion-Team/create-propulsion-simulated/wiki/ComputerCraft-peripherals-API#base-thrust-override-creative-only-"
+  },
+  "ComputerCraft-peripherals-API: Stirling engine (stirlingengine)": {
+   "text": "| Method | Notes | |--------|--------| | getRpm() | | | setSpeed(targetSpeed) | Clamped to supported scroll levels | | setActive(active) | | ---",
+   "src": "https://github.com/Propulsion-Team/create-propulsion-simulated/wiki/ComputerCraft-peripherals-API#stirling-engine-stirlingengine-"
+  },
+  "ComputerCraft-peripherals-API: Redstone transmission (redstonetransmission)": {
+   "text": "| Method | Notes | |--------|--------| | getTransmissionMode() | \"direct\" or \"incremental\" | | setTransmissionMode(mode) | Throws on invalid mode | | getShiftLevel() | | | setShiftLevel(level) | | ---",
+   "src": "https://github.com/Propulsion-Team/create-propulsion-simulated/wiki/ComputerCraft-peripherals-API#redstone-transmission-redstonetransmission-"
+  },
+  "ComputerCraft-peripherals-API: Tilt adapter (tiltadapter)": {
+   "text": "| Method | Notes | |--------|--------| | getLeftSignal() | | | getRightSignal() | | | setTargetAngle(angle) | While attached, computer drives tilt target | ---",
+   "src": "https://github.com/Propulsion-Team/create-propulsion-simulated/wiki/ComputerCraft-peripherals-API#tilt-adapter-tiltadapter-"
+  },
+  "ComputerCraft-peripherals-API: Coral generator (coralgenerator)": {
+   "text": "| Method | |--------| | getCoralAmountMb() | | getCoralCapacityMb() | | getEnergyAmountFe() | | getEnergyCapacityFe() |",
+   "src": "https://github.com/Propulsion-Team/create-propulsion-simulated/wiki/ComputerCraft-peripherals-API#coral-generator-coralgenerator-"
+  },
+  "Datapack-Example-Usage: Datapack Example Usage": {
+   "text": "Fuel definitions are data-driven under: data//thrusterfuels/.json These fuels are used by both Thrusters and Liquid Burners.",
+   "src": "https://github.com/Propulsion-Team/create-propulsion-simulated/wiki/Datapack-Example-Usage#datapack-example-usage"
+  },
+  "Datapack-Example-Usage: Resolution rules (strict data-driven)": {
+   "text": "Only declared fuel entries are valid. There is no implicit fallback for minecraft:lava or forge:fuel. If a world previously relied on fallback behavior, add explicit entries (datapack, config, or KubeJS). Source precedence is: removed fuel ids KubeJS scripted/override entries datapack + config merged entries",
+   "src": "https://github.com/Propulsion-Team/create-propulsion-simulated/wiki/Datapack-Example-Usage#resolution-rules-strict-data-driven-"
+  },
+  "Datapack-Example-Usage: Fields": {
+   "text": "fluid (required): fluid id thrustmultiplier (required): thrust scaling consumptionmultiplier (required): fuel usage scaling particle (optional): plume, plasma, or none (default: plume) overridetextures (optional): list of particle texture ids from the particle atlas overridecolor (optional): RGB color int, e.g. 0x66CCFF usefluidcolor (optional): use the fluid's own tint color for particles requiredmod (optional): only loads if that mod is present",
+   "src": "https://github.com/Propulsion-Team/create-propulsion-simulated/wiki/Datapack-Example-Usage#fields"
+  },
+  "Datapack-Example-Usage: Example datapack files": {
+   "text": "Path: data/mypack/thrusterfuels/keroseneplasma.json Contents: data/mypack/thrusterfuels/watergreenplume.json Notes: overridecolor uses a decimal RGB integer (3407718 == 0x33FF66). If usefluidcolor is true, that fluid tint is used dynamically. If both are present, usefluidcolor takes priority over overridecolor.",
+   "src": "https://github.com/Propulsion-Team/create-propulsion-simulated/wiki/Datapack-Example-Usage#example-datapack-files"
+  },
+  "Datapack-Example-Usage: Reload": {
+   "text": "Use /reload to re-read datapack fuel files. On reload, fuel data is synced to connected clients automatically.",
+   "src": "https://github.com/Propulsion-Team/create-propulsion-simulated/wiki/Datapack-Example-Usage#reload"
+  },
+  "Home: Quick facts": {
+   "text": "Peripheral methods marked mainThread = true run on the server thread (safe for world/block updates). While a computer is attached, thrusters enter peripheral control: throttle comes from Lua (setPower / setThrust / …), not from adjacent redstone strength. On detach, thrusters return to normal redstone control and Lua throttle is cleared.",
+   "src": "https://github.com/Propulsion-Team/create-propulsion-simulated/wiki/Home#quick-facts"
+  },
+  "KubeJS-API: KubeJS API": {
+   "text": "Create: Propulsion exposes ThrusterFuelManager as a global in KubeJS scripts. This API registers fuels for both: Thrusters Liquid Burners Both systems share the same fuel registry.",
+   "src": "https://github.com/Propulsion-Team/create-propulsion-simulated/wiki/KubeJS-API#kubejs-api"
+  },
+  "KubeJS-API: Methods": {
+   "text": "registerScriptedFuel(String fluidId, Map settings) Single supported KubeJS registration API. Supports keys: thrustMultiplier / thrustmultiplier consumptionMultiplier / consumptionmultiplier particle overrideTextures / overridetextures overrideColor / overridecolor useFluidColor / usefluidcolor Returns true when registration succeeds. overrideFuel(String fluidIdToOverride, Map settings) Explicit alias for overriding an existing fuel entry. removeFuel(String fuelIdToRemove) Removes/disables a fuel id from all active sources (datapack/config/KubeJS).",
+   "src": "https://github.com/Propulsion-Team/create-propulsion-simulated/wiki/KubeJS-API#methods"
+  },
+  "KubeJS-API: Particle names": {
+   "text": "plume (default) plasma none (disables thruster exhaust particles for that fuel)",
+   "src": "https://github.com/Propulsion-Team/create-propulsion-simulated/wiki/KubeJS-API#particle-names"
+  },
+  "KubeJS-API: Notes": {
+   "text": "Fuel matching is strict: only declared entries are valid. There is no implicit fallback for minecraft:lava or forge:fuel. Effective precedence is removed > KubeJS > datapack+config. Invalid fluid ids are ignored and logged. particleName falls back to plume if unknown. overrideTextureIds accepts resource ids in the particle atlas (e.g. modid:plume0). overrideColor is optional and clamped to 0x000000..0xFFFFFF. useFluidColor tints particles using the actual fluid color from the fluid stack.",
+   "src": "https://github.com/Propulsion-Team/create-propulsion-simulated/wiki/KubeJS-API#notes"
+  }
+ }
+}

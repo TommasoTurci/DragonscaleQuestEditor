@@ -1,0 +1,411 @@
+{
+ "wiki": "github.com/ochotonida/artifacts/wiki",
+ "ns": "artifacts",
+ "harvested": "2026-10-22T23:50:55.911Z",
+ "matched": 44,
+ "unmatched": 45,
+ "docs": {
+  "artifacts:umbrella": {
+   "text": "Acts as a shield without durability, and slows your fall when held. Can be found in buried treasure chests, desert pyramids and village tanneries. Can be found through archaeology in desert wells.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#umbrella",
+   "title": "Umbrella"
+  },
+  "artifacts:whoopee_cushion": {
+   "text": "Occasionally plays a fart noise when worn. Equipable in any slot. Can be found in desert pyramids, village tanneries and the spawn bonus chest. Can be found through archaeology in trail ruins.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#whoopee-cushion",
+   "title": "Whoopee Cushion"
+  },
+  "artifacts:night_vision_goggles": {
+   "text": "Grants a small amount of night vision when worn. Can be found in abandoned mineshafts, shipwrecks and ruined portals. Very rarely worn by naturally spawned skeletons. Can be found through archaeology in desert pyramids.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#night-vision-goggles",
+   "title": "Night Vision Goggles"
+  },
+  "artifacts:snorkel": {
+   "text": "Gives the player a 15 second water breathing effect. Can be found in buried treasure chests, shipwrecks and large underwater ruins. Very rarely worn by naturally spawned drowned. Can be found through archaeology in desert pyramids.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#snorkel",
+   "title": "Snorkel"
+  },
+  "artifacts:superstitious_hat": {
+   "text": "Applies an extra level of looting to killed entities. Can be found in pillager outposts, strongholds, large underwater ruins and abandoned mineshafts. Can be found through archaeology in desert wells.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#superstitious-hat",
+   "title": "Superstitious Hat"
+  },
+  "artifacts:villager_hat": {
+   "text": "Decreases trading prices with villagers. Can be found in villages and igloos. Can be found through archaeology in trail ruins.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#villager-hat",
+   "title": "Villager Hat"
+  },
+  "artifacts:cowboy_hat": {
+   "text": "Increases the speed of ridden mounts. Can be found in nether fortresses, bastion stables and ruined portals. Very rarely worn by naturally spawned zombies. Can be found through archaeology in desert pyramids.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#cowboy-hat",
+   "title": "Cowboy Hat"
+  },
+  "artifacts:anglers_hat": {
+   "text": "Applies an extra level of Lure and Luck of the Sea when fishing. Can be found in village tanneries, buried treasure chests, jungle temples and large underwater ruins. Can be found through archaeology in cold ocean ruins.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#angler-s-hat",
+   "title": "Angler's Hat"
+  },
+  "artifacts:charm_of_sinking": {
+   "text": "Allows the player to move freely in fluids. Can be found in desert pyramids, shipwrecks, ancient cities and village temples. Can be found through archaeology in desert wells.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#charm-of-sinking",
+   "title": "Charm of Sinking"
+  },
+  "artifacts:cross_necklace": {
+   "text": "Increases the length of invincibility after taking damage. Can be found in bastion treasure chests, nether fortresses, pillager outposts and large underwater ruins.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#cross-necklace",
+   "title": "Cross Necklace"
+  },
+  "artifacts:flame_pendant": {
+   "text": "Has a chance to light attacking entities on fire. Can be found in desert pyramids and bastion stables. Very rarely worn by naturally spawned skeletons. Can be found through archaeology in trail ruins.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#flame-pendant",
+   "title": "Flame Pendant"
+  },
+  "artifacts:panic_necklace": {
+   "text": "Gives the player a short speed status effect after taking damage. Can be found in abandoned mineshafts, bastion treasure chests and pillager outposts.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#panic-necklace",
+   "title": "Panic Necklace"
+  },
+  "artifacts:lucky_scarf": {
+   "text": "Applies an extra level of fortune to mined blocks. Can be found in treasure chests, ruined portals, strongholds, igloos and underwater ruins. Can be found through archaeology in cold ocean ruins.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#lucky-scarf",
+   "title": "Lucky Scarf"
+  },
+  "artifacts:scarf_of_invisibility": {
+   "text": "Turns the player invisible. Can be found in desert pyramids, pillager outposts, shipwrecks and village tanneries. Very rarely worn by naturally spawned zombies.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#scarf-of-invisibility",
+   "title": "Scarf of Invisibility"
+  },
+  "artifacts:shock_pendant": {
+   "text": "Has a chance to strike attacking entities with lightning. Can be found in desert pyramids and ancient cities. Can be found through archaeology in desert pyramids.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#shock-pendant",
+   "title": "Shock Pendant"
+  },
+  "artifacts:thorn_pendant": {
+   "text": "Has a chance to damage attacking entities. Can be found in desert pyramids and ruined portals. Very rarely worn by naturally spawned husks. Can be found through archaeology in trail ruins.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#thorn-pendant",
+   "title": "Thorn Pendant"
+  },
+  "artifacts:charm_of_shrinking": {
+   "text": "Shrinks the wearer. Can be found in Village weapon smiths, nether fortresses, ruined portals and dungeons. Can be found through archaeology in trail ruins.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#charm-of-shrinking",
+   "title": "Charm of Shrinking"
+  },
+  "artifacts:antidote_vessel": {
+   "text": "Greatly reduces the duration of negative status effects. Can be found in strongholds, bastion treasure chests and village temples. Very rarely worn by naturally spawned wither skeletons. Can be found through archaeology in cold ocean ruins.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#antidote-vessel",
+   "title": "Antidote Vessel"
+  },
+  "artifacts:cloud_in_a_bottle": {
+   "text": "Allows the player to double jump. Can be found in pillager outposts, large underwater ruins, end cities and abandoned mineshafts. Can be found through archaeology in trail ruins.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#cloud-in-a-bottle",
+   "title": "Cloud in a Bottle"
+  },
+  "artifacts:crystal_heart": {
+   "text": "Increases the player's maximum health with 5 hearts. Can be found in bastion treasure chests, end cities and pillager outposts.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#crystal-heart",
+   "title": "Crystal Heart"
+  },
+  "artifacts:helium_flamingo": {
+   "text": "Allows the player to swim through the air for a short period of time. Can be found in end cities, ancient cities and strongholds.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#helium-flamingo",
+   "title": "Helium Flamingo"
+  },
+  "artifacts:obsidian_skull": {
+   "text": "Applies a 30 second fire resistance effect to the player after taking fire damage, with a 60 second cooldown. Can be found in ruined portals, shipwrecks and abandoned mineshafts. Very rarely worn by naturally spawned piglins. Can be found through archaeology in desert pyramids.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#obsidian-skull",
+   "title": "Obsidian Skull"
+  },
+  "artifacts:universal_attractor": {
+   "text": "Attracts nearby items. Can be found in desert pyramids, ruined portals and shipwrecks. Very rarely worn by naturally spawned piglins. Can be found through archaeology in desert wells.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#universal-attractor",
+   "title": "Universal Attractor"
+  },
+  "artifacts:chorus_totem": {
+   "text": "A fatal hit teleports the player somewhere else, consuming the item. Can be found in end cities and woodland mansions.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#chorus-totem",
+   "title": "Chorus Totem"
+  },
+  "artifacts:warp_drive": {
+   "text": "Causes ender pearls not to be consumed but cost hunger instead. Also removes damage from teleporting with an ender pearl. Can be found in village temples, end cities, dungeons and ancient cities. Can be found through archaeology in desert wells.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#warp-drive",
+   "title": "Warp Drive"
+  },
+  "artifacts:digging_claws": {
+   "text": "Increases the players mining speed, and increases the players base mining level to stone. Can be found in abandoned mineshafts, buried treasure chests and village toolsmiths. Can be found through archaeology in cold ocean ruins.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#digging-claws",
+   "title": "Digging Claws"
+  },
+  "artifacts:feral_claws": {
+   "text": "Increases the players attack speed. Can be found in shipwrecks, buried treasure chests and village weaponsmiths. Can be found through archaeology in trail ruins.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#feral-claws",
+   "title": "Feral Claws"
+  },
+  "artifacts:fire_gauntlet": {
+   "text": "Causes the player's melee attacks to set entities on fire. Can be found in ruined portals, large underwater ruins and bastion treasure chests. Very rarely worn by naturally spawned wither skeletons. Can be found through archaeology in cold ocean ruins.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#fire-gauntlet",
+   "title": "Fire Gauntlet"
+  },
+  "artifacts:golden_hook": {
+   "text": "Increases experience dropped from creatures by 75%. Can be found in buried treasure chests, shipwrecks and bastion treasure chests. Very rarely worn by naturally spawned piglins.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#golden-hook",
+   "title": "Golden Hook"
+  },
+  "artifacts:pocket_piston": {
+   "text": "Increases knockback dealt by the player. Can be be found in pillager outposts, nether fortresses and village toolsmiths. Can be found through archaeology in trail ruins.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#pocket-piston",
+   "title": "Pocket Piston"
+  },
+  "artifacts:power_glove": {
+   "text": "The player's attacks deal 4 additional damage. Can be found in pillager outposts, ruined portals, strongholds and large underwater ruins. Can be found through archaeology in desert pyramids.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#power-glove",
+   "title": "Power Glove"
+  },
+  "artifacts:vampiric_glove": {
+   "text": "The player is healed 20% of the damage dealt by melee attacks. Can be found in abandoned mineshafts, desert pyramids and village armorers. Very rarely worn by naturally spawned husks. Can be found through archaeology in warm ocean ruins.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#vampiric-glove",
+   "title": "Vampiric Glove"
+  },
+  "artifacts:onion_ring": {
+   "text": "Grants a temporary haste effect after eating food. Can be found in abandoned mineshafts, ancient cities and desert pyramids. Very rarely worn by naturally spawned piglin brutes. Can be found through archaeology in warm ocean ruins.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#onion-ring",
+   "title": "Onion Ring"
+  },
+  "artifacts:pickaxe_heater": {
+   "text": "Automatically smelts mined ores. Can be found in abandoned mineshafts, bastion stables, strongholds and ancient cities. Can be found through archaeology in trail ruins.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#pickaxe-heater",
+   "title": "Pickaxe Heater"
+  },
+  "artifacts:withered_bracelet": {
+   "text": "Has a chance to apply a wither effect when attacking an entity. Can be found in bastion stables, nether fortresses and dungeons. Can be found through archaeology in cold ocean ruins.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#withered-bracelet",
+   "title": "Withered Bracelet"
+  },
+  "artifacts:aqua_dashers": {
+   "text": "Allows the player to sprint on water and lava. Can be found in abandoned mineshafts, buried treasure chests, ancient cities and strongholds. Can be found through archaeology in warm ocean ruins and trail ruins.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#aqua-dashers",
+   "title": "Aqua-Dashers"
+  },
+  "artifacts:bunny_hoppers": {
+   "text": "Increases the player's jump height and prevents fall damage. Can be found in jungle temples, buried treasure chests, bastion stables and village tanneries. Very rarely worn by naturally spawned zombies. Can be found through archaeology in warm ocean ruins.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#bunny-hoppers",
+   "title": "Bunny Hoppers"
+  },
+  "artifacts:flippers": {
+   "text": "Increases the player's swimming speed by 100%. Can be found in buried treasure chests, shipwrecks and large underwater ruins. Very rarely worn by naturally spawned drowned.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#flippers",
+   "title": "Flippers"
+  },
+  "artifacts:kitty_slippers": {
+   "text": "Creepers don't target and run away from the player. Can be found in jungle temples, buried treasure chests and village tanneries. Can be found through archaeology in desert pyramids.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#kitty-slippers",
+   "title": "Kitty Slippers"
+  },
+  "artifacts:running_shoes": {
+   "text": "Increases the player's movement speed by 40%, and increases the players step height, both while sprinting. Can be found in shipwrecks, nether fortresses and village armorers. Can be found through archaeology in warm ocean ruins.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#running-shoes",
+   "title": "Running Shoes"
+  },
+  "artifacts:steadfast_spikes": {
+   "text": "Increases the player's knockback resistance to 100%, and makes ice less slippery. Can be found in pillager outposts, shipwrecks, bastion treasure chests and village armorers. Very rarely worn by naturally spawned strays. Can be found through archaeology in trail ruins.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#steadfast-spikes",
+   "title": "Steadfast Spikes"
+  },
+  "artifacts:snowshoes": {
+   "text": "Allows the player to walk on powdered snow, and increases the player's movement speed on snow. Can be found in snowy and taiga villages, igloos and ancient cities. Very rarely worn by naturally spawned strays. Can be found through archaeology in trail ruins.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#snowshoes",
+   "title": "Snowshoes"
+  },
+  "artifacts:rooted_boots": {
+   "text": "Slowly restores the player's hunger bar when walking on grass. Can be found in jungle temples, pillager outposts, strongholds and ancient cities. Can be found through archaeology in trail ruins.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#rooted-boots",
+   "title": "Rooted Boots"
+  },
+  "artifacts:strider_shoes": {
+   "text": "Allows the player to stand on lava while sneaking, and grants immunity to hot floor damage. Can be found in nether fortresses, ruined portals and dungeons. Very rarely worn by naturally spawned piglin brutes. Can be found through archaeology in warm ocean ruins.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#strider-shoes",
+   "title": "Strider Shoes"
+  }
+ },
+ "orphans": {
+  "Creating-Custom-Items: togglekey": {
+   "text": "When this component is present, the item can be toggled on and off using the specified toggle key. Must be one of: charmofshrinking, charmofsinking, nightvisiongoggles, scarfofinvisibility, universalattractor",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#togglekey"
+  },
+  "Creating-Custom-Items: disabledbytoggle": {
+   "text": "When this component is present, all components in the abilities section are ignored. This component is automatically added and removed when the toggle key for the item is pressed. This component has no fields.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#disabledbytoggle"
+  },
+  "Creating-Custom-Items: equipsound": {
+   "text": "The id of the sound event that should play when the item is right-click equipped. This component only works on wearable items added by Artifacts.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#equipsound"
+  },
+  "Creating-Custom-Items: abilitylore": {
+   "text": "Uses the same format as the vanilla minecraft:itemlore component. The tooltip from this component is ordered before ability tooltips instead of after.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#abilitylore"
+  },
+  "Creating-Custom-Items: piglinloved": {
+   "text": "Piglins are neutral towards players wearing an item with this component. This component has no fields. The vanilla minecraft:piglinloved item tag may also be of interest.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#piglinloved"
+  },
+  "Creating-Custom-Items: hurtsound": {
+   "text": "When this component is present, an additional sound will play when an entity wearing the item takes damage. sound: The id of the sound event that should play enabled: (optional) Whether this component is enabled",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#hurtsound"
+  },
+  "Creating-Custom-Items: reducednightvision": {
+   "text": "When an item with this component is worn, the brightness of any night vision effect will be reduced by this factor when the effect has less than 12 seconds remaining. Accepts a number between 0 and 1.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#reducednightvision"
+  },
+  "Creating-Custom-Items: hidewheninvisible": {
+   "text": "Items with this component will hide their model when the entity wearing it is invisible. This component only works on wearable items added by Artifacts. enabled: (optional) Whether this component is enabled",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#hidewheninvisible"
+  },
+  "Creating-Custom-Items: postdamagecooldown": {
+   "text": "When a player wearing the item takes damage, the item goes on cooldown. Most abilities will stop functioning when an item is on cooldown. cooldown: The amount of time the item goes on cooldown for, in seconds tag: (optional) A damage type tag to filter on",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#postdamagecooldown"
+  },
+  "Creating-Custom-Items: postdamageeffects": {
+   "text": "A list of mob effects that should be applied when an entity wearing the item takes damage. Objects in the list have the following fields: effect: An object with the following fields: id: The id of the mob effect level: (default = 1) The level of the mob effect duration: (default = 10) The duration of the mob effect spawnparticles: (default = true) Whether the effect should emit particles showicon: (default = false) Whether the icon of the effect should be visible in the HUD condition: (default = always) A condition that must be true for the entity wearing the item. Must be one of always,…",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#postdamageeffects"
+  },
+  "Creating-Custom-Items: posteatingeffects": {
+   "text": "A list of mob effects that should be applied when a player wearing the item finishes eating food. The objects in the list should follow the same format as the effect field from postdamageeffects. The duration of the effect is multiplied with the amount of food points restored.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#posteatingeffects"
+  },
+  "Creating-Custom-Items: damageabsorption": {
+   "text": "Causes melee attacks from entities wearing the item to absorb a portion of the damage dealt. absorptionratio: The proportion of damage dealt that is absorbed absorptionchance: The chance that damage is absorbed when attacking an entity maxdamageabsorbed: The maximum amount of damage that can be absorbed in a single hit",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#damageabsorption"
+  },
+  "Creating-Custom-Items: attackeffects": {
+   "text": "A list of effects to inflict on entities attacked by the entity wearing the item. The objects in the list have the following format: effect: The mob effect that should be applied. Uses the same format as the effect field from postdamage effects. chance: (default = 1) The probability that the effect is inflicted after an attack cooldown: (default = 0) The amount of time the item goes on cooldown for after successfully applying an effect",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#attackeffects"
+  },
+  "Creating-Custom-Items: attributemodifiers": {
+   "text": "A list of attribute modifiers that should be applied to entities wearing this item. Objects in the list use the following format: attribute: An attribute id amount: The attribute modifier amount operation: The operation of the attribute modifier. Can be either addvalue, addmultipliedbase or addmultipliedtotal. id: An identifier for this attribute modifier. Note that this identifier must be unique such that it does not conflict with other attribute modifiers. ignorecooldown: (default = true) Whether this attribute modifier should still be active when the item is on cooldown",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#attributemodifiers"
+  },
+  "Creating-Custom-Items: damageimmunity": {
+   "text": "Makes the wearer immune to a specific type of damage tag: A damage type tag to filter on condition: (default = always) A condition that should be true when the entity takes damage. Must be one of always, never, abovewater, inwater, ongrass, whilesneaking, whilesprinting.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#damageimmunity"
+  },
+  "Creating-Custom-Items: doublejump": {
+   "text": "Allows players to double jump. falldamagemultiplier: (default = 0) How much fall damage players take when double jumping after falling sprintjumphorizontalvelocity: (default = 0) The amount of extra horizontal velocity that is applied when double jumping while sprinting sprintjumpverticalvelocity: (default = 0) The amount of extra vertical velocity that is applied when double jumping while sprinting enabled: (default = true) Whether this component is enabled",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#doublejump"
+  },
+  "Creating-Custom-Items: enderpearlhungercost": {
+   "text": "Causes ender pearls not to be consumed, but cost hunger instead. cost: The amount of hunger points it costs to throw an ender pearl cooldown: (default = 0) The duration ender pearls go on cooldown for, in addition to the default 1 second cooldown enabled: (default = true) Whether this component is enabled",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#enderpearlhungercost"
+  },
+  "Creating-Custom-Items: posteatingplantgrowth": {
+   "text": "Causes a bone meal effect to be applied when the player eats an item while standing on grass or moss. enabled: (default = true) Whether this component is enabled",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#posteatingplantgrowth"
+  },
+  "Creating-Custom-Items: enchantmentlevelmodifiers": {
+   "text": "Increases the enchantment levels of specific enchantments for the entity. Currently supported enchantments are Fortune, Looting, Luck of the Sea and Lure. Objects in the list use the following format: enchantment: An enchantment id level (Default: 1): The amount to increase the enchantment level by.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#enchantmentlevelmodifiers"
+  },
+  "Creating-Custom-Items: mobeffects": {
+   "text": "A list of mob effects to apply to entities wearing the item. Objects in this list use the same format as the effect field from postdamageeffects",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#mobeffects"
+  },
+  "Creating-Custom-Items: enderpearldamageimmunity": {
+   "text": "Nullifies the damage caused by ender pearls. enabled: (default = true) Whether this component is enabled.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#enderpearldamageimmunity"
+  },
+  "Creating-Custom-Items: cureeffects": {
+   "text": "Reduces the duration of effects in the artifacts:antidotevesselcancellable tag duration: The duration in seconds that negative effects are reduced to enabled: (default = true) Whether this component is enabled",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#cureeffects"
+  },
+  "Creating-Custom-Items: replenishhungerongrass": {
+   "text": "Replenishes hunger when the entity is standing on grass duration: The duration in seconds it takes to regenerate a single food point enabled: (default = true) Whether this component is enabled",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#replenishhungerongrass"
+  },
+  "Creating-Custom-Items: creeperrepellent": {
+   "text": "Makes nearby creepers run away from the entity. enabled: (default = true) Whether this component is enabled",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#creeperrepellent"
+  },
+  "Creating-Custom-Items: phantomrepellent": {
+   "text": "Makes the item hiss at attacking phantoms when worn. enabled: (default = true) Whether this component is enabled",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#phantomrepellent"
+  },
+  "Creating-Custom-Items: sinking": {
+   "text": "Causes the entities movement to be unaffected by fluids. enabled: (default = true) Whether this component is enabled",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#sinking"
+  },
+  "Creating-Custom-Items: autosmelt": {
+   "text": "Smelts ores mined by the wearer enabled: (default = true) Whether this component is enabled",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#autosmelt"
+  },
+  "Creating-Custom-Items: fluidcollision": {
+   "text": "Allows the wearer to stand on fluids tag: (optional) A fluid tag to filter on condition: A condition that must be true for the entity. Must be one of: always, never, whilesneaking, whilesprinting",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#fluidcollision"
+  },
+  "Creating-Custom-Items: swiminair": {
+   "text": "Allows the wearer to swim in the air. flightduration: The duration in seconds the player can swim in air before needing to recharge rechargeduration: The amount of time it takes to recharge this ability cooldown: The amount of time the item goes on cooldown for when stopping flight mid-air",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#swiminair"
+  },
+  "Creating-Custom-Items: deathprotectionteleport": {
+   "text": "Teleports the entity to a random location if the entity would otherwise die. chance: (default = 1) The chance the entity is teleported on death healthrestored (default = 10): The amount of health points to restore when the ability activates cooldown (default = 0): The amount of time the item goes on cooldown for when the ability activates consume: (default = true) Wether the item is consumed when the ability activates",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#deathprotectionteleport"
+  },
+  "Creating-Custom-Items: retaliationeffects": {
+   "text": "The effects that should be applied on attacking entities thorns: (optional) When present, the attacking entity is damaged chance: The probability an attacking entity is damaged cooldown: (default = 0) The amount of time in seconds the item goes on cooldown for after successfully damaging an attacker mindamage: The minimum amount of damage dealt maxdamage: The maximum amount of damage dealt fire: (optional) When present, the attacking entity is set on fire chance: The probability that the attacking entity is set on fire cooldown: (default = 0) The amount of time in seconds the item goes on…",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#retaliationeffects"
+  },
+  "Creating-Custom-Items: tooltierupgrade": {
+   "text": "Upgrades the player's base tool tier. tier: The tier the player's base mining level is upgraded to. Can be one of wood, stone, iron, diamond or netherite.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#tooltierupgrade"
+  },
+  "Creating-Custom-Items: walkonpowdersnow": {
+   "text": "Allows the entity to walk on powder snow. enabled: (default = true) Whether this component is enabled",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Creating-Custom-Items#walkonpowdersnow"
+  },
+  "Data-Pack-Format: Blocks": {
+   "text": "artifacts:mineable/diggingclaws: Blocks that the digging claws can harvest, if they have the correct tool tier. Contains #mineable/pickaxe, #mineable/axe, #mineable/shovel and #mineable/hoe by default artifacts:campsitechests: Chests that can generate inside campsite when the useModdedChests config option is turned on. Includes the vanilla chest and wooden chests from Quark artifacts:rootedbootsgrass: Blocks that restore hunger with the Rooted Boots. Contains #animalsspawneableon by default. artifacts:snowlayers: Blocks that that affect the artifacts:generic.movementspeedonsnow attribute",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Data-Pack-Format#blocks"
+  },
+  "Data-Pack-Format: Items": {
+   "text": "artifacts:artifacts: Contains all artifacts. Used in the Amateur Archaeologist advancement",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Data-Pack-Format#items"
+  },
+  "Data-Pack-Format: Entity Types": {
+   "text": "artifacts:creepers: Entities that avoid players wearing the Kitty Slippers. Includes creepers from creeper overhaul by default",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Data-Pack-Format#entity-types"
+  },
+  "Data-Pack-Format: Mob Effects": {
+   "text": "artifacts:antidotevesselcancellable: The mob effects that can are affected by the Antidote Vessel",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Data-Pack-Format#mob-effects"
+  },
+  "Data-Pack-Format: Damage Types": {
+   "text": "artifacts:ishotfloor: Damage types that are nullified by the Strider Shoes",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Data-Pack-Format#damage-types"
+  },
+  "Data-Pack-Format: Features": {
+   "text": "artifacts:campsite The Artifacts campsite. Uses an empty feature config.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Data-Pack-Format#features"
+  },
+  "Data-Pack-Format: Placement Modifiers": {
+   "text": "artifacts:campsitecount Similar to minecraft:count, but reads the count value from the config. artifacts:campsiteheightrange Similar to a uniform minecraft:heightrange placement. The minimum and maximum Y-levels are read from the config. artifacts:ceilingheightfilter maxheight: the maximum distance between the current block and another solid block above it. Used to prevent too many campsites from spawning in large, open caves.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Data-Pack-Format#placement-modifiers"
+  },
+  "Data-Pack-Format: Loot Conditions": {
+   "text": "artifacts:artifactrarityadjustedchance defaultprobability: the probability that this loot condition succeeds when artifactRarity is set to 1. Similar to minecraft:randomchance, but the actual probability used is weighted closer to 0 or 1 depending on the artifactRarity value in the Artifacts config. The actual probability used is p ÷ (p + r - p × r), where p is the defaultprobability field and r is the artifactRarity value set in the config. This loot condition always fails if the artifactRarity value in the config is greater than 9999. artifacts:configvaluechance config: either archaeology,…",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Data-Pack-Format#loot-conditions"
+  },
+  "Data-Pack-Format: Loot Functions": {
+   "text": "artifacts:replacewithloottable loottable: the loot table to roll from Replaces the item with an item rolled from a loot table. Logs an error unless exactly 1 item was generated from the loot table. Used for archaeology loot in the Fabric version of Artifacts.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Data-Pack-Format#loot-functions"
+  },
+  "Data-Pack-Format: Loot Modifiers (Forge/NeoForge Only)": {
+   "text": "artifacts:rollloottable lootTable: the loot table that loot is generated from. replace: (optional, default = false) whether the loot generated previously should be completely replaced by the rolled loot table. Used in combination with the forge:loottableid/neoforge:loottableid loot condition to add loot to existing loot tables. The replace option is used for archaeology loot. Note: due to how the loottableid loot condition works, items will only be added to the generated loot if the target loot table is the actual loot table being rolled. If a loot table references other loot tables, only the…",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Data-Pack-Format#loot-modifiers-forge-neoforge-only-"
+  },
+  "Items: Everlasting Beef, Eternal Steak": {
+   "text": "A food item that does not get consumed when you eat it, with a 15 second cooldown. Everlasting beef drops from cows killed by players with a 1/500 drop rate, not affected by Looting. Can rarely also be found in bastion stables and village butchers. The drop rate of everlasting beef from cows can be changed in the config.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#everlasting-beef-eternal-steak"
+  },
+  "Items: Plastic Drinking Hat, Novelty Drinking Hat": {
+   "text": "Reduces the time it takes to drink drinkable items by 70%, and reduces the time it takes to eat items by 40%. Can be found in abandoned mineshafts, buried treasure chests and nether fortresses. Very rarely worn by naturally spawned skeletons. Can be found through archaeology in desert wells.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Items#plastic-drinking-hat-novelty-drinking-hat"
+  }
+ }
+}

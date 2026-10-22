@@ -1,0 +1,546 @@
+{
+ "wiki": "github.com/Penumbra-MC/Enderscape/wiki",
+ "ns": "enderscape",
+ "harvested": "2026-10-22T23:50:54.194Z",
+ "matched": 3,
+ "unmatched": 130,
+ "docs": {
+  "enderscape:end_trial_spawner": {
+   "text": "| Mob | Spawn Weight | |------------|--------------| | Endermite | 3⁄4 | | Rubblemite | 1⁄4 |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/End-City#end-trial-spawner",
+   "title": "End Trial Spawner"
+  },
+  "enderscape:mirror": {
+   "text": "Each teleport costs 1 unit of energy, plus one unit for every distance increment traveled from the linked Lodestone. The base increment is 500 blocks, increasing by 250 blocks per Resonance level, up to a maximum of 1250 blocks per unit with Resonance III.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Resonance#mirror",
+   "title": "Mirror"
+  },
+  "enderscape:magnia_attractor": {
+   "text": "Magnia Attractors can pull up to 200 entities before consuming fuel. Each level of Resonance increases this threshold by 100, allowing up to 500 entities pulled before consuming fuel with Resonance III.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Resonance#magnia-attractor",
+   "title": "Magnia Attractor"
+  }
+ },
+ "orphans": {
+  "Advancements: Trivia": {
+   "text": "The name of the advancement \"Beyond The End\" is a reference to Enderscape's early title during development, \"Beyond The End\".",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Advancements#trivia"
+  },
+  "Blocks: Building Blocks": {
+   "text": "Veiled Planks ⚠️ Celestial Planks ⚠️ Murublight Planks ⚠️ End Stone ⚠️ Polished End Stone ⚠️ End Stone Bricks ⚠️ Chiseled End Stone ⚠️ Veradite ⚠️ Polished Veradite ⚠️ Veradite Bricks ⚠️ Chiseled Veradite ⚠️ Mirestone ⚠️ Polished Mirestone ⚠️ Mirestone Bricks ⚠️ Chiseled Mirestone ⚠️ Kurodite ⚠️ Polished Kurodite ⚠️ Kurodite Bricks ⚠️ Chiseled Kurodite ⚠️ Alluring Magnia ⚠️ Repulsive Magnia ⚠️ Etched Alluring Magnia ⚠️ Etched Repulsive Magnia ⚠️ Purpur ⚠️ Dusk Purpur ⚠️ Purpur Tiles ⚠️ Celestial Bricks ⚠️ Murublight Bricks ⚠️ Shadoline ⚠️",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Blocks#building-blocks"
+  },
+  "Blocks: Natural Blocks": {
+   "text": "End Stone ⚠️ Veiled End Stone ⚠️ Celestial Overgrowth ⚠️ Veradite ⚠️ Mirestone ⚠️ Corrupt Overgrowth ⚠️ Kurodite ⚠️ Alluring Magnia ⚠️ Alluring Magnia Sprout ⚠️ Repulsive Magnia ⚠️ Repulsive Magnia Sprout ⚠️ Void Shale ⚠️ Nebulite Ore ⚠️ Mirestone Nebulite Ore ⚠️ Shadoline Ore ⚠️ Mirestone Shadoline Ore ⚠️ Block of Raw Shadoline ⚠️ Veiled Log ⚠️ Celestial Stem ⚠️ Murublight Stem ⚠️ Veiled Leaves ⚠️ Veiled Leaf Pile ⚠️ Veiled Vines ⚠️ Celestial Cap ⚠️ Murublight Cap ⚠️ Veiled Sapling ⚠️ Celestial Chanterelle ⚠️ Murublight Chanterelle ⚠️ Murublight Shelf ⚠️ Dry End Growth ⚠️ Chorus Sprouts ⚠️…",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Blocks#natural-blocks"
+  },
+  "Blocks: Functional Blocks": {
+   "text": "Bulb Lantern ⚠️ End Lamp ⚠️ Blinklamp ⚠️ Veiled Sign ⚠️ Veiled Hanging Sign ⚠️ Celestial Sign ⚠️ Celestial Hanging Sign ⚠️ Murublight Sign ⚠️ Murublight Hanging Sign ⚠️ End Vault ⚠️",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Blocks#functional-blocks"
+  },
+  "Bucket-of-Rustle: Obtaining": {
+   "text": "A bucket of rustle can be obtained via using an empty bucket on a Rustle.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Bucket-of-Rustle#obtaining"
+  },
+  "Bucket-of-Rustle: Usage": {
+   "text": "Pressing 'use' with a bucket of rustle spawns the rustle back into the world, leaving an empty bucket in the player's inventory. If a bucket of rustle is inside a dispenser, the dispenser spawns the rustle in front of it upon activation, leaving an empty bucket inside. If a bucket of rustle is named a certain name through an anvil, the rustle inside displays that name as if it were named with a name tag.‌ Alternatively, if a named rustle is captured with an empty bucket, the resulting bucket of rustle shares a name with the captured rustle.‌",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Bucket-of-Rustle#usage"
+  },
+  "Bucket-of-Rustle: Creative": {
+   "text": "When the player spawns in a rustle with a bucket of rustle from the Creative inventory, it is always an adult.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Bucket-of-Rustle#creative"
+  },
+  "Bucket-of-Rustle: Advancements": {
+   "text": "| Icon | Name | Actual Requirements | |--------------------|---------------------|-----------------------| | | The Rustle Hustle | Collect a Rustle in a Bucket. |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Bucket-of-Rustle#advancements"
+  },
+  "Bundling: Obtaining": {
+   "text": "Books enchanted with Bundling can be obtained in End Cities.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Bundling#obtaining"
+  },
+  "Celestial-Grove: Description": {
+   "text": "Celestial Groves are lush biomes that appear throughout the End, and the home of Drifters. They are the rarest of all biomes, but are often sighted near Veiled Woodlands. They have slightly denser fog than the End Highlands, and the nebulae and stars in their skies are tinted orange. Much of the Celestial Groves' surface is covered in Celestial Overgrowth, which supports the growth of Celestial Growth, Bulb Flowers, and Celestial Chanterelles. Large Celestial Chanterelles appear frequently, towering above the ground. Flanger Berry Vines grow from their caps, bearing Flanger Berries at their…",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Celestial-Grove#description"
+  },
+  "Celestial-Grove: Creatures": {
+   "text": "| Mob | Spawn Weight | Group Size | |-----------|--------------|------------| | Drifter | 3⁄5 | 3–6 | | Driftlet | 2⁄5 | 2–3 |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Celestial-Grove#creatures"
+  },
+  "Celestial-Grove: Monsters": {
+   "text": "| Mob | Spawn Weight | Group Size | |-----------|--------------|------------| | Enderman | 10⁄10 | 4–4 |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Celestial-Grove#monsters"
+  },
+  "Celestial-Grove: Music": {
+   "text": "Gameplay Soundtrack Title Soundtrack Weight Celestial Grove Elysium Enderscape No. 9 5 Celestial Grove Otherworld Enderscape No. 10 5 Celestial Grove Finality Enderscape No. 11 5 The End The End Minecraft - Volume Beta No. 19 1",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Celestial-Grove#music"
+  },
+  "Celestial-Grove: Trivia": {
+   "text": "Celestial Groves were the first Enderscape biome to be publicly released. The Celestial Grove music track, Elysium, is named after Elysium, a concept of the afterlife from Greek mythology, a paradise reserved for heroes and those related to the gods.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Celestial-Grove#trivia"
+  },
+  "Celestial-Grove: Screenshots": {
+   "text": "Celestial Grove Large Celestial Grove \"Home Away From Home\" Celestial Grove with Midnight lighting",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Celestial-Grove#screenshots"
+  },
+  "Chorus-Cake-Roll: Usage": {
+   "text": "To eat a chorus cake roll, press 'use' while it is placed on the ground. Eating a slice restores 2 (🍗) hunger and 0.4 hunger saturation. Consuming the last slice causes the player to teleport in a random area around where its eaten, similarly to chorus fruit.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Chorus-Cake-Roll#usage"
+  },
+  "Chorus-Cake-Roll: Trivia": {
+   "text": "Chorus Cake Rolls are inspired by Ube Cake Rolls. The elements that make up Chorus Cake Rolls were all intentionally made to be found in The End, with sugar being found in Mirestone Ruins",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Chorus-Cake-Roll#trivia"
+  },
+  "Corrupt-Barrens: Description": {
+   "text": "Corrupt Barrens are dense biomes that appear uncommonly throughout the End, and one of the few where Endermen do not spawn. They have much denser fog than the End Highlands, and the nebulae and stars in their skies are very faint. The surfaces and undersides of Corrupt Barrens are layered with Mirestone, often covered by Corrupt Overgrowth. Corrupt Growth grows in dense patches on the surfaces and ceilings. Murublight Chanterelles are found on the surface, while large Murublight Chanterelles and clusters of Blinklight Vines grow beneath. Pillars of Mirestone often emerge from Mirestone on the…",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Corrupt-Barrens#description"
+  },
+  "Corrupt-Barrens: Monsters": {
+   "text": "| Mob | Spawn Weight | Group Size | |------------|--------------|------------| | Endermite | 4⁄5 | 1-1 | | Rubblemite | 1⁄5 | 1-1 |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Corrupt-Barrens#monsters"
+  },
+  "Corrupt-Barrens: Music": {
+   "text": "Gameplay Soundtrack Title Soundtrack Weight Corrupt Barrens Mutagen Enderscape No. 3 5 Corrupt Barrens Nebula Enderscape No. 4 5 The End The End Minecraft - Volume Beta No. 19 1",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Corrupt-Barrens#music"
+  },
+  "Corrupt-Barrens: Trivia": {
+   "text": "Corrupt Barrens were initially concepted around the time of Celestial Groves, yet took many more iterations to be implemented. The Corrupt Barrens music track, Nebula, was the first to be composed and implemented, yet wasn't included publicly until it was later reworked.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Corrupt-Barrens#trivia"
+  },
+  "Credits: Artwork": {
+   "text": "lunarbunten Ninni Konci vye Evergreene YourLocalOtto sierra ArathainFarqoe",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Credits#artwork"
+  },
+  "Credits: Localization": {
+   "text": "Aigis (eses) Anrien (eses) AstardGrimoire (ruru) Julius (ptbr) Konci (idid) Quilt1003 (zhcn)",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Credits#localization"
+  },
+  "Credits: Special Thanks": {
+   "text": "Abysa Aigis Draradech FusionSwarly ishland Lyof marleyinbloom Patbox paulevs Ramixin Rebel459 xirobi ... and Mojang Studios, C418, Lena Raine, and others, whose work made this possible ♡",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Credits#special-thanks"
+  },
+  "Dagger: Generated Loot": {
+   "text": "| Item | Structure | Container | Quantity | Chance | |--------|------------|-----------|----------|--------| | Dagger | Mirestone Ruins | Chest | 1 | ???% |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Dagger#generated-loot"
+  },
+  "Dagger: Usage": {
+   "text": "Daggers use Nebulite as fuel. Left-clicking a Dagger with a Nebulite gem in your inventory will consume the gem and add one unit of fuel, up to the maximum of five.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Dagger#usage"
+  },
+  "Dagger: Cost": {
+   "text": "Every two hits off-cooldown costs 1 unit of energy, plus one hit per Resonance level, up to a maximum of 5 hits per unit with Resonance III.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Dagger#cost"
+  },
+  "Dagger: Stunning": {
+   "text": "To stun, the Dagger must be fueled and off-cooldown. Causing a stunning hit to the back makes the stun effect last longer than if hit from the front.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Dagger#stunning"
+  },
+  "Dagger: Interface": {
+   "text": "The fuel amount is shown on the fuel bar beneath the item icon in the inventory and hotbar, as well as within the item tooltip and first-person HUD when held.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Dagger#interface"
+  },
+  "Dagger: Enchantments": {
+   "text": "The Dagger can receive the following enchantments: | Name | Description | Max Level | |-----------------|---------------------------------------------------------------------------|-----------| | Resonance | Enhances the fuel efficiency of Nebulite tools. | III |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Dagger#enchantments"
+  },
+  "Dagger: Advancements": {
+   "text": "| Icon | Name | Actual Requirements | |--------|----------------------------|-----------------------------------------------------------------------------------| | A Stunning Blow | Stun a mob by backstabbing with the dagger. |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Dagger#advancements"
+  },
+  "Drift-Jelly-Bottle: Obtaining": {
+   "text": "###### See Also: Drifter A drift jelly bottle can be obtained by using a glass bottle on a Drifter if they are visibly leaking jelly. A dispenser with glass bottles can be used to collect the drift jelly. The drift jelly bottle appears as an item in the dispenser's inventory. If the dispenser is full, the drift jelly bottle is shot out.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Drift-Jelly-Bottle#obtaining"
+  },
+  "Drift-Jelly-Bottle: Usage": {
+   "text": "To drink a drift jelly bottle, press and hold 'use' while it is selected in the hotbar. Drinking one restores 6 (🍗🍗🍗) hunger and 2.4 hunger saturation and returns a glass bottle. Consuming the item also grants the player Low Gravity for 20 seconds. Drift jelly bottles can be drunk even with a full hunger bar. Drinking a drift jelly bottle takes 25% longer than eating other food - 2 seconds - and has a unique sound.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Drift-Jelly-Bottle#usage"
+  },
+  "Drift-Jelly-Bottle: Trivia": {
+   "text": "Drift Jelly, and consequently Drift Jelly Bottles, used to be colored pink in old versions, but was changed due to visibility issues on the Drifter.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Drift-Jelly-Bottle#trivia"
+  },
+  "Drift-Leggings: Usage": {
+   "text": "When worn, Drift Leggings provide 4 armor points, 2 armor toughness, +20% speed, +60% safe fall distance, -40% gravity, and reduced air resistance.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Drift-Leggings#usage"
+  },
+  "Drift-Leggings: Repairing": {
+   "text": "Two damaged Drift Leggings can be combined through crafting or using the grindstone. The durability of the used Drift Leggings are added together, plus an extra 5% durability. Both the crafting table and grindstone methods do not keep the enchantments of either leggings. Drift Leggings can also be repaired in an anvil by adding Drift Jelly Bottles, with each bottle restoring 25% the leggings' maximum durability, rounded down. Two Drift Leggings can also be combined in an anvil. Both methods using the anvil preserve the leggings' enchantments.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Drift-Leggings#repairing"
+  },
+  "Drift-Leggings: Advancements": {
+   "text": "| Icon | Name | Actual Requirements | |---------------------|---------------------|----------------------------------------| | Otherworldly Drip | Have Drift Leggings in your inventory. |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Drift-Leggings#advancements"
+  },
+  "Drifter: Behavior": {
+   "text": "When the tentacles of a Drifter are covered in a teal substance and the Drifter is emitting particles, that means it's leaking jelly. Drift Jelly can be harvested from Drifters that are leaking jelly with a Glass Bottle. Drifters naturally begin leaking jelly after 15-20 minutes. When another 15-20 minutes pass, they will stop leaking jelly. Drifters are intimidated by Rubblemites and Slimes, and will run away from them until they're at least 8 blocks away. When hurt, a Drifter will continuously run from its attacker until it is at least 12 blocks away.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Drifter#behavior"
+  },
+  "Drifter: Roaming": {
+   "text": "Drifters aimlessly roam around in the air, occasionally singing. When they touch the ground, they immediately bounce back into the air. Every 30-60 seconds, Drifters search for nearby Flanger Berry blocks. If one is found, it becomes the \"home\" position for that Drifter and other Drifters nearby, resetting their cooldowns. If a Drifter wanders too far away from home, it will hastily wander back. Their wandering behavior leads to them to hovering around in specific areas for long periods, as well as occasional migration in groups.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Drifter#roaming"
+  },
+  "Drifter: Bouncing": {
+   "text": "When a mob lands on a Drifter, they will bounce about 7 blocks into the air. This hurts the Drifter, dealing one damage point unless the mob is wearing boots enchanted with Feather Falling. Bouncing will also give the Drifter slight vertical momentum, allowing repeated bounces to gain height. If the mob is sneaking, vertical bounce momentum is halved and the Drifter will move downwards, allowing for a relatively safe descent. Mobs gliding with Elytra gain 50% more horizontal speed and 33% more bounce height when landing on a Drifter. Driftlets cannot be bounced on.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Drifter#bouncing"
+  },
+  "Drifter: Breeding": {
+   "text": "Drifters follow players holding Chorus Fruit or Flanger Berries. When bred, a Driftlet is created, and both parents begin leaking jelly. They cannot breed for five minutes afterwards.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Drifter#breeding"
+  },
+  "Drifter: Advancements": {
+   "text": "| Name | Screenshot | Actual Requirements | |--------------------|--------------------------------------------------------|---------------------------------------------------------------| | Terminal Jellocity | | Bounce on a Drifter while gliding at very high speeds with an Elytra. |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Drifter#advancements"
+  },
+  "Drifter: Trivia": {
+   "text": "An experimental feature once had Drifters' faces change expression depending on external factors, such as health and happiness. Drift Jelly was originally pink, later changed to teal in order to contrast Drifter tendrils. Drifters were originally intended to have pink, yellow, and teal color variations. During development, it was stated that if Driftlets were able to be bounced on, it would kill them instantly. The Drifter's design originated from an accident while modelling a Jellyfish, causing the \"arms\" to instead resemble a torso. The top texture of the Drifter's bell remained unfinished…",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Drifter#trivia"
+  },
+  "Drifter: Screenshots": {
+   "text": "A Drifter in a Celestial Grove Multiple Drifters floating together Drifter leaking jelly",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Drifter#screenshots"
+  },
+  "Drifter: Development": {
+   "text": "Modelling error (March 2021)by lunarbunten Initial concept (March 2021)by lunarbunten Drifter artwork (June 2022)by lunarbunten",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Drifter#development"
+  },
+  "End-City-Key: Generated Loot": {
+   "text": "| Item | Structure | Container | Quantity | Chance | |--------|------------|-----------|----------|--------| | End City Key | End City | End Trial Spawner | 1 | 50.0% |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/End-City-Key#generated-loot"
+  },
+  "End-City-Key: Usage": {
+   "text": "Using an end city key on an End Vault unlocks it, causing it to eject items and the end city key to be consumed. End Vaults can only be unlocked once per player, unless more than 128 players open it, which causes the first player on the list to be forgotten after all subsequent players open it.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/End-City-Key#usage"
+  },
+  "End-City-Key: Advancements": {
+   "text": "| Icon | Name | Actual Requirements | |---------------------|---------------------|-----------------------| | | Lifting the Lockdown | Unlock an End Vault with an End City Key. |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/End-City-Key#advancements"
+  },
+  "End-City: Description": {
+   "text": "Once a symbol of unity, End Cities now lay abandoned throughout the End. They are tall, towering structures, with branching stairways, arenas, and abandoned homes. Much of the loot is obtained through End Vaults, unlocked by fighting through waves of Endermites and Rubblemites from End Trial Spawners. End Vaults within End ships contain Elytra. End Cities generate at world surface in End Highlands, End Midlands, Magnia Fields, Veiled Woodlands, and Celestial Groves, at least 56 blocks above minimum world height.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/End-City#description"
+  },
+  "End-City: Mobs": {
+   "text": "Shulkers appear throughout End Cities, typically inside towers, arenas, and houses, alongside other areas. Natural hostile mob spawning is disabled within End Cities. Mobs spawn only from the End Trial Spawners. The number of mobs spawned scales with the number of players in range of each spawner.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/End-City#mobs"
+  },
+  "End-City: Loot": {
+   "text": "Vault Loot The vault in End ships always contain one Elytra. | Item | Stack Size | Chance per Roll | |-------------------------------------------|-----------------|-----------------| | Diamond Sword | 1 | 7.4% | | Diamond Pickaxe | 1 | 7.4% | | Diamond Axe | 1 | 7.4% | | Diamond Shovel | 1 | 7.4% | | Diamond Hoe | 1 | 7.4% | | Diamond Helmet | 1 | 9.3% | | Diamond Chestplate | 1 | 9.3% | | Diamond Leggings | 1 | 9.3% | | Diamond Boots | 1 | 9.3% | | Iron Ingot | 4-10 | 18.2% | | Gold Ingot | 2-6 | 18.2% | | Diamond | 2-8 | 12.1% | | Emerald | 2-6 | 12.1% | | Blaze Rod | 2-4 | 6.1% | |…",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/End-City#loot"
+  },
+  "End-City: Advancements": {
+   "text": "| Name | Actual Requirements | |----------------------------------|----------------------------------------------------------------------------------------| | The City at the End of the Game | Enter an End City. | | Lifting the Lockdown | Use an End City Key on an End Vault. | | Sky's the Limit | Have Elytra in your inventory. | | Great View From Up Here | Move 30 blocks vertically with the Levitation effect applied, regardless of direction. |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/End-City#advancements"
+  },
+  "End-City: Music": {
+   "text": "Gameplay Soundtrack Title Soundtrack Weight End City Grandeur Enderscape No. 6 20",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/End-City#music"
+  },
+  "End-City: Trivia": {
+   "text": "Enderscape's End City overhaul began with developers decorating vanilla End Cities for fun, yet quickly grew into a full redesign. The melody of Grandeur was later reused in glare, bliss, and Respite.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/End-City#trivia"
+  },
+  "End-Highlands-&-Midlands: Description": {
+   "text": "End Highlands and End Midlands comprise most of the End. Chorus Plants and Chorus Sprouts are common here, while Dry End Growth appears infrequently. End Cities, End Gateways, and Large End Gateways can generate in this biome.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/End-Highlands-%26-Midlands#description"
+  },
+  "End-Highlands-&-Midlands: Monsters": {
+   "text": "| Mob | Spawn Weight | Group Size | |-----------|--------------|------------| | Enderman | 10⁄12 | 4–4 | | Rubblemite | 2⁄12 | 2–3 |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/End-Highlands-%26-Midlands#monsters"
+  },
+  "End-Highlands-&-Midlands: Music": {
+   "text": "Gameplay Soundtrack Title Soundtrack Weight Default End, Magnia Fields, Veiled Woodlands Desolation Enderscape No. 1 1 The End The End Minecraft - Volume Beta No. 19 1",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/End-Highlands-%26-Midlands#music"
+  },
+  "FAQ: Frequently Asked Questions": {
+   "text": "Commonly asked questions regarding Enderscape. If you feel something is missing that should be here, please open an issue.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/FAQ#frequently-asked-questions"
+  },
+  "FAQ: Where is Enderscape for NeoForge?": {
+   "text": "Enderscape is not officially developed for NeoForge. Enderscape currently only has one active programmer, so developing updates on multiple versions for Fabric alongside a NeoForge version is unfeasible. Previous NeoForge releases have been done by volunteer developers, and we no longer desire to support NeoForge.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/FAQ#where-is-enderscape-for-neoforge-"
+  },
+  "FAQ: Why isn't Enderscape updated for 1.21.1?": {
+   "text": "Enderscape was ported from an unfinished 1.19.4 branch to 1.21.3 in November of 2024. Porting to 1.21.1 was never in consideration, as lunarbunten aims to support and play their mods on the latest version however possible. Furthermore, developing on 1.21.1 concurrently would be unfeasible as our code would have to be readjusted many times to accommodate Minecraft's older codebase. We have no intentions of updating Enderscape on 1.21.1.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/FAQ#why-isn-t-enderscape-updated-for-1-21-1-"
+  },
+  "FAQ: Why isn't Enderscape on 1.20?": {
+   "text": "Every reason above alongside features such as Trial Spawners and Vaults from 1.21 not being present in 1.20. Developing on 1.20 alongside modern versions would be entirely unfeasible due to increasingly vast Minecraft codebase differences. We have no intentions of porting Enderscape to 1.20.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/FAQ#why-isn-t-enderscape-on-1-20-"
+  },
+  "FAQ: Building Blocks": {
+   "text": "Potentially conflicting blocks that Enderscape adds: End Stone slabs, stairs, and walls Polished End Stone, including slabs, stairs, and walls Purpur Walls and Chiseled Purpur",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/FAQ#building-blocks"
+  },
+  "FAQ: Tools": {
+   "text": "Potentially conflicting tools that Enderscape adds: Dagger, a melee weapon accessible early in End progression with fast attack speed and lower damage. Supports most sword enchantments. Enderscape's Dagger has the ability to stun mobs upon attack when fueled with Nebulite. Mirror, found in Strongholds and End Cities that allows players to teleport to linked Lodestones when fueled with Nebulite. Includes enchantments to reduce cost and allow traveling between the Overworld and End. Magnia Attractor, which pulls items and experience orbs in a wide radius towards the player when fueled with…",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/FAQ#tools"
+  },
+  "FAQ: Structures": {
+   "text": "Enderscape overhauls Strongholds and End Cities. Strongholds in Enderscape are designed to be similar to vanilla Strongholds while featuring additional polish and variety. It features a visual update making use of more blocks, redesigned versions of old Stronghold rooms, and greater room variety. It also overrides the natural hostile mob pool, notably excluding Creepers while also including Silverfish and heightened Enderman spawn chances. End Cities in Enderscape are designed to feel similar to vanilla End Cities while including new gameplay from Trial Spawners and Vaults. It features a…",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/FAQ#structures"
+  },
+  "FAQ: World Generation": {
+   "text": "Enderscape implements new world generation via a built-in datapack that only supports our own biomes. If you wish to add other biomes, you must directly modify the world generation in a data pack. We would like to make this more accessible and automatic at a later date. Enderscape also has biomes that appear at different altitudes. Depending on the implementation, these could appear out of context or be unsupported entirely. Enderscape's world generation can be disabled during world creation, but this is not recommended.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/FAQ#world-generation"
+  },
+  "FAQ: General Feature Roadmap": {
+   "text": "Nothing from this list has an ETA. We'll work on something when we think it'll be fun, and release it when it's ready. Thank you for supporting Enderscape.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/FAQ#general-feature-roadmap"
+  },
+  "FAQ: Future plans": {
+   "text": "Additional biomes (Not abundant in life, unlike Celestial Grove, Corrupt Barrens, Veiled Woodlands) Additional biomes in Void Depths Center Island overhaul Ender Dragon fight update Additional major structure Additional Shadoline building blocks Additional hostile mobs Additional enderman-like mobs Celestial Grove update Magnia Radio (at least 3 or 5 music tracks per dimension on release)",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/FAQ#future-plans"
+  },
+  "FAQ: Possible plans": {
+   "text": "Additional nebulite-fueled tools Additional structures End City variants End progression redesign Renewable Magnia Renewable Nebulite",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/FAQ#possible-plans"
+  },
+  "FAQ: Unlikely to happen": {
+   "text": "Nebulite fueled armor set Shadoline toolset (like Copper, Iron, Diamond, etc.) New armor & toolset like Netherite Enderlings from Minecraft Dungeons (Watchling, Blasting, Snareling)",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/FAQ#unlikely-to-happen"
+  },
+  "FAQ: Not going to happen": {
+   "text": "Nebulite armor or toolset Additional villager-like species, similar to Piglins",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/FAQ#not-going-to-happen"
+  },
+  "Flanger-Berry: Obtaining": {
+   "text": "Flanger berries can be obtained by destroying a ripe Flanger Berry Block either by hand or shooting it with an arrow.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Flanger-Berry#obtaining"
+  },
+  "Flanger-Berry: Usage": {
+   "text": "To eat a flanger berry, press and hold 'use' while it is selected in the hotbar. Eating one restores 5 (🍗🍗🍗) hunger and 12 hunger saturation Flanger berries grant alot of saturation, which can be useful in the End for long trips.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Flanger-Berry#usage"
+  },
+  "Items: Ingredients": {
+   "text": "Drift Jelly Bottle Raw Shadoline Shadoline Ingot Shadoline Nugget Nebulite Nebulite Shards Rubble Chitin Stasis Armor Trim ⚠️ End City Key Crescent Banner Pattern ⚠️",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Items#ingredients"
+  },
+  "Magnia-Attractor: Usage": {
+   "text": "Magnia Attractors require Nebulite as fuel. Left-clicking a Magnia Attractor with a Nebulite gem in your inventory will consume the gem and add one unit of fuel, up to the maximum of six. It can be powered on and off by using it in your hand or right-clicking it in your inventory.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Magnia-Attractor#usage"
+  },
+  "Magnia-Attractor: Attracting": {
+   "text": "When a mob has a fueled and powered Magnia Attractor in their inventory, nearby items and experience orbs in a 20x8x20 area will be pulled to them.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Magnia-Attractor#attracting"
+  },
+  "Magnia-Attractor: Cost": {
+   "text": "Each time the user collects an item stack or experience orb pulled by a Magnia Attractor, a hidden counter increases. If items continue being pulled but cannot be picked up, the counter still rises gradually. When it reaches 200, one unit of energy is consumed.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Magnia-Attractor#cost"
+  },
+  "Magnia-Attractor: Interface": {
+   "text": "The fuel amount is shown on the fuel bar beneath the item icon in the inventory and hotbar, as well as within the item tooltip and first-person HUD when held.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Magnia-Attractor#interface"
+  },
+  "Magnia-Attractor: First-person HUD": {
+   "text": "When held, a fuel bar will appear above the crosshair. The full length represents maximum fuel capacity, pink units show the current fuel amount, and glowing white units indicate the use cost. Normal",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Magnia-Attractor#first-person-hud"
+  },
+  "Magnia-Attractor: Enchantments": {
+   "text": "A Magnia Attractor can receive the following enchantments: | Name | Description | Max Level | |-----------------|---------------------------------------------------------------------------------------------------|-----------| | Resonance | Enhances the fuel efficiency of Nebulite tools. | III | | Bundling | Items picked up are automatically added to the first Bundle that already contains a matching item.| I |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Magnia-Attractor#enchantments"
+  },
+  "Magnia-Attractor: Advancements": {
+   "text": "| Name | Actual Requirements | |---------------------|----------------------------------------------------------| | Magnificent Reach! | Pull an item or experience orb using a Magnia Attractor. |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Magnia-Attractor#advancements"
+  },
+  "Magnia-Fields: Description": {
+   "text": "Magnia Fields are desolate biomes common throughout the End. The nebulae and stars in their skies are tinted green. Veins of Magnia run along the surfaces and undersides of the Magnia Fields. Alluring Magnia appears on the surface, and Repulsive Magnia beneath. Arches of Alluring Magnia are often found, and occasional Magnia \"towers\" emerge from the surface, with stems of Repulsive Magnia leading to a bulb of Alluring Magnia surrounded by rings. Alluring Magnia Sprouts are found growing on Alluring Magnia, and Repulsive Magnia Sprouts on Repulsive Magnia. Chorus Plants and Chorus Sprouts…",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Magnia-Fields#description"
+  },
+  "Magnia-Fields: Monsters": {
+   "text": "| Mob | Spawn Weight | Group Size | |-----------|--------------|------------| | Enderman | 10⁄12 | 4–4 | | Rubblemite | 2⁄12 | 2–3 |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Magnia-Fields#monsters"
+  },
+  "Magnia-Fields: Music": {
+   "text": "Gameplay Soundtrack Title Soundtrack Weight Default End, Magnia Fields, Veiled Woodlands Desolation Enderscape No. 1 1 Magnia Fields Flutters Enderscape No. 2 5 The End The End Minecraft - Volume Beta No. 19 1",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Magnia-Fields#music"
+  },
+  "Magnia-Fields: Trivia": {
+   "text": "Magnia Fields were initially developed in 2023 but weren’t publicly available until version 1.0.0 in 2025.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Magnia-Fields#trivia"
+  },
+  "Mirestone-Ruins: Description": {
+   "text": "Left behind in pursuit of grandeur, Mirestone Ruins are found throughout Corrupt Barrens. They are ruined settlements branching from a central fountain, with paths leading to scattered houses, altars, and bunkers. Chests found throughout contain moderately useful items, some unavailable elsewhere in the End. These chests are also the only source of the Music Disc \"vye - decay\".",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Mirestone-Ruins#description"
+  },
+  "Mirestone-Ruins: Loot": {
+   "text": "| Item | Stack Size | Chance per Roll | |-------------------------|-------------|-----------------| | Bone | 3–6 | 12.0% | | Chorus Fruit | 2–6 | 12.0% | | Bread | 2–4 | 8.0% | | Ender Pearl | 1–6 | 8.0% | | Murublight Shelf | 1–2 | 8.0% | | Gunpowder | 4–8 | 6.0% | | Leather | 4–8 | 6.0% | | Paper | 4–8 | 6.0% | | Sugar | 3–6 | 6.0% | | Flanger Berry | 2–8 | 3.0% | | Black Dye | 1–6 | 3.0% | | Music Disc (vye - decay)| 1 | 3.0% |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Mirestone-Ruins#loot"
+  },
+  "Mirestone-Ruins: Trivia": {
+   "text": "An early version of the Mirestone Ruins were shown in a preview video before being redesigned.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Mirestone-Ruins#trivia"
+  },
+  "Mirror: Generated Loot": {
+   "text": "| Item | Structure | Container | Quantity | Chance | |--------|------------|-----------|----------|--------| | Mirror | Stronghold | Chest | 1 | 18.0% | | Mirror | End City | End Vault | 1 | 10.0% |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Mirror#generated-loot"
+  },
+  "Mirror: Usage": {
+   "text": "Mirrors require Nebulite as fuel. Left-clicking a Mirror with a Nebulite gem in your inventory will consume the gem and add one unit of fuel, up to the maximum of five.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Mirror#usage"
+  },
+  "Mirror: Cost": {
+   "text": "Each teleport costs 1 unit of energy, plus one unit for every distance increment traveled from the linked Lodestone. The base increment is 500 blocks, increasing by 250 blocks per Resonance level, up to a maximum of 1250 blocks per unit with Resonance III. Traveling between dimensions with Transdimensional always consumes the Mirror's maximum fuel capacity.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Mirror#cost"
+  },
+  "Mirror: Teleporting": {
+   "text": "To teleport, a Mirror must meet the following requirements: It must be linked to a Lodestone (use the Mirror on one to link). It must be in the same dimension as the Lodestone, or have the Transdimensional enchantment. The coordinate scales of both dimensions must match (Overworld to Nether is not allowed). The destination must be within range, based on the Mirror's fuel capacity. The Mirror must have enough fuel to cover the teleportation cost. The user must not exceed size limits. The target location must have enough room for the user. If all checks pass, the user is teleported to the…",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Mirror#teleporting"
+  },
+  "Mirror: Dispensers": {
+   "text": "Dispensers can use Mirrors, teleporting any valid entity in front of their face. This consumes fuel and applies the same cooldown to Players. Entities that are too large cannot be teleported, and certain mobs (such as Wardens, Withers, and Elder Guardians) cannot be teleported.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Mirror#dispensers"
+  },
+  "Mirror: Interface": {
+   "text": "The fuel amount is shown on the fuel bar beneath the item icon in the inventory and hotbar, as well as within the item tooltip and first-person HUD when held.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Mirror#interface"
+  },
+  "Mirror: First-person HUD": {
+   "text": "When held, a fuel bar will appear above the crosshair. The full length represents maximum fuel capacity, pink units show the current fuel amount, and glowing white units indicate the teleportation cost. When enchanted with Transdimensional, in a different dimension, and at maximum fuel, the bar will glow, indicating that you can teleport between dimensions. If there's an issue, such as insufficient fuel or being in a different dimension without Transdimensional, a glowing red outline will appear around the fuel bar. Normal Transdimensional Error",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Mirror#first-person-hud"
+  },
+  "Mirror: Enchantments": {
+   "text": "The Mirror can receive the following enchantments: | Name | Description | Max Level | |-----------------|---------------------------------------------------------------------------|-----------| | Resonance | Enhances the fuel efficiency of Nebulite tools. | III | | Transdimensional| Allows teleportation between dimensions with matching coordinate scales. | I |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Mirror#enchantments"
+  },
+  "Mirror: Advancements": {
+   "text": "| Icon | Name | Actual Requirements | |--------|----------------------------|-----------------------------------------------------------------------------------| | Through the Looking Glass | Teleport with a Mirror. | | Not Quite Long Distance | Use a Mirror to teleport a horizontal distance of 2000 blocks or more. | | A Link Between Worlds | Teleport to a different dimension using a Mirror. |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Mirror#advancements"
+  },
+  "Mirror: Trivia": {
+   "text": "The Mirror was originally inspired by the Magic Mirror from The Legend of Zelda: A Link to the Past, an item that lets the player instantly travel between the Light World and Dark World. The Mirror item texture was meant to occasionally blink, but this wasn't implemented due to issues with Minecraft's animation system.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Mirror#trivia"
+  },
+  "Nebulite-Shards: Advancements": {
+   "text": "| Name | Actual Requirements | |---------------------|-----------------------| | Nebulous Activity | Craft a Nebulite gem. |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Nebulite-Shards#advancements"
+  },
+  "Nebulite: Fueling": {
+   "text": "Left-clicking a Mirror or Magnia Attractor with a Nebulite gem in an inventory will consume the gem and add one unit of fuel.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Nebulite#fueling"
+  },
+  "Nebulite: Beacons": {
+   "text": "Nebulite can be used to select powers from a beacon. The player must select one of the available powers then insert a Nebulite gem into the item slot.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Nebulite#beacons"
+  },
+  "Nebulite: Advancements": {
+   "text": "| Icon | Name | Actual Requirements | |---------------------|---------------------|-----------------------| | | Nebulous Activity | Craft a Nebulite gem. |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Nebulite#advancements"
+  },
+  "Raw-Shadoline: Obtaining": {
+   "text": "Raw Shadoline can be obtained by mining Shadoline Ore without Silk Touch.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Raw-Shadoline#obtaining"
+  },
+  "Resonance: Dagger": {
+   "text": "Daggers consume Nebulite fuel upon performing 4 stuns. Each level of Resonance increases this threshold by 2, allowing up to 10 stuns before consuming fuel with Resonance III.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Resonance#dagger"
+  },
+  "Resonance: Obtaining": {
+   "text": "Resonance can be obtained on Nebulite tools in the Enchanting Table. Books enchanted with Resonance can be obtained in End Cities.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Resonance#obtaining"
+  },
+  "Rubble-Shield: Dashing": {
+   "text": "When blocking with a Rubble Shield, moving and jumping triggers a dash in the direction you’re moving. Dashing gives you a significant horizontal speed boost, at the cost of 3 durability. Dashing can also be performed while gliding with an Elytra enchanted with Rebound, costing 9 durability.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Rubble-Shield#dashing"
+  },
+  "Rubble-Shield: Repairing": {
+   "text": "Two damaged Rubble Shields of the same variant can be combined through crafting or using the grindstone. The durability of the used Rubble Shields is added together, plus an extra 5% durability. Both the crafting table and grindstone methods do not keep the enchantments of either shield. Rubble Shields can also be repaired in an anvil by adding Rubble Chitin, with each item restoring 25% of the shield’s maximum durability, rounded down. Two Rubble Shields of the same variant can also be combined in an anvil. Both methods using the anvil preserve the shield’s enchantments.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Rubble-Shield#repairing"
+  },
+  "Rubble-Shield: Advancements": {
+   "text": "| Icon | Name | Actual Requirements | |---------------------|---------------------|-----------------------| | | Not Today, Maybe Another | While shielding yourself, jump in a direction to dash. |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Rubble-Shield#advancements"
+  },
+  "Rubble-Shield: Trivia": {
+   "text": "Rubble Shields had early iterations dating back to 2020 but were never publicly implemented until redesigned in 2025.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Rubble-Shield#trivia"
+  },
+  "Rubblemite: Spawning": {
+   "text": "Rubblemites spawn in groups of 2-3 within End Highlands, End Midlands, Magnia Fields, and Veiled Woodlands. In Corrupt Barrens, they spawn in groups of 1. The material of their shell depends on the block the Rubblemite spawns on. Mirestone variants appear on Mirestone blocks, Dusk Purpur blocks, and Corrupt Overgrowth. Veradite and Kurodite variants appear on Veradite and Kurodite respectively.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Rubblemite#spawning"
+  },
+  "Rubblemite: On Death": {
+   "text": "Rubblemites drop 5 experience points, 0-1 of their shell material, and have a 25% chance to drop Rubble Chitin.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Rubblemite#on-death"
+  },
+  "Rubblemite: Behavior": {
+   "text": "Rubblemites attack Players and Iron Golems within 24 blocks. As arthropods, Rubblemites are affected by the Bane of Arthropods enchantment.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Rubblemite#behavior"
+  },
+  "Rubblemite: Damaging": {
+   "text": "Upon taking attack damage, Rubblemites retreat into their shell for 2 seconds. When inside their shell, Rubblemites won't move or look around. When inside their shell or dashing, they are invulnerable to physical attacks under 12 HP. Rubblemites also enter their shells when they touch water or rain. When submerged in water, they won't move, and will slowly drown.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Rubblemite#damaging"
+  },
+  "Rubblemite: Attacking": {
+   "text": "Rubblemites have a 10% chance to dash towards their target during combat, gaining horizontal and slight vertical momentum, followed by a 1.5 second cooldown. Rubblemites cannot dash when they have the slowness effect, making Bane of Arthropods especially effective at countering them.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Rubblemite#attacking"
+  },
+  "Rubblemite: Trivia": {
+   "text": "Rubblemites are voiced by Vye, an Enderscape developer. Prior to version 1.0, the bottom textures of Rubblemites did not connect to their head.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Rubblemite#trivia"
+  },
+  "Rustle: Shearing": {
+   "text": "Rustles drop 1-3 String when sheared. This is unaffected by Fortune and Looting.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Rustle#shearing"
+  },
+  "Rustle: Behavior": {
+   "text": "Rustles wander aimlessly, often making noise. They have poor eyesight, and only spot Players up close. When they bump into another mob, they'll stop and forget their path. Occasionally, Rustles search for Veiled Leaf Piles or Carpet blocks to rest on, sleeping for one minute before waking. When sheared, Rustles will regrow their hair naturally over 4-8 minutes. A sheared Rustle may also look for nearby Murublight Chanterelles, eating and destroying one to regrow its hair. When hurt, a Rustle will continuously run from its attacker until it is at least 12 blocks away.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Rustle#behavior"
+  },
+  "Rustle: Breeding": {
+   "text": "Rustles can be bred using Murublight Shelves, after which they spawn a baby Rustle. They cannot breed for five minutes afterwards.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Rustle#breeding"
+  },
+  "Rustle: Advancements": {
+   "text": "| Name | Screenshot | Actual Requirements | |-------------------|--------------------------------------------------------|------------------------------| | The Rustle Hustle | | Use a Bucket on a Rustle. |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Rustle#advancements"
+  },
+  "Rustle: Trivia": {
+   "text": "The design of Rustles was inspired by sea slugs and silkworms.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Rustle#trivia"
+  },
+  "Rustle: Development": {
+   "text": "Veiled Woodlands concept art (March 2025)by Konci Rustle design concept (March 2025)by Konci",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Rustle#development"
+  },
+  "Shadoline-Armor: Usage": {
+   "text": "When worn, Shadoline Armor provides a total of 15 armor points, and 70% stealth. Stealth reduces the range that mobs are able to detect you in.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Shadoline-Armor#usage"
+  },
+  "Shadoline-Armor: Repairing": {
+   "text": "Two of the same piece of damaged Shadoline Armor can be combined through crafting or using the grindstone. The durability of the used Shadoline Armor are added together, plus an extra 5% durability. Both the crafting table and grindstone methods do not keep the enchantments of either leggings. Shadoline Armor can also be repaired in an anvil by adding Shadoline Ingots, with each ingot restoring 25% the armors maximum durability, rounded down. Two of the same piece can also be combined in an anvil. Both methods using the anvil preserve the armors enchantments.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Shadoline-Armor#repairing"
+  },
+  "Transdimensional: Obtaining": {
+   "text": "Books enchanted with Transdimensional can be obtained in End Cities.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Transdimensional#obtaining"
+  },
+  "Transdimensional: Advancements": {
+   "text": "| Name | Actual Requirements | |----------------------------|-----------------------------------------------------------------------------------| | A Link Between Worlds | Teleport to a different dimension using a Mirror enchanted with Transdimensional. |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Transdimensional#advancements"
+  },
+  "Veiled-Woodlands: Description": {
+   "text": "Veiled Woodlands are dense forests that appear throughout the End, and the home of Rustles. They have rather dense fog compared to End Highlands, and the nebulae and stars in their skies are tinted blue. Most of the Veiled Woodlands' surface is covered in silk-like growth. Wisp Growth, Wisp Sprouts, and Wisp Flowers thrive on the Veiled End Stone. Veiled trees root into the End Stone below, with their leaves visible above. Veiled Vines grow from the Veiled Leaves, emitting particles that drift away in the wind. Chorus Plants, Chorus Sprouts, and Dry End Growth also appear growing on the End…",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Veiled-Woodlands#description"
+  },
+  "Veiled-Woodlands: Creatures": {
+   "text": "| Mob | Spawn Weight | Group Size | |-----------|--------------|------------| | Rustle | 6⁄6 | 2–3 |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Veiled-Woodlands#creatures"
+  },
+  "Veiled-Woodlands: Monsters": {
+   "text": "| Mob | Spawn Weight | Group Size | |-----------|--------------|------------| | Enderman | 10⁄12 | 4–4 | | Rubblemite | 2⁄12 | 2–3 |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Veiled-Woodlands#monsters"
+  },
+  "Veiled-Woodlands: Music": {
+   "text": "Gameplay Soundtrack Title Soundtrack Weight Default End, Magnia Fields, Veiled Woodlands Desolation Enderscape No. 1 1 Veiled Woodlands Respite Enderscape No. 8 5 The End The End Minecraft - Volume Beta No. 19 1",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Veiled-Woodlands#music"
+  },
+  "Veiled-Woodlands: Development": {
+   "text": "Experimentation with growth (March 2025) Concept art (March 2025) by Konci",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Veiled-Woodlands#development"
+  },
+  "_Sidebar: Biomes": {
+   "text": "End Highlands & Midlands Celestial Grove Corrupt Barrens Magnia Fields Veiled Woodlands",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/_Sidebar#biomes"
+  }
+ }
+}

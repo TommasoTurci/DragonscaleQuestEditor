@@ -1,0 +1,170 @@
+{
+ "wiki": "github.com/rockquiet/Spawn/wiki",
+ "ns": "spawn",
+ "harvested": "2026-10-22T23:50:53.312Z",
+ "matched": 0,
+ "unmatched": 40,
+ "docs": {},
+ "orphans": {
+  "Commands-&-Permissions: /spawn": {
+   "text": "Permission: spawn.use (default for everyone) Description: Teleport to spawn",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Commands-%26-Permissions#-spawn"
+  },
+  "Commands-&-Permissions: /spawn %player%": {
+   "text": "Permission: spawn.others (default for op) Description: Teleport another player to spawn",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Commands-%26-Permissions#-spawn-player-"
+  },
+  "Commands-&-Permissions: /spawn set": {
+   "text": "Permission: spawn.set (default for op) Description: Sets the spawn at the current location",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Commands-%26-Permissions#-spawn-set"
+  },
+  "Commands-&-Permissions: /spawn reload": {
+   "text": "Permission: spawn.reload (default for op) Description: Reloads all files",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Commands-%26-Permissions#-spawn-reload"
+  },
+  "Commands-&-Permissions: teleport-cooldown bypass": {
+   "text": "Permission: spawn.bypass.cooldown (default for op) Description: Bypass the teleport cooldown",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Commands-%26-Permissions#teleport-cooldown-bypass"
+  },
+  "Commands-&-Permissions: teleport-delay bypass": {
+   "text": "Permission: spawn.bypass.delay (default for op) Description: Bypass the teleport delay",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Commands-%26-Permissions#teleport-delay-bypass"
+  },
+  "Commands-&-Permissions: cancel-on-move bypass": {
+   "text": "Permission: spawn.bypass.cancel-on-move (default for op) Description: Bypass the teleport cancel on move",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Commands-%26-Permissions#cancel-on-move-bypass"
+  },
+  "Commands-&-Permissions: void-teleport bypass": {
+   "text": "Permission: spawn.bypass.void-teleport (default for op) Description: Bypass the void teleport",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Commands-%26-Permissions#void-teleport-bypass"
+  },
+  "Commands-&-Permissions: respawn-teleport bypass": {
+   "text": "Permission: spawn.bypass.respawn-teleport (default for op) Description: Bypass the respawn teleport",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Commands-%26-Permissions#respawn-teleport-bypass"
+  },
+  "Commands-&-Permissions: join-teleport bypass": {
+   "text": "Permission: spawn.bypass.join-teleport (default for op) Description: Bypass the join teleport",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Commands-%26-Permissions#join-teleport-bypass"
+  },
+  "Commands-&-Permissions: world-change bypass": {
+   "text": "Permission: spawn.bypass.world-change (default for op) Description: Bypass the world change teleport",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Commands-%26-Permissions#world-change-bypass"
+  },
+  "Commands-&-Permissions: world-list bypass": {
+   "text": "Permission: spawn.bypass.world-list (default for op) Description: Bypass the world-list",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Commands-%26-Permissions#world-list-bypass"
+  },
+  "Commands-&-Permissions: gamemode-restriction bypass": {
+   "text": "Permission: spawn.bypass.gamemode-restriction (default for op) Description: Bypass the gamemode-restriction",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Commands-%26-Permissions#gamemode-restriction-bypass"
+  },
+  "Commands-&-Permissions: All permissions": {
+   "text": "Permission: spawn. Description: Grants all permissions of the plugin",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Commands-%26-Permissions#all-permissions"
+  },
+  "Commands-&-Permissions: All bypass permissions": {
+   "text": "Permission: spawn.bypass. Description: Grants all bypass permissions",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Commands-%26-Permissions#all-bypass-permissions"
+  },
+  "Configuration: update-checks": {
+   "text": "Default value: true Description: Checks for plugin updates on server start",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Configuration#update-checks"
+  },
+  "Configuration: list-type": {
+   "text": "Default value: disabled Possible values: disabled : world-list is not used blacklist : the plugin will not work in worlds listed below whitelist : the plugin will only work in worlds listed below Description: Mode that the world-list should use",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Configuration#list-type"
+  },
+  "Configuration: world-list": {
+   "text": "Default values: \"none\" Example: Description: A list of worlds where the plugin should or should not work",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Configuration#world-list"
+  },
+  "Configuration: gamemode-restricted": {
+   "text": "Default value: false Description: Restrict the usage to specific game modes (only for players teleporting themselves)",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Configuration#gamemode-restricted"
+  },
+  "Configuration: gamemode-list": {
+   "text": "Default values: \"none\" Possible values: SURVIVAL, ADVENTURE, CREATIVE, SPECTATOR Example: Description: A list of worlds on which the plugin should or should not work",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Configuration#gamemode-list"
+  },
+  "Configuration: use-player-head-rotation": {
+   "text": "Default value: false Description: Use the player's current head rotation instead of the defined one (spawn location) on teleport",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Configuration#use-player-head-rotation"
+  },
+  "Configuration: fall-damage": {
+   "text": "Default value: false Description: Toggle if the player takes fall damage on teleport",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Configuration#fall-damage"
+  },
+  "Configuration: teleport-on-join:": {
+   "text": "Default value: false Description: Teleports the player to spawn when joining the server",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Configuration#teleport-on-join-"
+  },
+  "Configuration: only-first-join": {
+   "text": "Default value: false Description: Teleports the player to spawn only when joining the server for the first time",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Configuration#only-first-join"
+  },
+  "Configuration: seconds": {
+   "text": "Default value: 3 Description: How long the player has to wait before being teleported to spawn",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Configuration#seconds"
+  },
+  "Configuration: cancel-on-move": {
+   "text": "Default value: true Description: Toggle if the teleport delay should be canceled if the player moves",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Configuration#cancel-on-move"
+  },
+  "Configuration: blindness": {
+   "text": "Default value: false Description: Toggle if the player should get the blindness effect during delay Note: this may not work properly with very short delay times.",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Configuration#blindness"
+  },
+  "Configuration: teleport-out-of-void:": {
+   "text": "Default value: false Description: Teleports the player to spawn when falling into the void",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Configuration#teleport-out-of-void-"
+  },
+  "Configuration: check-height": {
+   "text": "Default value: -64 Description: The height at which the player gets teleported out of the void",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Configuration#check-height"
+  },
+  "Configuration: teleport-on-respawn:": {
+   "text": "Default value: false Description: Teleports the player to spawn on death",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Configuration#teleport-on-respawn-"
+  },
+  "Configuration: ignore-bed-spawn": {
+   "text": "Default value: false Description: Toggle if the bed spawn-point of the player should be ignored",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Configuration#ignore-bed-spawn"
+  },
+  "Configuration: ignore-anchor-spawn": {
+   "text": "Default value: false Description: Toggle if the respawn anchor spawn-point of the player should be ignored",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Configuration#ignore-anchor-spawn"
+  },
+  "Configuration: teleport-on-world-change:": {
+   "text": "Default value: false Description: Teleports the player to spawn if they enter a world other than the spawn world",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Configuration#teleport-on-world-change-"
+  },
+  "Configuration: check-on-join": {
+   "text": "Default value: false Description: Toggle if the world should also be checked on join. This can interfere with teleport on join",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Configuration#check-on-join"
+  },
+  "Configuration: particle": {
+   "text": "Default value: PORTAL Description: Which particles to spawn on teleport Particles: Latest Version / 1.8",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Configuration#particle"
+  },
+  "Configuration: amount": {
+   "text": "Default value: 40 Description: The number of particles to spawn",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Configuration#amount"
+  },
+  "Configuration: sound": {
+   "text": "Default value: ENTITYENDERMANTELEPORT Description: Which sound to play on teleport Sounds: Latest Version / 1.9 - 1.21 / 1.8",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Configuration#sound"
+  },
+  "Configuration: Formatting": {
+   "text": "MiniMessage is supported on 1.18.2+ Paper based servers. Legacy Formatting with & codes is supported on all server types and versions.",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Configuration#formatting"
+  },
+  "Configuration: Features": {
+   "text": "Any message can be disabled by setting it to ''. Remove %prefix% from a message if it should not use it.",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Configuration#features"
+  },
+  "Home: Commands & Permissions": {
+   "text": "Commands & Permissions Bypass Permissions Star () Permissions",
+   "src": "https://github.com/rockquiet/Spawn/wiki/Home#commands-permissions"
+  }
+ }
+}

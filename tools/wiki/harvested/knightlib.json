@@ -1,0 +1,18 @@
+{
+ "wiki": "github.com/Xylonity/Knight-Lib/wiki",
+ "ns": "knightlib",
+ "harvested": "2026-10-22T23:50:59.870Z",
+ "matched": 0,
+ "unmatched": 2,
+ "docs": {},
+ "orphans": {
+  "Home: 🗂️ Quick context": {
+   "text": "Most utilities that have a trivial use are available under the dev.xylonity.knightlib.api package in the common module (so they are accesible from everywhere). Loader-specific modules (Forge, NeoForge, Fabric) only contain direct implementations of the abstractions defined in common, so you generally don't need to touch them. Everything you need is in common. Other packages outside dev.xylonity.knightlib.api also contain abstractions and internal implementations that the API itself may rely on. For example, the built-in S2C and C2S packets are located at…",
+   "src": "https://github.com/Xylonity/Knight-Lib/wiki/Home#-quick-context"
+  },
+  "Home: ☁️ How do I integrate this library into my project?": {
+   "text": "Include the maven repository under your \"repositories\" category, and then add the knightlib jar dependency.",
+   "src": "https://github.com/Xylonity/Knight-Lib/wiki/Home#-how-do-i-integrate-this-library-into-my-project-"
+  }
+ }
+}

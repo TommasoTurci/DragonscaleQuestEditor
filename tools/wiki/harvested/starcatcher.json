@@ -1,0 +1,42 @@
+{
+ "wiki": "github.com/wdiscute/starcatcher/wiki",
+ "ns": "starcatcher",
+ "harvested": "2026-10-22T23:50:51.741Z",
+ "matched": 0,
+ "unmatched": 8,
+ "docs": {},
+ "orphans": {
+  "Credits: wdiscute:": {
+   "text": "Main developer & Designer Pretty much everything coding related",
+   "src": "https://github.com/wdiscute/starcatcher/wiki/Credits#wdiscute-"
+  },
+  "Credits: Nikdo53": {
+   "text": "Secondary code developer Fishing Minigame UI Art Miscellaneous textures and item sprite tweaks Most of the 1.20.1 backports",
+   "src": "https://github.com/wdiscute/starcatcher/wiki/Credits#nikdo53"
+  },
+  "Credits: DayTheMagpie": {
+   "text": "Trophy Models Tournament Stand UI Art Tournament Stand Model Tournament Overlay UI Secret Notes UI Art Fisherman's Hats Models Selling Bin UI Art Tackle Box UI Art Bobber Models Miscellaneous Item Sprite Tweaks",
+   "src": "https://github.com/wdiscute/starcatcher/wiki/Credits#daythemagpie"
+  },
+  "Credits: Redeix": {
+   "text": "Selling Bin Model Tackle Box Model & Animations Several Original Item Sprites",
+   "src": "https://github.com/wdiscute/starcatcher/wiki/Credits#redeix"
+  },
+  "Credits: Kapitencraft": {
+   "text": "Coding help & cleanup, specially during early versions of the mod",
+   "src": "https://github.com/wdiscute/starcatcher/wiki/Credits#kapitencraft"
+  },
+  "Credits: quipinny": {
+   "text": "Base Fish Sprites Asset Pack Rod Skins and other Miscellanious Item Sprites",
+   "src": "https://github.com/wdiscute/starcatcher/wiki/Credits#quipinny"
+  },
+  "Credits: Kaupenjoe Community & Neoforge Community": {
+   "text": "Always happy to help with any issues that arose Thank you to all the translators who contribuited their time to make the mod accessible to everyone! Thank you everyone who stopped by my streams as I developed the mod and followed along the journey ♥",
+   "src": "https://github.com/wdiscute/starcatcher/wiki/Credits#kaupenjoe-community-neoforge-community"
+  },
+  "_Credits: Nikdo53": {
+   "text": "Fishing minigame UI art Code help Most of the 1.20.1 backports",
+   "src": "https://github.com/wdiscute/starcatcher/wiki/_Credits#nikdo53"
+  }
+ }
+}

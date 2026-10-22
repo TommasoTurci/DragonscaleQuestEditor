@@ -1,0 +1,1011 @@
+{
+ "wiki": "iron.wiki",
+ "ns": "irons_spellbooks",
+ "harvested": "2026-10-22T23:52:16.862Z",
+ "matched": 112,
+ "unmatched": 110,
+ "docs": {
+  "irons_spellbooks:amethyst_resonance_charm": {
+   "text": "When around neck: +15% Mana Regeneration",
+   "src": "https://iron.wiki/curios/?s=irons_spellbooks:amethyst_resonance_charm#irons_spellbooks:amethyst_resonance_charm",
+   "title": "Amethyst Resonance Charm"
+  },
+  "irons_spellbooks:betrayer_signet": {
+   "text": "When worn as ring: +10% Eldritch Spell Power Passive Ability (5s cooldown): Deal extra damage to creatures based on their maximum mana",
+   "src": "https://iron.wiki/curios/?s=irons_spellbooks:betrayer_signet#irons_spellbooks:betrayer_signet",
+   "title": "Signet of the Betrayer"
+  },
+  "irons_spellbooks:cast_time_ring": {
+   "text": "When worn as ring: +15% Cast Time Reduction",
+   "src": "https://iron.wiki/curios/?s=irons_spellbooks:cast_time_ring#irons_spellbooks:cast_time_ring",
+   "title": "Ring of Expediency"
+  },
+  "irons_spellbooks:concentration_amulet": {
+   "text": "When around neck: Long Casts become uninterruptible",
+   "src": "https://iron.wiki/curios/?s=irons_spellbooks:concentration_amulet#irons_spellbooks:concentration_amulet",
+   "title": "Amulet of Concentration"
+  },
+  "irons_spellbooks:cooldown_ring": {
+   "text": "When worn as ring: +15% Cooldown Reduction",
+   "src": "https://iron.wiki/curios/?s=irons_spellbooks:cooldown_ring#irons_spellbooks:cooldown_ring",
+   "title": "Ring of Recovery"
+  },
+  "irons_spellbooks:emerald_stoneplate_ring": {
+   "text": "When worn as ring: Slain creatures drop +25% experience",
+   "src": "https://iron.wiki/curios/?s=irons_spellbooks:emerald_stoneplate_ring#irons_spellbooks:emerald_stoneplate_ring",
+   "title": "Emerald Stoneplate Ring"
+  },
+  "irons_spellbooks:expulsion_ring": {
+   "text": "When worn as ring: Passive Ability (2s cooldown): When attacked, emit an expulsive burst of air",
+   "src": "https://iron.wiki/curios/?s=irons_spellbooks:expulsion_ring#irons_spellbooks:expulsion_ring",
+   "title": "Ring of Expulsion"
+  },
+  "irons_spellbooks:frostward_ring": {
+   "text": "When worn as ring: Grants freezing immunity",
+   "src": "https://iron.wiki/curios/?s=irons_spellbooks:frostward_ring#irons_spellbooks:frostward_ring",
+   "title": "Frostward Ring"
+  },
+  "irons_spellbooks:greater_conjurers_talisman": {
+   "text": "When around neck: +15% Summon Damage Summon spells that time-out do not go on cooldown",
+   "src": "https://iron.wiki/curios/?s=irons_spellbooks:greater_conjurers_talisman#irons_spellbooks:greater_conjurers_talisman",
+   "title": "Greater Conjurer's Talisman"
+  },
+  "irons_spellbooks:invisibility_ring": {
+   "text": "When worn as ring: I would say read the fine print, but I can't see it",
+   "src": "https://iron.wiki/curios/?s=irons_spellbooks:invisibility_ring#irons_spellbooks:invisibility_ring",
+   "title": "Ring of Invisibility"
+  },
+  "irons_spellbooks:poisonward_ring": {
+   "text": "When worn as ring: Grants poison immunity",
+   "src": "https://iron.wiki/curios/?s=irons_spellbooks:poisonward_ring#irons_spellbooks:poisonward_ring",
+   "title": "Poisonward Ring"
+  },
+  "irons_spellbooks:visibility_ring": {
+   "text": "When worn as ring: Allows visible creatures to be seen",
+   "src": "https://iron.wiki/curios/?s=irons_spellbooks:visibility_ring#irons_spellbooks:visibility_ring",
+   "title": "Ring of Visibility"
+  },
+  "irons_spellbooks:wicked_bone_ring": {
+   "text": "When worn as ring: +1 Spell Projectile Ricochet",
+   "src": "https://iron.wiki/curios/?s=irons_spellbooks:wicked_bone_ring#irons_spellbooks:wicked_bone_ring",
+   "title": "Wicked Bone Ring"
+  },
+  "irons_spellbooks:alchemist_cauldron": {
+   "text": "Can be used to brew potions, craft elixirs, recycle scrolls, and upgrade ink. If a mob or player is placed in it while there is water, blood vials can also be produced. It has 4 input and 4 output slots, and must have water in it to activate. Right click to place a valid item into the input slots, and right click with a glass bottle to extract an output item.",
+   "src": "https://iron.wiki/blocks/?s=irons_spellbooks:alchemist_cauldron#irons_spellbooks:alchemist_cauldron",
+   "title": "Alchemist Cauldron"
+  },
+  "irons_spellbooks:arcane_anvil": {
+   "text": "Used to upgrade scrolls, upgrade equipment, and imbue weapons",
+   "src": "https://iron.wiki/blocks/?s=irons_spellbooks:arcane_anvil#irons_spellbooks:arcane_anvil",
+   "title": "Arcane Anvil"
+  },
+  "irons_spellbooks:armor_pile": {
+   "text": "Found scattered throughout Ancient Battlegrounds. Harvesting with a diamond pickaxe will cause an Ancient Knight to spawn.",
+   "src": "https://iron.wiki/blocks/?s=irons_spellbooks:armor_pile#irons_spellbooks:armor_pile",
+   "title": "Armor Pile"
+  },
+  "irons_spellbooks:ice_spider_egg": {
+   "text": "Requires silk touch to harvest. When found naturally, can have a layer of ice protecting it. Breaking the ice awakens a nearby Ice Spider to protect the egg.",
+   "src": "https://iron.wiki/blocks/?s=irons_spellbooks:ice_spider_egg#irons_spellbooks:ice_spider_egg",
+   "title": "Ice Spider Egg"
+  },
+  "irons_spellbooks:inscription_table": {
+   "text": "Used to slot spells from scrolls into spell books for repeated use.",
+   "src": "https://iron.wiki/blocks/?s=irons_spellbooks:inscription_table#irons_spellbooks:inscription_table",
+   "title": "Inscription Table"
+  },
+  "irons_spellbooks:mithril_ore": {
+   "text": "Can be found below y = -38, unexposed to air. Requires a netherite pickaxe to harvest. Drops Raw Mithril",
+   "src": "https://iron.wiki/blocks/?s=irons_spellbooks:mithril_ore#irons_spellbooks:mithril_ore",
+   "title": "Mithril Ore"
+  },
+  "irons_spellbooks:scroll_forge": {
+   "text": "Used to craft scrolls. The ink used determines the rarity of the spells. The level will always be the lowest level of that rarity. You cannot use an ink that is less rare than the minimum rarity of the scroll.",
+   "src": "https://iron.wiki/blocks/?s=irons_spellbooks:scroll_forge#irons_spellbooks:scroll_forge",
+   "title": "Scroll Forge"
+  },
+  "irons_spellbooks:ancient_knowledge_fragment": {
+   "text": "Can be found rarely in bookshelf loot, more commonly in Ancient Cities, or traded for by Wandering Traders",
+   "src": "https://iron.wiki/items/?s=irons_spellbooks:ancient_knowledge_fragment#irons_spellbooks:ancient_knowledge_fragment",
+   "title": "Ancient Knowledge Fragment"
+  },
+  "irons_spellbooks:arcane_essence": {
+   "text": "A common magic material used in many recipes. Can be found sparsely in vanilla structures, but much more commonly in magic structures or from killing magic mobs.",
+   "src": "https://iron.wiki/items/?s=irons_spellbooks:arcane_essence#irons_spellbooks:arcane_essence",
+   "title": "Arcane Essence"
+  },
+  "irons_spellbooks:blank_rune": {
+   "text": "The base for all other runes to be crafted from. Can be found rarely in some vanilla structures, or more commonly in magic structures. Each school mage drops one for their school on death.",
+   "src": "https://iron.wiki/items/?s=irons_spellbooks:blank_rune#irons_spellbooks:blank_rune",
+   "title": "Blank Runestone"
+  },
+  "irons_spellbooks:blood_vial": {
+   "text": "Blood Focus. Place a lit campfire beneath a cauldron, and put a mob in the cauldron to cook the mob. This will fill the cauldron with blood, which can be withdrawn with glass bottles to obtain vials of blood.",
+   "src": "https://iron.wiki/items/?s=irons_spellbooks:blood_vial#irons_spellbooks:blood_vial",
+   "title": "Blood Vial"
+  },
+  "irons_spellbooks:cinder_essence": {
+   "text": "Dropped from Ancient Knights. Used for upgrade orbs",
+   "src": "https://iron.wiki/items/?s=irons_spellbooks:cinder_essence#irons_spellbooks:cinder_essence",
+   "title": "Cinder Essence"
+  },
+  "irons_spellbooks:cinderous_soulcaller": {
+   "text": "Used to awaken an echo in the Citadel...",
+   "src": "https://iron.wiki/items/?s=irons_spellbooks:cinderous_soulcaller#irons_spellbooks:cinderous_soulcaller",
+   "title": "Cinderous Soulcaller"
+  },
+  "irons_spellbooks:common_ink": {
+   "text": "Found commonly in magic structures or from killing powerful magic mobs",
+   "src": "https://iron.wiki/items/?s=irons_spellbooks:common_ink#irons_spellbooks:common_ink",
+   "title": "Common Ink"
+  },
+  "irons_spellbooks:epic_ink": {
+   "text": "Found rarely in magic structures or from killing powerful magic mobs",
+   "src": "https://iron.wiki/items/?s=irons_spellbooks:epic_ink#irons_spellbooks:epic_ink",
+   "title": "Epic Ink"
+  },
+  "irons_spellbooks:legendary_ink": {
+   "text": "Found very rarely in magic structures or from killing powerful magic mobs",
+   "src": "https://iron.wiki/items/?s=irons_spellbooks:legendary_ink#irons_spellbooks:legendary_ink",
+   "title": "Legendary Ink"
+  },
+  "irons_spellbooks:lightning_bottle": {
+   "text": "Lightning Focus. Use an empty bottle on a charged creeper to obtain. You can use the Lightning Bolt Spell, lightning rod or trident to charge a creeper.",
+   "src": "https://iron.wiki/items/?s=irons_spellbooks:lightning_bottle#irons_spellbooks:lightning_bottle",
+   "title": "Bottle o' Lightning"
+  },
+  "irons_spellbooks:music_disc_dead_king_lullaby": {
+   "text": "Caner Crebes - Whispers of Ice Cane be traded for by the Cryomancer",
+   "src": "https://iron.wiki/items/?s=irons_spellbooks:music_disc_whispers_of_ice#irons_spellbooks:music_disc_whispers_of_ice",
+   "title": "Music Disc"
+  },
+  "irons_spellbooks:permafrost_shard": {
+   "text": "Crafting Ingredient. Found in Impaled Icebreaker Shipwrecks.",
+   "src": "https://iron.wiki/items/?s=irons_spellbooks:permafrost_shard#irons_spellbooks:permafrost_shard",
+   "title": "Permafrost Shard"
+  },
+  "irons_spellbooks:pyrium_ingot": {
+   "text": "Crafting ingredient. Can be found in Citadel vaults",
+   "src": "https://iron.wiki/items/?s=irons_spellbooks:pyrium_ingot#irons_spellbooks:pyrium_ingot",
+   "title": "Pyrium Ingot"
+  },
+  "irons_spellbooks:rare_ink": {
+   "text": "Found rarely in magic structures or from killing powerful magic mobs",
+   "src": "https://iron.wiki/items/?s=irons_spellbooks:rare_ink#irons_spellbooks:rare_ink",
+   "title": "Rare Ink"
+  },
+  "irons_spellbooks:ruined_book": {
+   "text": "Crafting ingredient. Can be found in Ancient Cities.",
+   "src": "https://iron.wiki/items/?s=irons_spellbooks:ruined_book#irons_spellbooks:ruined_book",
+   "title": "Ruined Book"
+  },
+  "irons_spellbooks:timeless_slurry": {
+   "text": "Crafting ingredient. Made in the Alchemist Cauldron",
+   "src": "https://iron.wiki/items/?s=irons_spellbooks:timeless_slurry#irons_spellbooks:timeless_slurry",
+   "title": "Timeless Slurry"
+  },
+  "irons_spellbooks:uncommon_ink": {
+   "text": "Found in magic structures or from killing powerful magic mobs",
+   "src": "https://iron.wiki/items/?s=irons_spellbooks:uncommon_ink#irons_spellbooks:uncommon_ink",
+   "title": "Uncommon Ink"
+  },
+  "irons_spellbooks:upgrade_orb": {
+   "text": "The base for all other upgrade orbs to be crafted from",
+   "src": "https://iron.wiki/items/?s=irons_spellbooks:upgrade_orb#irons_spellbooks:upgrade_orb",
+   "title": "Empty Upgrade Orb"
+  },
+  "irons_spellbooks:wayward_compass": {
+   "text": "Once crafted, it finds the nearest Catacombs and leads you towards it",
+   "src": "https://iron.wiki/items/?s=irons_spellbooks:wayward_compass#irons_spellbooks:wayward_compass",
+   "title": "Wayward Compass"
+  },
+  "irons_spellbooks:amethyst_rapier": {
+   "text": "Can be Imbued (1/1) When in Main Hand: 8 Attack Damage 2.3 Attack Speed Imbued Spell: [Echoing Strikes 5] 75% Damage 7 Echoing Hits 90 Mana Cost 30s Cooldown",
+   "src": "https://iron.wiki/spellbooks/?s=irons_spellbooks:amethyst_rapier#irons_spellbooks:amethyst_rapier",
+   "title": "Amethyst Rapier"
+  },
+  "irons_spellbooks:artificer_cane": {
+   "text": "When in Main Hand: 4 Attack Damage 1 Attack Speed +10% Spell Power +10% Cast Time Reduction +10% Cooldown Reduction",
+   "src": "https://iron.wiki/spellbooks/?s=irons_spellbooks:artificer_cane#irons_spellbooks:artificer_cane",
+   "title": "Artificer's Cane"
+  },
+  "irons_spellbooks:blaze_spell_book": {
+   "text": "When equipped as Spell Book: +10% Fire Spell Power +200 Max Mana",
+   "src": "https://iron.wiki/spellbooks/?s=irons_spellbooks:blaze_spell_book#irons_spellbooks:blaze_spell_book",
+   "title": "Blaze Instruction Manual"
+  },
+  "irons_spellbooks:blood_staff": {
+   "text": "When in Main Hand: 8 Attack Damage 1 Attack Speed +15% Blood Spell Power +10% Summon Damage +5% Spell Power",
+   "src": "https://iron.wiki/spellbooks/?s=irons_spellbooks:blood_staff#irons_spellbooks:blood_staff",
+   "title": "The Blood Staff"
+  },
+  "irons_spellbooks:boreal_blade": {
+   "text": "Can be Imbued (1/1) When in Main Hand: 16 Attack Damage 0.9 Attack Speed Imbued Spell: [Frostbite 3] 8 Shatter Damage 30s Effect Length 100 Mana Cost 30s Cooldown",
+   "src": "https://iron.wiki/spellbooks/?s=irons_spellbooks:boreal_blade#irons_spellbooks:boreal_blade",
+   "title": "Boreal Blade"
+  },
+  "irons_spellbooks:cursed_doll_spell_book": {
+   "text": "+1 level to Blood Slash, Blood Step When equipped as Spell Book: +10% Blood Spell Power +10% Spell Resistance +200 Max Mana",
+   "src": "https://iron.wiki/spellbooks/?s=irons_spellbooks:cursed_doll_spell_book#irons_spellbooks:cursed_doll_spell_book",
+   "title": "Vampiric Spell Book"
+  },
+  "irons_spellbooks:decrepit_scythe": {
+   "text": "When in Main Hand: 11 Attack Damage 1.4 Attack Speed",
+   "src": "https://iron.wiki/spellbooks/?s=irons_spellbooks:decrepit_scythe#irons_spellbooks:decrepit_scythe",
+   "title": "Decrepit Scythe"
+  },
+  "irons_spellbooks:diamond_spell_book": {
+   "text": "When equipped as Spell Book: +100 Max Mana",
+   "src": "https://iron.wiki/spellbooks/?s=irons_spellbooks:diamond_spell_book#irons_spellbooks:diamond_spell_book",
+   "title": "Enchanted Spell Book"
+  },
+  "irons_spellbooks:dragonskin_spell_book": {
+   "text": "When equipped as Spell Book: +10% Ender Spell Power +200 Max Mana",
+   "src": "https://iron.wiki/spellbooks/?s=irons_spellbooks:dragonskin_spell_book#irons_spellbooks:dragonskin_spell_book",
+   "title": "Dragonskin Spell Book"
+  },
+  "irons_spellbooks:druidic_spell_book": {
+   "text": "When equipped as Spell Book: +10% Nature Spell Power +200 Max Mana",
+   "src": "https://iron.wiki/spellbooks/?s=irons_spellbooks:druidic_spell_book#irons_spellbooks:druidic_spell_book",
+   "title": "Druidic Tome"
+  },
+  "irons_spellbooks:evoker_spell_book": {
+   "text": "Unique Spell Book Press [V] to cast Inscribed Spells: [Fang Strike 6] [Fang Ward 4] [Summon Vex 4] When equipped as Spell Book: +10% Evocation Spell Power +200 Max Mana",
+   "src": "https://iron.wiki/spellbooks/?s=irons_spellbooks:evoker_spell_book#irons_spellbooks:evoker_spell_book",
+   "title": "Grimoire of Evokation"
+  },
+  "irons_spellbooks:gold_spell_book": {
+   "text": "When equipped as Spell Book: +15% Cast Time Reduction +50 Max Mana",
+   "src": "https://iron.wiki/spellbooks/?s=irons_spellbooks:gold_spell_book#irons_spellbooks:gold_spell_book",
+   "title": "Apprentice's Spell Book"
+  },
+  "irons_spellbooks:graybeard_staff": {
+   "text": "When in Main Hand: 3 Attack Damage 1 Attack Speed +10% Spell Power +25% Mana Regeneration",
+   "src": "https://iron.wiki/spellbooks/?s=irons_spellbooks:graybeard_staff#irons_spellbooks:graybeard_staff",
+   "title": "Graybeard Staff"
+  },
+  "irons_spellbooks:hellrazor": {
+   "text": "Can be Imbued (1/1) When in Main Hand: 13 Attack Damage 1.4 Attack Speed Imbued Spell: [Raise Hell 3] 15 Damage 8 Block Radius 3 Casts 0.8s Cast Time 180 Mana Cost 12.5s Cooldown",
+   "src": "https://iron.wiki/spellbooks/?s=irons_spellbooks:hellrazor#irons_spellbooks:hellrazor",
+   "title": "Hellrazor"
+  },
+  "irons_spellbooks:hither_thither_wand": {
+   "text": "Unique Imbued Spell: [Portal 1] 48 Cast Range 5m Portal Duration 200 Mana Cost 1.5m Cooldown",
+   "src": "https://iron.wiki/spellbooks/?s=irons_spellbooks:hither_thither_wand#irons_spellbooks:hither_thither_wand",
+   "title": "Hither-Thither Wand"
+  },
+  "irons_spellbooks:ice_spell_book": {
+   "text": "When equipped as Spell Book: +10% Ice Spell Power +200 Max Mana",
+   "src": "https://iron.wiki/spellbooks/?s=irons_spellbooks:ice_spell_book#irons_spellbooks:ice_spell_book",
+   "title": "Frostbranded Book"
+  },
+  "irons_spellbooks:ice_staff": {
+   "text": "When in Main Hand: 5 Attack Damage 1 Attack Speed +15% Ice Spell Power +25% Mana Regeneration +5% Spell Power",
+   "src": "https://iron.wiki/spellbooks/?s=irons_spellbooks:ice_staff#irons_spellbooks:ice_staff",
+   "title": "Ice Staff"
+  },
+  "irons_spellbooks:keeper_flamberge": {
+   "text": "When in Main Hand: 11 Attack Damage 1.3 Attack Speed +4 Armor",
+   "src": "https://iron.wiki/spellbooks/?s=irons_spellbooks:keeper_flamberge#irons_spellbooks:keeper_flamberge",
+   "title": "Decrepit Flamberge"
+  },
+  "irons_spellbooks:legionnaire_flamberge": {
+   "text": "When in Main Hand: 11 Attack Damage 1.5 Attack Speed +4 Armor",
+   "src": "https://iron.wiki/spellbooks/?s=irons_spellbooks:legionnaire_flamberge#irons_spellbooks:legionnaire_flamberge",
+   "title": "Legionnaire Flamberge"
+  },
+  "irons_spellbooks:lightning_rod": {
+   "text": "When in Main Hand: 5 Attack Damage 1 Attack Speed +15% Lightning Spell Power +10% Cooldown Reduction +5% Spell Power",
+   "src": "https://iron.wiki/spellbooks/?s=irons_spellbooks:lightning_rod#irons_spellbooks:lightning_rod",
+   "title": "Rod o' Lightning"
+  },
+  "irons_spellbooks:magehunter": {
+   "text": "When in Main Hand: 7 Attack Damage 1.6 Attack Speed +15% Spell Resistance",
+   "src": "https://iron.wiki/spellbooks/?s=irons_spellbooks:magehunter#irons_spellbooks:magehunter",
+   "title": "Magehunter"
+  },
+  "irons_spellbooks:necronomicon_spell_book": {
+   "text": "Unique Spell Book +2 levels to Raise Dead Press [V] to cast Inscribed Spells: [Blood Slash 5] [Blood Step 5] [Ray of Siphoning 5] [Blaze Storm 5] When equipped as Spell Book: +200 Max Mana",
+   "src": "https://iron.wiki/spellbooks/?s=irons_spellbooks:necronomicon_spell_book#irons_spellbooks:necronomicon_spell_book",
+   "title": "Necronomicon"
+  },
+  "irons_spellbooks:netherite_spell_book": {
+   "text": "When equipped as Spell Book: +20% Cooldown Reduction +200 Max Mana",
+   "src": "https://iron.wiki/spellbooks/?s=irons_spellbooks:netherite_spell_book#irons_spellbooks:netherite_spell_book",
+   "title": "Ancient Codex"
+  },
+  "irons_spellbooks:pyrium_staff": {
+   "text": "When in Main Hand: 9 Attack Damage 1.5 Attack Speed +15% Fire Spell Power +10% Cast Time Reduction +5% Spell Power",
+   "src": "https://iron.wiki/spellbooks/?s=irons_spellbooks:pyrium_staff#irons_spellbooks:pyrium_staff",
+   "title": "Pyrium Staff"
+  },
+  "irons_spellbooks:rotten_spell_book": {
+   "text": "When equipped as Spell Book: -15% Spell Resistance +100 Max Mana",
+   "src": "https://iron.wiki/spellbooks/?s=irons_spellbooks:rotten_spell_book#irons_spellbooks:rotten_spell_book",
+   "title": "Rotten Spell Book"
+  },
+  "irons_spellbooks:spellbreaker": {
+   "text": "Can be Imbued (1/1) When in Main Hand: 10 Attack Damage 1.8 Attack Speed +15% Cooldown Reduction Imbued Spell: [Counterspell 1] 50 Mana Cost 5s Cooldown",
+   "src": "https://iron.wiki/spellbooks/?s=irons_spellbooks:spellbreaker#irons_spellbooks:spellbreaker",
+   "title": "Spellbreaker"
+  },
+  "irons_spellbooks:twilight_gale": {
+   "text": "Can be Imbued (1/1) When in Main Hand: 13 Attack Damage 1.4 Attack Speed Imbued Spell: [Volt Strike 5] 10 Damage 50 Mana Cost 5s Cooldown",
+   "src": "https://iron.wiki/spellbooks/?s=irons_spellbooks:twilight_gale#irons_spellbooks:twilight_gale",
+   "title": "Twilight Gale"
+  },
+  "irons_spellbooks:villager_spell_book": {
+   "text": "When equipped as Spell Book: +10% Holy Spell Power +10% Cast Time Reduction +200 Max Mana",
+   "src": "https://iron.wiki/spellbooks/?s=irons_spellbooks:villager_spell_book#irons_spellbooks:villager_spell_book",
+   "title": "Villager Bible"
+  },
+  "irons_spellbooks:archevoker_boots": {
+   "text": "When on Feet: +3 Armor +125 Max Mana +10% Evocation Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:archevoker_boots#irons_spellbooks:archevoker_boots",
+   "title": "Archevoker Boots"
+  },
+  "irons_spellbooks:archevoker_chestplate": {
+   "text": "Can be Imbued (0/1) When on Body: +8 Armor +125 Max Mana +10% Evocation Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:archevoker_chestplate#irons_spellbooks:archevoker_chestplate",
+   "title": "Archevoker Coat"
+  },
+  "irons_spellbooks:archevoker_helmet": {
+   "text": "When on Head: +3 Armor +125 Max Mana +10% Evocation Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:archevoker_helmet#irons_spellbooks:archevoker_helmet",
+   "title": "Archevoker Hat"
+  },
+  "irons_spellbooks:archevoker_leggings": {
+   "text": "When on Legs: +6 Armor +125 Max Mana +10% Evocation Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:archevoker_leggings#irons_spellbooks:archevoker_leggings",
+   "title": "Archevoker Leggings"
+  },
+  "irons_spellbooks:cryomancer_boots": {
+   "text": "When on Feet: +3 Armor +125 Max Mana +10% Ice Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:cryomancer_boots#irons_spellbooks:cryomancer_boots",
+   "title": "Cryomancer Boots"
+  },
+  "irons_spellbooks:cryomancer_chestplate": {
+   "text": "Can be Imbued (0/1) When on Body: +8 Armor +125 Max Mana +10% Ice Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:cryomancer_chestplate#irons_spellbooks:cryomancer_chestplate",
+   "title": "Cryomancer Coat"
+  },
+  "irons_spellbooks:cryomancer_helmet": {
+   "text": "When on Head: +3 Armor +125 Max Mana +10% Ice Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:cryomancer_helmet#irons_spellbooks:cryomancer_helmet",
+   "title": "Cryomancer Hood"
+  },
+  "irons_spellbooks:cryomancer_leggings": {
+   "text": "When on Legs: +6 Armor +125 Max Mana +10% Ice Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:cryomancer_leggings#irons_spellbooks:cryomancer_leggings",
+   "title": "Cryomancer Leggings"
+  },
+  "irons_spellbooks:cultist_boots": {
+   "text": "When on Feet: +3 Armor +125 Max Mana +10% Blood Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:cultist_boots#irons_spellbooks:cultist_boots",
+   "title": "Cultist Boots"
+  },
+  "irons_spellbooks:cultist_chestplate": {
+   "text": "Can be Imbued (0/1) When on Body: +8 Armor +125 Max Mana +10% Blood Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:cultist_chestplate#irons_spellbooks:cultist_chestplate",
+   "title": "Cultist Armor"
+  },
+  "irons_spellbooks:cultist_helmet": {
+   "text": "When on Head: +3 Armor +125 Max Mana +10% Blood Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:cultist_helmet#irons_spellbooks:cultist_helmet",
+   "title": "Cultist Hood"
+  },
+  "irons_spellbooks:cultist_leggings": {
+   "text": "When on Legs: +6 Armor +125 Max Mana +10% Blood Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:cultist_leggings#irons_spellbooks:cultist_leggings",
+   "title": "Cultist Leggings"
+  },
+  "irons_spellbooks:electromancer_boots": {
+   "text": "When on Feet: +3 Armor +125 Max Mana +10% Lightning Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:electromancer_boots#irons_spellbooks:electromancer_boots",
+   "title": "Electromancer Boots"
+  },
+  "irons_spellbooks:electromancer_chestplate": {
+   "text": "Can be Imbued (0/1) When on Body: +8 Armor +125 Max Mana +10% Lightning Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:electromancer_chestplate#irons_spellbooks:electromancer_chestplate",
+   "title": "Electromancer Robe"
+  },
+  "irons_spellbooks:electromancer_helmet": {
+   "text": "When on Head: +3 Armor +125 Max Mana +10% Lightning Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:electromancer_helmet#irons_spellbooks:electromancer_helmet",
+   "title": "Electromancer Hat"
+  },
+  "irons_spellbooks:electromancer_leggings": {
+   "text": "When on Legs: +6 Armor +125 Max Mana +10% Lightning Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:electromancer_leggings#irons_spellbooks:electromancer_leggings",
+   "title": "Electromancer Leggings"
+  },
+  "irons_spellbooks:infernal_sorcerer_chestplate": {
+   "text": "Can be Imbued (0/1) Passive Ability: Dealing Fire Spell Damage adds a stack of Immolation to the creature At 3 Immolation stacks, cause an explosion (10 damage), spreading Immolation When on Body: +8 Armor +150 Max Mana +10% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:infernal_sorcerer_chestplate#irons_spellbooks:infernal_sorcerer_chestplate",
+   "title": "Infernal Sorcerer Chestplate"
+  },
+  "irons_spellbooks:netherite_mage_boots": {
+   "text": "When on Feet: +3 Armor +3 Armor Toughness +125 Max Mana +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:netherite_mage_boots#irons_spellbooks:netherite_mage_boots",
+   "title": "Netherite Battlemage Boots"
+  },
+  "irons_spellbooks:netherite_mage_chestplate": {
+   "text": "Can be Imbued (0/1) When on Body: +8 Armor +3 Armor Toughness +125 Max Mana +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:netherite_mage_chestplate#irons_spellbooks:netherite_mage_chestplate",
+   "title": "Netherite Battlemage Robes"
+  },
+  "irons_spellbooks:netherite_mage_helmet": {
+   "text": "When on Head: +3 Armor +3 Armor Toughness +125 Max Mana +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:netherite_mage_helmet#irons_spellbooks:netherite_mage_helmet",
+   "title": "Netherite Battlemage Hat"
+  },
+  "irons_spellbooks:netherite_mage_leggings": {
+   "text": "When on Legs: +6 Armor +3 Armor Toughness +125 Max Mana +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:netherite_mage_leggings#irons_spellbooks:netherite_mage_leggings",
+   "title": "Netherite Battlemage Leggings"
+  },
+  "irons_spellbooks:paladin_chestplate": {
+   "text": "Can be Imbued (0/1) When on Body: +8 Armor +4 Armor Toughness +40% Knockback Resistance +150 Max Mana +10% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:paladin_chestplate#irons_spellbooks:paladin_chestplate",
+   "title": "Lightbringer Chestplate"
+  },
+  "irons_spellbooks:plagued_boots": {
+   "text": "When on Feet: +3 Armor +125 Max Mana +10% Nature Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:plagued_boots#irons_spellbooks:plagued_boots",
+   "title": "Plagued Boots"
+  },
+  "irons_spellbooks:plagued_chestplate": {
+   "text": "Can be Imbued (0/1) When on Body: +8 Armor +125 Max Mana +10% Nature Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:plagued_chestplate#irons_spellbooks:plagued_chestplate",
+   "title": "Plagued Coat"
+  },
+  "irons_spellbooks:plagued_helmet": {
+   "text": "When on Head: +3 Armor +125 Max Mana +10% Nature Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:plagued_helmet#irons_spellbooks:plagued_helmet",
+   "title": "Plagued Mask"
+  },
+  "irons_spellbooks:plagued_leggings": {
+   "text": "When on Legs: +6 Armor +125 Max Mana +10% Nature Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:plagued_leggings#irons_spellbooks:plagued_leggings",
+   "title": "Plagued Leggings"
+  },
+  "irons_spellbooks:priest_boots": {
+   "text": "When on Feet: +3 Armor +125 Max Mana +10% Holy Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:priest_boots#irons_spellbooks:priest_boots",
+   "title": "Priest Boots"
+  },
+  "irons_spellbooks:priest_chestplate": {
+   "text": "Can be Imbued (0/1) When on Body: +8 Armor +125 Max Mana +10% Holy Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:priest_chestplate#irons_spellbooks:priest_chestplate",
+   "title": "Priest Robes"
+  },
+  "irons_spellbooks:priest_helmet": {
+   "text": "When on Head: +3 Armor +125 Max Mana +10% Holy Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:priest_helmet#irons_spellbooks:priest_helmet",
+   "title": "Priest Mask"
+  },
+  "irons_spellbooks:priest_leggings": {
+   "text": "When on Legs: +6 Armor +125 Max Mana +10% Holy Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:priest_leggings#irons_spellbooks:priest_leggings",
+   "title": "Priest Leggings"
+  },
+  "irons_spellbooks:pyromancer_boots": {
+   "text": "When on Feet: +3 Armor +125 Max Mana +10% Fire Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:pyromancer_boots#irons_spellbooks:pyromancer_boots",
+   "title": "Pyromancer Boots"
+  },
+  "irons_spellbooks:pyromancer_chestplate": {
+   "text": "Can be Imbued (0/1) When on Body: +8 Armor +125 Max Mana +10% Fire Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:pyromancer_chestplate#irons_spellbooks:pyromancer_chestplate",
+   "title": "Pyromancer Robe"
+  },
+  "irons_spellbooks:pyromancer_helmet": {
+   "text": "When on Head: +3 Armor +125 Max Mana +10% Fire Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:pyromancer_helmet#irons_spellbooks:pyromancer_helmet",
+   "title": "Pyromancer Hat"
+  },
+  "irons_spellbooks:pyromancer_leggings": {
+   "text": "When on Legs: +6 Armor +125 Max Mana +10% Fire Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:pyromancer_leggings#irons_spellbooks:pyromancer_leggings",
+   "title": "Pyromancer Leggings"
+  },
+  "irons_spellbooks:shadowwalker_boots": {
+   "text": "When on Feet: +3 Armor +125 Max Mana +10% Ender Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:shadowwalker_boots#irons_spellbooks:shadowwalker_boots",
+   "title": "Shadow-Walker Boots"
+  },
+  "irons_spellbooks:shadowwalker_chestplate": {
+   "text": "Can be Imbued (0/1) When on Body: +8 Armor +125 Max Mana +10% Ender Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:shadowwalker_chestplate#irons_spellbooks:shadowwalker_chestplate",
+   "title": "Shadow-Walker Armor"
+  },
+  "irons_spellbooks:shadowwalker_helmet": {
+   "text": "When on Head: +3 Armor +125 Max Mana +10% Ender Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:shadowwalker_helmet#irons_spellbooks:shadowwalker_helmet",
+   "title": "Shadow-Walker Mask"
+  },
+  "irons_spellbooks:shadowwalker_leggings": {
+   "text": "When on Legs: +6 Armor +125 Max Mana +10% Ender Spell Power +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:shadowwalker_leggings#irons_spellbooks:shadowwalker_leggings",
+   "title": "Shadow-Walker Leggings"
+  },
+  "irons_spellbooks:speed_boots": {
+   "text": "When on Feet: +3 Armor +150 Max Mana +60% Casting Movement Speed +10% Spell Power +25% Speed",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:speed_boots#irons_spellbooks:speed_boots",
+   "title": "Boots of Speed"
+  },
+  "irons_spellbooks:tarnished_helmet": {
+   "text": "Can be Imbued (0/1) When on Head: +150 Max Mana +25% Mana Regeneration -15% Attack Damage",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:tarnished_helmet#irons_spellbooks:tarnished_helmet",
+   "title": "Tarnished Crown"
+  },
+  "irons_spellbooks:wizard_boots": {
+   "text": "When on Feet: +3 Armor +125 Max Mana +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:wizard_boots#irons_spellbooks:wizard_boots",
+   "title": "Wizard Boots"
+  },
+  "irons_spellbooks:wizard_chestplate": {
+   "text": "Can be Imbued (0/1) When on Body: +8 Armor +125 Max Mana +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:wizard_chestplate#irons_spellbooks:wizard_chestplate",
+   "title": "Wizard Robes"
+  },
+  "irons_spellbooks:wizard_helmet/hat": {
+   "text": "When on Head: +3 Armor +125 Max Mana +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:wizard_hat#irons_spellbooks:wizard_hat",
+   "title": "Wizard Hat"
+  },
+  "irons_spellbooks:wizard_helmet/hood": {
+   "text": "When on Head: +3 Armor +125 Max Mana +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:wizard_helmet#irons_spellbooks:wizard_helmet",
+   "title": "Wizard Hood"
+  },
+  "irons_spellbooks:wizard_leggings": {
+   "text": "When on Legs: +6 Armor +125 Max Mana +5% Spell Power",
+   "src": "https://iron.wiki/armor/?s=irons_spellbooks:wizard_leggings#irons_spellbooks:wizard_leggings",
+   "title": "Wizard Leggings"
+  }
+ },
+ "orphans": {
+  "Ring of No Affinity": {
+   "text": "Affinity Rings are randomly generated as loot, and will boost the level of a select spell by one. This effect can stack. Spell can be set in the Arcane Anvil using a scroll.",
+   "src": "https://iron.wiki/curios/?s=irons_spellbooks:affinity_ring#irons_spellbooks:affinity_ring"
+  },
+  "Mithril Ore (Deepslate)": {
+   "text": "Can be found below y = -38, unexposed to air. Requires a netherite pickaxe to harvest. Drops Raw Mithril",
+   "src": "https://iron.wiki/blocks/?s=irons_spellbooks:deepslate_mithril_ore#irons_spellbooks:deepslate_mithril_ore"
+  },
+  "Acupuncture": {
+   "text": "Around a targeted creature, create a field of blood needles in every direction, shooting down and healing you for 25% of damage done",
+   "src": "https://iron.wiki/spells/?s=Acupuncture#Acupuncture"
+  },
+  "Blood Needles": {
+   "text": "Create a ring of needles made from blood and fire them forward, skewering targets and healing you for 25% of damage done",
+   "src": "https://iron.wiki/spells/?s=Blood%20Needles#Blood%20Needles"
+  },
+  "Blood Slash": {
+   "text": "Slash forward to send out a concentrated blade of blood, slicing through creatures and healing for 15% of damage done.",
+   "src": "https://iron.wiki/spells/?s=Blood%20Slash#Blood%20Slash"
+  },
+  "Blood Step": {
+   "text": "Instantaneously teleport to where you are looking, or directly behind any targeted creature. Gain a short duration of true invisibility upon reaching your destination.",
+   "src": "https://iron.wiki/spells/?s=Blood%20Step#Blood%20Step"
+  },
+  "Devour": {
+   "text": "Pull in a nearby creature and attack them with a bite, leeching 15% of damage done as health. If the creature is killed, you temporarily gain additional max HP. Created by the Ancient Magician known as Yorhavich.",
+   "src": "https://iron.wiki/spells/?s=Devour#Devour"
+  },
+  "Heartstop": {
+   "text": "Cast to inflict yourself with Heartstop, an effect that makes you temporarily invulnerable. However, once it wears off, you take 50% of all damage accumulated while under its effects.",
+   "src": "https://iron.wiki/spells/?s=Heartstop#Heartstop"
+  },
+  "Raise Dead": {
+   "text": "Cast to summon undead minions from the earth beneath you. The higher the power, the better equipment they will have.",
+   "src": "https://iron.wiki/spells/?s=Raise%20Dead#Raise%20Dead"
+  },
+  "Ray Of Siphoning": {
+   "text": "Hold to cast a ray of necrotic energy that siphons health from creatures it hits, damaging them and healing you for 100% of damage done.",
+   "src": "https://iron.wiki/spells/?s=Ray%20Of%20Siphoning#Ray%20Of%20Siphoning"
+  },
+  "Wither Skull": {
+   "text": "Launch a wither skull forward that explodes in a small radius around the impact. The higher the level, the faster the projectile.",
+   "src": "https://iron.wiki/spells/?s=Wither%20Skull#Wither%20Skull"
+  },
+  "Sacrifice": {
+   "text": "Target one of your magic summons to cause them to explode, killing them instantly, and dealing large damage in the area around them. The summon's remaining health boosts the damage dealt and radius of explosion.",
+   "src": "https://iron.wiki/spells/?s=Sacrifice#Sacrifice"
+  },
+  "Counterspell": {
+   "text": "Interrupt player and mob casting Banishes summoned shield , blood slash , creeper head Banishes summoned creatures Removes root Removes mob effects like fortify or evasion",
+   "src": "https://iron.wiki/spells/?s=Counterspell#Counterspell"
+  },
+  "Dragon's Breath": {
+   "text": "Hold to spew a cone of dragon breath forwards. Each time a creature is hit, there is a chance to create a pool of dragon breath at their feet.",
+   "src": "https://iron.wiki/spells/?s=Dragon's%20Breath#Dragon's%20Breath"
+  },
+  "Evasion": {
+   "text": "Cast to imbue yourself with ender energy. Upon being attacked while under its effects, you will immediately teleport within a short radius and avoid taking any damage. Only a finite amount of hits can be dodged before the effect immediately wears off.",
+   "src": "https://iron.wiki/spells/?s=Evasion#Evasion"
+  },
+  "Magic Arrow": {
+   "text": "Hold to charge a piercing arrow made of arcane energy. This arrow has no gravity and can travel through blocks.",
+   "src": "https://iron.wiki/spells/?s=Magic%20Arrow#Magic%20Arrow"
+  },
+  "Magic Missile": {
+   "text": "Shoot a bolt of concentrated arcane magic. Also a trademark of every wizard.",
+   "src": "https://iron.wiki/spells/?s=Magic%20Missile#Magic%20Missile"
+  },
+  "Starfall": {
+   "text": "Target a single area and continuously rain down arcane comets from above for the duration of the spell",
+   "src": "https://iron.wiki/spells/?s=Starfall#Starfall"
+  },
+  "Teleport": {
+   "text": "Instantaneously teleport to where you are looking, leaving nothing but a cloud of ender energy behind.",
+   "src": "https://iron.wiki/spells/?s=Teleport#Teleport"
+  },
+  "Summon Ender Chest": {
+   "text": "Apparate your Ender Chest inventory upon casting.",
+   "src": "https://iron.wiki/spells/?s=Summon%20Ender%20Chest#Summon%20Ender%20Chest"
+  },
+  "Recall": {
+   "text": "Warps you back to your spawn location, or world spawn if there is none.",
+   "src": "https://iron.wiki/spells/?s=Recall#Recall"
+  },
+  "Portal": {
+   "text": "Creates two portals that allows players to travel back and forth between them.",
+   "src": "https://iron.wiki/spells/?s=Portal#Portal"
+  },
+  "Echoing Strikes": {
+   "text": "Non-magical attacks will create an echo, producing a spectral sword to slam down in an area, or a piercing magical arrow to shoot the same target. Echoes do a percent of the original attack's damage.",
+   "src": "https://iron.wiki/spells/?s=Echoing%20Strikes#Echoing%20Strikes"
+  },
+  "Black Hole": {
+   "text": "Around a targeted location, create a fissure into the void, manifesting a black hole that will suck in nearby creatures and slowly crush them to death",
+   "src": "https://iron.wiki/spells/?s=Black%20Hole#Black%20Hole"
+  },
+  "Summon Swords": {
+   "text": "Conjure a trio of spectral armaments to aid in battle: a brawling shortsword, a quick rapier, and a tanking claymore. Created by the Ancient Magician known as Hazentouvel.",
+   "src": "https://iron.wiki/spells/?s=Summon%20Swords#Summon%20Swords"
+  },
+  "Shadow Slash": {
+   "text": "Dash forward with a arcing slash of arcane energy, striking creatures in an area. Projectiles hit are deflected. Scales off held weapon's melee damage and enchantments.",
+   "src": "https://iron.wiki/spells/?s=Shadow%20Slash#Shadow%20Slash"
+  },
+  "Arcane Shackle": {
+   "text": "Hurl a bundle of arcane chains. Upon hitting a creature, cause three chains to bind it to the ground, each applying a tethering force. On miss, three chains lash out to unique nearby creatures. Chains can be damaged or dispelled.",
+   "src": "https://iron.wiki/spells/?s=Arcane%20Shackle#Arcane%20Shackle"
+  },
+  "Gravity Fissure": {
+   "text": "Split from the air a miniature Black Hole that moves forward in a line, pulling nearby creatures into its gravity well, but dealing no damage.",
+   "src": "https://iron.wiki/spells/?s=Gravity%20Fissure#Gravity%20Fissure"
+  },
+  "Chain Creeper": {
+   "text": "Around a targeted creature or block, conjure a ring of creeper heads that falls to the ground and explodes. Any creature killed by this blast will conjure another, smaller, ring of creeper heads. This can chain multiple times.",
+   "src": "https://iron.wiki/spells/?s=Chain%20Creeper#Chain%20Creeper"
+  },
+  "Fang Strike": {
+   "text": "Conjure a line of evoker fangs in front of you, in classic illager fashion.",
+   "src": "https://iron.wiki/spells/?s=Fang%20Strike#Fang%20Strike"
+  },
+  "Fang Ward": {
+   "text": "Conjure protective rings of evoker fangs around you, in classic illager fashion.",
+   "src": "https://iron.wiki/spells/?s=Fang%20Ward#Fang%20Ward"
+  },
+  "Firecracker": {
+   "text": "Instantaneously conjure a firework where you look that explodes in a small radius around it.",
+   "src": "https://iron.wiki/spells/?s=Firecracker#Firecracker"
+  },
+  "Gust": {
+   "text": "Conjure a strong gust of wind, knocking back creatures in a conical shape, causing damage if they impact a wall",
+   "src": "https://iron.wiki/spells/?s=Gust#Gust"
+  },
+  "Invisibility": {
+   "text": "Cast to briefly grant yourself true invisibility, which hides armor and held items, but immediately wears off upon dealing damage. Mobs also lose aggro.",
+   "src": "https://iron.wiki/spells/?s=Invisibility#Invisibility"
+  },
+  "Lob Creeper": {
+   "text": "Lob the head of a creeper forward that explodes in a medium radius around the impact. The higher the level, the faster the projectile.",
+   "src": "https://iron.wiki/spells/?s=Lob%20Creeper#Lob%20Creeper"
+  },
+  "Shield": {
+   "text": "Conjure a stationary shield of arcane energy where you look that will block projectiles and prevent creatures from passing.",
+   "src": "https://iron.wiki/spells/?s=Shield#Shield"
+  },
+  "Spectral Hammer": {
+   "text": "Conjure a spectral hammer out from where you look that will mine all connected stone-type blocks in a cube where it hits, leaving only ores and rubble behind.",
+   "src": "https://iron.wiki/spells/?s=Spectral%20Hammer#Spectral%20Hammer"
+  },
+  "Summon Horse": {
+   "text": "Conjure a spectral steed that will follow you around and only let you ride. The horse's speed, health, and jump height scales with spell power.",
+   "src": "https://iron.wiki/spells/?s=Summon%20Horse#Summon%20Horse"
+  },
+  "Summon Vex": {
+   "text": "Cast to conjure vexes that will follow, protect, and fight for you.",
+   "src": "https://iron.wiki/spells/?s=Summon%20Vex#Summon%20Vex"
+  },
+  "Slow": {
+   "text": "Apply the Slowed effect to a targeted creature, decreasing its movement speed, attack speed, mining speed, and cast time reduction for a duration.",
+   "src": "https://iron.wiki/spells/?s=Slow#Slow"
+  },
+  "Arrow Volley": {
+   "text": "Around a targeted creature or block, summon a rolling wave of magical arrows from the sky.",
+   "src": "https://iron.wiki/spells/?s=Arrow%20Volley#Arrow%20Volley"
+  },
+  "Throw": {
+   "text": "Cast to throw your held item, dealing a base damage plus damage normally inflicted by the item.",
+   "src": "https://iron.wiki/spells/?s=Throw#Throw"
+  },
+  "Fang Swirl": {
+   "text": "Target a creature or block to conjure a spiraling zone of evoker fangs in a radius.",
+   "src": "https://iron.wiki/spells/?s=Fang%20Swirl#Fang%20Swirl"
+  },
+  "Scapegoat": {
+   "text": "Conjure a magical decoy in the form of a goat, which takes aggro from nearby hostile mobs and runs off into the distance, taunting them for a duration.",
+   "src": "https://iron.wiki/spells/?s=Scapegoat#Scapegoat"
+  },
+  "Blaze Storm": {
+   "text": "Hold to unleash a barrage of blaze fireballs, shooting rapidly but wildly in front of you and igniting any creatures or blocks hit.",
+   "src": "https://iron.wiki/spells/?s=Blaze%20Storm#Blaze%20Storm"
+  },
+  "Burning Dash": {
+   "text": "Quickly launch yourself forward in a haze of fire, searing creatures you pass through while in a blaze.",
+   "src": "https://iron.wiki/spells/?s=Burning%20Dash#Burning%20Dash"
+  },
+  "Fireball": {
+   "text": "Manifest and throw a ball of fire, exploding and dealing massive damage on impact.",
+   "src": "https://iron.wiki/spells/?s=Fireball#Fireball"
+  },
+  "Firebolt": {
+   "text": "Shoot a small projectile of fire, igniting whatever it hits.",
+   "src": "https://iron.wiki/spells/?s=Firebolt#Firebolt"
+  },
+  "Fire Breath": {
+   "text": "Hold to spew a cone of fire outwards, igniting creatures and blocks in its path.",
+   "src": "https://iron.wiki/spells/?s=Fire%20Breath#Fire%20Breath"
+  },
+  "Magma Bomb": {
+   "text": "Launch a bomb made from magma, exploding on impact and leaving a field of fire where it lands",
+   "src": "https://iron.wiki/spells/?s=Magma%20Bomb#Magma%20Bomb"
+  },
+  "Wall Of Fire": {
+   "text": "Recast to place anchor points, which erupts into a wall of fire when the cast finishes, or when the maximum length is reached. This wall blocks projectiles and ignites creatures that pass through it.",
+   "src": "https://iron.wiki/spells/?s=Wall%20Of%20Fire#Wall%20Of%20Fire"
+  },
+  "Heat Surge": {
+   "text": "Emanate a surge of fiery magic, igniting and rending creatures in a radius around you. Rended creatures have reduced armor.",
+   "src": "https://iron.wiki/spells/?s=Heat%20Surge#Heat%20Surge"
+  },
+  "Flaming Strike": {
+   "text": "Unleash a sweeping melee attack in the form of a wreath of flames. This spell is uninterruptible. The damage scales off of your held weapon's melee damage and enchantments.",
+   "src": "https://iron.wiki/spells/?s=Flaming%20Strike#Flaming%20Strike"
+  },
+  "Scorch": {
+   "text": "In a targeted area, erupt a scorch of fiery magic, damaging creatures in the zone and leaving a field of fire.",
+   "src": "https://iron.wiki/spells/?s=Scorch#Scorch"
+  },
+  "Flaming Barrage": {
+   "text": "Repeatedly cast to shoot individual small fireballs, which home towards your cursor, or the creature your cursor is targeting.",
+   "src": "https://iron.wiki/spells/?s=Flaming%20Barrage#Flaming%20Barrage"
+  },
+  "Fire Arrow": {
+   "text": "Aim an arrow made of fiery magic that will deal direct damage on impact and explode for half damage in a small radius around it. It flies straight for a duration before gravity affects it.",
+   "src": "https://iron.wiki/spells/?s=Fire%20Arrow#Fire%20Arrow"
+  },
+  "Raise Hell": {
+   "text": "Slam down your weapon to wreath a fiery shockwave in a large radius around you. Damage scales based on the held weapon.",
+   "src": "https://iron.wiki/spells/?s=Raise%20Hell#Raise%20Hell"
+  },
+  "Angel Wings": {
+   "text": "Cast to gain wings made of holy energy, acting as an elytra, for a brief period of time.",
+   "src": "https://iron.wiki/spells/?s=Angel%20Wings#Angel%20Wings"
+  },
+  "Blessing Of Life": {
+   "text": "Cast to target any creature, showing a glowing outline. Completing the cast will heal this creature.",
+   "src": "https://iron.wiki/spells/?s=Blessing%20Of%20Life#Blessing%20Of%20Life"
+  },
+  "Fortify": {
+   "text": "Upon casting, fortify every friendly creature within a radius around you, giving them temporary HP.",
+   "src": "https://iron.wiki/spells/?s=Fortify#Fortify"
+  },
+  "Greater Heal": {
+   "text": "A more powerful but much slower version of heal, this spell will completely heal yourself upon being casted.",
+   "src": "https://iron.wiki/spells/?s=Greater%20Heal#Greater%20Heal"
+  },
+  "Guiding Bolt": {
+   "text": "Fire a slow bolt of holy energy. Creatures hit will gain the Guided effect, homing nearby projectiles in towards them",
+   "src": "https://iron.wiki/spells/?s=Guiding%20Bolt#Guiding%20Bolt"
+  },
+  "Healing Circle": {
+   "text": "Around a targeted creature or block, place a stationary circle of holy magic that heals allies within",
+   "src": "https://iron.wiki/spells/?s=Healing%20Circle#Healing%20Circle"
+  },
+  "Heal": {
+   "text": "Cast to infuse yourself with holy energy and immediately regain health.",
+   "src": "https://iron.wiki/spells/?s=Heal#Heal"
+  },
+  "Sunbeam": {
+   "text": "Funnel the power of the heavens into a beam of holy energy from above, smiting targets in an area.",
+   "src": "https://iron.wiki/spells/?s=Sunbeam#Sunbeam"
+  },
+  "Wisp": {
+   "text": "Conjure a projectile of holy energy that will float towards nearby targets and deal damage upon impact.",
+   "src": "https://iron.wiki/spells/?s=Wisp#Wisp"
+  },
+  "Divine Smite": {
+   "text": "With a fervor of holy energy, swing forth your weapon, doing a melee area attack. This spell is uninterruptible. The damage scales off of your held weapon's melee damage and enchantments.",
+   "src": "https://iron.wiki/spells/?s=Divine%20Smite#Divine%20Smite"
+  },
+  "Haste": {
+   "text": "To a targeted creature, or yourself if no creature is targeted, apply the Hastened effect, increasing movement speed, attack speed, mining speed, and cast time reduction for a duration.",
+   "src": "https://iron.wiki/spells/?s=Haste#Haste"
+  },
+  "Cleanse": {
+   "text": "Pray to a divine magic to cleanse yourself and nearby allies of harmful status effects.",
+   "src": "https://iron.wiki/spells/?s=Cleanse#Cleanse"
+  },
+  "Cone Of Cold": {
+   "text": "Hold to cast out a cone of cold energy, freezing creatures in its path.",
+   "src": "https://iron.wiki/spells/?s=Cone%20Of%20Cold#Cone%20Of%20Cold"
+  },
+  "Frost Step": {
+   "text": "Teleport to where you are looking, leaving behind a shadow of ice. This shadow will take nearby aggro, and shatter into icicles after 5 seconds or upon taking any damage.",
+   "src": "https://iron.wiki/spells/?s=Frost%20Step#Frost%20Step"
+  },
+  "Ice Block": {
+   "text": "Conjure a giant chunk of ice above a targeted creature or block. After a short delay, it will fall down and explode for area frost damage, doing additional damage to any creatures hit on the way down.",
+   "src": "https://iron.wiki/spells/?s=Ice%20Block#Ice%20Block"
+  },
+  "Icicle": {
+   "text": "Fire a piercing bolt of cold energy in the form of an icicle, freezing those it touches.",
+   "src": "https://iron.wiki/spells/?s=Icicle#Icicle"
+  },
+  "Summon Polar Bear": {
+   "text": "Cast to summon a polar bear who will follow, protect, and fight for you, as well as providing a mount.",
+   "src": "https://iron.wiki/spells/?s=Summon%20Polar%20Bear#Summon%20Polar%20Bear"
+  },
+  "Ray Of Frost": {
+   "text": "Fire a beam of cold energy, dealing low damage but immediately applying freeze to the creature hit.",
+   "src": "https://iron.wiki/spells/?s=Ray%20Of%20Frost#Ray%20Of%20Frost"
+  },
+  "Frostwave": {
+   "text": "Cascade a wave of frost magic in a radius around you, afflicting creatures with chilled. Chilled creatures become entombed in ice when fully frozen.",
+   "src": "https://iron.wiki/spells/?s=Frostwave#Frostwave"
+  },
+  "Ice Spikes": {
+   "text": "Unleash a cascading line of ice magic, creating ice crystals that emerge from the ground. The final spike does full damage, and will emerge early if a creature within range is targeted.",
+   "src": "https://iron.wiki/spells/?s=Ice%20Spikes#Ice%20Spikes"
+  },
+  "Ice Tomb": {
+   "text": "Encase yourself in a protective tomb of ice, providing healing while within, absorbing one hit or counterspell before breaking. Dismount to leave the tomb.",
+   "src": "https://iron.wiki/spells/?s=Ice%20Tomb#Ice%20Tomb"
+  },
+  "Snowball": {
+   "text": "Conjure a giant snowball and throw it forward, bursting into a frosty field and Chilling creatures in a surrounding radius on impact. Chilled creatures become entombed in ice when fully frozen.",
+   "src": "https://iron.wiki/spells/?s=Snowball#Snowball"
+  },
+  "Frostbite": {
+   "text": "Imbue yourself with a magical Frostbiting power, making any fully-frozen creature you kill turn into an Ice Shadow. Ice Shadows shatter into icicles after 5 seconds or upon taking any damage.",
+   "src": "https://iron.wiki/spells/?s=Frostbite#Frostbite"
+  },
+  "Blizzard": {
+   "text": "Channel a slow-moving, swirling blizzard at a targeted location, causing freezing wind and snow to pull creatures into the center of the vortex.",
+   "src": "https://iron.wiki/spells/?s=Blizzard#Blizzard"
+  },
+  "Ascension": {
+   "text": "Cast to strike lightning at your feet and ascend quickly into the air, and gain reduced gravity for a short duration. The lightning bolt deals damage and knocks back creatures struck.",
+   "src": "https://iron.wiki/spells/?s=Ascension#Ascension"
+  },
+  "Chain Lightning": {
+   "text": "Start a chain of lightning from a targeted creature, causing waves of zapping magic to cascade to nearby creatures",
+   "src": "https://iron.wiki/spells/?s=Chain%20Lightning#Chain%20Lightning"
+  },
+  "Charge": {
+   "text": "Imbue yourself with the power of lightning, increasing your speed and combat abilities.",
+   "src": "https://iron.wiki/spells/?s=Charge#Charge"
+  },
+  "Electrocute": {
+   "text": "Hold to manifest a cone of electrical energy, damaging creatures in its path.",
+   "src": "https://iron.wiki/spells/?s=Electrocute#Electrocute"
+  },
+  "Lightning Bolt": {
+   "text": "Down from the heavens, summon a bolt of lightning.",
+   "src": "https://iron.wiki/spells/?s=Lightning%20Bolt#Lightning%20Bolt"
+  },
+  "Lightning Lance": {
+   "text": "Hold to charge a spear made of lightning. Release to throw it like a javelin, dealing high damage to the creature it hits.",
+   "src": "https://iron.wiki/spells/?s=Lightning%20Lance#Lightning%20Lance"
+  },
+  "Shockwave": {
+   "text": "Coalesce a surge of electrical power, and unleash it in a devastating shockwave, blasting exposed creatures.",
+   "src": "https://iron.wiki/spells/?s=Shockwave#Shockwave"
+  },
+  "Thunderstorm": {
+   "text": "Cast to conjure a thunderstorm centered around yourself, which strikes nearby creatures within sight with a small bolt of lightning every 2 seconds for the spell's duration.",
+   "src": "https://iron.wiki/spells/?s=Thunderstorm#Thunderstorm"
+  },
+  "Ball Lightning": {
+   "text": "Conjure an orb of lightning that slowly moves forward, damaging creatures it phases through and bouncing off blocks.",
+   "src": "https://iron.wiki/spells/?s=Ball%20Lightning#Ball%20Lightning"
+  },
+  "Volt Strike": {
+   "text": "Leap forward in a spinning voltaic attack, striking the first creature or surface you hit, and dealing a residual blast in a small area around around the impact.",
+   "src": "https://iron.wiki/spells/?s=Volt%20Strike#Volt%20Strike"
+  },
+  "Acid Spit": {
+   "text": "Spit an orb of acid, splashing in a radius upon impact and rending creatures hit, melting away and reducing their armor",
+   "src": "https://iron.wiki/spells/?s=Acid%20Spit#Acid%20Spit"
+  },
+  "Blight": {
+   "text": "Target a creature to blight them, reducing their incoming healing and outgoing damage",
+   "src": "https://iron.wiki/spells/?s=Blight#Blight"
+  },
+  "Poison Arrow": {
+   "text": "Charge a powerful arrow, imbued with poison magic, that will release a poisonous cloud upon impact",
+   "src": "https://iron.wiki/spells/?s=Poison%20Arrow#Poison%20Arrow"
+  },
+  "Poison Spray": {
+   "text": "Spew forth a cone of poison, damaging and poisoning creatures in its reach",
+   "src": "https://iron.wiki/spells/?s=Poison%20Spray#Poison%20Spray"
+  },
+  "Poison Splash": {
+   "text": "Around a targeted creature or block, conjure a wave of poisonous magic that splashes down, damaging creatures hit and leaving behind a poisonous cloud",
+   "src": "https://iron.wiki/spells/?s=Poison%20Splash#Poison%20Splash"
+  },
+  "Root": {
+   "text": "Around a targeted creature, sprout magical roots than entangle them and completely prevent non-magical movement",
+   "src": "https://iron.wiki/spells/?s=Root#Root"
+  },
+  "Aspect Of The Spider": {
+   "text": "Instill yourself with poisonous magic, dealing additional melee, ranged, or spell damage creatures that are poisoned",
+   "src": "https://iron.wiki/spells/?s=Aspect%20Of%20The%20Spider#Aspect%20Of%20The%20Spider"
+  },
+  "Firefly Swarm": {
+   "text": "Emanate a swarm of violent fireflies, following a targeted creature and dealing aoe damage. If the initial target dies, the last harmed creature will be targeted.",
+   "src": "https://iron.wiki/spells/?s=Firefly%20Swarm#Firefly%20Swarm"
+  },
+  "Oakskin": {
+   "text": "The great power of oak infuses itself into your skin, granting damage reduction of any incoming damage for a duration.",
+   "src": "https://iron.wiki/spells/?s=Oakskin#Oakskin"
+  },
+  "Earthquake": {
+   "text": "Conjure an earthquake around a targeted creature or location, causing tremors to ripple through the ground, damaging and slowing creatures in the area.",
+   "src": "https://iron.wiki/spells/?s=Earthquake#Earthquake"
+  },
+  "Stomp": {
+   "text": "With a magic force, stomp the ground in front of you and send a short tremor forward through the ground, damaging creatures in its path.",
+   "src": "https://iron.wiki/spells/?s=Stomp#Stomp"
+  },
+  "Gluttony": {
+   "text": "Turn your stomach into an arcane furnace, turning eaten food into mana for a duration.",
+   "src": "https://iron.wiki/spells/?s=Gluttony#Gluttony"
+  },
+  "Touch Dig": {
+   "text": "Use magic to break a block. Held items affect drops.",
+   "src": "https://iron.wiki/spells/?s=Touch%20Dig#Touch%20Dig"
+  },
+  "Abyssal Shroud": {
+   "text": "Cloak yourself with the shadows of the abyss, granting the ability to evade any attack for a short duration of time.",
+   "src": "https://iron.wiki/spells/?s=Abyssal%20Shroud#Abyssal%20Shroud"
+  },
+  "Sculk Tentacles": {
+   "text": "From where you look, erupt a mass of sculk energy in the form of wailing tentacles, damaging and blinding creatures caught in the chaos.",
+   "src": "https://iron.wiki/spells/?s=Sculk%20Tentacles#Sculk%20Tentacles"
+  },
+  "Sonic Boom": {
+   "text": "Blast forth a sonic boom of immense power, passing through solid material and harming all creatures in its path.",
+   "src": "https://iron.wiki/spells/?s=Sonic%20Boom#Sonic%20Boom"
+  },
+  "Planar Sight": {
+   "text": "Shift your vision in between planes, gaining the ability to see creatures through solid material.",
+   "src": "https://iron.wiki/spells/?s=Planar%20Sight#Planar%20Sight"
+  },
+  "Telekinesis": {
+   "text": "Reach out with a spectral force and grip a creature, forcing them towards your gaze. Creatures are susceptible to kinetic damage.",
+   "src": "https://iron.wiki/spells/?s=Telekinesis#Telekinesis"
+  },
+  "Pocket Dimension": {
+   "text": "Cast to transport yourself into a personal pocket dimension only you can access, giving a small free range area.",
+   "src": "https://iron.wiki/spells/?s=Pocket%20Dimension#Pocket%20Dimension"
+  }
+ }
+}

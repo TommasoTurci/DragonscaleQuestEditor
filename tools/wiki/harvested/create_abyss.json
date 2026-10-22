@@ -1,0 +1,22 @@
+{
+ "wiki": "github.com/pb6106/abyss/wiki",
+ "ns": "create_abyss",
+ "harvested": "2026-10-22T23:50:59.053Z",
+ "matched": 0,
+ "unmatched": 3,
+ "docs": {},
+ "orphans": {
+  "Commands: /abyss exit": {
+   "text": "Teleports the executor their spawnpoint (or world spawn if their bed is in the abyss)",
+   "src": "https://github.com/pb6106/abyss/wiki/Commands#-abyss-exit"
+  },
+  "Commands: /abyss placestructure wreck": {
+   "text": "Places a random wreck infront of the executor Optionally you may provide another value to chose a specific varient default graveyard implosion porthole tube",
+   "src": "https://github.com/pb6106/abyss/wiki/Commands#-abyss-placestructure-wreck"
+  },
+  "Commands: /abyss vision": {
+   "text": "Grants the executor night vision and conduit power infinitely with no particles",
+   "src": "https://github.com/pb6106/abyss/wiki/Commands#-abyss-vision"
+  }
+ }
+}

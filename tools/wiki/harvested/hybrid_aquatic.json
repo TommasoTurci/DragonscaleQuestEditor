@@ -1,0 +1,65 @@
+{
+ "wiki": "hybrid-aquatic.fandom.com",
+ "ns": "hybrid_aquatic",
+ "harvested": "2026-10-22T23:52:18.135Z",
+ "matched": 2,
+ "unmatched": 11,
+ "docs": {
+  "hybrid_aquatic:opah": {
+   "text": "Opah are medium-sized fish that spawn in Oceans, Lukewarm, and Warm Oceans.",
+   "src": "https://hybrid-aquatic.fandom.com/wiki/Opah",
+   "title": "Opah"
+  },
+  "hybrid_aquatic:oarfish": {
+   "text": "Oarfish are large, passive fish that spawn in all deep oceans.",
+   "src": "https://hybrid-aquatic.fandom.com/wiki/Oarfish",
+   "title": "Oarfish"
+  }
+ },
+ "orphans": {
+  "Hybrid Aquatic Wiki": {
+   "text": "A wiki of all there is to find in the Minecraft mod Hybrid Aquatic",
+   "src": "https://hybrid-aquatic.fandom.com/wiki/Hybrid_Aquatic_Wiki"
+  },
+  "Yellowfin Tuna": {
+   "text": "Yellowfin Tuna are medium-sized passive fish that spawn in all Ocean biomes.",
+   "src": "https://hybrid-aquatic.fandom.com/wiki/Yellowfin_Tuna"
+  },
+  "Great White Shark": {
+   "text": "Great white sharks are large, predatory fish that spawn in oceans, deep oceans, cold oceans, and deep cold oceans.",
+   "src": "https://hybrid-aquatic.fandom.com/wiki/Great_White_Shark"
+  },
+  "Tiger Shark": {
+   "text": "Tiger sharks are large, predatory fish that spawn in oceans, warm oceans, and lukewarm oceans.",
+   "src": "https://hybrid-aquatic.fandom.com/wiki/Tiger_Shark"
+  },
+  "Whale Shark": {
+   "text": "Whale sharks are large, passive fish that spawn in oceans, warm oceans, and lukewarm oceans.",
+   "src": "https://hybrid-aquatic.fandom.com/wiki/Whale_Shark"
+  },
+  "Basking Shark": {
+   "text": "Basking sharks are large, passive fish that spawn in oceans, warm oceans, and lukewarm oceans.",
+   "src": "https://hybrid-aquatic.fandom.com/wiki/Basking_Shark"
+  },
+  "Thresher Shark": {
+   "text": "Thresher sharks are medium, predatory fish that spawn in warm oceans, lukewarm oceans, and deep oceans.",
+   "src": "https://hybrid-aquatic.fandom.com/wiki/Thresher_Shark"
+  },
+  "Bull Shark": {
+   "text": "Great white sharks are large, predatory fish that spawn in oceans, warm oceans, lukewarm oceans. They can also be rarely spotted in rivers and mangrove swamps.",
+   "src": "https://hybrid-aquatic.fandom.com/wiki/Bull_Shark"
+  },
+  "Hammerhead Shark": {
+   "text": "Hammerhead sharks are large, predatory fish that spawn in oceans, warm oceans, and lukewarm oceans.",
+   "src": "https://hybrid-aquatic.fandom.com/wiki/Hammerhead_Shark"
+  },
+  "Frilled Shark": {
+   "text": "Frilled sharks are medium, predatory fish that spawn in deep oceans and deep cold oceans.",
+   "src": "https://hybrid-aquatic.fandom.com/wiki/Frilled_Shark"
+  },
+  "Plushies": {
+   "text": "To obtain a plushie, the wandering trader has a chance to offer a variety of plushies for sale, each with an opportunity to be available. Look at the selection and discover the adorable plushies that might be on offer.",
+   "src": "https://hybrid-aquatic.fandom.com/wiki/Plushies"
+  }
+ }
+}
