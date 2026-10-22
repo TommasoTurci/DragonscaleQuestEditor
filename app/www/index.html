@@ -396,6 +396,14 @@ details .inner{padding:0 11px 11px;display:flex;flex-direction:column;gap:11px}
 .modcard p{margin:0;font-size:.82rem;color:var(--muted);line-height:1.5}
 .modcard a{font-size:.74rem;color:var(--accent);font-family:var(--mono);text-decoration:none;word-break:break-all}
 .modcard a:hover{text-decoration:underline}
+.wikidoc{
+  background:var(--panel-2);border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:6px;
+}
+.wikidoc h4{margin:0}
+.wikidoc p{margin:0;font-size:.86rem;line-height:1.55}
+.wikidoc a{font-size:.72rem;color:var(--accent);text-decoration:none}
+.wikidoc a:hover{text-decoration:underline}
 .tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
 .tag{
   font-size:.68rem;font-family:var(--mono);padding:3px 7px;border-radius:999px;
@@ -520,6 +528,8 @@ const S = {
   names: {},               // item id -> the name a human would use
   items: null,             // the server's item registry, fetched on first browse
   mods: {},                // mod id -> what its author says it is
+  docs: {},                // item id -> a paragraph harvested from its wiki
+  docSources: {},          // which wiki each mod came from
   notes: {},               // item id -> what it is, as written here
 };
 const view = { x: 0, y: 0, scale: 48 };    // world units -> px
@@ -646,18 +656,21 @@ async function connect(t) {
 }
 
 async function first() {
-  const [book, types, idx, nm, md] = await Promise.all([
+  const [book, types, idx, nm, md, dc] = await Promise.all([
     api('/book'),
     api('/types').catch(() => ({ tasks: {}, rewards: {} })),
     fetch('/icons/index.json').then(r => r.ok ? r.json() : { icons: {} }).catch(() => ({ icons: {} })),
     fetch('/icons/names.json').then(r => r.ok ? r.json() : { names: {} }).catch(() => ({ names: {} })),
-    fetch('/icons/mods.json').then(r => r.ok ? r.json() : { mods: {} }).catch(() => ({ mods: {} }))
+    fetch('/icons/mods.json').then(r => r.ok ? r.json() : { mods: {} }).catch(() => ({ mods: {} })),
+    fetch('/icons/docs.json').then(r => r.ok ? r.json() : { docs: {} }).catch(() => ({ docs: {} }))
   ]);
   S.book = book;
   S.types = types && types.tasks ? types : { tasks: {}, rewards: {} };
   S.icons = idx.icons || {};
   S.names = nm.names || {};
   S.mods = md.mods || {};
+  S.docs = dc.docs || {};
+  S.docSources = dc.sources || {};
   if (!S.chapterId) S.chapterId = (chapters()[0] || {}).id || null;
   renderChapters();
   fitView();
@@ -2344,6 +2357,21 @@ async function renderDetail(id) {
   // than most sentences would, and it is the server's own answer, not a guess.
   const info = document.createElement('div');
   wrap.append(info);
+
+  // What the mod's wiki says, pulled in by tools/wiki and served from here so
+  // nobody has to open a browser tab mid-quest.
+  const doc = S.docs[id];
+  if (doc) {
+    const d = document.createElement('div');
+    d.className = 'wikidoc';
+    d.innerHTML = '<h4>From the ' + esc(doc.wiki) + ' wiki</h4>'
+      + '<p>' + esc(doc.text) + '</p>';
+    const a2 = document.createElement('a');
+    a2.href = doc.src; a2.target = '_blank'; a2.rel = 'noreferrer';
+    a2.textContent = 'full page';
+    d.append(a2);
+    wrap.append(d);
+  }
 
   const noteBox = document.createElement('div');
   noteBox.className = 'field';

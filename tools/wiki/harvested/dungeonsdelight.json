@@ -1,0 +1,137 @@
+{
+ "wiki": "dungeonsdelight.wiki.gg",
+ "ns": "dungeonsdelight",
+ "harvested": "2026-10-22T23:44:28.873Z",
+ "matched": 10,
+ "unmatched": 19,
+ "docs": {
+  "dungeonsdelight:monster_pot": {
+   "text": "A Monster Pot is a variant of the Farmer's Delight [https://github.com/vectorwing/FarmersDelight/wiki/Cooking-Pots Cooking Pot]. It is used in the cooking of most Monster Foods in Dungeon's Delight, filling a similar function to the [https://github.com/vectorwing/FarmersDelight/wiki Farmer's Delight] [https://github.com/vectorwing/FarmersDelight/wiki/Cooking-Pots Cooking Pot].",
+   "src": "https://dungeonsdelight.wiki.gg/wiki/Monster_Pot",
+   "title": "Monster Pot"
+  },
+  "dungeonsdelight:ancient_egg": {
+   "text": "Ancient Eggs are a new material and food. They are primarily used as a crafting ingredient.",
+   "src": "https://dungeonsdelight.wiki.gg/wiki/Ancient_Egg",
+   "title": "Ancient Egg"
+  },
+  "dungeonsdelight:heap_of_ancient_eggs": {
+   "text": "Heap of Ancient Eggs are obtained by aging a block of embedded eggs over time. Harvesting with a shovel yields 4 [https://dungeonsdelight.wiki.gg/wiki/Ancient_Egg Ancient Eggs]",
+   "src": "https://dungeonsdelight.wiki.gg/wiki/Heap_Of_Ancient_Eggs",
+   "title": "Heap Of Ancient Eggs"
+  },
+  "dungeonsdelight:embedded_eggs": {
+   "text": "Embedded Eggs are used in the process of making [https://dungeonsdelight.wiki.gg/wiki/Ancient_Egg Ancient Eggs]. When placed, Embedded Eggs will begin to age into [https://dungeonsdelight.wiki.gg/wiki/Heap_Of_Ancient_Eggs Heap of Ancient Eggs]. This process can be sped up through several [https://dungeonsdelight.wiki.gg/wiki/Heap_Of_Ancient_Eggs modifiers].",
+   "src": "https://dungeonsdelight.wiki.gg/wiki/Embedded_Eggs",
+   "title": "Embedded Eggs"
+  },
+  "dungeonsdelight:rancid_reduction": {
+   "text": "Rancid Reduction is a new extract used for crafting and rotting crops. Rancid Reduction can be thrown in an arc and produce a lingering area of effect similar to a [https://minecraft.wiki/w/Lingering_Potion Lingering Potion]. Full-grown potato and tomato plants in this area will be converted to their rotten variants, which can be harvested to yield [https://minecraft.wiki/w/Poisonous_Potato Poisonous Potatoes] and rotten tomatoes respectively.",
+   "src": "https://dungeonsdelight.wiki.gg/wiki/Rancid_Reduction",
+   "title": "Rancid Reduction"
+  },
+  "dungeonsdelight:monster_burger": {
+   "text": "The Monster Burger is a secret food item in Dungeon's Delight that is hidden in JEI and the recipe booklet. The Monster Burger provides its consumer with 0:05 seconds of all Monster Effects. This is used primarily to convert any already present potion effects into their monster counterparts, but is also an effiecient way to gain all monster effect advancements in one consumable.",
+   "src": "https://dungeonsdelight.wiki.gg/wiki/Monster_Burger",
+   "title": "Monster Burger"
+  },
+  "dungeonsdelight:poi": {
+   "text": "Poi is a bowl food made from Rotbulbs similar to Beetroot Soup.",
+   "src": "https://dungeonsdelight.wiki.gg/wiki/Poi",
+   "title": "Poi"
+  },
+  "dungeonsdelight:dungeon_stove": {
+   "text": "A Dungeon Stove is a variant of the Farmer's Delight [https://github.com/vectorwing/FarmersDelight/wiki/Cooking-Pots Stove]. It has similar functionality to the Stove, with the additional ability of being able to heat Monster Pots.",
+   "src": "https://dungeonsdelight.wiki.gg/wiki/Dungeon_Stove",
+   "title": "Dungeon Stove"
+  },
+  "dungeonsdelight:gunk_arrow": {
+   "text": "Gunk arrows are a new projectile that inflict targets with [https://dungeonsdelight.wiki.gg/Putrid_Scent Putrid Scent] for 200 ticks or 10 seconds.",
+   "src": "https://dungeonsdelight.wiki.gg/wiki/Gunk_Arrow",
+   "title": "Gunk Arrow"
+  },
+  "dungeonsdelight:wormouth": {
+   "text": "A Wormouth is a block found as a part of Wormroots. It cannot be obtained as an item in survival, even with a tool enchanted with [https://minecraft.wiki/w/Silk_Touch Silk Touch].",
+   "src": "https://dungeonsdelight.wiki.gg/wiki/Wormouth",
+   "title": "Wormouth"
+  }
+ },
+ "orphans": {
+  "Dungeons Delight Wiki/welcome": {
+   "text": "We are currently maintaining articles. Please feel free to contribute by creating new articles or expanding existing ones.",
+   "src": "https://dungeonsdelight.wiki.gg/wiki/Dungeons_Delight_Wiki%2Fwelcome"
+  },
+  "Dungeons Delight Wiki/about": {
+   "text": "Dungeon's Delight is an addon to the popular [https://minecraft.wiki/ Minecraft] mod [https://www.curseforge.com/minecraft/mc-mods/farmers-delight Farmer’s Delight] which aims to introduce new content in the farming and cooking aspects of the game. Dungeon's Delight expands on [https://www.curseforge.com/minecraft/mc-mods/farmers-delight Farmer’s Delight] with the ability to cook and monsters and earn various new status effects from them.",
+   "src": "https://dungeonsdelight.wiki.gg/wiki/Dungeons_Delight_Wiki%2Fabout"
+  },
+  "Dungeons Delight Wiki/contribute": {
+   "text": "is a collaborative wiki resource that is open for anyone to edit. You don't need special permission beyond registering an account to edit most pages, and your contributions can grow the wiki and help other players.",
+   "src": "https://dungeonsdelight.wiki.gg/wiki/Dungeons_Delight_Wiki%2Fcontribute"
+  },
+  "Effects": {
+   "text": "Dungeon's Delight features a new category of [https://minecraft.wiki/w/Effect effects] known as Monster Effects. Monster Effects are variants of existing [https://minecraft.wiki/w/Effect effects] that have been \"monsterized\", they retain similar behavior but are greatly altered.",
+   "src": "https://dungeonsdelight.wiki.gg/wiki/Effects"
+  },
+  "Voracity": {
+   "text": "Voracity is the [https://dungeonsdelight.wiki.gg/wiki/Effects Monster Effect] variant of the [https://github.com/vectorwing/FarmersDelight/wiki/Effects Nourishment]. Voracity grants the user the ability to replenish [https://minecraft.wiki/w/Hunger hunger] points from attacking living entities.",
+   "src": "https://dungeonsdelight.wiki.gg/wiki/Voracity"
+  },
+  "Burrow Gut": {
+   "text": "Burrow Gut is the [https://dungeonsdelight.wiki.gg/wiki/Effects Monster Effect] variant of the [https://minecraft.wiki/w/Haste Haste]. Burrow Gut grants the user the ability to replenish [https://minecraft.wiki/w/Hunger hunger] points from mining blocks.",
+   "src": "https://dungeonsdelight.wiki.gg/wiki/Burrow_Gut"
+  },
+  "Tenacity": {
+   "text": "Tenacity is the [https://dungeonsdelight.wiki.gg/wiki/Effects Monster Effect] variant of the [https://github.com/vectorwing/FarmersDelight/wiki/Effects Comfort]. Tenacity causes the player to naturally regenerate faster the less [https://minecraft.wiki/w/Hunger hunger] they have.",
+   "src": "https://dungeonsdelight.wiki.gg/wiki/Tenacity"
+  },
+  "Feral Bite": {
+   "text": "Feral Bite is an unused [https://minecraft.wiki/w/Effect effect] that grants the user a 20% chance to inflict [https://dungeonsdelight.wiki.gg/Serrated Serrated] to attacked targets for 8 seconds.",
+   "src": "https://dungeonsdelight.wiki.gg/wiki/Feral_Bite"
+  },
+  "Putrid Scent": {
+   "text": "Putrid Scent is an [https://minecraft.wiki/w/Effect effect] that causes undead entities to target the user even if they are a hostile entity. Non player entities will begin to flee from entities.",
+   "src": "https://dungeonsdelight.wiki.gg/wiki/Putrid_Scent"
+  },
+  "Items": {
+   "text": "Dungeon's Delight introduces many new ingredients, materials, and foods that of which strive to have some sort of usage or purpose. This page provides information behind items in general, for specifics on an item open up the item's page.",
+   "src": "https://dungeonsdelight.wiki.gg/wiki/Items"
+  },
+  "Blocks": {
+   "text": "Dungeon's Delight introduces many new blocks, this page is a comprehensive list of every item available in the mod.",
+   "src": "https://dungeonsdelight.wiki.gg/wiki/Blocks"
+  },
+  "Exudation": {
+   "text": "Exudation is the [https://dungeonsdelight.wiki.gg/wiki/Effects Monster Effect] variant of the [https://minecraft.wiki/w/Absorption Absorption] effect.",
+   "src": "https://dungeonsdelight.wiki.gg/wiki/Exudation"
+  },
+  "Rot Bulb": {
+   "text": "Rot Bulbs are a new crop introduced in Dungeon's Delight. Rot Bulbs present a unique harvesting mechanic as harvesting more Rot Bulbs requires defeating mobs the crop spawns.",
+   "src": "https://dungeonsdelight.wiki.gg/wiki/Rot_Bulb"
+  },
+  "Rotbulb Crop": {
+   "text": "A rotbulb is a manifestation of pure rot in the form of a plant.",
+   "src": "https://dungeonsdelight.wiki.gg/wiki/Rotbulb_Crop"
+  },
+  "Cleavers": {
+   "text": "Cleavers are an alternative to Farmer's Delight [https://github.com/vectorwing/FarmersDelight/wiki/Knife Knives]. Much like the [https://github.com/vectorwing/FarmersDelight/wiki/Knife Knife], Cleavers can harvest grass, crops, and guarantee secondary drops from slain mobs but have much lower attack speed but higher damage.",
+   "src": "https://dungeonsdelight.wiki.gg/wiki/Cleavers"
+  },
+  "World Generation": {
+   "text": "Dungeon's Delight introduces new world generation features, this page is a comprehensive list of every structure in the mod.",
+   "src": "https://dungeonsdelight.wiki.gg/wiki/World_Generation"
+  },
+  "Rotten Dungeon": {
+   "text": "Rotten Dungeons are variants of [https://minecraft.wiki/w/Monster_Room Monster Rooms] found rarely underground in the Overworld, and are the only means of obtaining Rotbulbs.",
+   "src": "https://dungeonsdelight.wiki.gg/wiki/Rotten_Dungeon"
+  },
+  "Wormroot (Feature)": {
+   "text": "Wormroots are relatively rare plant-like features found in the underground of the Overworld. Their main body consists of Wormroot Stalks and Wormouths.",
+   "src": "https://dungeonsdelight.wiki.gg/wiki/Wormroot_(Feature)"
+  },
+  "Mobs": {
+   "text": "Harvesting drops from mobs is a key source of ingredients for Dungeon's Delight. There is currently one new mob added by Dungeon's Delight.",
+   "src": "https://dungeonsdelight.wiki.gg/wiki/Mobs"
+  }
+ }
+}

@@ -19,6 +19,7 @@ import net.minecraft.world.item.crafting.ShapedRecipe;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
@@ -49,6 +50,8 @@ public final class RecipeReader {
     private static Map<String, List<Integer>> makes = Map.of();
     private static Map<String, List<Integer>> uses = Map.of();
     private static int builtFrom = -1;
+    private static final int MAX_DEPTH = 24;
+    private static Map<String, Integer> depths = new HashMap<>();
 
     private RecipeReader() {}
 
@@ -59,7 +62,62 @@ public final class RecipeReader {
         out.add("makes", render(mc, makes.get(item)));
         out.add("uses", render(mc, uses.get(item)));
         out.addProperty("total", snapshot.size());
+        out.addProperty("depth", depth(item));
+        out.addProperty("usedBy", uses.containsKey(item) ? uses.get(item).size() : 0);
         return out;
+    }
+
+    /**
+     * How many crafting steps deep an item sits: 0 for something you find or
+     * mine, 1 for something made directly from those, and so on.
+     *
+     * <p>This is the number a quest tree is really ordered by. Working it out by
+     * hand for a pack this size is the kind of bookkeeping nobody finishes, and
+     * the recipe graph already answers it.
+     *
+     * <p>Modded recipe graphs have cycles in them — an ingot makes a block makes
+     * nine ingots — so this walks with a visited set and a depth cap, and takes
+     * the cheapest route to an item rather than the first one found.
+     */
+    private static int depth(String item) {
+        Integer cached = depths.get(item);
+        if (cached != null) return cached;
+        int d = depth(item, new HashSet<>(), 0);
+        depths.put(item, d);
+        return d;
+    }
+
+    private static int depth(String item, Set<String> seen, int level) {
+        if (level > MAX_DEPTH) return MAX_DEPTH;
+        Integer cached = depths.get(item);
+        if (cached != null) return cached;
+        List<Integer> recipes = makes.get(item);
+        if (recipes == null || recipes.isEmpty()) return 0;     // found, not made
+        if (!seen.add(item)) return MAX_DEPTH;                  // a loop; not this way
+
+        int best = MAX_DEPTH;
+        for (int i : recipes) {
+            try {
+                int worst = 0;
+                for (Ingredient ing : ingredients(snapshot.get(i).value())) {
+                    if (ing == null || ing.isEmpty()) continue;
+                    ItemStack[] items = ing.getItems();
+                    if (items.length == 0) continue;
+                    // The easiest thing that satisfies the slot is the one a
+                    // player will reach for.
+                    int cheapest = MAX_DEPTH;
+                    for (int k = 0; k < items.length && k < MAX_PER_SLOT; k++) {
+                        cheapest = Math.min(cheapest, depth(idOf(items[k]), seen, level + 1));
+                    }
+                    worst = Math.max(worst, cheapest);
+                }
+                best = Math.min(best, worst + 1);
+            } catch (Exception ignored) {
+                // One unreadable recipe should not make an item look unreachable.
+            }
+        }
+        seen.remove(item);
+        return best;
     }
 
     private static JsonArray render(MinecraftServer mc, List<Integer> hits) {
@@ -224,6 +282,7 @@ public final class RecipeReader {
         makes = byOutput;
         uses = byInput;
         builtFrom = list.size();
+        depths = new HashMap<>();
         DragonscaleBridge.LOG.info("[questbridge] indexed {} recipes in {} ms",
             list.size(), System.currentTimeMillis() - started);
     }

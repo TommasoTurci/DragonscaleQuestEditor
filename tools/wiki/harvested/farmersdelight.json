@@ -1,0 +1,654 @@
+{
+ "wiki": "farmersdelight.fandom.com",
+ "ns": "farmersdelight",
+ "harvested": "2026-10-22T23:38:10.460Z",
+ "matched": 103,
+ "unmatched": 32,
+ "docs": {
+  "farmersdelight:cooking_pot": {
+   "text": "The main purpose of a Cooking Pot is cooking. Its interface can be opened by pressing the use item button on it. A [https://minecraft.fandom.com/wiki/Campfire?so=search Campfire], Stove, [https://minecraft.fandom.com/wiki/Magma_Block?so=search Magma Block], [https://minecraft.fandom.com/wiki/Lava?so=search Lava] or [https://minecraft.fandom.com/wiki/Fire Fire] must be placed under the Cooking Pot in order to cook items. The items (up to one stack per slot) to be cooked are placed in the first 6 slots. (A Bowl Item must be placed in the left ladle slot if the desired output item is a Bowl…",
+   "src": "https://farmersdelight.fandom.com/wiki/Cooking_Pot",
+   "title": "Cooking Pot"
+  },
+  "farmersdelight:cabbages": {
+   "text": "Cabbages can be obtained from their wild variant which naturally generate on .",
+   "src": "https://farmersdelight.fandom.com/wiki/Cabbage",
+   "title": "Cabbage"
+  },
+  "farmersdelight:cooked_rice": {
+   "text": "Cooked Rice is a food item added by the Farmer's Delight mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Cooked_Rice",
+   "title": "Cooked Rice"
+  },
+  "farmersdelight:cooked_mutton_chops": {
+   "text": "A Cooked Mutton Chop is the smoked (cooked) version of a Raw Mutton Chop, added by the Farmer's Delight mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Cooked_Mutton_Chops",
+   "title": "Cooked Mutton Chops"
+  },
+  "farmersdelight:cutting_board": {
+   "text": "The Cutting Board is a workstation where players can break down one item into many outputs, by using a valid tool on it.",
+   "src": "https://farmersdelight.fandom.com/wiki/Cutting_Board",
+   "title": "Cutting Board"
+  },
+  "farmersdelight:cabbage_leaf": {
+   "text": "A Cabbage Leaf is a Chopped food item added by Farmer's Delight.",
+   "src": "https://farmersdelight.fandom.com/wiki/Cabbage_Leaf",
+   "title": "Cabbage Leaf"
+  },
+  "farmersdelight:apple_cider": {
+   "text": "Apple Cider is a [https://farmersdelight.fandom.com/wiki/Category:Drink drink] item added by the Farmer's Delight Mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Apple_Cider",
+   "title": "Apple Cider"
+  },
+  "farmersdelight:cabbage_rolls": {
+   "text": "Cabbage Rolls are a new item added by the Farmer's Delight Mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Cabbage_Rolls",
+   "title": "Cabbage Rolls"
+  },
+  "farmersdelight:chocolate_pie": {
+   "text": "The Chocolate Pie is a place-able food item added by the Farmer's Delight mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Chocolate_Pie",
+   "title": "Chocolate Pie"
+  },
+  "farmersdelight:egg_sandwich": {
+   "text": "Egg Sandwiches can be crafted using one [https://minecraft.fandom.com/wiki/Bread Bread] and two Fried Eggs. Can be crafted in Crafting Table.",
+   "src": "https://farmersdelight.fandom.com/wiki/Egg_Sandwich",
+   "title": "Egg Sandwich"
+  },
+  "farmersdelight:fried_egg": {
+   "text": "Fried Eggs can be obtained by cooking an [https://minecraft.fandom.com/wiki/Egg Egg] in a [https://minecraft.fandom.com/wiki/Furnace Furnace], Skillet or [https://minecraft.fandom.com/wiki/Campfire Campfire].",
+   "src": "https://farmersdelight.fandom.com/wiki/Fried_Egg",
+   "title": "Fried Egg"
+  },
+  "farmersdelight:beef_patty": {
+   "text": "Beef Patties can be obtained by cooking Minced Beef in a [https://minecraft.fandom.com/wiki/Furnace Furnace], Skillet or [https://minecraft.fandom.com/wiki/Campfire Campfire].",
+   "src": "https://farmersdelight.fandom.com/wiki/Beef_Patty",
+   "title": "Beef Patty"
+  },
+  "farmersdelight:cod_roll": {
+   "text": "Two Cod Rolls can be crafted with two Raw Cod Slices and one Cooked Rice.",
+   "src": "https://farmersdelight.fandom.com/wiki/Cod_Roll",
+   "title": "Cod Roll"
+  },
+  "farmersdelight:cooked_salmon_slice": {
+   "text": "Cooked Salmon Slice is a food added in the Farmer's Delight Mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Cooked_Salmon_Slice",
+   "title": "Cooked Salmon Slice"
+  },
+  "farmersdelight:cooked_cod_slice": {
+   "text": "Cooked Cod Slice is a food added in the Farmer's Delight Mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Cooked_Cod_Slice",
+   "title": "Cooked Cod Slice"
+  },
+  "farmersdelight:cooked_bacon": {
+   "text": "It can be obtained by cooking Raw Bacon in a [https://minecraft.fandom.com/wiki/Furnace Furnace], Skillet or [https://minecraft.fandom.com/wiki/Campfire Campfire].",
+   "src": "https://farmersdelight.fandom.com/wiki/Cooked_Bacon",
+   "title": "Cooked Bacon"
+  },
+  "farmersdelight:bone_broth": {
+   "text": "In a Cooking Pot, add a [https://minecraft.fandom.com/wiki/Bone Bone] and either a [https://minecraft.fandom.com/wiki/Brown_Mushroom Brown Mushroom] or [https://minecraft.fandom.com/wiki/Red_Mushroom Red Mushroom] or [https://minecraft.fandom.com/wiki/Glow_Lichen Glow Lichen].",
+   "src": "https://farmersdelight.fandom.com/wiki/Bone_Broth",
+   "title": "Bone Broth"
+  },
+  "farmersdelight:chicken_soup": {
+   "text": "In a Cooking Pot add a Carrot and an Onion, as well as either a Cabbage or Cabbage Leaf and either a [https://minecraft.fandom.com/wiki/Raw_Chicken Raw Chicken] or Raw Chicken Cuts.",
+   "src": "https://farmersdelight.fandom.com/wiki/Chicken_Soup",
+   "title": "Chicken Soup"
+  },
+  "farmersdelight:cooked_chicken_cuts": {
+   "text": "Cooked Chicken Cuts are a food added in the Farmer's Delight Mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Cooked_Chicken_Cuts",
+   "title": "Cooked Chicken Cuts"
+  },
+  "farmersdelight:bacon_sandwich": {
+   "text": "It can be crafted with one [https://minecraft.fandom.com/wiki/Bread Bread], one Cooked Bacon, a Tomato, and either a Cabbage or Cabbage Leaf.",
+   "src": "https://farmersdelight.fandom.com/wiki/Bacon_Sandwich",
+   "title": "Bacon Sandwich"
+  },
+  "farmersdelight:dog_food": {
+   "text": "Dog Food is an animal food added in the Farmer's Delight mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Dog_Food",
+   "title": "Dog Food"
+  },
+  "farmersdelight:baked_cod_stew": {
+   "text": "In a Cooking Pot, add either a [https://minecraft.fandom.com/wiki/Raw_Cod Raw Cod] or Raw Cod Slice, a Tomato, an [https://minecraft.fandom.com/wiki/Egg Egg] and a [https://minecraft.fandom.com/wiki/Potato Potato].",
+   "src": "https://farmersdelight.fandom.com/wiki/Baked_Cod_Stew",
+   "title": "Baked Cod Stew"
+  },
+  "farmersdelight:dumplings": {
+   "text": "Dumplings can be made in a Cooking Pot with Wheat Dough, Cabbage or a Cabbage Leaf, Onion, and either Raw Chicken, Raw Beef, Raw Pork, or a Brown Mushroom.",
+   "src": "https://farmersdelight.fandom.com/wiki/Dumplings",
+   "title": "Dumplings"
+  },
+  "farmersdelight:barbecue_stick": {
+   "text": "Barbecue on a Stick can be crafted with a Stick, Onion, Tomato, and any Cooked Meat. Can be crafted in Crafting Table.",
+   "src": "https://farmersdelight.fandom.com/wiki/Barbecue_on_a_Stick",
+   "title": "Barbecue on a Stick"
+  },
+  "farmersdelight:chicken_sandwich": {
+   "text": "Chicken Sandwich can be crafted with Bread, Cooked Chicken/Cooked Chicken Cuts, Cabbage, and Carrot in a crafting grid.",
+   "src": "https://farmersdelight.fandom.com/wiki/Chicken_Sandwich",
+   "title": "Chicken Sandwich"
+  },
+  "farmersdelight:beef_stew": {
+   "text": "Beef Stew is made by placing Minced Beef or [https://minecraft.fandom.com/wiki/Raw_Beef Raw Beef], [https://minecraft.fandom.com/wiki/Carrot Carrot], and [https://minecraft.fandom.com/wiki/Potato Potato] in a Cooking Pot.",
+   "src": "https://farmersdelight.fandom.com/wiki/Beef_Stew",
+   "title": "Beef Stew"
+  },
+  "farmersdelight:fish_stew": {
+   "text": "Fish stew is made by placing any raw fish, Tomato Sauce, and an Onion in a Cooking Pot.",
+   "src": "https://farmersdelight.fandom.com/wiki/Fish_Stew",
+   "title": "Fish Stew"
+  },
+  "farmersdelight:bacon_and_eggs": {
+   "text": "Place two fried eggs, two cooked pieces of bacon and a bowl in a crafting grid.",
+   "src": "https://farmersdelight.fandom.com/wiki/Bacon_and_Eggs",
+   "title": "Bacon and Eggs"
+  },
+  "farmersdelight:apple_pie": {
+   "text": "The Apple Pie is a placeable food item added by the Farmer's Delight mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Apple_Pie",
+   "title": "Apple Pie"
+  },
+  "farmersdelight:wooden_basket": {
+   "text": "A Basket is a decorative block that stores items like a chest. it can be orientated based on the angle the player is facing when placing the block, like a shulker. Items dropped on top of the basket when it is placed upright will be collected to be stored inside, acting the same way as a hopper. It will also collect items when placed on its side or even with the opening facing down, as long as the items are dropped towards the opening.",
+   "src": "https://farmersdelight.fandom.com/wiki/Basket",
+   "title": "Basket"
+  },
+  "farmersdelight:canvas_sign": {
+   "text": "\"Signs are a non-solid blocks that displays text and can be placed on the top or side of other blocks, hanging signs can be placed underneath blocks or with a solid self-supporting bracket.\"",
+   "src": "https://farmersdelight.fandom.com/wiki/Canvas_Sign",
+   "title": "Canvas Sign"
+  },
+  "farmersdelight:canvas_rug": {
+   "text": "A canvas rug is a decorative block similar to wool rugs and can be placed down. It is crafted using a single canvas that will give 2 canvas rugs. Alternatively, canvas rugs can be re-crafted into a single canvas by placing 2 canvas rugs in a crafting table or the player's crafting inventory (their position on the table does no matter).",
+   "src": "https://farmersdelight.fandom.com/wiki/Canvas_Rug",
+   "title": "Canvas Rug"
+  },
+  "farmersdelight:onion": {
+   "text": "Onions are a new crop and food item added by Farmer's Delight. They are used in multiple recipes.",
+   "src": "https://farmersdelight.fandom.com/wiki/Onion",
+   "title": "Onion"
+  },
+  "farmersdelight:rice": {
+   "text": "Rice can be found growing in swamp and jungle biomes as harvestable Wild Rice, but can also be found in minecart chests.",
+   "src": "https://farmersdelight.fandom.com/wiki/Rice",
+   "title": "Rice"
+  },
+  "farmersdelight:honey_glazed_ham_block": {
+   "text": "Honey Glazed Ham is a food item added by Farmer's Delight. It is categorized as a feast item.",
+   "src": "https://farmersdelight.fandom.com/wiki/Honey_Glazed_Ham",
+   "title": "Honey Glazed Ham"
+  },
+  "farmersdelight:ham": {
+   "text": "Ham is a food and meat item added by the Farmer's Delight mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Ham",
+   "title": "Ham"
+  },
+  "farmersdelight:fried_rice": {
+   "text": "Fried Rice is a food item added by the Farmer's Delight mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Fried_Rice",
+   "title": "Fried Rice"
+  },
+  "farmersdelight:milk_bottle": {
+   "text": "A Milk Bottle is a drink item added by the Farmer's Delight Mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Milk_Bottle",
+   "title": "Milk Bottle"
+  },
+  "farmersdelight:mutton_wrap": {
+   "text": "A Mutton Wrap is a food item, added by the Farmer's Delight mod. If you have Cultural or Corn Delight, the bread is replaced by a Tortilla. Can be crafted in Crafting Table.",
+   "src": "https://farmersdelight.fandom.com/wiki/Mutton_Wrap",
+   "title": "Mutton Wrap"
+  },
+  "farmersdelight:glow_berry_custard": {
+   "text": "Glow Berry Custard is a [https://farmersdelight.fandom.com/wiki/Category:Drink drink] item added by the Farmer's Delight Mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Glow_Berry_Custard",
+   "title": "Glow Berry Custard"
+  },
+  "farmersdelight:hot_cocoa": {
+   "text": "Hot Cocoa is a [https://farmersdelight.fandom.com/wiki/Category:Drink drink] item added by the Farmer's Delight Mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Hot_Cocoa",
+   "title": "Hot Cocoa"
+  },
+  "farmersdelight:minced_beef": {
+   "text": "Minced Beef is a food item added by the Farmer's Delight mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Minced_Beef",
+   "title": "Minced Beef"
+  },
+  "farmersdelight:pumpkin_soup": {
+   "text": "In a Cooking Pot, add a Pumpkin Slice and one each of the following:",
+   "src": "https://farmersdelight.fandom.com/wiki/Pumpkin_Soup",
+   "title": "Pumpkin Soup"
+  },
+  "farmersdelight:raw_pasta": {
+   "text": "Raw Pasta is an ingredient added by the Farmer's Delight mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Raw_Pasta",
+   "title": "Raw Pasta"
+  },
+  "farmersdelight:pumpkin_slice": {
+   "text": "Pumpkin Slices are ingredients added in the Farmer's Delight mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Pumpkin_Slice",
+   "title": "Pumpkin Slice"
+  },
+  "farmersdelight:hamburger": {
+   "text": "A hamburger can be crafted with one [https://minecraft.fandom.com/wiki/Bread Bread], one Beef Patty, one Tomato, one Onion and either a Cabbage or Cabbage Leaf. Can be crafted in Crafting Table.",
+   "src": "https://farmersdelight.fandom.com/wiki/Hamburger",
+   "title": "Hamburger"
+  },
+  "farmersdelight:kelp_roll": {
+   "text": "It is created with a crafting table with the following recipe:",
+   "src": "https://farmersdelight.fandom.com/wiki/Kelp_Roll",
+   "title": "Kelp Roll"
+  },
+  "farmersdelight:kelp_roll_slice": {
+   "text": "Kelp Roll Slice is a food added in the Farmer's Delight Mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Kelp_Roll_Slice",
+   "title": "Kelp Roll Slice"
+  },
+  "farmersdelight:cod_slice": {
+   "text": "Two Raw Cod Slices can be obtained by cutting [https://minecraft.fandom.com/wiki/Raw_Cod Raw Cod] with a Knife on a Cutting Board.",
+   "src": "https://farmersdelight.fandom.com/wiki/Raw_Cod_Slice",
+   "title": "Raw Cod Slice"
+  },
+  "farmersdelight:salmon_slice": {
+   "text": "Raw Salmon Slice is a food added in the Farmer's Delight Mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Raw_Salmon_Slice",
+   "title": "Raw Salmon Slice"
+  },
+  "farmersdelight:rice_roll_medley_block": {
+   "text": "The Rice Roll Medley is a place-able food item added by the Farmer's Delight mod. It is categorized as a feast item.",
+   "src": "https://farmersdelight.fandom.com/wiki/Rice_Roll_Medley",
+   "title": "Rice Roll Medley"
+  },
+  "farmersdelight:noodle_soup": {
+   "text": "In a Cooking Pot, add a Fried Egg, Raw Pasta, [https://minecraft.fandom.com/wiki/Dried_Kelp Dried Kelp] and either Raw Bacon or [https://minecraft.fandom.com/wiki/Raw_Porkchop Raw Porkchop].",
+   "src": "https://farmersdelight.fandom.com/wiki/Noodle_Soup",
+   "title": "Noodle Soup"
+  },
+  "farmersdelight:bacon": {
+   "text": "2 Raw Bacon can be obtained by cutting a [https://minecraft.fandom.com/wiki/Raw_Porkchop Raw Porkchop] with a Knife on a Cutting Board.",
+   "src": "https://farmersdelight.fandom.com/wiki/Raw_Bacon",
+   "title": "Raw Bacon"
+  },
+  "farmersdelight:mixed_salad": {
+   "text": "It can be crafted with a Tomato, Cabbage or Cabbage Leaf, [https://minecraft.fandom.com/wiki/Beetroot Beetroot] and [https://minecraft.fandom.com/wiki/Bowl Bowl].",
+   "src": "https://farmersdelight.fandom.com/wiki/Mixed_Salad",
+   "title": "Mixed Salad"
+  },
+  "farmersdelight:pie_crust": {
+   "text": "Pie Crust is an ingredient added in the Farmer's Delight mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Pie_Crust",
+   "title": "Pie Crust"
+  },
+  "farmersdelight:chicken_cuts": {
+   "text": "Raw Chicken Cuts are a food added in the Farmer's Delight mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Raw_Chicken_Cuts",
+   "title": "Raw Chicken Cuts"
+  },
+  "farmersdelight:grilled_salmon": {
+   "text": "It can be crafted with a [https://minecraft.fandom.com/wiki/Cooked_Salmon Cooked Salmon] or Cooked Salmon Slice, one [https://minecraft.fandom.com/wiki/Sweet_Berries Sweet Berries], an Onion, a Cabbage or Cabbage Leaf and a [https://minecraft.fandom.com/wiki/Bowl Bowl].",
+   "src": "https://farmersdelight.fandom.com/wiki/Grilled_Salmon",
+   "title": "Grilled Salmon"
+  },
+  "farmersdelight:fruit_salad": {
+   "text": "Fruit Salad can be crafted with a Bowl, two Berries (either Glow Berries or Sweet Berries), two Melon Slices, one Pumpkin Slice, and an Apple.",
+   "src": "https://farmersdelight.fandom.com/wiki/Fruit_Salad",
+   "title": "Fruit Salad"
+  },
+  "farmersdelight:nether_salad": {
+   "text": "Nether Salad can be crafted with a Bowl, Crimson Fungus, and Warped Fungus.",
+   "src": "https://farmersdelight.fandom.com/wiki/Nether_Salad",
+   "title": "Nether Salad"
+  },
+  "farmersdelight:pasta_with_meatballs": {
+   "text": "Pasta with Meatballs can be made by placing Minced Beef, Raw Pasta, and Tomato Sauce in a Cooking Pot. It provides nourishment for 3:00.",
+   "src": "https://farmersdelight.fandom.com/wiki/Pasta_with_Meatballs",
+   "title": "Pasta with Meatballs"
+  },
+  "farmersdelight:pasta_with_mutton_chop": {
+   "text": "Pasta with Mutton Chop can be made by placing Raw Mutton/Raw Mutton Chops, Raw Pasta, and Tomato Sauce in a Cooking Pot. It gives the effect „Nourishment“ for three minutes.",
+   "src": "https://farmersdelight.fandom.com/wiki/Pasta_with_Mutton_Chop",
+   "title": "Pasta with Mutton Chop"
+  },
+  "farmersdelight:ratatouille": {
+   "text": "Ratatouille can be made by placing a Beetroot, Onion, Tomato, and any Vegetable in a Cooking Pot.",
+   "src": "https://farmersdelight.fandom.com/wiki/Ratatouille",
+   "title": "Ratatouille"
+  },
+  "farmersdelight:horse_feed": {
+   "text": "Horse feed is crafted by two [https://minecraft.fandom.com/wiki/Apple Apples], a [https://minecraft.fandom.com/wiki/Golden_Apple Golden Carrot], and a Rice Bale/[https://minecraft.fandom.com/wiki/Hay_Bale Hay Bale].",
+   "src": "https://farmersdelight.fandom.com/wiki/Horse_Feed",
+   "title": "Horse Feed"
+  },
+  "farmersdelight:melon_juice": {
+   "text": "Melon Juice is crafted with Four Melon Slices, Sugar, and a Glass Bottle.",
+   "src": "https://farmersdelight.fandom.com/wiki/Melon_Juice",
+   "title": "Melon Juice"
+  },
+  "farmersdelight:melon_popsicle": {
+   "text": "Melon Popsicles are a sweet which can be crafted using 4 melon slices, a stick and 2 ice.",
+   "src": "https://farmersdelight.fandom.com/wiki/Melon_Popsicle",
+   "title": "Melon Popsicle"
+  },
+  "farmersdelight:honey_cookie": {
+   "text": "Can be crafted with 2 wheat and a honey bottle. Crafts 8 cookies.",
+   "src": "https://farmersdelight.fandom.com/wiki/Honey_Cookie",
+   "title": "Honey Cookie"
+  },
+  "farmersdelight:mushroom_rice": {
+   "text": "In a Cooking Pot add a [https://minecraft.fandom.com/wiki/Mushroom?so=search Brown Mushroom], [https://minecraft.fandom.com/wiki/Mushroom?so=search Red Mushroom], Rice as well as either a Carrot or Potato.",
+   "src": "https://farmersdelight.fandom.com/wiki/Mushroom_Rice",
+   "title": "Mushroom Rice"
+  },
+  "farmersdelight:organic_compost": {
+   "text": "Organic Compost is an intermediate block which is used to create Rich Soil using decomposition.",
+   "src": "https://farmersdelight.fandom.com/wiki/Organic_Compost",
+   "title": "Organic Compost"
+  },
+  "farmersdelight:rich_soil": {
+   "text": "When used in place of soil, certain plants or crops planted on top of it will periodically receive extra growth stages, exactly as though grown with Bone Meal.",
+   "src": "https://farmersdelight.fandom.com/wiki/Rich_Soil",
+   "title": "Rich Soil"
+  },
+  "farmersdelight:onion_soup": {
+   "text": "In a cooking pot, add two Onions, one [https://minecraft.fandom.com/wiki/Bread Bread], and either a Milk Bottle or a [https://minecraft.fandom.com/wiki/Milk Milk Bucket].",
+   "src": "https://farmersdelight.fandom.com/wiki/Onion_soup",
+   "title": "Onion soup"
+  },
+  "farmersdelight:gleaming_salad_block": {
+   "text": "The Gleaming Salad is a place-able food item added by the Farmer's Delight mod. It is categorized as a feast item.",
+   "src": "https://farmersdelight.fandom.com/wiki/Gleaming_salad",
+   "title": "Gleaming salad"
+  },
+  "farmersdelight:stove": {
+   "text": "The Stove is a utility block that acts like a Campfire with 6 slots. {| class=\"fandom-table\" !Renewable",
+   "src": "https://farmersdelight.fandom.com/wiki/Stove",
+   "title": "Stove"
+  },
+  "farmersdelight:skillet": {
+   "text": "The Skillet is a utility block used for cooking items, as well as a strong weapon.",
+   "src": "https://farmersdelight.fandom.com/wiki/Skillet",
+   "title": "Skillet"
+  },
+  "farmersdelight:wild_beetroots": {
+   "text": "Sea Beets (Wild Beetroot) are a new wild crop added by Farmer's Delight.",
+   "src": "https://farmersdelight.fandom.com/wiki/Sea_Beet",
+   "title": "Sea Beet"
+  },
+  "farmersdelight:tomato": {
+   "text": "Tomatoes can be obtained via its wild variant in arid climates (above 1.0 ) such as that of the biome. It can also be found in village farms.",
+   "src": "https://farmersdelight.fandom.com/wiki/Tomato",
+   "title": "Tomato"
+  },
+  "farmersdelight:stuffed_pumpkin_block": {
+   "text": "The Stuffed Pumpkin is a feast item added by the Farmer's Delight mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Stuffed_Pumpkin",
+   "title": "Stuffed Pumpkin"
+  },
+  "farmersdelight:wild_cabbages": {
+   "text": "Wild Cabbage are a new wild crop added by Farmer's Delight. They appear as \"a large bush with small yellow flowers.\"",
+   "src": "https://farmersdelight.fandom.com/wiki/Wild_Cabbage",
+   "title": "Wild Cabbage"
+  },
+  "farmersdelight:wild_potatoes": {
+   "text": "Wild Potatoes are a new wild crop added by Farmer's Delight. They appear \"similar to normal potato patches, but with large flowers.\"",
+   "src": "https://farmersdelight.fandom.com/wiki/Wild_Potato",
+   "title": "Wild Potato"
+  },
+  "farmersdelight:wild_onions": {
+   "text": "Wild Onions are a new wild crop added by Farmer's Delight. They appear as \"a thick cluster of Allium flowers usually has an onion bulb under them.\"",
+   "src": "https://farmersdelight.fandom.com/wiki/Wild_Onion",
+   "title": "Wild Onion"
+  },
+  "farmersdelight:wild_carrots": {
+   "text": "Wild Carrots are a new wild crop added by Farmer's Delight. They appear as \"a flowering weed, with a conspicuous beige-colored base.\"",
+   "src": "https://farmersdelight.fandom.com/wiki/Wild_Carrot",
+   "title": "Wild Carrot"
+  },
+  "farmersdelight:wild_rice": {
+   "text": "Wild Rice are a new wild food crop added by Farmer's Delight, which can be found in jungles and swamps. They appear as \"a thinner form of cultivated rice... [which] thrive in shallow puddles of water.\"",
+   "src": "https://farmersdelight.fandom.com/wiki/Wild_Rice",
+   "title": "Wild Rice"
+  },
+  "farmersdelight:smoked_ham": {
+   "text": "Smoked Ham is the smoked (cooked) version of a ham, added by the Farmer's Delight mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Smoked_Ham",
+   "title": "Smoked Ham"
+  },
+  "farmersdelight:shepherds_pie_block": {
+   "text": "The Shepherd's Pie is a place-able food item added by the Farmer's Delight mod. It is categorized as a feast item.",
+   "src": "https://farmersdelight.fandom.com/wiki/Shepherd's_Pie",
+   "title": "Shepherd's Pie"
+  },
+  "farmersdelight:roast_chicken_block": {
+   "text": "The Roast Chicken is a place-able food item added by the Farmer's Delight mod. It is categorized as a feast item.",
+   "src": "https://farmersdelight.fandom.com/wiki/Roast_Chicken",
+   "title": "Roast Chicken"
+  },
+  "farmersdelight:tomato_sauce": {
+   "text": "Tomato Sauce is a food item that can be eaten by the player.",
+   "src": "https://farmersdelight.fandom.com/wiki/Tomato_Sauce",
+   "title": "Tomato Sauce"
+  },
+  "farmersdelight:sweet_berry_cheesecake": {
+   "text": "The Sweet Berry Cheesecake is a place-able food item added by the Farmer's Delight mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Sweet_Berry_Cheesecake",
+   "title": "Sweet Berry Cheesecake"
+  },
+  "farmersdelight:squid_ink_pasta": {
+   "text": "Squid Ink Pasta is a food added in the Farmer's Delight mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Squid_Ink_Pasta",
+   "title": "Squid Ink Pasta"
+  },
+  "farmersdelight:wheat_dough": {
+   "text": "Wheat Dough is an ingredient added in the Farmer's Delight mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Wheat_Dough",
+   "title": "Wheat Dough"
+  },
+  "farmersdelight:salmon_roll": {
+   "text": "Two Salmon Rolls can be crafted with two Raw Salmon Slices and one Cooked Rice.",
+   "src": "https://farmersdelight.fandom.com/wiki/Salmon_Roll",
+   "title": "Salmon Roll"
+  },
+  "farmersdelight:vegetable_soup": {
+   "text": "In a cooking pot, add a [https://minecraft.fandom.com/wiki/Beetroot Beetroot], [https://minecraft.fandom.com/wiki/Potato Potato], [https://minecraft.fandom.com/wiki/Carrot Carrot] and either a Cabbage or Cabbage Leaf.",
+   "src": "https://farmersdelight.fandom.com/wiki/Vegetable_Soup",
+   "title": "Vegetable Soup"
+  },
+  "farmersdelight:vegetable_noodles": {
+   "text": "Vegetable Noodles is a food added in the Farmer's Delight mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Vegetable_Noodles",
+   "title": "Vegetable Noodles"
+  },
+  "farmersdelight:stuffed_potato": {
+   "text": "Stuffed Potato can be crafted by placing a baked potato, steak/beef patty, and milk bucket/milk bottle in a crafting grid.",
+   "src": "https://farmersdelight.fandom.com/wiki/Stuffed_Potato",
+   "title": "Stuffed Potato"
+  },
+  "farmersdelight:roasted_mutton_chops": {
+   "text": "Roasted Mutton Chops can be crafted with a Bowl, Tomato, Beetroot, Cooked Rice, and Cooked Mutton Chops.",
+   "src": "https://farmersdelight.fandom.com/wiki/Roasted_Mutton_Chops",
+   "title": "Roasted Mutton Chops"
+  },
+  "farmersdelight:cake_slice": {
+   "text": "A slice of cake is 1/7th of a whole cake, refills as much a regular bite of cake.",
+   "src": "https://farmersdelight.fandom.com/wiki/Slice_of_Cake",
+   "title": "Slice of Cake"
+  },
+  "farmersdelight:tree_bark": {
+   "text": "Tree bark is an item obtained by stripping any compatible log or wood on a Cutting Board with an axe.",
+   "src": "https://farmersdelight.fandom.com/wiki/Tree_Bark",
+   "title": "Tree Bark"
+  },
+  "farmersdelight:apple_pie_slice": {
+   "text": "It can be crafted by cutting an Apple Pie on a cutting board. It will drop 4 slices.",
+   "src": "https://farmersdelight.fandom.com/wiki/Slice_of_Apple_Pie",
+   "title": "Slice of Apple Pie"
+  },
+  "farmersdelight:sweet_berry_cheesecake_slice": {
+   "text": "Can be obtained by placing a Sweet Berry Cheesecake on a cutting board and using a Knife. Drops 4 slices.",
+   "src": "https://farmersdelight.fandom.com/wiki/Slice_of_Sweet_Berry_Cheesecake",
+   "title": "Slice of Sweet Berry Cheesecake"
+  },
+  "farmersdelight:chocolate_pie_slice": {
+   "text": "Obtained by placing a Chocolate pie on a cutting board and using a knife. Will Drop 4 slices.",
+   "src": "https://farmersdelight.fandom.com/wiki/Slice_of_Chocolate_Pie",
+   "title": "Slice of Chocolate Pie"
+  },
+  "farmersdelight:sweet_berry_cookie": {
+   "text": "Can be crafted with 2 wheat and a sweet berry. Crafts 8 cookies,",
+   "src": "https://farmersdelight.fandom.com/wiki/Sweet_Berry_Cookie",
+   "title": "Sweet Berry Cookie"
+  },
+  "farmersdelight:straw": {
+   "text": "Straw is an which is made by either cutting plants with a knife on a Cutting Board, or harvesting plants with a knife (i.e Rice). It can be used to craft several items.",
+   "src": "https://farmersdelight.fandom.com/wiki/Straw",
+   "title": "Straw"
+  },
+  "farmersdelight:rotten_tomato": {
+   "text": "When a Tomato Plant is fully grown there is a 5% chance for a Rotten Tomato to appear when the plant is harvested.",
+   "src": "https://farmersdelight.fandom.com/wiki/Rotten_Tomato",
+   "title": "Rotten Tomato"
+  },
+  "farmersdelight:rope": {
+   "text": "Rope is a placeable item and crafting material. It is crafted using 2 Straw, which can be harvested from Rice plants, or by cutting a Rice Panicle on a Cutting Board using a Knife.",
+   "src": "https://farmersdelight.fandom.com/wiki/Rope",
+   "title": "Rope"
+  },
+  "farmersdelight:safety_net": {
+   "text": "The safety net is a placeable block that will negate fall damage from any height when landed onto. Similar to a slime block but the player will not bounce up proportionally to the falling height.",
+   "src": "https://farmersdelight.fandom.com/wiki/Safety_Net",
+   "title": "Safety Net"
+  }
+ },
+ "orphans": {
+  "Farmer's Delight Wiki": {
+   "text": "\"Farmer's Delight is a mod that gently expands upon farming and cooking in Minecraft. Using a simple cooking system and a few familiar ingredients, you'll be able to prepare a wide variety of hearty meals: from sandwiches to salads and stews, from beautiful desserts to mouth-watering feasts, no ingredient will be left behind in your kitchen! It also introduces a rich set of utilities: a way to improve the very soil your crops grow in, a brand new kind of tool to scavenge resources with, cute decorations for your builds, and many blocks and items to help you on your adventure!\"",
+   "src": "https://farmersdelight.fandom.com/wiki/Farmer's_Delight_Wiki"
+  },
+  "Blocks": {
+   "text": "This is a list of [https://minecraft.fandom.com/wiki/Block blocks] from Farmer's Delight.",
+   "src": "https://farmersdelight.fandom.com/wiki/Blocks"
+  },
+  "Crops": {
+   "text": "\"Wild Crops spawn occasionally in nature at different biomes and climates. Since they're wild, a patch may not be very edible or fruitful, but will usually yield a single seed or plantable when broken. Rarely, seed-bearing wild crops may drop a unit of edible produce. You can also shear the patch to relocate it as decoration.\" - [https://github.com/vectorwing/FarmersDelight/wiki/Wild-Crops Crops Section], \"Farmer's Delight introduces a few new mechanics for early-game: new tools to help you out, and new things to look out for!\" Here you'll find all the useful steps needed for a smooth start!…",
+   "src": "https://farmersdelight.fandom.com/wiki/Crops"
+  },
+  "Carrot": {
+   "text": "Carrots are a crop with new functions in Farmer's Delight. All vanilla properties of carrots are the same.",
+   "src": "https://farmersdelight.fandom.com/wiki/Carrot"
+  },
+  "Feasts": {
+   "text": "Feasts are very large meals, which can be placed as a block to provide multiple servings to players.",
+   "src": "https://farmersdelight.fandom.com/wiki/Feasts"
+  },
+  "Effects": {
+   "text": "\"Farmer's Delight introduces a few new status effects to Minecraft. This page explains what they do, and how to get them.",
+   "src": "https://farmersdelight.fandom.com/wiki/Effects"
+  },
+  "Addon Mods": {
+   "text": "{| class=\"sortable fandom-table\" !Image !Mod !Description !Author/s !Since Minecraft Version !Latest Minecraft Version",
+   "src": "https://farmersdelight.fandom.com/wiki/Addon_Mods"
+  },
+  "Finger Foods": {
+   "text": "Finger Foods are a type of food found in Farmer's Delight. They are small portions of food, meant to be eaten out of the hand. Some foods can be created in a crafting table, while others require a Cooking Pot.",
+   "src": "https://farmersdelight.fandom.com/wiki/Finger_Foods"
+  },
+  "Drinks": {
+   "text": "Drinks are a type of food found in Farmer's Delight. They can be created in a Cooking Pot or crafted. They do not restore hunger, but provide effects and minor benefits.",
+   "src": "https://farmersdelight.fandom.com/wiki/Drinks"
+  },
+  "Crates": {
+   "text": "Crates are block variations of various crops, which can be crafted with 9 of the respective crop, and can be crafted back into the crop. They function similar to hay bales, though with differing textures.",
+   "src": "https://farmersdelight.fandom.com/wiki/Crates"
+  },
+  "Food": {
+   "text": "Types of food are separated based upon the amount of saturation healed.",
+   "src": "https://farmersdelight.fandom.com/wiki/Food"
+  },
+  "Comfort": {
+   "text": "Comfort, [https://github.com/vectorwing/FarmersDelight/wiki/Effects per the Farmer's Delight mod page], allows the player to maintain natural regeneration even if they're too hungry to do so normally. This is indicated by a silver sheen scrolling over the health meter.",
+   "src": "https://farmersdelight.fandom.com/wiki/Comfort"
+  },
+  "Advancements": {
+   "text": "There are currently 22 advancements in Farmer's Delight. This page splits them into \"growing\" advancements, \"cooking\" advancements, and \"cutting\" advancements based off of their positions in the advancement tree.",
+   "src": "https://farmersdelight.fandom.com/wiki/Advancements"
+  },
+  "Cabinet": {
+   "text": "The Cabinet (formerly Pantry) is a decorative storage block. it has the same storage as a normal chest. There is a unique model for each vanilla wood type.",
+   "src": "https://farmersdelight.fandom.com/wiki/Cabinet"
+  },
+  "Decorations": {
+   "text": "This is a list of the current decorative items in Farmer's Delight.",
+   "src": "https://farmersdelight.fandom.com/wiki/Decorations"
+  },
+  "Decomposition": {
+   "text": "Decomposition is the process in which Organic Compost blocks become Rich Soil.",
+   "src": "https://farmersdelight.fandom.com/wiki/Decomposition"
+  },
+  "Potato": {
+   "text": "Potatoes can now be found in the \"Wild\" variant. These can be found in colder biomes (between temperatures of 0.3 and 1.0). They grow on Grass blocks.",
+   "src": "https://farmersdelight.fandom.com/wiki/Potato"
+  },
+  "Mutton Chops": {
+   "text": "A Raw Mutton Chop is a raw meat food item added by the Farmer's Delight mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Mutton_Chops"
+  },
+  "Knife": {
+   "text": "The Knife is a new category of tool/weapon, aimed at preparing ingredients and foraging resources from plants and animals.",
+   "src": "https://farmersdelight.fandom.com/wiki/Knife"
+  },
+  "Nether's Delight": {
+   "text": "Welcome to the Nether's Delight Wiki!Nether's Delight is a mod that expands upon Farmer's Delight with features based around the Nether.",
+   "src": "https://farmersdelight.fandom.com/wiki/Nether's_Delight"
+  },
+  "Meals": {
+   "text": "Meals are a type of food found in Farmer's Delight. They consist of salads, stews, and plated meals. They can be created in a Cooking Pot (with the exception of salads, which are made in a crafting table).",
+   "src": "https://farmersdelight.fandom.com/wiki/Meals"
+  },
+  "Pet Foods": {
+   "text": "Pet Foods are a type of food found in Farmer's Delight. When fed to their associated mob, they will grant certain effects. They can be created in a Cooking Pot or Crafting Table.",
+   "src": "https://farmersdelight.fandom.com/wiki/Pet_Foods"
+  },
+  "Nourishment": {
+   "text": "Nourishment, [https://github.com/vectorwing/FarmersDelight/wiki/Effects per the Farmer's Delight mod page], prevents players from losing hunger or saturation through exhausting actions, such as running, jumping and attacking mobs. This effectively extends the hunger bar beyond its saturation limit, delaying the time before players need to eat again.",
+   "src": "https://farmersdelight.fandom.com/wiki/Nourishment"
+  },
+  "Pumpkin Slices": {
+   "text": "Pumpkin slice is a food item added by the Farmer's Delight mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Pumpkin_Slices"
+  },
+  "Raw Salmon Slices": {
+   "text": "Two Raw Cod Slices can be obtained by cutting [https://minecraft.fandom.com/wiki/Raw_Salmon Raw Cod] with a Knife on a Cutting Board.",
+   "src": "https://farmersdelight.fandom.com/wiki/Raw_Salmon_Slices"
+  },
+  "Mushroom Colony": {
+   "text": "The Red & Brown Mushroom Colony is a part of the 18 crops of Farmer's Delight.",
+   "src": "https://farmersdelight.fandom.com/wiki/Mushroom_Colony"
+  },
+  "Fruits Delight": {
+   "text": "Welcome to the Fruits Delight Wiki![https://www.curseforge.com/minecraft/mc-mods/fruits-delight Fruits Delight] is a Farmer's Delight addon that adds fruits, jelly, juice, and fruit-based food.",
+   "src": "https://farmersdelight.fandom.com/wiki/Fruits_Delight"
+  },
+  "Wild Crop": {
+   "text": "Wild Crops are the natural, uncultivated forms of farmable crops, growing across nature.",
+   "src": "https://farmersdelight.fandom.com/wiki/Wild_Crop"
+  },
+  "Seeds": {
+   "text": "In Farmer's Delight, there are multiple added seeds. This includes, cabbage seeds, and tomato seeds (similar to wheat). However, there are also other plants that use their food item as their seed item, such as: rice, tomatoes, and onions (similar to carrots and potatoes). These seeds can be obtained from their wild variants.",
+   "src": "https://farmersdelight.fandom.com/wiki/Seeds"
+  },
+  "Tomato Vines": {
+   "text": "Wild Tomatoes are a new wild crop added by Farmer's Delight. They appear as \"non-spiked floor vines covered in tiny tomatoes.\"",
+   "src": "https://farmersdelight.fandom.com/wiki/Tomato_Vines"
+  },
+  "Sweets": {
+   "text": "Sweets are a type of food found in Farmer's Delight. They consist of pies, cakes, cookies, and frozen treats. They can be created in a crafting table and Cooking Pot.",
+   "src": "https://farmersdelight.fandom.com/wiki/Sweets"
+  },
+  "Sweet Berry Cheescake": {
+   "text": "The Sweet Berry Cheesecake is a place-able food item added by the Farmer's Delight mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Sweet_Berry_Cheescake"
+  }
+ }
+}

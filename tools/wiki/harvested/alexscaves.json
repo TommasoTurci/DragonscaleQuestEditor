@@ -1,0 +1,1796 @@
+{
+ "wiki": "alexscaves.wiki.gg",
+ "ns": "alexscaves",
+ "harvested": "2026-10-22T23:44:27.632Z",
+ "matched": 253,
+ "unmatched": 130,
+ "docs": {
+  "alexscaves:amber_curiosity": {
+   "text": "Amber Curiosity is a rare special item obtained from mining Amber.",
+   "src": "https://alexscaves.wiki.gg/wiki/Amber_Curiosity",
+   "title": "Amber Curiosity"
+  },
+  "alexscaves:abyssmarine": {
+   "text": "Abyssmarine is a dark stone that only occurs in the Abyssal Chasm.",
+   "src": "https://alexscaves.wiki.gg/wiki/Abyssmarine",
+   "title": "Abyssmarine"
+  },
+  "alexscaves:abyssal_altar": {
+   "text": "Abyssal Altars are strange interactive blocks found in the Abyssal Chasm.",
+   "src": "https://alexscaves.wiki.gg/wiki/Abyssal_Altar",
+   "title": "Abyssal Altar"
+  },
+  "alexscaves:ambersol": {
+   "text": "Ambersol is a block that generates in Amber Blobs on the ceilings of the Primordial Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Ambersol",
+   "title": "Ambersol"
+  },
+  "alexscaves:amber": {
+   "text": "Amber is a naturally generating block that can be found in the Primordial Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Amber",
+   "title": "Amber"
+  },
+  "alexscaves:acid": {
+   "text": "Acid is a corrosive green fluid that naturally generates in the Toxic Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Acid",
+   "title": "Acid"
+  },
+  "alexscaves:energized_galena_azure": {
+   "text": "Azure Energized Galena is a luminous block found in the Magnetic Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Azure_Energized_Galena",
+   "title": "Azure Energized Galena"
+  },
+  "alexscaves:azure_magnet": {
+   "text": "An Azure Magnet is a craftable magnetic block that can be powered by Redstone.",
+   "src": "https://alexscaves.wiki.gg/wiki/Azure_Magnet",
+   "title": "Azure Magnet"
+  },
+  "alexscaves:azure_neodymium_ingot": {
+   "text": "An Azure Neodymium Ingot is one of two types of Neodymium Ingot that is obtained from crafting three Iron Ingots and three Raw Azure Neodymium together, as well as loot from Magnetic Ruins loot chests.",
+   "src": "https://alexscaves.wiki.gg/wiki/Azure_Neodymium_Ingot",
+   "title": "Azure Neodymium Ingot"
+  },
+  "alexscaves:bioluminesscence": {
+   "text": "Bioluminesscence is an item known to be the source of a Gossamer Worm's distinct blue glow. It is used as a crafting and brewing ingredient.",
+   "src": "https://alexscaves.wiki.gg/wiki/Bioluminesscence",
+   "title": "Bioluminesscence"
+  },
+  "alexscaves:bioluminescent_torch": {
+   "text": "Bioluminescent Torches are non-solid light-emitting blocks that can be placed underwater.",
+   "src": "https://alexscaves.wiki.gg/wiki/Bioluminescent_Torch",
+   "title": "Bioluminescent Torch"
+  },
+  "alexscaves:radon_bottle": {
+   "text": "A Bottle of Radon is radon gas captured in a glass bottle that has been expelled from a toxic-fume spewing Geothermal Vent.",
+   "src": "https://alexscaves.wiki.gg/wiki/Bottle_of_Radon",
+   "title": "Bottle of Radon"
+  },
+  "alexscaves:beholder": {
+   "text": "A Beholder is a block that allows players to see through it using an Occult Gem.",
+   "src": "https://alexscaves.wiki.gg/wiki/Beholder",
+   "title": "Beholder"
+  },
+  "alexscaves:amber_monolith": {
+   "text": "Amber Monoliths are peculiar blocks that naturally generate in the Primordial Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Amber_Monolith",
+   "title": "Amber Monolith"
+  },
+  "alexscaves:acidic_radrock": {
+   "text": "Acidic Radrock is a variant of Radrock found in the Toxic Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Acidic_Radrock",
+   "title": "Acidic Radrock"
+  },
+  "alexscaves:block_of_uranium": {
+   "text": "A Block of Uranium is a radioactive mineral block equivalent to nine Uranium.",
+   "src": "https://alexscaves.wiki.gg/wiki/Block_of_Uranium",
+   "title": "Block of Uranium"
+  },
+  "alexscaves:block_of_pearl": {
+   "text": "A Block of Pearl is a mineral block equivalent to nine Pearls.",
+   "src": "https://alexscaves.wiki.gg/wiki/Block_of_Pearl",
+   "title": "Block of Pearl"
+  },
+  "alexscaves:sweetish_fish_blue": {
+   "text": "Blue Sweetish Fish is a common item found in the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Blue_Sweetish_Fish",
+   "title": "Blue Sweetish Fish"
+  },
+  "alexscaves:gelatin_blue": {
+   "text": "The Blue Gelatin is one of the five variants of Gelatin from the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Blue_Gelatin",
+   "title": "Blue Gelatin"
+  },
+  "alexscaves:biome_treat": {
+   "text": "The Biome Treat is a strange item crafted from materials found in the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Biome_Treat",
+   "title": "Biome Treat"
+  },
+  "alexscaves:alex_meal": {
+   "text": "Alex Meals can occasionally be found in Licowitch Tower chests.",
+   "src": "https://alexscaves.wiki.gg/wiki/Alex_Meal",
+   "title": "Alex Meal"
+  },
+  "alexscaves:atlatitan_egg": {
+   "text": "Atlatitan Eggs are a rare type of Dinosaur Egg from the Primordial Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Atlatitan_Egg",
+   "title": "Atlatitan Egg"
+  },
+  "alexscaves:block_of_chocolate": {
+   "text": "Block of Chocolate is a commonly generating block found only in the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Block_of_Chocolate",
+   "title": "Block of Chocolate"
+  },
+  "alexscaves:block_of_frosted_chocolate": {
+   "text": "Block of Frosted Chocolate is a commonly generating block found only in the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Block_of_Frosted_Chocolate",
+   "title": "Block of Frosted Chocolate"
+  },
+  "alexscaves:block_of_azure_neodymium": {
+   "text": "Blocks of Azure Neodynium can be crafted from Azure Neodynium Ingots",
+   "src": "https://alexscaves.wiki.gg/wiki/Block_of_Azure_Neodymium",
+   "title": "Block of Azure Neodymium"
+  },
+  "alexscaves:block_of_scarlet_neodymium": {
+   "text": "Blocks of Scarlet Neodynium can be crafted from Scarlet Neodynium Ingots",
+   "src": "https://alexscaves.wiki.gg/wiki/Block_of_Scarlet_Neodymium",
+   "title": "Block of Scarlet Neodymium"
+  },
+  "alexscaves:azure_neodymium_pillar": {
+   "text": "An Azure Neodymium Pillar is a naturally generating magnetic block.",
+   "src": "https://alexscaves.wiki.gg/wiki/Azure_Neodymium_Pillar",
+   "title": "Azure Neodymium Pillar"
+  },
+  "alexscaves:azure_neodymium_node": {
+   "text": "An Azure Neodymium Node is a naturally generating magnetic block.",
+   "src": "https://alexscaves.wiki.gg/wiki/Azure_Neodymium_Node",
+   "title": "Azure Neodymium Node"
+  },
+  "alexscaves:ancient_leaves": {
+   "text": "Ancient Leaves is a naturally generating block that can be found in the Primordial Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Ancient_Leaves",
+   "title": "Ancient Leaves"
+  },
+  "alexscaves:ancient_sapling": {
+   "text": "Breaking Ancient Leaves without Shears or a tool enchanted with Silk Touch has a chance of yielding an Ancient Sapling.",
+   "src": "https://alexscaves.wiki.gg/wiki/Ancient_Sapling",
+   "title": "Ancient Sapling"
+  },
+  "alexscaves:cave_tablet": {
+   "text": "Cave Tablets are an item that can be obtained primarily by exploring and finding Underground Cabins, where they appear as loot within. They are invaluable to finding new rare cave biomes, and for gathering information about these biomes. Cave Tablets have a variant for each biome added by Alex's Caves, but the variant of a tablet is hidden until it is properly researched.",
+   "src": "https://alexscaves.wiki.gg/wiki/Cave_Tablet",
+   "title": "Cave Tablet"
+  },
+  "alexscaves:cave_codex": {
+   "text": "Cave Codices are items that can be obtained by completing the research of a Cave Tablet in a Spelunkery Table. Like cave tablets, they have a variant for each cave biome added by Alex's Caves, however the biome is visible in the item's tooltip since it has been translated.",
+   "src": "https://alexscaves.wiki.gg/wiki/Cave_Codex",
+   "title": "Cave Codex"
+  },
+  "alexscaves:cave_book": {
+   "text": "The Cave Compendium is a craftable guide book covering general content about Alex's Caves, along with a section for every new biome added by the mod.",
+   "src": "https://alexscaves.wiki.gg/wiki/Cave_Compendium",
+   "title": "Cave Compendium"
+  },
+  "alexscaves:cave_map": {
+   "text": "Cave Biome Maps are a new kind of illustrated map added by Alex's Caves that point towards the nearest rare cave biome depending on what Cave Codex was used to craft them.",
+   "src": "https://alexscaves.wiki.gg/wiki/Cave_Biome_Map",
+   "title": "Cave Biome Map"
+  },
+  "alexscaves:charred_remnant": {
+   "text": "A Charred Remnant is the ancient remains of a mysterious radioactive item.",
+   "src": "https://alexscaves.wiki.gg/wiki/Charred_Remnant",
+   "title": "Charred Remnant"
+  },
+  "alexscaves:cooked_trilocaris_tail": {
+   "text": "Cooked Trilocaris Tail is the cooked variant of Raw Trilocaris Tail.",
+   "src": "https://alexscaves.wiki.gg/wiki/Cooked_Trilocaris_Tail",
+   "title": "Cooked Trilocaris Tail"
+  },
+  "alexscaves:trilocaris_bucket": {
+   "text": "A Bucket of Trilocaris is a Trilocaris inside of a water bucket.",
+   "src": "https://alexscaves.wiki.gg/wiki/Bucket_of_Trilocaris",
+   "title": "Bucket of Trilocaris"
+  },
+  "alexscaves:acid_bucket": {
+   "text": "An empty bucket can be filled with Acid by right-clicking on an Acid source block while holding the bucket. This consumes the Acid source block in the process.",
+   "src": "https://alexscaves.wiki.gg/wiki/Bucket_of_Acid",
+   "title": "Bucket of Acid"
+  },
+  "alexscaves:cinder_brick": {
+   "text": "A Cinder Brick is a special brick variant that can be crafted into Cinder Blocks or can be thrown to hurt mobs or destroy blocks from a short distance.",
+   "src": "https://alexscaves.wiki.gg/wiki/Cinder_Brick",
+   "title": "Cinder Brick"
+  },
+  "alexscaves:tripodfish_bucket": {
+   "text": "A Bucket of Tripodfish is a Tripodfish inside of a water bucket.",
+   "src": "https://alexscaves.wiki.gg/wiki/Bucket_of_Tripodfish",
+   "title": "Bucket of Tripodfish"
+  },
+  "alexscaves:lanternfish_bucket": {
+   "text": "A Bucket of Lanternfish is a Lanternfish inside of a water bucket.",
+   "src": "https://alexscaves.wiki.gg/wiki/Bucket_of_Lanternfish",
+   "title": "Bucket of Lanternfish"
+  },
+  "alexscaves:sea_pig_bucket": {
+   "text": "A Bucket of Sea Pig can be obtained by using a water bucket on a Sea Pig. Once a water bucket is used, the water bucket is turned into a Bucket of Sea Pig.",
+   "src": "https://alexscaves.wiki.gg/wiki/Bucket_of_Sea_Pig",
+   "title": "Bucket of Sea Pig"
+  },
+  "alexscaves:gossamer_worm_bucket": {
+   "text": "A Bucket of Gossamer Worm is a Gossamer Worm inside of a water bucket.",
+   "src": "https://alexscaves.wiki.gg/wiki/Bucket_of_Gossamer_Worm",
+   "title": "Bucket of Gossamer Worm"
+  },
+  "alexscaves:radgill_bucket": {
+   "text": "A Bucket of Radgill is a Radgill inside of a Bucket of Acid.",
+   "src": "https://alexscaves.wiki.gg/wiki/Bucket_of_Radgill",
+   "title": "Bucket of Radgill"
+  },
+  "alexscaves:cooked_radgill": {
+   "text": "Cooked Radgill is the cooked variant of Radgill in its item form.",
+   "src": "https://alexscaves.wiki.gg/wiki/Cooked_Radgill",
+   "title": "Cooked Radgill"
+  },
+  "alexscaves:cooked_mussel": {
+   "text": "A Cooked Mussel is the cooked variant of a Mussel. Unlike its raw variant, it cannot be placed. It is eaten quickly similarly to Dried Kelp.",
+   "src": "https://alexscaves.wiki.gg/wiki/Cooked_Mussel",
+   "title": "Cooked Mussel"
+  },
+  "alexscaves:cooked_lanternfish": {
+   "text": "Cooked Lanternfish is the cooked variant of Lanternfish in its item form. Unlike its raw variant, it cannot be brewed into Potions of Deepsight or be made into Deep Sea Sushi Rolls. It is eaten quickly similar to dried kelp.",
+   "src": "https://alexscaves.wiki.gg/wiki/Cooked_Lanternfish",
+   "title": "Cooked Lanternfish"
+  },
+  "alexscaves:copper_valve": {
+   "text": ".]] Copper Valves can be found in various Abyssal Ruins structures.",
+   "src": "https://alexscaves.wiki.gg/wiki/Copper_Valve",
+   "title": "Copper Valve"
+  },
+  "alexscaves:cooked_tripodfish": {
+   "text": "Cooked Tripodfish is the cooked variant of Tripodfish in its item form. Unlike its raw variant, it cannot be be made into Deep Sea Sushi Rolls.",
+   "src": "https://alexscaves.wiki.gg/wiki/Cooked_Tripodfish",
+   "title": "Cooked Tripodfish"
+  },
+  "alexscaves:cave_painting": {
+   "text": "Cave Paintings are a variant of Smooth Limestone that can be found in the Primordial Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Cave_Painting",
+   "title": "Cave Painting"
+  },
+  "alexscaves:burrowing_arrow": {
+   "text": "A Burrowing Arrow is a unique variant of arrow capable of breaking blocks when landing.",
+   "src": "https://alexscaves.wiki.gg/wiki/Burrowing_Arrow",
+   "title": "Burrowing Arrow"
+  },
+  "alexscaves:corrodent_teeth": {
+   "text": "Corrodent Teeth are basic crafting and brewing ingredients commonly dropped by Corrodents.",
+   "src": "https://alexscaves.wiki.gg/wiki/Corrodent_Teeth",
+   "title": "Corrodent Teeth"
+  },
+  "alexscaves:dark_tatters": {
+   "text": "Dark Tatters are items used as crafting ingredients to make some basic items or to make further advanced crafting ingredients. They are known to make up the robes of Underzealots and Watchers.",
+   "src": "https://alexscaves.wiki.gg/wiki/Dark_Tatters",
+   "title": "Dark Tatters"
+  },
+  "alexscaves:cooked_dinosaur_chop": {
+   "text": "A Cooked Dinosaur Chop is the cooked variant of a Dinosaur Chop. It is a block that can be eaten by the player.",
+   "src": "https://alexscaves.wiki.gg/wiki/Cooked_Dinosaur_Chop",
+   "title": "Cooked Dinosaur Chop"
+  },
+  "alexscaves:conversion_crucible": {
+   "text": "The Conversion Crucible is a glimmering gold cauldron able to transform the world around it.",
+   "src": "https://alexscaves.wiki.gg/wiki/Conversion_Crucible",
+   "title": "Conversion Crucible"
+  },
+  "alexscaves:purple_soda_bucket": {
+   "text": "A Bucket of Purple Soda is a bucket filled with Purple Soda.",
+   "src": "https://alexscaves.wiki.gg/wiki/Bucket_of_Purple_Soda",
+   "title": "Bucket of Purple Soda"
+  },
+  "alexscaves:caramel_apple": {
+   "text": "The Caramel Apple is a consumable item crafted with items found inside the Candy Cavity",
+   "src": "https://alexscaves.wiki.gg/wiki/Caramel_Apple",
+   "title": "Caramel Apple"
+  },
+  "alexscaves:caramel": {
+   "text": "Caramel Cubes will drop 0-2 Caramel upon death. Looting increases the amount of Caramel dropped, up to 5 Caramel with Looting III.",
+   "src": "https://alexscaves.wiki.gg/wiki/Caramel",
+   "title": "Caramel"
+  },
+  "alexscaves:chocolate_ice_cream_scoop": {
+   "text": "The Chocolate Ice Cream Scoop is variant of the Ice Cream Scoops, the others being Vanilla and Sweetberry easily found throughout the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Chocolate_Ice_Cream_Scoop",
+   "title": "Chocolate Ice Cream Scoop"
+  },
+  "alexscaves:confection_oven": {
+   "text": "The Confection Oven is a magical oven able to infinitely summon Gingerbread Men.",
+   "src": "https://alexscaves.wiki.gg/wiki/Confection_Oven",
+   "title": "Confection Oven"
+  },
+  "alexscaves:candy_cane_hook": {
+   "text": "The Candy Cane Hook is a utility item that can be used as a grappling hook.",
+   "src": "https://alexscaves.wiki.gg/wiki/Candy_Cane_Hook",
+   "title": "Candy Cane Hook"
+  },
+  "alexscaves:cookie_block": {
+   "text": "Cookie Block is a commonly generating block found in the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Cookie_Block",
+   "title": "Cookie Block"
+  },
+  "alexscaves:cinder_block": {
+   "text": "Cinder Blocks naturally generate within Toxic Ruins, as their durable makeup allows them to retain form in the corrosive acids and atmosphere of the Toxic Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Cinder_Block",
+   "title": "Cinder Block"
+  },
+  "alexscaves:candy_cane": {
+   "text": "Candy Canes are an edible food item and crafting ingredient found in the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Candy_Cane",
+   "title": "Candy Cane"
+  },
+  "alexscaves:cycad": {
+   "text": "Cycads are small, woody plants native to the Primordial Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Cycad",
+   "title": "Cycad"
+  },
+  "alexscaves:carmine_froglight": {
+   "text": "Carmine Froglights can be obtained when a Golden Frog found in the Primordial Caves eats a small magma cube.",
+   "src": "https://alexscaves.wiki.gg/wiki/Carmine_Froglight",
+   "title": "Carmine Froglight"
+  },
+  "alexscaves:dinosaur_nugget": {
+   "text": "Dinosaur Nuggets are food items that can be found in Caveman Houses or crafted from a Cooked Dinosaur Chop. They change appearance depending on stack size.",
+   "src": "https://alexscaves.wiki.gg/wiki/Dinosaur_Nugget",
+   "title": "Dinosaur Nugget"
+  },
+  "alexscaves:depth_glass": {
+   "text": "Depth Glass is a translucent block that looks similar to Glass but has a dark outline, allowing players looking through to see clearly through water.",
+   "src": "https://alexscaves.wiki.gg/wiki/Depth_Glass",
+   "title": "Depth Glass"
+  },
+  "alexscaves:enigmatic_engine": {
+   "text": "The Enigmatic Engine is a rare block from the Abyssal Chasm used to create a Submarine.",
+   "src": "https://alexscaves.wiki.gg/wiki/Enigmatic_Engine",
+   "title": "Enigmatic Engine"
+  },
+  "alexscaves:drain": {
+   "text": "Drains are rare blocks found only in the Abyssal Chasm's ruins.",
+   "src": "https://alexscaves.wiki.gg/wiki/Drain",
+   "title": "Drain"
+  },
+  "alexscaves:floater": {
+   "text": "A Floater is a rideable entity primarily used to save yourself from drowning by rapidly ascending yourself above the surface of water.",
+   "src": "https://alexscaves.wiki.gg/wiki/Floater",
+   "title": "Floater"
+  },
+  "alexscaves:depth_charge": {
+   "text": "Depth Charges are unique throwable combat items that explode after hitting a solid surface. They can alternatively be used to craft Drains.",
+   "src": "https://alexscaves.wiki.gg/wiki/Depth_Charge",
+   "title": "Depth Charge"
+  },
+  "alexscaves:galena": {
+   "text": "Galena is the most common block in the Magnetic Caves biome. It is mainly used for crafting or as a building block.",
+   "src": "https://alexscaves.wiki.gg/wiki/Galena",
+   "title": "Galena"
+  },
+  "alexscaves:energized_galena_neutral": {
+   "text": "Energized Galena is a luminous block found in the Magnetic Caves. It is a result of the mixed energies of Scarlet and Azure Neodymium.",
+   "src": "https://alexscaves.wiki.gg/wiki/Energized_Galena",
+   "title": "Energized Galena"
+  },
+  "alexscaves:fertilizer": {
+   "text": "Fertilizer is an item that can be used as a stronger variant of bone meal.",
+   "src": "https://alexscaves.wiki.gg/wiki/Fertilizer",
+   "title": "Fertilizer"
+  },
+  "alexscaves:galena_gauntlet": {
+   "text": "The Galena Gauntlet is a special tool used primarily with magnetic tools or weapons to deal damage or mine blocks from a great distance.",
+   "src": "https://alexscaves.wiki.gg/wiki/Galena_Gauntlet",
+   "title": "Galena Gauntlet"
+  },
+  "alexscaves:ferrouslime_ball": {
+   "text": "A Ferrouslimeball is a crafting and brewing ingredient commonly dropped by Ferrouslimes.",
+   "src": "https://alexscaves.wiki.gg/wiki/Ferrouslimeball",
+   "title": "Ferrouslimeball"
+  },
+  "alexscaves:dinosaur_pottery_sherd": {
+   "text": "A Dinosaur Pottery Sherd is a pottery sherd that seems to depict some sort of sauropod, likely an Atlatitan. Unlike most other pottery sherds, brushing suspicious sand or suspicious gravel is not necessary to find this sherd.",
+   "src": "https://alexscaves.wiki.gg/wiki/Dinosaur_Pottery_Sherd",
+   "title": "Dinosaur Pottery Sherd"
+  },
+  "alexscaves:footprint_pottery_sherd": {
+   "text": "A Footprint Pottery Sherd is a pottery sherd that depicts a footprint of some sort of creature. Unlike most other pottery sherds, brushing suspicious sand or suspicious gravel is not necessary to find this sherd.",
+   "src": "https://alexscaves.wiki.gg/wiki/Footprint_Pottery_Sherd",
+   "title": "Footprint Pottery Sherd"
+  },
+  "alexscaves:extinction_spear": {
+   "text": "The Extinction Spear is a spear imbued with the fallen souls of ancient dinosaurs. It can be used as a melee and ranged weapon similarly to the Limestone Spear and Trident.",
+   "src": "https://alexscaves.wiki.gg/wiki/Extinction_Spear",
+   "title": "Extinction Spear"
+  },
+  "alexscaves:fissile_core": {
+   "text": "A Fissile Core is the explosive core of a Nucleeper used to craft explosive or radioactive blocks or items. Fissile Cores are radioactive, and simply having it in the player's inventory can inflict the Irradiated effect for 1:30 seconds.",
+   "src": "https://alexscaves.wiki.gg/wiki/Fissile_Core",
+   "title": "Fissile Core"
+  },
+  "alexscaves:deep_sea_sushi_roll": {
+   "text": "A Deep Sea Sushi Roll is a hearty food item crafted from the drops of various Abyssal Chasm creatures.",
+   "src": "https://alexscaves.wiki.gg/wiki/Deep_Sea_Sushi_Roll",
+   "title": "Deep Sea Sushi Roll"
+  },
+  "alexscaves:desolate_dagger": {
+   "text": "The Desolate Dagger is a magically imbued melee weapon capable of summoning ghostly variations of itself that deal extra damage to targets.",
+   "src": "https://alexscaves.wiki.gg/wiki/Desolate_Dagger",
+   "title": "Desolate Dagger"
+  },
+  "alexscaves:dreadbow": {
+   "text": "The Dreadbow is a powerful ranged weapon capable of raining down barrages of dark arrows upon enemies from afar.",
+   "src": "https://alexscaves.wiki.gg/wiki/Dreadbow",
+   "title": "Dreadbow"
+  },
+  "alexscaves:darkened_apple": {
+   "text": "A Darkened Apple is a food item primarily eaten when under the effects of Darkness Incarnate to extend its duration.",
+   "src": "https://alexscaves.wiki.gg/wiki/Darkened_Apple",
+   "title": "Darkened Apple"
+  },
+  "alexscaves:dinosaur_chop": {
+   "text": "A Dinosaur Chop is a food item from the Primordial Caves. Similarly to Cake, it is a block that can be eaten by the player.",
+   "src": "https://alexscaves.wiki.gg/wiki/Dinosaur_Chop",
+   "title": "Dinosaur Chop"
+  },
+  "alexscaves:fiddlehead": {
+   "text": "Fiddleheads are a special type of fern that can be found in the Primordial Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Fiddlehead",
+   "title": "Fiddlehead"
+  },
+  "alexscaves:flytrap": {
+   "text": "A Flytrap is a carnivorous plant found in the Primordial Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Flytrap",
+   "title": "Flytrap"
+  },
+  "alexscaves:fern_thatch": {
+   "text": "A Fern Thatch is a naturally-generating block from the Primordial Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Fern_Thatch",
+   "title": "Fern Thatch"
+  },
+  "alexscaves:frostmint": {
+   "text": "Frostmints are gravity blocks found on the ceiling of the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Frostmint",
+   "title": "Frostmint"
+  },
+  "alexscaves:frostmint_spear": {
+   "text": "A Frostmint Spear is a stackable weapon used in both melee and ranged combat. It has no durability and instead must be replenished or retrieved when thrown.",
+   "src": "https://alexscaves.wiki.gg/wiki/Frostmint_Spear",
+   "title": "Frostmint Spear"
+  },
+  "alexscaves:flood_basalt": {
+   "text": "Flood Basalt is a naturally generating block found in the Primordial Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Flood_Basalt",
+   "title": "Flood Basalt"
+  },
+  "alexscaves:galena_iron_ore": {
+   "text": "Galena Iron Ore is a variant of Iron Ore found exclusively within the Magnetic Caves. It is a major source of Raw Iron.",
+   "src": "https://alexscaves.wiki.gg/wiki/Galena_Iron_Ore",
+   "title": "Galena Iron Ore"
+  },
+  "alexscaves:galena_bricks": {
+   "text": "Galena Bricks can be found in Magnetic Ruins and drop themselves when mined with a pickaxe.",
+   "src": "https://alexscaves.wiki.gg/wiki/Galena_Bricks",
+   "title": "Galena Bricks"
+  },
+  "alexscaves:galena_pillar": {
+   "text": "Galena Pillars can be found occasionally in magnetic ruins. Galena Pillars can be crafted from Packed Galena.",
+   "src": "https://alexscaves.wiki.gg/wiki/Galena_Pillar",
+   "title": "Galena Pillar"
+  },
+  "alexscaves:galena_slab": {
+   "text": "Galena Slabs can be found occasionally in magnetic ruins Galena Slabs can be crafted from Galena.",
+   "src": "https://alexscaves.wiki.gg/wiki/Galena_Slab",
+   "title": "Galena Slab"
+  },
+  "alexscaves:galena_brick_slab": {
+   "text": "Galena Brick Slabs can be found occasionally in magnetic ruins",
+   "src": "https://alexscaves.wiki.gg/wiki/Galena_Brick_Slab",
+   "title": "Galena Brick Slab"
+  },
+  "alexscaves:galena_brick_stairs": {
+   "text": "Galena Brick Stairs can be found occasionally in magnetic ruins",
+   "src": "https://alexscaves.wiki.gg/wiki/Galena_Brick_Stairs",
+   "title": "Galena Brick Stairs"
+  },
+  "alexscaves:galena_brick_wall": {
+   "text": "Galena Brick Walls can be found occasionally in magnetic ruins",
+   "src": "https://alexscaves.wiki.gg/wiki/Galena_Brick_Wall",
+   "title": "Galena Brick Wall"
+  },
+  "alexscaves:gazing_pearl": {
+   "text": "The Gazing Pearl is a mysterious and rare item that constantly shows your reputation with the Deep Ones.",
+   "src": "https://alexscaves.wiki.gg/wiki/Gazing_Pearl",
+   "title": "Gazing Pearl"
+  },
+  "alexscaves:heavyweight": {
+   "text": "A Heavyweight is an item exclusively used as an ingredient to make a Magnetic Quarry Smasher.",
+   "src": "https://alexscaves.wiki.gg/wiki/Heavyweight",
+   "title": "Heavyweight"
+  },
+  "alexscaves:green_soylent": {
+   "text": "Green Soylent is a consumable drink item primarily used to heal while Irradiated.",
+   "src": "https://alexscaves.wiki.gg/wiki/Green_Soylent",
+   "title": "Green Soylent"
+  },
+  "alexscaves:holocoder": {
+   "text": "Holocoders are unique items used to generate Holograms with a Hologram Projector.",
+   "src": "https://alexscaves.wiki.gg/wiki/Holocoder",
+   "title": "Holocoder"
+  },
+  "alexscaves:heavy_bone": {
+   "text": "A Heavy Bone is a special variant of bone obtained from slaying only the largest dinosaurs in the Primordial Caves. It can be crafted into more bone meal than regular bones but is predominantly used for crafting exclusive Primordial items.",
+   "src": "https://alexscaves.wiki.gg/wiki/Heavy_Bone",
+   "title": "Heavy Bone"
+  },
+  "alexscaves:guanostone": {
+   "text": "Guanostone is a variant of Stone that generates in the Forlorn Hollows.",
+   "src": "https://alexscaves.wiki.gg/wiki/Guanostone",
+   "title": "Guanostone"
+  },
+  "alexscaves:immortal_embryo": {
+   "text": "The Immortal Embryo is an extremely strange item that represents an embryo frozen in development of some unknown creature. It can only be obtained from slaying the formidable Hullbreaker.",
+   "src": "https://alexscaves.wiki.gg/wiki/Immortal_Embryo",
+   "title": "Immortal Embryo"
+  },
+  "alexscaves:game_controller": {
+   "text": "The Game Controller is an extremely rare item found solely in Abyssal Ruins.",
+   "src": "https://alexscaves.wiki.gg/wiki/Game_Controller",
+   "title": "Game Controller"
+  },
+  "alexscaves:hologram_projector": {
+   "text": "The Hologram Projector is a block that is able to project holograms of various mobs using bound Holocoders.",
+   "src": "https://alexscaves.wiki.gg/wiki/Hologram_Projector",
+   "title": "Hologram Projector"
+  },
+  "alexscaves:guardian_pottery_sherd": {
+   "text": "A Guardian Pottery Sherd is a pottery sherd that depicts an unknown variant of guardian. Unlike most other pottery sherds, brushing suspicious sand or suspicious gravel is not necessary to find this sherd.",
+   "src": "https://alexscaves.wiki.gg/wiki/Guardian_Pottery_Sherd",
+   "title": "Guardian Pottery Sherd"
+  },
+  "alexscaves:hero_pottery_sherd": {
+   "text": "A Hero Pottery Sherd is a pottery sherd that depicts the emblem of the hypothetical Deep One Hero, an extremely strong variant of Deep One now lost to time. Unlike most other pottery sherds, brushing suspicious sand or suspicious gravel is not necessary to find this sherd.",
+   "src": "https://alexscaves.wiki.gg/wiki/Hero_Pottery_Sherd",
+   "title": "Hero Pottery Sherd"
+  },
+  "alexscaves:heart_of_iron": {
+   "text": "The Heart Of Iron is a block placed when defeating a Magnetron. Being made of iron, it is attracted by Scarlet Magnets and repulsed by Azure Magnets.",
+   "src": "https://alexscaves.wiki.gg/wiki/Heart_of_Iron",
+   "title": "Heart of Iron"
+  },
+  "alexscaves:ink_bomb": {
+   "text": "An Ink Bomb is a throwable combat item that will leave a blinding area of effect cloud on every solid surface or entity it hits. Like snowballs, they can hit mobs but do not deal damage to them on impact.",
+   "src": "https://alexscaves.wiki.gg/wiki/Ink_Bomb",
+   "title": "Ink Bomb"
+  },
+  "alexscaves:glow_ink_bomb": {
+   "text": "A Glow Ink Bomb is a special variant of Ink Bomb that leaves a blinding and glow-inflicting area of effect cloud on every solid surface or entity it hits. Like snowballs, they can hit mobs but do not deal damage to them on impact.",
+   "src": "https://alexscaves.wiki.gg/wiki/Glow_Ink_Bomb",
+   "title": "Glow Ink Bomb"
+  },
+  "alexscaves:guano": {
+   "text": "Guano is a crafting ingredient used to craft a some basic items or used to be thrown at enemies.",
+   "src": "https://alexscaves.wiki.gg/wiki/Guano",
+   "title": "Guano"
+  },
+  "alexscaves:gumball_pile": {
+   "text": "Gumball Piles are common loot obtained from the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Gumball_Pile",
+   "title": "Gumball Pile"
+  },
+  "alexscaves:hot_chocolate_bottle": {
+   "text": "Hot Chocolate is a food item that removes insomnia from the player upon being drank.",
+   "src": "https://alexscaves.wiki.gg/wiki/Hot_Chocolate_Bottle",
+   "title": "Hot Chocolate Bottle"
+  },
+  "alexscaves:sweetish_fish_green": {
+   "text": "Green Sweetish Fish is a common item found in the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Green_Sweetish_Fish",
+   "title": "Green Sweetish Fish"
+  },
+  "alexscaves:geothermal_vent": {
+   "text": "Geothermal Vent is a block found in both the Toxic Caves and Abyssal Chasm.",
+   "src": "https://alexscaves.wiki.gg/wiki/Geothermal_Vent",
+   "title": "Geothermal Vent"
+  },
+  "alexscaves:gingerbread_crumbs": {
+   "text": "Gingerbread Crumbs are a common item obtainable inside the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Gingerbread_Crumbs",
+   "title": "Gingerbread Crumbs"
+  },
+  "alexscaves:gelatin_green": {
+   "text": "The Green Gelatin is one of the five variants of Gelatin from the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Green_Gelatin",
+   "title": "Green Gelatin"
+  },
+  "alexscaves:grottoceratops_egg": {
+   "text": "Grottoceratops Eggs are a type of Dinosaur Egg from the Primordial Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Grottoceratops_Egg",
+   "title": "Grottoceratops Egg"
+  },
+  "alexscaves:gingerbarrel": {
+   "text": "Gingerbarrels are small storage blocks found in the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Gingerbarrel",
+   "title": "Gingerbarrel"
+  },
+  "alexscaves:gobthumper": {
+   "text": "Gobthumpers are strange blocks crafted from materials found in the Candy Cavity. They are used to summon Gum Worms.",
+   "src": "https://alexscaves.wiki.gg/wiki/Gobthumper",
+   "title": "Gobthumper"
+  },
+  "alexscaves:galena_spire": {
+   "text": "Galena Spires are a decorative block that spawns commonly throughout the Magnetic Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Galena_Spire",
+   "title": "Galena Spire"
+  },
+  "alexscaves:galena_wall": {
+   "text": "Galena Stairs are purely a decorative block, but like all walls, have a tall hitbox, allowing them to contain most mobs.",
+   "src": "https://alexscaves.wiki.gg/wiki/Galena_Wall",
+   "title": "Galena Wall"
+  },
+  "alexscaves:guanostone_redstone_ore": {
+   "text": "Guanostone Redstone Ore is a variant of Redstone Ore found exclusively within the Forlorn Hollows. It is a major source of Redstone Dust.",
+   "src": "https://alexscaves.wiki.gg/wiki/Guanostone_Redstone_Ore",
+   "title": "Guanostone Redstone Ore"
+  },
+  "alexscaves:limestone": {
+   "text": "Limestone is a stone-type block found exclusively in the Primordial Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Limestone",
+   "title": "Limestone"
+  },
+  "alexscaves:lanternfish": {
+   "text": "Lanternfish are common bucketable passive aquatic mobs found in the Abyssal Chasm. They swim around in massive schools, and rise from the depths to swim near the surface during the night.",
+   "src": "https://alexscaves.wiki.gg/wiki/Lanternfish",
+   "title": "Lanternfish"
+  },
+  "alexscaves:marine_snow": {
+   "text": "Marine Snow is an item that can be produced by Sea Pigs upon feeding them clay balls, mud, or Muck.",
+   "src": "https://alexscaves.wiki.gg/wiki/Marine_Snow",
+   "title": "Marine Snow"
+  },
+  "alexscaves:pearl": {
+   "text": "Pearls are valuable items that are occasionally dropped when breaking Mussels. These commodities are primarily used to barter and exchange for goods with the Deep One society.",
+   "src": "https://alexscaves.wiki.gg/wiki/Pearl",
+   "title": "Pearl"
+  },
+  "alexscaves:mussel": {
+   "text": "Mussels are mollusks found scattered across the Abyssal Chasm.",
+   "src": "https://alexscaves.wiki.gg/wiki/Mussel",
+   "title": "Mussel"
+  },
+  "alexscaves:muck": {
+   "text": "A thick layer of Muck covers the bottom of the Abyssal Chasm.",
+   "src": "https://alexscaves.wiki.gg/wiki/Muck",
+   "title": "Muck"
+  },
+  "alexscaves:ortholance": {
+   "text": "The Ortholance is a strange and unique weapon that is capable of flinging its user short distances whilst dealing damage to surrounding enemies.",
+   "src": "https://alexscaves.wiki.gg/wiki/Ortholance",
+   "title": "Ortholance"
+  },
+  "alexscaves:nuclear_furnace": {
+   "text": "The Nuclear Furnace is a large utility block crafted using items from the Toxic Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Nuclear_Furnace",
+   "title": "Nuclear Furnace"
+  },
+  "alexscaves:nuclear_siren": {
+   "text": "A Nuclear Siren is a craftable sound-emitting block that can be found in the Toxic Caves biome.",
+   "src": "https://alexscaves.wiki.gg/wiki/Nuclear_Siren",
+   "title": "Nuclear Siren"
+  },
+  "alexscaves:nuclear_bomb": {
+   "text": "The Nuclear Bomb is an explosive block that, when detonated, has an extremely powerful explosion.",
+   "src": "https://alexscaves.wiki.gg/wiki/Nuclear_Bomb",
+   "title": "Nuclear Bomb"
+  },
+  "alexscaves:quarry_smasher": {
+   "text": "A Magnetic Quarry Smasher is a placeable entity used alongside a Magnetic Quarry to create a fully automatic mining mechanism.",
+   "src": "https://alexscaves.wiki.gg/wiki/Magnetic_Quarry_Smasher",
+   "title": "Magnetic Quarry Smasher"
+  },
+  "alexscaves:notor_gizmo": {
+   "text": "A Notor Gizmo is an item used in many hologram related crafting recipes.",
+   "src": "https://alexscaves.wiki.gg/wiki/Notor_Gizmo",
+   "title": "Notor Gizmo"
+  },
+  "alexscaves:limestone_spear": {
+   "text": "A Limestone Spear is a stackable weapon used in both melee and ranged combat. It has no durability and instead must be replenished or retrieved when thrown.",
+   "src": "https://alexscaves.wiki.gg/wiki/Limestone_Spear",
+   "title": "Limestone Spear"
+  },
+  "alexscaves:magic_conch": {
+   "text": "The Magic Conch is an extremely magical weapon capable of summoning loyal Deep Ones to aid you in battle.",
+   "src": "https://alexscaves.wiki.gg/wiki/Magic_Conch",
+   "title": "Magic Conch"
+  },
+  "alexscaves:ominous_catalyst": {
+   "text": "The Ominous Catalyst is a mysterious item used to awaken the powerful Luxtructosaurus. Unlike most other items, it is immune to fire and lava.",
+   "src": "https://alexscaves.wiki.gg/wiki/Ominous_Catalyst",
+   "title": "Ominous Catalyst"
+  },
+  "alexscaves:peering_coprolith": {
+   "text": "Peering Coprolith is a block that naturally generates in the Forlorn Hollows. It can also be crafted.",
+   "src": "https://alexscaves.wiki.gg/wiki/Peering_Coprolith",
+   "title": "Peering Coprolith"
+  },
+  "alexscaves:magnetic_levitation_rail": {
+   "text": "Magnetic Levitation Rails are a special type of rail crafted with ingredients from the Magnetic Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Magnetic_Levitation_Rail",
+   "title": "Magnetic Levitation Rail"
+  },
+  "alexscaves:moth_dust": {
+   "text": "Moth Dust is a unique item that can be sprayed onto mobs or other players to strategically mark them with the scent of a Gloomoth, making all denizens in the Forlorn Hollows hostile toward them. It can also be alternatively used to craft some Forlorn Hollow related crafting recipes.",
+   "src": "https://alexscaves.wiki.gg/wiki/Moth_Dust",
+   "title": "Moth Dust"
+  },
+  "alexscaves:occult_gem": {
+   "text": "An Occult Gem is a mysterious item needed to craft many magical items and blocks.",
+   "src": "https://alexscaves.wiki.gg/wiki/Occult_Gem",
+   "title": "Occult Gem"
+  },
+  "alexscaves:metal_swarf": {
+   "text": "Metal Swarf is a craftable gravity block typically found in the Magnetic Caves biome.",
+   "src": "https://alexscaves.wiki.gg/wiki/Metal_Swarf",
+   "title": "Metal Swarf"
+  },
+  "alexscaves:nuclear_furnace_component": {
+   "text": "Nuclear Furnace Components are blocks used to create the Nuclear Furnace.",
+   "src": "https://alexscaves.wiki.gg/wiki/Nuclear_Furnace_Component",
+   "title": "Nuclear Furnace Component"
+  },
+  "alexscaves:magnetic_light": {
+   "text": "Magnetic Lights are light-emitting blocks crafted with materials from the Magnetic Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Magnetic_Light",
+   "title": "Magnetic Light"
+  },
+  "alexscaves:licoroot": {
+   "text": "Licoroot naturally form as part of large \"trees\" found throughout the Candy Cavity. The trees can be grown from Licoroot Sprouts using Bone Meal.",
+   "src": "https://alexscaves.wiki.gg/wiki/Licoroot",
+   "title": "Licoroot"
+  },
+  "alexscaves:moth_ball": {
+   "text": "Moth Balls are blocks crafted from resources commonly found in the Forlorn Hollows.",
+   "src": "https://alexscaves.wiki.gg/wiki/Moth_Ball",
+   "title": "Moth Ball"
+  },
+  "alexscaves:jelly_bean": {
+   "text": "A Jelly Bean is a food item obtained from Gummy Bears that allow Potions to be consumed more conveniently.",
+   "src": "https://alexscaves.wiki.gg/wiki/Jelly_Bean",
+   "title": "Jelly Bean"
+  },
+  "alexscaves:quarry": {
+   "text": "The Magnetic Quarry is a utility block crafted using materials from the Magnetic Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Magnetic_Quarry",
+   "title": "Magnetic Quarry"
+  },
+  "alexscaves:magnetic_activator": {
+   "text": "Magnetic Activators can occasionally be found in Magnetic Ruins.",
+   "src": "https://alexscaves.wiki.gg/wiki/Magnetic_Activator",
+   "title": "Magnetic Activator"
+  },
+  "alexscaves:metal_barrel": {
+   "text": "Scrap Metal is a craftable block typically found in several biomes.",
+   "src": "https://alexscaves.wiki.gg/wiki/Metal_Barrel",
+   "title": "Metal Barrel"
+  },
+  "alexscaves:metal_rebar": {
+   "text": "Metal Rebar is a metallic block that can be crafted with materials from the Magnetic Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Metal_Rebar",
+   "title": "Metal Rebar"
+  },
+  "alexscaves:metal_scaffolding": {
+   "text": "Metal Scaffolding is a metallic block that can be crafted with materials from the Magnetic Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Metal_Scaffolding",
+   "title": "Metal Scaffolding"
+  },
+  "alexscaves:ping_pong_sponge": {
+   "text": "Ping-Pong Sponges are sessile animals that grow in the Abyssal Chasm.",
+   "src": "https://alexscaves.wiki.gg/wiki/Ping-Pong_Sponge",
+   "title": "Ping-Pong Sponge"
+  },
+  "alexscaves:radgill": {
+   "text": "Radgill are common bucketable passive aquatic mobs found in the Toxic Caves. They swim through acid, and serve as a readily available - if risky - food source.",
+   "src": "https://alexscaves.wiki.gg/wiki/Radgill",
+   "title": "Radgill"
+  },
+  "alexscaves:raw_azure_neodymium": {
+   "text": "Raw Azure Neodymium is one of two types of Raw Neodymium that is obtained from mining Azure Neodymium Nodes or Pillars, as well as loot from Magnetic Ruins loot chests.",
+   "src": "https://alexscaves.wiki.gg/wiki/Raw_Azure_Neodymium",
+   "title": "Raw Azure Neodymium"
+  },
+  "alexscaves:raw_scarlet_neodymium": {
+   "text": "Raw Scarlet Neodymium is one of two types of Raw Neodymium that is obtained from mining Scarlet Neodymium Nodes or Pillars, as well as loot from Magnetic Ruins loot chests.",
+   "src": "https://alexscaves.wiki.gg/wiki/Raw_Scarlet_Neodymium",
+   "title": "Raw Scarlet Neodymium"
+  },
+  "alexscaves:resistor_shield": {
+   "text": "The Resistor Shield is a unique variant of shield that is used to block damage from oncoming attacks or explosions while simultaneously doing continuous damage and knockback to foes in a small radius. Just like regular shields, they can be temporarily disabled by getting hit with an axe and some attacks completely bypass them altogether. Unlike regular shields, banners cannot be applied to Resistor Shields.",
+   "src": "https://alexscaves.wiki.gg/wiki/Resistor_Shield",
+   "title": "Resistor Shield"
+  },
+  "alexscaves:pewen_boat": {
+   "text": "A Pewen Boat is a variant of boat that exclusively uses Pewen Planks in its crafting recipe. Just like bamboo rafts and Thornwood Boats, they look rather different when compared to other boats but function almost identically.",
+   "src": "https://alexscaves.wiki.gg/wiki/Pewen_Boat",
+   "title": "Pewen Boat"
+  },
+  "alexscaves:pewen_chest_boat": {
+   "text": "A Pewen Boat with Chest is a single chest occupying the passenger seat of a Pewen Boat, and functions as such. It can be used to transport items over bodies of water.",
+   "src": "https://alexscaves.wiki.gg/wiki/Pewen_Boat_with_Chest",
+   "title": "Pewen Boat with Chest"
+  },
+  "alexscaves:pine_nuts": {
+   "text": "Pine Nuts are food items that have a chance to be dropped by Pewen Branches when broken. While they can be eaten, they are primarily used for crafting Serene Salad.",
+   "src": "https://alexscaves.wiki.gg/wiki/Pine_Nuts",
+   "title": "Pine Nuts"
+  },
+  "alexscaves:primitive_club": {
+   "text": "A Primitive Club is an extremely slow but powerful melee weapon that has a chance to inflict enemies with the Stunned effected every hit. It is most useful for running away from powerful enemies.",
+   "src": "https://alexscaves.wiki.gg/wiki/Primitive_Club",
+   "title": "Primitive Club"
+  },
+  "alexscaves:primordial_soup": {
+   "text": "Primordial Soup is a food item that inflicts haste upon being eaten.",
+   "src": "https://alexscaves.wiki.gg/wiki/Primordial_Soup",
+   "title": "Primordial Soup"
+  },
+  "alexscaves:trilocaris_tail": {
+   "text": "Raw Trilocaris Tail is a food item that can be eaten or cooked in a furnace, smoker, or campfire to make Cooked Trilocaris Tail.",
+   "src": "https://alexscaves.wiki.gg/wiki/Raw_Trilocaris_Tail",
+   "title": "Raw Trilocaris Tail"
+  },
+  "alexscaves:pewen_sap": {
+   "text": "Pewen Sap is a niche item obtained from smelting Pewen Branches.",
+   "src": "https://alexscaves.wiki.gg/wiki/Pewen_Sap",
+   "title": "Pewen Sap"
+  },
+  "alexscaves:pure_darkness": {
+   "text": "Pure Darkness is an ominous and menacing appearing item used in the crafting recipes of many magical items.",
+   "src": "https://alexscaves.wiki.gg/wiki/Pure_Darkness",
+   "title": "Pure Darkness"
+  },
+  "alexscaves:polymer_plate": {
+   "text": "A Polymer Plate is a synthetic material crafted from many raw ingredients found inside the Toxic Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Polymer_Plate",
+   "title": "Polymer Plate"
+  },
+  "alexscaves:primal_magma": {
+   "text": "Primal Magma is a block that only generates in volcano structures, which generates in Primordial Caves. Primal Magma is found in two states depending on where it's found.",
+   "src": "https://alexscaves.wiki.gg/wiki/Primal_Magma",
+   "title": "Primal Magma"
+  },
+  "alexscaves:raygun": {
+   "text": "A Raygun is a futuristic ranged weapon that utilizes a continuous beam of energy to hurt any mobs in its way.",
+   "src": "https://alexscaves.wiki.gg/wiki/Raygun",
+   "title": "Raygun"
+  },
+  "alexscaves:remote_detonator": {
+   "text": "A Remote Detonator is a unique utility used to ignite TNT and Nuclear Bombs from any distance.",
+   "src": "https://alexscaves.wiki.gg/wiki/Remote_Detonator",
+   "title": "Remote Detonator"
+  },
+  "alexscaves:radrock": {
+   "text": "Radrock is an irradiated variant of Stone found exclusively in the Toxic Caves biome.",
+   "src": "https://alexscaves.wiki.gg/wiki/Radrock",
+   "title": "Radrock"
+  },
+  "alexscaves:porous_coprolith": {
+   "text": "Porous Coprolith is a block that naturally generates in the Forlorn Hollows. It can be used to craft Peering Coprolith.",
+   "src": "https://alexscaves.wiki.gg/wiki/Porous_Coprolith",
+   "title": "Porous Coprolith"
+  },
+  "alexscaves:radrock_uranium_ore": {
+   "text": "Radrock Uranium Ore is a variant of Radrock found exclusively within the Toxic Caves. It is the primary source of Uranium.",
+   "src": "https://alexscaves.wiki.gg/wiki/Radrock_Uranium_Ore",
+   "title": "Radrock Uranium Ore"
+  },
+  "alexscaves:pewen_branch": {
+   "text": "Pewen Branches are a relatively niche item from the Primordial Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Pewen_Branch",
+   "title": "Pewen Branch"
+  },
+  "alexscaves:pewen_planks": {
+   "text": "Pewen Planks are a variant of Planks from the Primordial Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Pewen_Planks",
+   "title": "Pewen Planks"
+  },
+  "alexscaves:radiant_essence": {
+   "text": "The Radiant Essence is a rare item found inside the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Radiant_Essence",
+   "title": "Radiant Essence"
+  },
+  "alexscaves:peppermint_powder": {
+   "text": "Peppermint Powder is an edible food item and crafting ingredient found inside the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Peppermint_Powder",
+   "title": "Peppermint Powder"
+  },
+  "alexscaves:gelatin_pink": {
+   "text": "The Pink Gelatin is one of the five variants of Gelatin from the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Pink_Gelatin",
+   "title": "Pink Gelatin"
+  },
+  "alexscaves:gelatin_red": {
+   "text": "The Red Gelatin is one of the five variants of Gelatin from the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Red_Gelatin",
+   "title": "Red Gelatin"
+  },
+  "alexscaves:sweetish_fish_pink": {
+   "text": "Pink Sweetish Fish is a common item found in the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Pink_Sweetish_Fish",
+   "title": "Pink Sweetish Fish"
+  },
+  "alexscaves:sweetish_fish_red": {
+   "text": "Red Sweetish Fish is a common item found in the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Red_Sweetish_Fish",
+   "title": "Red Sweetish Fish"
+  },
+  "alexscaves:purple_soda_bottle": {
+   "text": "Purple Soda Bottles are items that can be obtained from the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Purple_Soda_Bottle",
+   "title": "Purple Soda Bottle"
+  },
+  "alexscaves:purple_soda_bottle_rocket": {
+   "text": "Purple Soda Bottle Rockets are craftable items that can be found in the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Purple_Soda_Bottle_Rocket",
+   "title": "Purple Soda Bottle Rocket"
+  },
+  "alexscaves:relicheirus_egg": {
+   "text": "Relicheirus Eggs are a type of Dinosaur Egg from the Primordial Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Relicheirus_Egg",
+   "title": "Relicheirus Egg"
+  },
+  "alexscaves:purple_soda": {
+   "text": "Purple Soda is a non-renewable fluid found exclusively in the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Purple_Soda",
+   "title": "Purple Soda"
+  },
+  "alexscaves:rainbounce_boots": {
+   "text": "The Rainbounce Boots are a piece of armor that enables the player to bounce on any block, while also giving them immunity to fall damage.",
+   "src": "https://alexscaves.wiki.gg/wiki/Rainbounce_Boots",
+   "title": "Rainbounce Boots"
+  },
+  "alexscaves:spelunkery_table": {
+   "text": "Spelunkery Tables are blocks that are exclusively found in Underground Cabins. They are useful for researching and decoding Cave Tablets, and for gathering information about the biomes and their features.",
+   "src": "https://alexscaves.wiki.gg/wiki/Spelunkery_Table",
+   "title": "Spelunkery Table"
+  },
+  "alexscaves:sea_pig": {
+   "text": "Sea pigs are common bucketable passive mobs found in the Abyssal Chasm. They can produce Pearls and Marine Snow when fed.",
+   "src": "https://alexscaves.wiki.gg/wiki/Sea_Pig",
+   "title": "Sea Pig"
+  },
+  "alexscaves:sea_staff": {
+   "text": "The Sea Staff is a highly magical ranged weapon that utilizes summoning powerful bolts of water to damage enemies.",
+   "src": "https://alexscaves.wiki.gg/wiki/Sea_Staff",
+   "title": "Sea Staff"
+  },
+  "alexscaves:sea_glass_shards": {
+   "text": "Sea Glass Shards are common items obtained from a variety of sources within the Abyssal Chasm. They are primarily used for crafting Depth Glass.",
+   "src": "https://alexscaves.wiki.gg/wiki/Sea_Glass_Shards",
+   "title": "Sea Glass Shards"
+  },
+  "alexscaves:submarine": {
+   "text": "A Submarine is a massive drivable vehicle entity used for the transportation of players within large bodies of water such of oceans. Due to their size, they are incredibly durable with multiple hits needed to be destroyed, and move much faster than boats sailing over water.",
+   "src": "https://alexscaves.wiki.gg/wiki/Submarine",
+   "title": "Submarine"
+  },
+  "alexscaves:energized_galena_scarlet": {
+   "text": "Scarlet Energized Galena is a luminous block found in the Magnetic Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Scarlet_Energized_Galena",
+   "title": "Scarlet Energized Galena"
+  },
+  "alexscaves:scarlet_magnet": {
+   "text": "A Scarlet Magnet is a craftable magnetic block that can be powered by Redstone.",
+   "src": "https://alexscaves.wiki.gg/wiki/Scarlet_Magnet",
+   "title": "Scarlet Magnet"
+  },
+  "alexscaves:slam": {
+   "text": "Slam is a food item primarily used to heal while inflicted with the Irradiated effect and inflicts strength upon being eaten.",
+   "src": "https://alexscaves.wiki.gg/wiki/Slam",
+   "title": "Slam"
+  },
+  "alexscaves:spelunkie": {
+   "text": "A Spelunkie is a food item primarily used to heal while inflicted with the Irradiated effect. It is eaten quickly similarly to dried kelp.",
+   "src": "https://alexscaves.wiki.gg/wiki/Spelunkie",
+   "title": "Spelunkie"
+  },
+  "alexscaves:sulfur_dust": {
+   "text": "Sulfur Dust is an item primarily used to synthesize raw materials or to create food that specialize with healing when inflicted with the Irradiated effect.",
+   "src": "https://alexscaves.wiki.gg/wiki/Sulfur_Dust",
+   "title": "Sulfur Dust"
+  },
+  "alexscaves:seeking_arrow": {
+   "text": "A Seeking Arrow is a special variant of arrow infused with the magnetic properties of neodymium, causing them to curve toward any nearby mob they fly by.",
+   "src": "https://alexscaves.wiki.gg/wiki/Seeking_Arrow",
+   "title": "Seeking Arrow"
+  },
+  "alexscaves:scarlet_neodymium_ingot": {
+   "text": "A Scarlet Neodymium Ingot is one of two types of Neodymium Ingot that is obtained from crafting three Iron Ingots and three Raw Scarlet Neodymium together, as well as loot from Magnetic Ruins loot chests.",
+   "src": "https://alexscaves.wiki.gg/wiki/Scarlet_Neodymium_Ingot",
+   "title": "Scarlet Neodymium Ingot"
+  },
+  "alexscaves:seething_stew": {
+   "text": "Seething Stew is a food item that inflicts the Rage effect upon being eaten.",
+   "src": "https://alexscaves.wiki.gg/wiki/Seething_Stew",
+   "title": "Seething Stew"
+  },
+  "alexscaves:serene_salad": {
+   "text": "Serene Salad is a food item that clears the Stunned effect when eaten.",
+   "src": "https://alexscaves.wiki.gg/wiki/Serene_Salad",
+   "title": "Serene Salad"
+  },
+  "alexscaves:tectonic_shard": {
+   "text": "A Tectonic Shard is a special item dropped by the Luxtructosaurus used to craft powerful items.",
+   "src": "https://alexscaves.wiki.gg/wiki/Tectonic_Shard",
+   "title": "Tectonic Shard"
+  },
+  "alexscaves:shadow_silk": {
+   "text": "Shadow Silk is a unique crafting ingredient required to craft the most powerful equipment and gear from the Forlorn Hollows.",
+   "src": "https://alexscaves.wiki.gg/wiki/Shadow_Silk",
+   "title": "Shadow Silk"
+  },
+  "alexscaves:siren_light": {
+   "text": "Siren Lights are dyeable light-emitting blocks that can be crafted using Bottles of Radon.",
+   "src": "https://alexscaves.wiki.gg/wiki/Siren_Light",
+   "title": "Siren Light"
+  },
+  "alexscaves:sharpened_candy_cane": {
+   "text": "The Sharpened Candy Cane is an item exclusive to the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Sharpened_Candy_Cane",
+   "title": "Sharpened Candy Cane"
+  },
+  "alexscaves:sack_of_sating": {
+   "text": "A Sack of Sating is a rare item used to automatically feed the player.",
+   "src": "https://alexscaves.wiki.gg/wiki/Sack_of_Sating",
+   "title": "Sack of Sating"
+  },
+  "alexscaves:sweet_tooth": {
+   "text": "Gum Worms are the only source of Sweet Teeth, dropping 2-4 Sweet Teeth upon death.",
+   "src": "https://alexscaves.wiki.gg/wiki/Sweet_Tooth",
+   "title": "Sweet Tooth"
+  },
+  "alexscaves:sundae": {
+   "text": "Sundaes are crafted using a number of items from the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Sundae",
+   "title": "Sundae"
+  },
+  "alexscaves:stinky_fish": {
+   "text": "The only way to legitimately obtain this item in Survival Mode is by killing the player \"Noonyeyz\". Upon death, they will drop a single Stinky Fish.",
+   "src": "https://alexscaves.wiki.gg/wiki/Stinky_Fish",
+   "title": "Stinky Fish"
+  },
+  "alexscaves:subterranodon_egg": {
+   "text": "Subterranodon Eggs are a type of Dinosaur Egg that generate naturally in the Primordial Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Subterranodon_Egg",
+   "title": "Subterranodon Egg"
+  },
+  "alexscaves:sweetberry_ice_cream_scoop": {
+   "text": "The Sweetberry Ice Cream Scoop is variant of the Ice Cream Scoops, the others being Vanilla and Chocolate easily found throughout the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Sweetberry_Ice_Cream_Scoop",
+   "title": "Sweetberry Ice Cream Scoop"
+  },
+  "alexscaves:sugar_staff": {
+   "text": "The Sugar Staff is a weapon that can be dropped from a Licowitch. It allows the player to recreate some of the Licowitch's attacks.",
+   "src": "https://alexscaves.wiki.gg/wiki/Sugar_Staff",
+   "title": "Sugar Staff"
+  },
+  "alexscaves:sundrop": {
+   "text": "Sundrops are edible luminous blocks found within the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Sundrop",
+   "title": "Sundrop"
+  },
+  "alexscaves:sulfur": {
+   "text": "Sulfur Blocks are yellow crystalline blocks found in the Toxic Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Sulfur",
+   "title": "Sulfur"
+  },
+  "alexscaves:sugar_glass": {
+   "text": "Sugar Glass only naturally generates in the form of giant soda bottles in the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Sugar_Glass",
+   "title": "Sugar Glass"
+  },
+  "alexscaves:shot_gum": {
+   "text": "The Shot Gum is a ranged weapon that fires two Gumballs at a time similarly to a Gumbeeper.",
+   "src": "https://alexscaves.wiki.gg/wiki/Shot_Gum",
+   "title": "Shot Gum"
+  },
+  "alexscaves:scrap_metal_plate": {
+   "text": "Scrap Metal Plates are metallic blocks that can be crafted with materials from the Magnetic Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Scrap_Metal_Plate",
+   "title": "Scrap Metal Plate"
+  },
+  "alexscaves:smooth_limestone": {
+   "text": "Smooth Limestone is a variant of Limestone made by smelting regular limestone.",
+   "src": "https://alexscaves.wiki.gg/wiki/Smooth_Limestone",
+   "title": "Smooth Limestone"
+  },
+  "alexscaves:scarlet_neodymium_pillar": {
+   "text": "An Scarlet Neodymium Pillar is a naturally generating magnetic block.",
+   "src": "https://alexscaves.wiki.gg/wiki/Scarlet_Neodymium_Pillar",
+   "title": "Scarlet Neodymium Pillar"
+  },
+  "alexscaves:scarlet_neodymium_node": {
+   "text": "An Scarlet Neodymium Node is a naturally generating magnetic block.",
+   "src": "https://alexscaves.wiki.gg/wiki/Scarlet_Neodymium_Node",
+   "title": "Scarlet Neodymium Node"
+  },
+  "alexscaves:scrap_metal": {
+   "text": "Scrap Metal is a craftable block typically found in several biomes.",
+   "src": "https://alexscaves.wiki.gg/wiki/Scrap_Metal",
+   "title": "Scrap Metal"
+  },
+  "alexscaves:uranium": {
+   "text": "Uranium is an item that can be obtained by mining Radrock Uranium Ore. Uranium is radioactive, and simply having enough of it in the player's inventory can inflict the Irradiated effect for 1:30 seconds.",
+   "src": "https://alexscaves.wiki.gg/wiki/Uranium",
+   "title": "Uranium"
+  },
+  "alexscaves:tube_worm": {
+   "text": "Tube Worms are blocks native to the Abyssal Chasm. They are found in towering, twisted white structures that branch and grow from a single spot on the ground.",
+   "src": "https://alexscaves.wiki.gg/wiki/Tube_Worm",
+   "title": "Tube Worm"
+  },
+  "alexscaves:tripodfish": {
+   "text": "Tripodfish are common [https://minecraft.wiki/w/Bucket_of_aquatic_mob bucketable] passive aquatic mobs found in the Abyssal Chasm.",
+   "src": "https://alexscaves.wiki.gg/wiki/Tripodfish",
+   "title": "Tripodfish"
+  },
+  "alexscaves:waste_drum": {
+   "text": "Waste Drums are a naturally occurring block that can be found dotting the landscape of the Toxic Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Waste_Drum",
+   "title": "Waste Drum"
+  },
+  "alexscaves:thornwood_branch": {
+   "text": "Thornwood Branches are a crafting ingredient found in the Forlorn Hollows.",
+   "src": "https://alexscaves.wiki.gg/wiki/Thornwood_Branch",
+   "title": "Thornwood Branch"
+  },
+  "alexscaves:telecore": {
+   "text": "A Telecore is an item used in some Magnetic Cave related crafting recipes.",
+   "src": "https://alexscaves.wiki.gg/wiki/Telecore",
+   "title": "Telecore"
+  },
+  "alexscaves:tough_hide": {
+   "text": "Tough Hide is an item used as a crafting ingredient to create the Primordial Armor Set.",
+   "src": "https://alexscaves.wiki.gg/wiki/Tough_Hide",
+   "title": "Tough Hide"
+  },
+  "alexscaves:tremorzilla_egg": {
+   "text": "The Tremorzilla Egg is a large neon egg made of the remains of other legendary monsters.",
+   "src": "https://alexscaves.wiki.gg/wiki/Tremorzilla_Egg",
+   "title": "Tremorzilla Egg"
+  },
+  "alexscaves:totem_of_possession": {
+   "text": "The Totem of Possession is an ominous, magical weapon capable of binding to and controlling the behaviors of nearby creatures. It seems to strongly resemble the appearance of a Gloomoth.",
+   "src": "https://alexscaves.wiki.gg/wiki/Totem_of_Possession",
+   "title": "Totem of Possession"
+  },
+  "alexscaves:underweed": {
+   "text": "Underweed is a small plant found in the Toxic Caves and Forlorn Hollows.",
+   "src": "https://alexscaves.wiki.gg/wiki/Underweed",
+   "title": "Underweed"
+  },
+  "alexscaves:uranium_shard": {
+   "text": "Uranium Shards are small pieces of Uranium that can be obtained from smelting Unrefined Waste. Uranium Shards are radioactive, and simply having enough of them in the player's inventory can inflict the Irradiated effect for 1:30 seconds.",
+   "src": "https://alexscaves.wiki.gg/wiki/Uranium_Shard",
+   "title": "Uranium Shard"
+  },
+  "alexscaves:toxic_paste": {
+   "text": "Toxic Paste is an item known to be the grotesque innards of a Gammaroach. It can be used to craft some basic blocks or items.",
+   "src": "https://alexscaves.wiki.gg/wiki/Toxic_Paste",
+   "title": "Toxic Paste"
+  },
+  "alexscaves:uranium_rod": {
+   "text": "Very rarely, Uranium Rods can be found in loot barrels in Toxic Ruins.",
+   "src": "https://alexscaves.wiki.gg/wiki/Uranium_Rod",
+   "title": "Uranium Rod"
+  },
+  "alexscaves:volcanic_core": {
+   "text": "The Volcanic Core is an unobtainable block in the Primordial Caves biome.",
+   "src": "https://alexscaves.wiki.gg/wiki/Volcanic_Core",
+   "title": "Volcanic Core"
+  },
+  "alexscaves:thornwood_boat": {
+   "text": "A Thornwood Boat is a variant of boat that exclusively uses Thornwood Planks in its crafting recipe. Just like bamboo rafts and Pewen Boats, they look rather different when compared to other boats but function almost identically.",
+   "src": "https://alexscaves.wiki.gg/wiki/Thornwood_Boat",
+   "title": "Thornwood Boat"
+  },
+  "alexscaves:thornwood_chest_boat": {
+   "text": "A Thornwood Boat with Chest is a single chest occupying the passenger seat of a Thornwood Boat, and functions as such. It can be used to transport items over bodies of water.",
+   "src": "https://alexscaves.wiki.gg/wiki/Thornwood_Boat_with_Chest",
+   "title": "Thornwood Boat with Chest"
+  },
+  "alexscaves:vesper_wing": {
+   "text": "Vesper Wings are strange food items that can be crafted into Vesper Stew. They are also importantly needed as a crafting ingredient for the Dreadbow.",
+   "src": "https://alexscaves.wiki.gg/wiki/Vesper_Wing",
+   "title": "Vesper Wing"
+  },
+  "alexscaves:vesper_stew": {
+   "text": "Vesper Stew is a food item that inflicts the night vision effect upon being eaten.",
+   "src": "https://alexscaves.wiki.gg/wiki/Vesper_Stew",
+   "title": "Vesper Stew"
+  },
+  "alexscaves:thin_bone": {
+   "text": "A Thin Bone Block is a type of bone block that can naturally generate in the Abyssal Chasm.",
+   "src": "https://alexscaves.wiki.gg/wiki/Thin_Bone_Block",
+   "title": "Thin Bone Block"
+  },
+  "alexscaves:unrefined_waste": {
+   "text": "Unrefined Waste is a highly radioactive gravity block found in the Toxic Caves biome.",
+   "src": "https://alexscaves.wiki.gg/wiki/Unrefined_Waste",
+   "title": "Unrefined Waste"
+  },
+  "alexscaves:tree_star": {
+   "text": "Tree Stars are special leaves found exclusively in the Primordial Caves biome.",
+   "src": "https://alexscaves.wiki.gg/wiki/Tree_Star",
+   "title": "Tree Star"
+  },
+  "alexscaves:tesla_bulb": {
+   "text": "Tesla Bulbs are highly volatile floating blocks found in the Magnetic Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Tesla_Bulb",
+   "title": "Tesla Bulb"
+  },
+  "alexscaves:thornwood_log": {
+   "text": "Thornwood Logs are naturally generating woody blocks found in the Forlorn Hollows.",
+   "src": "https://alexscaves.wiki.gg/wiki/Thornwood_Log",
+   "title": "Thornwood Log"
+  },
+  "alexscaves:thornwood_sapling": {
+   "text": "Thornwood Saplings can be grown into Thornwood Trees. Strangely, Thornwood Saplings can be placed on any block, but they will only grow if placed on the following blocks:",
+   "src": "https://alexscaves.wiki.gg/wiki/Thornwood_Sapling",
+   "title": "Thornwood Sapling"
+  },
+  "alexscaves:vallumraptor_egg": {
+   "text": "Vallumraptor Eggs are a type of Dinosaur Egg from the Primordial Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Vallumraptor_Egg",
+   "title": "Vallumraptor Egg"
+  },
+  "alexscaves:vanilla_ice_cream_scoop": {
+   "text": "The Vanilla Ice Cream Scoop is variant of the Ice Cream Scoops, the others being Chocolate and Sweetberry easily found throughout the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Vanilla_Ice_Cream_Scoop",
+   "title": "Vanilla Ice Cream Scoop"
+  },
+  "alexscaves:thornwood_planks": {
+   "text": "Thornwood Planks are a variant of Planks from the Forlorn Hollows.",
+   "src": "https://alexscaves.wiki.gg/wiki/Thornwood_Planks",
+   "title": "Thornwood Planks"
+  },
+  "alexscaves:tremorsaurus_egg": {
+   "text": "Tremorsaurus Eggs are a type of Dinosaur Egg from the Primordial Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Tremorsaurus_Egg",
+   "title": "Tremorsaurus Egg"
+  },
+  "alexscaves:gelatin_yellow": {
+   "text": "The Yellow Gelatin is one of the five variants of Gelatin from the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Yellow_Gelatin",
+   "title": "Yellow Gelatin"
+  },
+  "alexscaves:sweetish_fish_yellow": {
+   "text": "Yellow Sweetish Fish is a common item found in the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Yellow_Sweetish_Fish",
+   "title": "Yellow Sweetish Fish"
+  }
+ },
+ "orphans": {
+  "Biomes": {
+   "text": "Biomes are entire areas of the world with their own blocks, plants, mobs and more. Alex's Caves adds 6 new rare biomes, all of which generate in the lower portions of the Overworld.",
+   "src": "https://alexscaves.wiki.gg/wiki/Biomes"
+  },
+  "Blocks": {
+   "text": "Alex's Caves adds a variety of new blocks to Minecraft. Most of which are found exclusively with the rare cave biomes.",
+   "src": "https://alexscaves.wiki.gg/wiki/Blocks"
+  },
+  "Abyssal Chasm": {
+   "text": "\"The Abyssal Chasm is a biome found deep in the world, but unlike other cave biomes, it is covered by hundreds of blocks of water, not stone. It is found exclusively under ocean biomes, and appears as a massive trench where light barely penetrates. The trench walls are lined with Abyssmarine, a stone-like block, and the abyssal floor is covered in a thick layer of Muck. This Muck is quite thick and slows many creatures that walk on it down. It is also where much of the [https://en.wikipedia.org/wiki/Benthic_zone benthic] sea life that calls this biome home can be found, including Mussels, Sea…",
+   "src": "https://alexscaves.wiki.gg/wiki/Abyssal_Chasm"
+  },
+  "Abyssal Ruins": {
+   "text": "Abyssal Ruins are floating structures scattered across the floor of the Abyssal Chasm. They are the only source of the exclusive pottery sherds and the Game Controller.",
+   "src": "https://alexscaves.wiki.gg/wiki/Abyssal_Ruins"
+  },
+  "Abyssal Monument": {
+   "text": "These are structures are found within Abyssal Chasm and are living quarters of the Deep Ones. They are made of Abyssmarine and Sea Lanterns, and are filled with Dead Coral and Wet Sponges. They are shaped like the head of an Anglerfish.",
+   "src": "https://alexscaves.wiki.gg/wiki/Abyssal_Monument"
+  },
+  "Abyssal Monolith": {
+   "text": "Abyssmarine Monoliths are structures found naturally generating in the Abyssal Chasms. They are made of Abyssmarine, and are different compared to other structures in the Abyssal Chasms, due to the fact that it is the only structure to include an Abyssal Altar on top.",
+   "src": "https://alexscaves.wiki.gg/wiki/Abyssal_Monolith"
+  },
+  "Boundroid": {
+   "text": "Boundroids are common hostile mobs found in the Magnetic Caves. They are composite mobs that hang from quadrupedal winches which crawl across cave ceilings in pursuit of targets, slamming down on them once they get in range.",
+   "src": "https://alexscaves.wiki.gg/wiki/Boundroid"
+  },
+  "Arrow of Magnetizing": {
+   "text": "An Arrow of Magnetizing is a variant of regular arrow that can apply the Magnetizing effect to players and mobs.",
+   "src": "https://alexscaves.wiki.gg/wiki/Arrow_of_Magnetizing"
+  },
+  "Atlatitan": {
+   "text": "Atlatitans are gigantic neutral mobs found in the Primordial Caves after the Luxtructosaurus is slain for the first time. They can be fed Serene Salad and ridden for a brief amount of time, during which they are capable of leveling the terrain with a hefty stomp.",
+   "src": "https://alexscaves.wiki.gg/wiki/Atlatitan"
+  },
+  "Arrow of Deepsight": {
+   "text": "An Arrow of Deepsight is a variant of regular arrow that can apply the Deepsight effect to players and mobs.",
+   "src": "https://alexscaves.wiki.gg/wiki/Arrow_of_Deepsight"
+  },
+  "Arrow of Glowing": {
+   "text": "An Arrow of Glowing is a variant of regular arrow that can apply the Glowing effect to players and mobs.",
+   "src": "https://alexscaves.wiki.gg/wiki/Arrow_of_Glowing"
+  },
+  "Arrow of Haste": {
+   "text": "An Arrow of Haste is a variant of regular arrow that can apply the Haste effect to players and mobs.",
+   "src": "https://alexscaves.wiki.gg/wiki/Arrow_of_Haste"
+  },
+  "Arrow of Sugar Rush": {
+   "text": "An Arrow of Sugar Rush is a variant of regular arrow that can apply the Sugar Rush effect to players and mobs.",
+   "src": "https://alexscaves.wiki.gg/wiki/Arrow_of_Sugar_Rush"
+  },
+  "Amber Monolith Pillar": {
+   "text": "Amber Monolith Pillars (referred to as alexscaves:amber_monolith in-game) are the natural spawning of Dinosaurs in the Primordial Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Amber_Monolith_Pillar"
+  },
+  "Advancements": {
+   "text": "Alex's Caves has a total of 146 Advancements. This page lists all Advancements currently in Alex's Caves, as well as how to obtain them.",
+   "src": "https://alexscaves.wiki.gg/wiki/Advancements"
+  },
+  "Alex's Caves Wiki/welcome": {
+   "text": "Alex's Caves is a mod for Minecraft: Java Edition 1.20.1 that adds six new cave biomes hidden underneath the surface of the Overworld for you to explore.",
+   "src": "https://alexscaves.wiki.gg/wiki/Alex's_Caves_Wiki%2Fwelcome"
+  },
+  "Alex's Caves Wiki/about": {
+   "text": "[https://github.com/AlexModGuy/AlexsCaves/issues Alex's Caves Issues]",
+   "src": "https://alexscaves.wiki.gg/wiki/Alex's_Caves_Wiki%2Fabout"
+  },
+  "Alex's Caves Wiki/contribute": {
+   "text": "__NOTOC__ Want to help out with the wiki, but unsure where to start?",
+   "src": "https://alexscaves.wiki.gg/wiki/Alex's_Caves_Wiki%2Fcontribute"
+  },
+  "Caveman House": {
+   "text": "Caveman Houses are structures found naturally generating in the Primordial Caves. These limestone dwellings are covered in cave paintings on the inside, and on the second floor, one will find a chest that may contain the Primordial Armor Set, Dinosaur Nuggets, Limestone Spears, and Charcoal.",
+   "src": "https://alexscaves.wiki.gg/wiki/Caveman_House"
+  },
+  "Brainiac": {
+   "text": "Brainiacs are common hostile mobs found in the Toxic Caves. They are powerful undead monsters that use a variety of different attacks to dispatch targets.",
+   "src": "https://alexscaves.wiki.gg/wiki/Brainiac"
+  },
+  "Corrodent": {
+   "text": "Corrodents are common hostile mobs found in the Forlorn Hollows. They can burrow through blocks to move around and evade attacks, and will retreat from sources of light.",
+   "src": "https://alexscaves.wiki.gg/wiki/Corrodent"
+  },
+  "Bubbled": {
+   "text": "Bubbled is a status effect that slows and drowns the affected entity for a short period of time.",
+   "src": "https://alexscaves.wiki.gg/wiki/Bubbled"
+  },
+  "Candy Cavity": {
+   "text": "\"The Candy Cavity is a mysterious underground biome that defies all logic and expectation. This deeply unnatural place would be unsettling if it were not doused in sugary sweetness. Made nearly entirely out of candy, this place truly is a sight to behold. The Candy Cavity is believed to be a relatively recent addition to the overworld, likely being created as a byproduct of nefarious magical experiments carried out by its native sorcerers, the Licowitch. Inside the biome, the terrain consists primarily of Blocks of Chocolate, Frosted Block of Chocolate, and Cake Layers, which make the biome…",
+   "src": "https://alexscaves.wiki.gg/wiki/Candy_Cavity"
+  },
+  "Bucket of Blue Sweetish Fish": {
+   "text": "A Bucket of Blue Sweetish Fish is a Blue Sweetish Fish inside a Bucket of Purple Soda.",
+   "src": "https://alexscaves.wiki.gg/wiki/Bucket_of_Blue_Sweetish_Fish"
+  },
+  "Caramel Cube": {
+   "text": "Caramel Cubes are rare hostile mobs found in the Candy Cavity. They are stronger slimes that release movement-impeding puddles of melted caramel upon taking damage.",
+   "src": "https://alexscaves.wiki.gg/wiki/Caramel_Cube"
+  },
+  "Caniac": {
+   "text": "Caniacs are common hostile mobs found in the Candy Cavity. They will quickly chase down foes while swinging their arms around, continuously dealing damage upon reaching them.",
+   "src": "https://alexscaves.wiki.gg/wiki/Caniac"
+  },
+  "Candicorn": {
+   "text": "Candicorns are common neutral mobs found in the Candy Cavity. They can be tamed and used as mounts for quickly moving on land in addition to fighting foes with a powerful charge attack.",
+   "src": "https://alexscaves.wiki.gg/wiki/Candicorn"
+  },
+  "Bucket of Green Sweetish Fish": {
+   "text": "A Bucket of Green Sweetish Fish is a Green Sweetish Fish inside a Bucket of Purple Soda.",
+   "src": "https://alexscaves.wiki.gg/wiki/Bucket_of_Green_Sweetish_Fish"
+  },
+  "Bucket of Pink Sweetish Fish": {
+   "text": "A Bucket of Pink Sweetish Fish is a Pink Sweetish Fish inside a Bucket of Purple Soda.",
+   "src": "https://alexscaves.wiki.gg/wiki/Bucket_of_Pink_Sweetish_Fish"
+  },
+  "Bucket of Red Sweetish Fish": {
+   "text": "A Bucket of Red Sweetish Fish is a Red Sweetish Fish inside a Bucket of Purple Soda.",
+   "src": "https://alexscaves.wiki.gg/wiki/Bucket_of_Red_Sweetish_Fish"
+  },
+  "Bucket of Yellow Sweetish Fish": {
+   "text": "A Bucket of Yellow Sweetish Fish is a Yellow Sweetish Fish inside a Bucket of Purple Soda.",
+   "src": "https://alexscaves.wiki.gg/wiki/Bucket_of_Yellow_Sweetish_Fish"
+  },
+  "Forlorn Hollows": {
+   "text": "The Forlorn Hollows are the fifth cave biome added by Alex's Caves. It takes the form of a series of canyons engulfed by pure darkness. Almost no light shines here, as the biome is shrouded with an unnaturally thick layer of darkness.",
+   "src": "https://alexscaves.wiki.gg/wiki/Forlorn_Hollows"
+  },
+  "Deep One": {
+   "text": "Deep Ones are common neutral aquatic mobs found in the Abyssal Chasm. They will cautiously stalk players at first, but can become allies or enemies depending on the players' actions.",
+   "src": "https://alexscaves.wiki.gg/wiki/Deep_One"
+  },
+  "Deep One Knight": {
+   "text": "Deep One Knights are common neutral aquatic mobs found in the Abyssal Chasm. They are stronger Deep Ones that carry tridents or Ortholances, which they use in combat.",
+   "src": "https://alexscaves.wiki.gg/wiki/Deep_One_Knight"
+  },
+  "Deep One Mage": {
+   "text": "Deep One Mages are common neutral aquatic mobs found in the Abyssal Chasm. They are Deep One-like mobs that are capable of using ranged water attacks to fight enemies, in addition to using bubbles to float when above the water.",
+   "src": "https://alexscaves.wiki.gg/wiki/Deep_One_Mage"
+  },
+  "Ferrouslime": {
+   "text": "Ferrouslimes are common flying hostile mobs found in the Magnetic Caves. They can only move about in fixed patterns, but they can merge with each other to become stronger.",
+   "src": "https://alexscaves.wiki.gg/wiki/Ferrouslime"
+  },
+  "Forsaken": {
+   "text": "Forsaken are large hostile mobs that can spawn from Underzealot sacrificial rituals. They are powerful monsters that fight foes with sonic waves in addition to a variety of melee strikes from their upper arms, and can leap around to reposition.",
+   "src": "https://alexscaves.wiki.gg/wiki/Forsaken"
+  },
+  "Fusion Disc Fragment": {
+   "text": "A Fusion Disc Fragment is a variant of disc fragment used to craft the Fusion Music Disc.",
+   "src": "https://alexscaves.wiki.gg/wiki/Fusion_Disc_Fragment"
+  },
+  "Fusion Music Disc": {
+   "text": "The Fusion Music Disc is another variant of music disc that is crafted from its matching disc fragments similarly to Music Disc 5. It can be played in a jukebox.",
+   "src": "https://alexscaves.wiki.gg/wiki/Fusion_Music_Disc"
+  },
+  "Diving Armor Set": {
+   "text": "The Diving Armor Set is an armor set primarily worn to navigate through the Abyssal Chasm and through water easier. The set consists of the Diving Helmet, Diving Chestplate, Diving Leggings, and Diving Boots.",
+   "src": "https://alexscaves.wiki.gg/wiki/Diving_Armor_Set"
+  },
+  "Deep One Ruins": {
+   "text": "Deep One Ruins are the ruins created and built by the Deep Ones, having a few variants, with one having a special use.",
+   "src": "https://alexscaves.wiki.gg/wiki/Deep_One_Ruins"
+  },
+  "Deepsight": {
+   "text": "Deepsight is a status effect that removes the vanilla water fog when you explore underwater.",
+   "src": "https://alexscaves.wiki.gg/wiki/Deepsight"
+  },
+  "Forlorn Bridge": {
+   "text": "Forlorn Bridges are structures that commonly generate across the Forlorn Hollows.",
+   "src": "https://alexscaves.wiki.gg/wiki/Forlorn_Bridge"
+  },
+  "Forlorn Ruins": {
+   "text": "Forlorn Ruins are small house-like structures commonly found in the Forlorn Hollows.",
+   "src": "https://alexscaves.wiki.gg/wiki/Forlorn_Ruins"
+  },
+  "Forlorn Idol": {
+   "text": "Forlorn Idols are large uncommon structures found in the Forlorn Hollows.",
+   "src": "https://alexscaves.wiki.gg/wiki/Forlorn_Idol"
+  },
+  "Forlorn Post": {
+   "text": "Forlorn Posts are small structures that commonly generate throughout the Forlorn Hollows.",
+   "src": "https://alexscaves.wiki.gg/wiki/Forlorn_Post"
+  },
+  "Darkness Incarnate": {
+   "text": "Darkness Incarnate is a status effect granted by the Hood & Cloak of Darkness that allows the player to fly similarly to creative flight, albeit much faster.",
+   "src": "https://alexscaves.wiki.gg/wiki/Darkness_Incarnate"
+  },
+  "Guides/Getting Started": {
+   "text": "Alex's Caves introduces six new, expansive cave biomes that generate across the Overworld. Because the contents of these biomes are so strange, powerful, and mysterious by their very nature, they are all understandably quite rare - similar to Mushroom Fields biomes in the vanilla game. This presents a challenge in finding these biomes and learning about their wondrous contents. However, by following this guide, you should be well on your way to discovering one or more of these rare caves... __TOC__",
+   "src": "https://alexscaves.wiki.gg/wiki/Guides%2FGetting_Started"
+  },
+  "Guides/Spelunkery Table Research": {
+   "text": "Once you have found a Spelunkery Table and some Cave Tablets, you can begin the process of researching the strange inscriptions on the tablet. Make sure you either secure the area the Spelunkery Table is in, or move it somewhere else! Researching can take quite a while, and progress will be lost if interrupted. Before you begin researching, make sure to have paper on hand. If you have never successfully completed research in the spelunkery table, small exclamation points in the interface will give you general directions.",
+   "src": "https://alexscaves.wiki.gg/wiki/Guides%2FSpelunkery_Table_Research"
+  },
+  "Grottoceratops": {
+   "text": "Grottoceratops are common large neutral mobs found in the Primordial Caves. They frequently feed on various kinds of vegetation, being able to turn Curly Ferns into Fiddleheads by grazing on them.",
+   "src": "https://alexscaves.wiki.gg/wiki/Grottoceratops"
+  },
+  "Gloomoth": {
+   "text": "Gloomoths are common passive flying mobs found in the Forlorn Hollows. They will fly around sources of light, potentially attracting monsters such as Underzealots and Vespers.",
+   "src": "https://alexscaves.wiki.gg/wiki/Gloomoth"
+  },
+  "Gossamer Worm": {
+   "text": "Gossamer worms are common [https://minecraft.wiki/w/Bucket_of_aquatic_mob bucketable] passive aquatic mobs found in the Abyssal Chasm.",
+   "src": "https://alexscaves.wiki.gg/wiki/Gossamer_Worm"
+  },
+  "Hullbreaker": {
+   "text": "Hullbreakers are rare, gigantic neutral aquatic mobs found in the Abyssal Chasm. They are formidable predators that attack glowing mobs and submarines with their floodlights on.",
+   "src": "https://alexscaves.wiki.gg/wiki/Hullbreaker"
+  },
+  "Gammaroach": {
+   "text": "Gammaroaches are common neutral mobs found in the Toxic Caves. They will attack nearby players and mobs affected by the Irradiated status effect, and can pick up other hostile mobs before carrying them over to targets.",
+   "src": "https://alexscaves.wiki.gg/wiki/Gammaroach"
+  },
+  "Item/Lanternfish": {
+   "text": "Lanternfish is a food item and brewing ingredient that can be eaten or cooked in a furnace, smoker, or campfire to make Cooked Lanternfish. It is eaten quickly similarly to dried kelp.",
+   "src": "https://alexscaves.wiki.gg/wiki/Item%2FLanternfish"
+  },
+  "Item/Sea Pig": {
+   "text": "A Sea Pig is an unsating food item that can be eaten by the player, at high risk of inflicting Hunger.",
+   "src": "https://alexscaves.wiki.gg/wiki/Item%2FSea_Pig"
+  },
+  "Hazmat Armor Set": {
+   "text": "The Hazmat Armor Set is an armor set primarily worn to negate being inflicted with Irradiated or to be able to safely traverse through Acid. The set consists of the Hazmat Mask, Hazmat Chestplate, Hazmat Leggings, and Hazmat Boots.",
+   "src": "https://alexscaves.wiki.gg/wiki/Hazmat_Armor_Set"
+  },
+  "Irradiated": {
+   "text": "Irradiated is a status effect that prevents the affected entity from naturally regenerating while holding radioactive items. Irradiated I simply prevents regeneration, but Irradiated II and beyond slowly damages the affected entity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Irradiated"
+  },
+  "Hood & Cloak of Darkness": {
+   "text": "The Hood and Cloak of Darkness are a duo of items that grant the wearer powers of darkness when worn together.",
+   "src": "https://alexscaves.wiki.gg/wiki/Hood_%26_Cloak_of_Darkness"
+  },
+  "Gingerbread Town": {
+   "text": "Gingerbread Towns are structures found naturally generating in the Candy Cavity. These miniature fortresses resemble medieval villages and castles, and are to scale with Gingerbread Men, which spawn and live within them.",
+   "src": "https://alexscaves.wiki.gg/wiki/Gingerbread_Town"
+  },
+  "Gum Worm": {
+   "text": "Gum Worms are common large neutral mobs found in the Candy Cavity. They quickly burrow through blocks, and can be mounted by launching dual-wielded Candy Cane Hooks towards them.",
+   "src": "https://alexscaves.wiki.gg/wiki/Gum_Worm"
+  },
+  "Gumbeeper": {
+   "text": "Gumbeepers are common hostile mobs found in the the Candy Cavity. They shoot a limited number of gumballs that bounce off blocks at targets, running towards foes and bursting into more gumballs once they run low on ammunition.",
+   "src": "https://alexscaves.wiki.gg/wiki/Gumbeeper"
+  },
+  "Gingerbread Man": {
+   "text": "Gingerbread Men are neutral mobs found in small villages in the Candy Cavity. They steal candy from players before depositing it into Gingerbarrels.",
+   "src": "https://alexscaves.wiki.gg/wiki/Gingerbread_Man"
+  },
+  "Gummy Bear": {
+   "text": "Gummy Bears are common neutral mobs found in the Candy Cavity. They prey on Sweetish Fish, and can produce Jelly Beans after hibernating for some time when fed a potion.",
+   "src": "https://alexscaves.wiki.gg/wiki/Gummy_Bear"
+  },
+  "Gummy Ring": {
+   "text": "Gummy Rings are a set of colorful gummy blocks found in the Candy Cavity. They come in five colors: Blue, Green, Pink, Red, and Yellow.",
+   "src": "https://alexscaves.wiki.gg/wiki/Gummy_Ring"
+  },
+  "Gingerbread Armor Set": {
+   "text": "The Gingerbread Armor Set consists of the Gingerbread Helmet, Gingerbread Chestplate, Gingerbread Leggings, and Gingerbread Boots.",
+   "src": "https://alexscaves.wiki.gg/wiki/Gingerbread_Armor_Set"
+  },
+  "Golden Frog": {
+   "text": "Golden Frogs are a unique variant of frogs found in the Primordial Caves and attacked by Vallumraptors. They're colored a bright orange and yellow.",
+   "src": "https://alexscaves.wiki.gg/wiki/Golden_Frog"
+  },
+  "Items": {
+   "text": "Alex's Caves adds various items to Minecraft, most of which can be found or made of materials found within the new, rare cave biomes.",
+   "src": "https://alexscaves.wiki.gg/wiki/Items"
+  },
+  "Magnetic Caves": {
+   "text": "The Magnetic Caves is the first cave biome added by Alex's Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Magnetic_Caves"
+  },
+  "Mobs": {
+   "text": "Alex's Caves adds a variety of new mobs to Minecraft, all of which can be found within the mod's new underground cave biomes. This is a list comprising of all in-game creatures.",
+   "src": "https://alexscaves.wiki.gg/wiki/Mobs"
+  },
+  "Magnetron": {
+   "text": "Magnetrons are rare hostile mobs found in the Magnetic Caves. Upon spotting a foe, they will construct a body made out of blocks for themselves, greatly enhancing their strength.",
+   "src": "https://alexscaves.wiki.gg/wiki/Magnetron"
+  },
+  "Mine Guardian": {
+   "text": "Mine Guardians are hostile aquatic mobs found around ruins in the Abyssal Chasm. They are bound to an anchor that limits their movement, but they will explode upon approaching their target, destroying blocks underwater and dealing massive amounts of damage.",
+   "src": "https://alexscaves.wiki.gg/wiki/Mine_Guardian"
+  },
+  "Nucleeper": {
+   "text": "Nucleepers are rare hostile mobs found in the the Toxic Caves. They are larger and slower Creepers that take longer to prime themselves for detonation, but cannot be interrupted under normal circumstances once they start charging up and create a devastating nuclear explosion if allowed to finish.",
+   "src": "https://alexscaves.wiki.gg/wiki/Nucleeper"
+  },
+  "Notor": {
+   "text": "Notors are common semi-passive flying mobs found in the Magnetic Caves. They scan players before displaying an image of them, causing any nearby hostile mobs to home in on them.",
+   "src": "https://alexscaves.wiki.gg/wiki/Notor"
+  },
+  "Lingering Potion of Magnetizing": {
+   "text": "A Lingering Potion of Magnetizing is a special variant of Splash Potion of Magnetizing that leaves Magnetizing-inflicting clouds that linger on the ground in an area.",
+   "src": "https://alexscaves.wiki.gg/wiki/Lingering_Potion_of_Magnetizing"
+  },
+  "Luxtructosaurus": {
+   "text": "The Luxtructosaurus is a gigantic hostile boss mob that can be summoned from a volcano in the Primordial Caves. It causes nearby other volcanoes to erupt, has a powerful stomp attack that can level terrain, and can enter an enraged state that grants it the ability to breathe flames in addition to creating fissures in the ground with its stomp.",
+   "src": "https://alexscaves.wiki.gg/wiki/Luxtructosaurus"
+  },
+  "Item/Tripodfish": {
+   "text": "Tripodfish is a food item that can be eaten or cooked in a furnace, smoker, or campfire to make Cooked Tripodfish.",
+   "src": "https://alexscaves.wiki.gg/wiki/Item%2FTripodfish"
+  },
+  "Lingering Potion of Deepsight": {
+   "text": "A Lingering Potion of Deepsight is a special variant of Splash Potion of Deepsight that leaves Deepsight-inflicting clouds that linger on the ground in an area.",
+   "src": "https://alexscaves.wiki.gg/wiki/Lingering_Potion_of_Deepsight"
+  },
+  "Lingering Potion of Glowing": {
+   "text": "A Lingering Potion of Glowing is a special variant of Splash Potion of Glowing that leaves Glowing-inflicting clouds that linger on the ground in an area.",
+   "src": "https://alexscaves.wiki.gg/wiki/Lingering_Potion_of_Glowing"
+  },
+  "Lingering Potion of Haste": {
+   "text": "A Lingering Potion of Haste is a special variant of Splash Potion of Haste that leaves Haste-inflicting clouds that linger on the ground in an area.",
+   "src": "https://alexscaves.wiki.gg/wiki/Lingering_Potion_of_Haste"
+  },
+  "Magnetic Ruins": {
+   "text": "Magnetic Ruins are structures found across the Magnetic Caves, consisting of industrial building to giant heads.",
+   "src": "https://alexscaves.wiki.gg/wiki/Magnetic_Ruins"
+  },
+  "Licowitch": {
+   "text": "Licowitches are hostile mobs found in Licoroot towers in the Candy Cavity. They use a variety of different spells to fight foes, and will use Conversion Crucibles to perform short rituals.",
+   "src": "https://alexscaves.wiki.gg/wiki/Licowitch"
+  },
+  "Lingering Potion of Sugar Rush": {
+   "text": "A Lingering Potion of Sugar Rush is a special variant of Splash Potion of Sugar Rush that leaves Sugar Rush-inflicting clouds that linger on the ground in an area.",
+   "src": "https://alexscaves.wiki.gg/wiki/Lingering_Potion_of_Sugar_Rush"
+  },
+  "Licowitch Tower": {
+   "text": "Licowitch Towers are structures found naturally generating in the Candy Cavity. These warped constructs resemble witch huts, although they are far larger, and have Licoroot growths running across them. They are home to Licowitches and [https://minecraft.wiki/w/Witch witches] which spawn in and around the towers. They are the only place where the Conversion Crucible generates naturally.",
+   "src": "https://alexscaves.wiki.gg/wiki/Licowitch_Tower"
+  },
+  "Potion Effects": {
+   "text": "__NOTOC__ Alex's Caves features at least one new status effect per biome.",
+   "src": "https://alexscaves.wiki.gg/wiki/Potion_Effects"
+  },
+  "Primordial Caves": {
+   "text": "\"The Primordial Caves have been isolated from the rest of the world for untold millennia - perhaps for tens of millions of years. This isolation has led to the limestone-laden caves to have unique geology, flora and fauna, that have gone extinct elsewhere in the world ages ago. The subterranean biome is kept well-lit by Ambersol, a novel form of amber that illuminates all blocks beneath it. It appears within amber clusters on the ceiling of these massive caves. This illuminating power gives the entire biome a brightness equivalent to daytime on the surface, explaining the lack of monsters and…",
+   "src": "https://alexscaves.wiki.gg/wiki/Primordial_Caves"
+  },
+  "Relicheirus": {
+   "text": "Relicheirus are rare large neutral mobs found in the Primordial Caves. They are omnivores that can be aroused into feverishly toppling [https://minecraft.wiki/w/Tree trees] with Primordial Soup.",
+   "src": "https://alexscaves.wiki.gg/wiki/Relicheirus"
+  },
+  "Raycat": {
+   "text": "Raycats are common passive mobs found in the Toxic Caves. They are undead cats that can be tamed and used to repel Nucleepers in addition to curing the Irradiated status effect.",
+   "src": "https://alexscaves.wiki.gg/wiki/Raycat"
+  },
+  "Potion of Magnetizing": {
+   "text": "A Potion of Magnetizing is a bottled substance that inflicts the Magnetizing effect. It is created by brewing a Ferrouslimeball and an awkward potion.",
+   "src": "https://alexscaves.wiki.gg/wiki/Potion_of_Magnetizing"
+  },
+  "Polarity Armor Trim": {
+   "text": "Polarity Armor Trim is a type of smithing template used in smithing tables to add a trim to armor. It is consumed when used, but can be duplicated using an existing template, galena and diamonds.",
+   "src": "https://alexscaves.wiki.gg/wiki/Polarity_Armor_Trim"
+  },
+  "Primordial Armor Set": {
+   "text": "The Primordial Armor Set consists of the Primordial Helmet, Primordial Tunic, and Primordial Pants. Unlike all other armor sets, this set does not include boots.",
+   "src": "https://alexscaves.wiki.gg/wiki/Primordial_Armor_Set"
+  },
+  "Radgill (item)": {
+   "text": "Radgill is a hazardous food item that can be eaten or cooked in a furnace, smoker, or campfire to make Cooked Radgill. Eating it will inflict you with the Irradiated effect.",
+   "src": "https://alexscaves.wiki.gg/wiki/Radgill_(item)"
+  },
+  "Potion of Deepsight": {
+   "text": "A Potion of Deepsight is a bottled substance that inflicts the Deepsight effect. It is created by brewing a Lanternfish item and an awkward potion.",
+   "src": "https://alexscaves.wiki.gg/wiki/Potion_of_Deepsight"
+  },
+  "Potion of Glowing": {
+   "text": "A Potion of Glowing is a bottled substance that inflicts the Glowing effect. It is created by brewing Bioluminesscence and an awkward potion.",
+   "src": "https://alexscaves.wiki.gg/wiki/Potion_of_Glowing"
+  },
+  "Potion of Haste": {
+   "text": "A Potion of Haste is a bottled substance that inflicts the Haste effect. It is created by brewing Corrodent Teeth and an awkward potion.",
+   "src": "https://alexscaves.wiki.gg/wiki/Potion_of_Haste"
+  },
+  "Radon Lamp": {
+   "text": "Radon Lamps are dyeable light-emitting blocks that are crafted using Bottles of Radon.",
+   "src": "https://alexscaves.wiki.gg/wiki/Radon_Lamp"
+  },
+  "Rage": {
+   "text": "Rage is a status effect that will increase the player's attack when they are on lower health. Notably, when a mob is affected with Rage, they will attack any nearby mobs.",
+   "src": "https://alexscaves.wiki.gg/wiki/Rage"
+  },
+  "Potion of Sugar Rush": {
+   "text": "A Potion of Sugar is a bottled substance that inflicts the Sugar Rush effect. It is created by brewing a Sweet Tooth and a Swiftness Potion.",
+   "src": "https://alexscaves.wiki.gg/wiki/Potion_of_Sugar_Rush"
+  },
+  "Structures": {
+   "text": "Alex's Caves adds a few new structures, most of which reside in the new cave biomes.",
+   "src": "https://alexscaves.wiki.gg/wiki/Structures"
+  },
+  "Subterranodon": {
+   "text": "Subterranodons are common flying neutral mobs found in the Primordial Caves. They can be tamed and used as airborne mounts for quickly traversing most environments.",
+   "src": "https://alexscaves.wiki.gg/wiki/Subterranodon"
+  },
+  "Splash Potion of Magnetizing": {
+   "text": "A Splash Potion of Magnetizing is a variant of Potion of Magnetizing that can be thrown.",
+   "src": "https://alexscaves.wiki.gg/wiki/Splash_Potion_of_Magnetizing"
+  },
+  "Splash Potion of Deepsight": {
+   "text": "A Splash Potion of Deepsight is a variant of Potion of Deepsight that can be thrown.",
+   "src": "https://alexscaves.wiki.gg/wiki/Splash_Potion_of_Deepsight"
+  },
+  "Splash Potion of Glowing": {
+   "text": "A Splash Potion of Glowing is a variant of Potion of Glowing that can be thrown.",
+   "src": "https://alexscaves.wiki.gg/wiki/Splash_Potion_of_Glowing"
+  },
+  "Splash Potion of Haste": {
+   "text": "A Splash Potion of Haste is a variant of Potion of Haste that can be thrown.",
+   "src": "https://alexscaves.wiki.gg/wiki/Splash_Potion_of_Haste"
+  },
+  "Sweetish Fish": {
+   "text": "Sweetish Fish are common bucketable passive aquatic mobs found in the Candy Cavity. They swim through Purple Soda, and serve as a conspicuous food source.",
+   "src": "https://alexscaves.wiki.gg/wiki/Sweetish_Fish"
+  },
+  "Tasty Music Disc": {
+   "text": "The Tasty Music Disc is another variant of music disc that is crafted from its matching disc fragments, similarly to 5 and Fusion. It can be played in a jukebox.",
+   "src": "https://alexscaves.wiki.gg/wiki/Tasty_Music_Disc"
+  },
+  "Stunned": {
+   "text": "Stunned is a status effect that temporarily incapacitates the victim, stopping them from moving or attacking. The player can still do most actions that aren't moving or attacking, such as eating food.",
+   "src": "https://alexscaves.wiki.gg/wiki/Stunned"
+  },
+  "Splash Potion of Sugar Rush": {
+   "text": "A Splash Potion of Sugar Rush is a variant of Potion of Sugar Rush that can be thrown.",
+   "src": "https://alexscaves.wiki.gg/wiki/Splash_Potion_of_Sugar_Rush"
+  },
+  "Tasty Disc Fragment": {
+   "text": "A Tasty Disc Fragment is a variant of disc fragment used to craft the Tasty Music Disc.",
+   "src": "https://alexscaves.wiki.gg/wiki/Tasty_Disc_Fragment"
+  },
+  "Rock Candy": {
+   "text": "Rock Candy is a dyeable, renewable block found in the Candy Cavity.",
+   "src": "https://alexscaves.wiki.gg/wiki/Rock_Candy"
+  },
+  "Sugar Rush": {
+   "text": "Sugar Rush is an effect that gives +70% speed to a entity and slows down the tick rate of nearby entities by 10 creating a slow motion effect for half of the game's normal speed of 20 ticks per second, while under the effect of sugar rush, players experience a pink shader and move with a upbeat animation",
+   "src": "https://alexscaves.wiki.gg/wiki/Sugar_Rush"
+  },
+  "Underground Cabin": {
+   "text": "Underground Cabins are small structures found under the surface in the Overworld Dimension. They are the best source of Cave Tablets and the only source of a Spelunkery Table.",
+   "src": "https://alexscaves.wiki.gg/wiki/Underground_Cabin"
+  },
+  "Toxic Caves": {
+   "text": "The Toxic Caves is a massive, underground wasteland, said to have been created by excessive scientific hubris in ages long past.",
+   "src": "https://alexscaves.wiki.gg/wiki/Toxic_Caves"
+  },
+  "Widget:FileUrl/doc": {
+   "text": "This widget allows local files to be used in CSS. Don't use this directly, use Template:FileUrl instead.",
+   "src": "https://alexscaves.wiki.gg/wiki/Widget%3AFileUrl%2Fdoc"
+  },
+  "Widget:FileUrlStyle/doc": {
+   "text": "This widget allows local files to be used in CSS. Don't use this directly, use Template:FileUrlStyle instead.",
+   "src": "https://alexscaves.wiki.gg/wiki/Widget%3AFileUrlStyle%2Fdoc"
+  },
+  "Widget:SpriteDoc.css": {
+   "text": "display: flex; flex-wrap: wrap; padding: 0 0 1px 1px; margin: 0.5em 0; } .spritedoc-box { position: relative; display: flex; align-items: center; padding: 0.5em; background: var(--theme-page-background-color--secondary); border: 1px solid var(--theme-border-color); margin: 0 0 -1px -1px; }",
+   "src": "https://alexscaves.wiki.gg/wiki/Widget%3ASpriteDoc.css"
+  },
+  "Tremorsaurus": {
+   "text": "Tremorsaurus are rare large hostile mobs found in the Primordial Caves. They are mighty predators that can emit a deafening roar, scaring off most mobs around them.",
+   "src": "https://alexscaves.wiki.gg/wiki/Tremorsaurus"
+  },
+  "Trilocaris": {
+   "text": "Trilocaris are common bucketable neutral aquatic mobs found in the Primordial Caves. They are small nektobenthic arthropods that serve as a readily available aquatic food source.",
+   "src": "https://alexscaves.wiki.gg/wiki/Trilocaris"
+  },
+  "Underzealot": {
+   "text": "Underzealots are common hostile mobs found in the Forlorn Hollows. They grab nearby Gloomoths and sacrifice them during rituals, transforming them into Watchers - they will occasionally do the same to Vespers, transforming them into Forsaken.",
+   "src": "https://alexscaves.wiki.gg/wiki/Underzealot"
+  },
+  "Upcoming content": {
+   "text": "Version 2.1 is a minor update for Alex's Caves. It will expand upon the Magnetic Caves, Primordial Caves, Toxic Caves, and Forlorn Hollows.",
+   "src": "https://alexscaves.wiki.gg/wiki/Upcoming_content"
+  },
+  "Watcher": {
+   "text": "Watchers are hostile mobs that can spawn from Underzealot sacrificial rituals. They can possess players while attacking them, causing their victims' point-of-view to switch to their own.",
+   "src": "https://alexscaves.wiki.gg/wiki/Watcher"
+  },
+  "Teletor": {
+   "text": "Teletor are common flying hostile mobs found in the Magnetic Caves. They carry iron tools above their heads, which can be used to attack targets from afar.",
+   "src": "https://alexscaves.wiki.gg/wiki/Teletor"
+  },
+  "Vesper": {
+   "text": "Vespers are common flying hostile mobs found in the Forlorn Hollows. They will swoop down from the ceiling to attack targets when in range, but can be briefly knocked out of the air if blocked with a shield.",
+   "src": "https://alexscaves.wiki.gg/wiki/Vesper"
+  },
+  "Vallumraptor": {
+   "text": "Vallumraptors are common hostile mobs found in the Primordial Caves. They hunt prey in small packs, and will raid chests for food to eat.",
+   "src": "https://alexscaves.wiki.gg/wiki/Vallumraptor"
+  },
+  "Tremorzilla": {
+   "text": "A Tremorzilla is a gigantic, player-created, and highly destructive and resilient neutral mob that can be tamed and mounted. It has a devastating energy beam attack that can kill almost any living thing in seconds and blast through the terrain.",
+   "src": "https://alexscaves.wiki.gg/wiki/Tremorzilla"
+  },
+  "Whalefall": {
+   "text": "Whalefalls are whale skeletons found littered across the floor of the Abyssal Chasm.",
+   "src": "https://alexscaves.wiki.gg/wiki/Whalefall"
+  },
+  "Volcano": {
+   "text": "Volcanoes are large natural formations scattered across the Primordial Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Volcano"
+  },
+  "Toxic Ruins": {
+   "text": "Toxic Ruins are dilapidated structures scattered all across the Toxic Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Toxic_Ruins"
+  },
+  "Update Log": {
+   "text": "All of these changelogs have been taken from the official discord server.",
+   "src": "https://alexscaves.wiki.gg/wiki/Update_Log"
+  },
+  "Weapons": {
+   "text": "Alex's Caves adds a variety of weapons to the game, found across the Cave Biomes.",
+   "src": "https://alexscaves.wiki.gg/wiki/Weapons"
+  }
+ }
+}

@@ -1,0 +1,1428 @@
+{
+ "wiki": "create.fandom.com",
+ "ns": "create",
+ "harvested": "2026-10-22T23:37:53.759Z",
+ "matched": 177,
+ "unmatched": 133,
+ "docs": {
+  "create:andesite_alloy": {
+   "text": "Andesite Alloy is a material used in Andesite Casing and simple kinetic blocks, which serves as an entry-point to the mechanical components of Create. Among its many functions, it is an essential ingredient for crafting Shafts and both regular and large Cogwheels. Andesite Alloy is the most basic component construction material in Create.",
+   "src": "https://create.fandom.com/wiki/Andesite_Alloy",
+   "title": "Andesite Alloy"
+  },
+  "create:basin": {
+   "text": "The Basin is a block that holds items and fluids used in Packing, Compacting, and Mixing recipes. A basin can also function as an interaction point in fluid systems as fluids can be placed in or removed from a Basin directly by a player. In a survival game, a basin's most significant function is creating Brass, which is essential for the creation of most advanced components.",
+   "src": "https://create.fandom.com/wiki/Basin",
+   "title": "Basin"
+  },
+  "create:brass_hand": {
+   "text": "The Brass Hand is an item that is only used in crafting recipes.",
+   "src": "https://create.fandom.com/wiki/Brass_Hand",
+   "title": "Brass Hand"
+  },
+  "create:blaze_burner": {
+   "text": "A Blaze Burner is a heating component that is required for certain Mixing recipes. It can be used for heating Steam Engines, Bulk Smoking, Bulk Smelting, and as a decorative light source.",
+   "src": "https://create.fandom.com/wiki/Blaze_Burner",
+   "title": "Blaze Burner"
+  },
+  "create:brass_tunnel": {
+   "text": "A Brass Tunnel is a machine that can only be placed on Mechanical Belts. It can be decorative or it can be used to split, sort, or combine streams of items fed by belts.",
+   "src": "https://create.fandom.com/wiki/Brass_Tunnel",
+   "title": "Brass Tunnel"
+  },
+  "create:brass_ingot": {
+   "text": "The Brass Ingot is often used in any component capable of item sorting. It is also an important component in Mechanical Crafters, which are required to create the Crushing Wheel.",
+   "src": "https://create.fandom.com/wiki/Brass_Ingot",
+   "title": "Brass Ingot"
+  },
+  "create:brass_funnel": {
+   "text": "The Brass Funnel is a block that can extract or insert items into inventories, much like the Andesite Funnel.",
+   "src": "https://create.fandom.com/wiki/Brass_Funnel",
+   "title": "Brass Funnel"
+  },
+  "create:blaze_cake": {
+   "text": "Blaze Cake is an item that can be fed to a Blaze Burner in order to make it Super-Heated.",
+   "src": "https://create.fandom.com/wiki/Blaze_Cake",
+   "title": "Blaze Cake"
+  },
+  "create:cart_assembler": {
+   "text": "The Cart Assembler can attach a Contraption to that pass through it when supplied with a signal.",
+   "src": "https://create.fandom.com/wiki/Cart_Assembler",
+   "title": "Cart Assembler"
+  },
+  "create:adjustable_chain_gearshift": {
+   "text": "The Adjustable Chain Gearshift functions similarly to Encased Chain Drive, but can change the speed of the output when powered with redstone.",
+   "src": "https://create.fandom.com/wiki/Adjustable_Chain_Gearshift",
+   "title": "Adjustable Chain Gearshift"
+  },
+  "create:andesite_funnel": {
+   "text": "The Andesite Funnel is used to extract or insert materials into inventories, similar in nature to the Brass Funnel.",
+   "src": "https://create.fandom.com/wiki/Andesite_Funnel",
+   "title": "Andesite Funnel"
+  },
+  "create:builders_tea": {
+   "text": "Builder's Tea is a potion-like consumable that restores a single hunger point, 1.2 saturation, and grants the drinker the for 3 minutes.",
+   "src": "https://create.fandom.com/wiki/Builder's_Tea",
+   "title": "Builder's Tea"
+  },
+  "create:bar_of_chocolate": {
+   "text": "{| class=\"wikitable\" !Name !Namespaced ID !Form !Translation key",
+   "src": "https://create.fandom.com/wiki/Bar_of_Chocolate",
+   "title": "Bar of Chocolate"
+  },
+  "create:andesite_tunnel": {
+   "text": "The Tunnel does not stop items on the belt from being processed by an Encased Fan, but does stop the airflow from going beyond the belt.",
+   "src": "https://create.fandom.com/wiki/Andesite_Tunnel",
+   "title": "Andesite Tunnel"
+  },
+  "create:analog_lever": {
+   "text": "The Analog Lever is used to emit a variable signal via player input.",
+   "src": "https://create.fandom.com/wiki/Analog_Lever",
+   "title": "Analog Lever"
+  },
+  "create:zinc_block": {
+   "text": "This article is about the block. For the ore, see Zinc Ore. For other forms of zinc, see Zinc.",
+   "src": "https://create.fandom.com/wiki/Block_of_Zinc",
+   "title": "Block of Zinc"
+  },
+  "create:brass_block": {
+   "text": "The Block of Brass is a metal block. It can be crafted with 9 Brass Ingots. It can be used to form the base of a beacon pyramid.",
+   "src": "https://create.fandom.com/wiki/Block_of_Brass",
+   "title": "Block of Brass"
+  },
+  "create:asurine": {
+   "text": "Asurine is a decorative block in Create, named after its [https://en.wikipedia.org/wiki/Azure_(color) Azure] color.",
+   "src": "https://create.fandom.com/wiki/Asurine",
+   "title": "Asurine"
+  },
+  "create:industrial_iron_block": {
+   "text": ", an encased Chute, and a Block of Industrial Iron.|360x360px]] When on a Chute, the Chute becomes encased. The Block is not consumed. A Wrench can be to revert the Chute.",
+   "src": "https://create.fandom.com/wiki/Block_of_Industrial_Iron",
+   "title": "Block of Industrial Iron"
+  },
+  "create:experience_block": {
+   "text": "Block of Experience is a decorative storage block for Nuggets of Experience. It also can be used as a beacon base.",
+   "src": "https://create.fandom.com/wiki/Block_of_Experience",
+   "title": "Block of Experience"
+  },
+  "create:andesite_alloy_block": {
+   "text": "Block of Andesite Alloy is a decorative storage block for Andesite Alloy.",
+   "src": "https://create.fandom.com/wiki/Block_of_Andesite_Alloy",
+   "title": "Block of Andesite Alloy"
+  },
+  "create:cardboard": {
+   "text": "Cardboard is a key material for constructing bulk item storage and transport systems (Logistics Network) where it is used to create Packagers. Cardboard can also be crafted into books, item frames, item tags, armor and swords.",
+   "src": "https://create.fandom.com/wiki/Cardboard",
+   "title": "Cardboard"
+  },
+  "create:package": {
+   "text": "Cardboard Packages are part of the High Logistics system in Create. They are used to insert or extract items in bulk into or from storage blocks. They can also transport items in bulk between storage and a variety of tools in an automated factory.",
+   "src": "https://create.fandom.com/wiki/Cardboard_Package",
+   "title": "Cardboard Package"
+  },
+  "create:cardboard_sword": {
+   "text": "The Cardboard Sword only can only deal damage to arthropods, like spiders or bees, but also has powerful knockback and applies to mobs hit with it.",
+   "src": "https://create.fandom.com/wiki/Cardboard_Sword",
+   "title": "Cardboard Sword"
+  },
+  "create:chain_conveyor": {
+   "text": "The Chain Conveyor is used to transport Cardboard Packages. It has a secondary use of transferring rotational force across open spaces that aren't perfectly horizontal, vertical or on a 45° slope (where a Mechanical Belt would normally be used)",
+   "src": "https://create.fandom.com/wiki/Chain_Conveyor",
+   "title": "Chain Conveyor"
+  },
+  "create:cogwheel": {
+   "text": "The Cogwheel is a basic mechanical component in Create that relays rotation.",
+   "src": "https://create.fandom.com/wiki/Cogwheel",
+   "title": "Cogwheel"
+  },
+  "create:chromatic_compound": {
+   "text": "Chromatic Compound is a material used to create Shadow Steel and Refined Radiance. It is also used to upgrade the Handheld Blockzapper.",
+   "src": "https://create.fandom.com/wiki/Chromatic_Compound",
+   "title": "Chromatic Compound"
+  },
+  "create:chute": {
+   "text": "Chutes transport items vertically, generally downward unless an encased fan is used to blow items upward. There are two varieties: Chute and Smart Chute. Smart Chutes allow the player to control the types of items passed and their stack size.",
+   "src": "https://create.fandom.com/wiki/Chute",
+   "title": "Chute"
+  },
+  "create:chocolate": {
+   "text": "If Chocolate touches a source, the Lava turns to . If both touch each other while flowing, Scoria is made. If Lava flows over a Chocolate source, the Chocolate simply disappears.",
+   "src": "https://create.fandom.com/wiki/Chocolate",
+   "title": "Chocolate"
+  },
+  "create:clockwork_bearing": {
+   "text": "The Clockwork Bearing is an advanced version of the Mechanical Bearing for rotating up to two clock hands according to the current in-game time.",
+   "src": "https://create.fandom.com/wiki/Clockwork_Bearing",
+   "title": "Clockwork Bearing"
+  },
+  "create:creative_motor": {
+   "text": "The Creative Motor can only be obtained in or through the use of commands.",
+   "src": "https://create.fandom.com/wiki/Creative_Motor",
+   "title": "Creative Motor"
+  },
+  "create:clutch": {
+   "text": "The Clutch stops outgoing rotation when a redstone signal is applied.",
+   "src": "https://create.fandom.com/wiki/Clutch",
+   "title": "Clutch"
+  },
+  "create:cinder_flour": {
+   "text": "Cinder Flour is primarily used as an ingredient in the process of making Blaze Cakes, as well as in making various vanilla powders.",
+   "src": "https://create.fandom.com/wiki/Cinder_Flour",
+   "title": "Cinder Flour"
+  },
+  "create:chocolate_bucket": {
+   "text": "To fill an empty bucket with chocolate, use it on a chocolate source block. The block is consumed in the process. Flowing chocolate does not fill a bucket.",
+   "src": "https://create.fandom.com/wiki/Chocolate_Bucket",
+   "title": "Chocolate Bucket"
+  },
+  "create:controller_rail": {
+   "text": "Controller Rails are used to control the speed of s or Minecart Contraptions.",
+   "src": "https://create.fandom.com/wiki/Controller_Rail",
+   "title": "Controller Rail"
+  },
+  "create:chocolate_glazed_berries": {
+   "text": "To eat chocolate glazed berries, press and hold while it is selected in the hotbar. Eating them restores hunger and 9.2 – making it a mid-tier food item roughly on par with .",
+   "src": "https://create.fandom.com/wiki/Chocolate_Glazed_Berries",
+   "title": "Chocolate Glazed Berries"
+  },
+  "create:creative_crate": {
+   "text": "The Creative Crate is a creative-only block that can output the item in the filter slot (located on the top), infinitely. It will also act as a trash can when items are input to it, accepting and deleting the item. Although unobtainable in survival, it can be mined. Items can be extracted via a funnel, hopper or other item extracting components.",
+   "src": "https://create.fandom.com/wiki/Creative_Crate",
+   "title": "Creative Crate"
+  },
+  "create:creative_fluid_tank": {
+   "text": "A Creative-exclusive block that acts as an infinite source of the fluid it contains.",
+   "src": "https://create.fandom.com/wiki/Creative_Fluid_Tank",
+   "title": "Creative Fluid Tank"
+  },
+  "create:handheld_worldshaper": {
+   "text": "A Creative Worldshaper can Place, Merge and Attach Blocks. It can also place cubes, cylinders and spheres up to X32 Y32 Z32.",
+   "src": "https://create.fandom.com/wiki/Creative_Worldshaper",
+   "title": "Creative Worldshaper"
+  },
+  "create:copper_nugget": {
+   "text": "{| class=\"wikitable\" !Name !Namespaced ID !Form !Translation key",
+   "src": "https://create.fandom.com/wiki/Copper_Nugget",
+   "title": "Copper Nugget"
+  },
+  "create:crafter_slot_cover": {
+   "text": "Crafter Slot Covers are used to denote empty spaces in Mechanical Crafter setups.",
+   "src": "https://create.fandom.com/wiki/Crafter_Slot_Cover",
+   "title": "Crafter Slot Cover"
+  },
+  "create:copper_backtank": {
+   "text": "When placed, the backtank can be filled with air via Rotational Force. Simply attach a rotating Shaft to the Shaft at the top of the tank. When worn it provides armor points. Currently, it is only used with the Extendo Grip, Diving Helmet, and Potato Cannon.",
+   "src": "https://create.fandom.com/wiki/Copper_Backtank",
+   "title": "Copper Backtank"
+  },
+  "create:crafting_blueprint": {
+   "text": "Crafting Blueprint is a block much like a that can be used to save crafting recipes and auto craft them easily.",
+   "src": "https://create.fandom.com/wiki/Crafting_Blueprint",
+   "title": "Crafting Blueprint"
+  },
+  "create:creative_blaze_cake": {
+   "text": "The Creative Blaze Cake gives infinite fuel to Blaze Burners and allows the user to cycle through their states. This item is normally available in Creative Mode only.",
+   "src": "https://create.fandom.com/wiki/Creative_Blaze_Cake",
+   "title": "Creative Blaze Cake"
+  },
+  "create:crimsite": {
+   "text": "Crimsite is a decorative block added by Create, named after its [https://en.wikipedia.org/wiki/Crimson crimson] color.",
+   "src": "https://create.fandom.com/wiki/Crimsite",
+   "title": "Crimsite"
+  },
+  "create:contraption_controls": {
+   "text": "Contraption Controls are used to control Contraption Actors.",
+   "src": "https://create.fandom.com/wiki/Contraption_Controls",
+   "title": "Contraption Controls"
+  },
+  "create:clipboard": {
+   "text": "A Clipboard can be used to copy and paste a block's settings, keep track of a Schematicannon's checklist, or another written checklist.",
+   "src": "https://create.fandom.com/wiki/Clipboard",
+   "title": "Clipboard"
+  },
+  "create:encased_fan": {
+   "text": "The Encased Fan is a mechanical component that can create air streams. Encased Fans are used for moving entities, vertical transport of items and Bulk Item Processing.",
+   "src": "https://create.fandom.com/wiki/Encased_Fan",
+   "title": "Encased Fan"
+  },
+  "create:crushing_wheel": {
+   "text": "Crushing Wheels are the more advanced version of the Millstone. It applies Crushing recipes to any items inserted from the direction they are spinning away from.",
+   "src": "https://create.fandom.com/wiki/Crushing_Wheel",
+   "title": "Crushing Wheel"
+  },
+  "create:electron_tube": {
+   "text": "The Electron Tube is an item that is only used in crafting recipes.",
+   "src": "https://create.fandom.com/wiki/Electron_Tube",
+   "title": "Electron Tube"
+  },
+  "create:encased_chain_drive": {
+   "text": "The Encased Chain Drive is a block that can transfer rotation much like the Mechanical Belt.",
+   "src": "https://create.fandom.com/wiki/Encased_Chain_Drive",
+   "title": "Encased Chain Drive"
+  },
+  "create:fluid_pipe": {
+   "text": "Fluid Pipes are blocks used to transport and deal with fluids.",
+   "src": "https://create.fandom.com/wiki/Fluid_Pipe",
+   "title": "Fluid Pipe"
+  },
+  "create:fluid_tank": {
+   "text": "The Fluid Tank is a fluid storage mechanism that can store up to 8 buckets (displayed as 8,000 mB in-game) of fluid per block.",
+   "src": "https://create.fandom.com/wiki/Fluid_Tank",
+   "title": "Fluid Tank"
+  },
+  "create:gearbox": {
+   "text": "The Gearbox is a block used to transfer Rotational power in 4 directions, either horizontally or vertically.",
+   "src": "https://create.fandom.com/wiki/Gearbox",
+   "title": "Gearbox"
+  },
+  "create:extendo_grip": {
+   "text": "The Extendo Grip is a tool that can be used to increase the player's reach.",
+   "src": "https://create.fandom.com/wiki/Extendo_Grip",
+   "title": "Extendo Grip"
+  },
+  "create:flywheel": {
+   "text": "The Flywheel is a legacy block that was repurposed to a decorative block. It is 3x3 in size, but only needs 1 block to be placed, similar to the Water Wheel.",
+   "src": "https://create.fandom.com/wiki/Flywheel",
+   "title": "Flywheel"
+  },
+  "create:goggles": {
+   "text": "Engineer's Goggles are a wearable item that allow the user to see more details about placed machines.",
+   "src": "https://create.fandom.com/wiki/Engineer's_Goggles",
+   "title": "Engineer's Goggles"
+  },
+  "create:depot": {
+   "text": "The Depot is used as an interaction point for machines such as the Mechanical Arm.",
+   "src": "https://create.fandom.com/wiki/Depot",
+   "title": "Depot"
+  },
+  "create:deployer": {
+   "text": "The Deployer simulates player actions on blocks or entities exactly 2 blocks away from it. It can simulate a left or a right click, holding or without holding an item.",
+   "src": "https://create.fandom.com/wiki/Deployer",
+   "title": "Deployer"
+  },
+  "create:gearshift": {
+   "text": "The Gearshift reverses outgoing Rotational Force when a signal is applied.",
+   "src": "https://create.fandom.com/wiki/Gearshift",
+   "title": "Gearshift"
+  },
+  "create:cuckoo_clock": {
+   "text": "The Cuckoo Clock is powered by connecting a Shaft, or other rotational component, to the back of the clock.",
+   "src": "https://create.fandom.com/wiki/Cuckoo_Clock",
+   "title": "Cuckoo Clock"
+  },
+  "create:gantry_carriage": {
+   "text": "The Gantry Carriage is a block that can move Contraptions along Gantry Shafts.",
+   "src": "https://create.fandom.com/wiki/Gantry_Carriage",
+   "title": "Gantry Carriage"
+  },
+  "create:hand_crank": {
+   "text": "The Hand Crank generates a small amount of Rotational Force through player interaction.",
+   "src": "https://create.fandom.com/wiki/Hand_Crank",
+   "title": "Hand Crank"
+  },
+  "create:dough": {
+   "text": "Dough is used to make , , and . Using dough to make bread or cake is considerably cheaper than the vanilla recipe.",
+   "src": "https://create.fandom.com/wiki/Dough",
+   "title": "Dough"
+  },
+  "create:honey_bucket": {
+   "text": "This article is about the Bucket. For the fluid, see Honey. For other forms of honey, see Honey (disambiguation).",
+   "src": "https://create.fandom.com/wiki/Honey_Bucket",
+   "title": "Honey Bucket"
+  },
+  "create:fluid_valve": {
+   "text": "Fluid valves can be used to close or open the flow in a pipe. Fluid Valves can be switched between open and closed by providing Rotational Force to the side. This is often done with a Valve Handle or Gearshift. A set of directional arrows on the side of the valve will also rotate to indicate whether the valve is open or closed.",
+   "src": "https://create.fandom.com/wiki/Fluid_Valve",
+   "title": "Fluid Valve"
+  },
+  "create:framed_glass": {
+   "text": "The texture of Framed Glass will connect to adjacent Framed Glass.",
+   "src": "https://create.fandom.com/wiki/Framed_Glass",
+   "title": "Framed Glass"
+  },
+  "create:haunted_bell": {
+   "text": "The Haunted Bell is a block that highlights mob spawnable spots when held or rang.",
+   "src": "https://create.fandom.com/wiki/Haunted_Bell",
+   "title": "Haunted Bell"
+  },
+  "create:honey": {
+   "text": "A Mechanical Pump connected to a or will pump honey into connected pipes when the nest or hive is filled with honey.",
+   "src": "https://create.fandom.com/wiki/Honey",
+   "title": "Honey"
+  },
+  "create:display_link": {
+   "text": "A Display Link is used to get information from a block and send it to blocks that can display it.",
+   "src": "https://create.fandom.com/wiki/Display_Link",
+   "title": "Display Link"
+  },
+  "create:display_board": {
+   "text": "Similarly to Nixie Tubes, Display Boards can be aligned to share text. Display Boards can be expanded up to 32 blocks above, below, and to either side, allowing a maximum Display Board size of 32x32. More Display Boards can be placed beyond the limit, however they will not function as part of the main board.",
+   "src": "https://create.fandom.com/wiki/Display_Board",
+   "title": "Display Board"
+  },
+  "create:framed_glass_trapdoor": {
+   "text": "{| class=\"wikitable\" !Name !Namespaced ID !Form !Translation key",
+   "src": "https://create.fandom.com/wiki/Framed_Glass_Trapdoor",
+   "title": "Framed Glass Trapdoor"
+  },
+  "create:elevator_pulley": {
+   "text": "An Elevator Pulley is a Contraption useful for creating multi-floor elevators easily.",
+   "src": "https://create.fandom.com/wiki/Elevator_Pulley",
+   "title": "Elevator Pulley"
+  },
+  "create:desk_bell": {
+   "text": "A Desk Bell plays a sound and emits a redstone signal when right-clicked.",
+   "src": "https://create.fandom.com/wiki/Desk_Bell",
+   "title": "Desk Bell"
+  },
+  "create:factory_gauge": {
+   "text": "The Factory Gauge is used to send requests through a Logistics Network to maintain an amount of an item in the linked storage.",
+   "src": "https://create.fandom.com/wiki/Factory_Gauge",
+   "title": "Factory Gauge"
+  },
+  "create:mechanical_press": {
+   "text": "The Mechanical Press is a mechanical component that applies Pressing, Packing, and Compacting recipes to items below it. It is an important early-game item, as it is used to press Ingots into Sheets, which are important ingredients for higher-level components.",
+   "src": "https://create.fandom.com/wiki/Mechanical_Press",
+   "title": "Mechanical Press"
+  },
+  "create:millstone": {
+   "text": "The Millstone is a more basic equivalent of the Crushing Wheels, and is most likely the first of the two that the Player will construct. It is capable of applying milling recipes to any valid items inserted from above.",
+   "src": "https://create.fandom.com/wiki/Millstone",
+   "title": "Millstone"
+  },
+  "create:mechanical_mixer": {
+   "text": "The Mechanical Mixer is a mechanical component that applies Mixing recipes and shapeless Crafting recipes to items in Basins.",
+   "src": "https://create.fandom.com/wiki/Mechanical_Mixer",
+   "title": "Mechanical Mixer"
+  },
+  "create:nixie_tube": {
+   "text": "The Nixie Tube must be mined with a wooden pickaxe or higher, or else it drops nothing.",
+   "src": "https://create.fandom.com/wiki/Nixie_Tube",
+   "title": "Nixie Tube"
+  },
+  "create:mechanical_saw": {
+   "text": "Mechanical Saws are powered through rotational force, and when placed down facing to the side they will automatically chop down wood blocks in front of them. When chopping down a tree or giant mushroom, it will automatically destroy the entire tree by only destroying the bottom-most block. Blocks tagged as TREE_ATTACHMENTS will also be broken if found on the tree.",
+   "src": "https://create.fandom.com/wiki/Mechanical_Saw",
+   "title": "Mechanical Saw"
+  },
+  "create:mechanical_plough": {
+   "text": "The Mechanical Plough is a Movement Actor used to break non-collidable blocks and fling entities.",
+   "src": "https://create.fandom.com/wiki/Mechanical_Plough",
+   "title": "Mechanical Plough"
+  },
+  "create:belt_connector": {
+   "text": "A Mechanical Belt is a mechanical component that conveys rotation and moves items and entities.",
+   "src": "https://create.fandom.com/wiki/Mechanical_Belt",
+   "title": "Mechanical Belt"
+  },
+  "create:mechanical_crafter": {
+   "text": "Mechanical Crafters are machines that can automatically craft items.",
+   "src": "https://create.fandom.com/wiki/Mechanical_Crafter",
+   "title": "Mechanical Crafter"
+  },
+  "create:mechanical_piston": {
+   "text": "The Mechanical Piston is a piston that can push Contraptions when powered with Rotational Power.",
+   "src": "https://create.fandom.com/wiki/Mechanical_Piston",
+   "title": "Mechanical Piston"
+  },
+  "create:mechanical_arm": {
+   "text": "The Mechanical Arm can take or deposit items from various blocks within a 5 block radius of where it is placed. The order it does this in is determined by its behavior as well as the order the blocks were selected in during placement. A placed Mechanical Arm's selected blocks can be viewed by hovering over it with a Wrench. The Mechanical Arm is capable of transferring up to a stack of items at once.",
+   "src": "https://create.fandom.com/wiki/Mechanical_Arm",
+   "title": "Mechanical Arm"
+  },
+  "create:mechanical_harvester": {
+   "text": "The Mechanical Harvester is a component used on Contraptions to harvest crops.",
+   "src": "https://create.fandom.com/wiki/Mechanical_Harvester",
+   "title": "Mechanical Harvester"
+  },
+  "create:mechanical_bearing": {
+   "text": "The Mechanical Bearing is used to create and rotate Contraptions.",
+   "src": "https://create.fandom.com/wiki/Mechanical_Bearing",
+   "title": "Mechanical Bearing"
+  },
+  "create:minecart_coupling": {
+   "text": "Minecart Coupling is used to make minecart or minecart contraption trains.",
+   "src": "https://create.fandom.com/wiki/Minecart_Coupling",
+   "title": "Minecart Coupling"
+  },
+  "create:linear_chassis": {
+   "text": "The Linear Chassis is one method of connecting up Contraptions.",
+   "src": "https://create.fandom.com/wiki/Linear_Chassis",
+   "title": "Linear Chassis"
+  },
+  "create:mechanical_drill": {
+   "text": "Shift-right-clicking on a Mechanical Drill with a Wrench will destroy the Mechanical Drill and place it in your inventory.",
+   "src": "https://create.fandom.com/wiki/Mechanical_Drill",
+   "title": "Mechanical Drill"
+  },
+  "create:limestone": {
+   "text": "Limestone is found between Y -30 and 70 in layers with other blocks. It can generate alongside Crimsite, , and , or alongside and .",
+   "src": "https://create.fandom.com/wiki/Limestone",
+   "title": "Limestone"
+  },
+  "create:hose_pulley": {
+   "text": "The Hose Pulley lets down a hose that can drain bodies of liquids.",
+   "src": "https://create.fandom.com/wiki/Hose_Pulley",
+   "title": "Hose Pulley"
+  },
+  "create:item_drain": {
+   "text": "The Item Drain drains fluid from items such as buckets and bottles inserted onto it.",
+   "src": "https://create.fandom.com/wiki/Item_Drain",
+   "title": "Item Drain"
+  },
+  "create:iron_sheet": {
+   "text": "{| class=\"wikitable\" !Name !Namespaced ID !Form !Translation key",
+   "src": "https://create.fandom.com/wiki/Iron_Sheet",
+   "title": "Iron Sheet"
+  },
+  "create:nozzle": {
+   "text": "A Nozzle distributes the effect of an Encased Fan in all directions.",
+   "src": "https://create.fandom.com/wiki/Nozzle",
+   "title": "Nozzle"
+  },
+  "create:honeyed_apple": {
+   "text": "A Honeyed Apple is a item. Eating one restores hunger and 12.8 – as much as a or .",
+   "src": "https://create.fandom.com/wiki/Honeyed_Apple",
+   "title": "Honeyed Apple"
+  },
+  "create:mechanical_pump": {
+   "text": "Mechanical Pumps (MPs) have a maximum range of 16 blocks (configurable) on either side, though this does not seem to apply to pipes themselves. You may however have up to 30 pipes between pumps. Mechanical Pumps will move fluid in only one direction at a time.",
+   "src": "https://create.fandom.com/wiki/Mechanical_Pump",
+   "title": "Mechanical Pump"
+  },
+  "create:linked_controller": {
+   "text": "The Linked Controller is a remote control for Redstone Links.",
+   "src": "https://create.fandom.com/wiki/Linked_Controller",
+   "title": "Linked Controller"
+  },
+  "create:item_vault": {
+   "text": "By default, each Item Vault block has a storage space of 20 stacks, and this can be changed in the Config. Items cannot be added or removed by the player, but by components such as Chutes, Funnels, and Item Hatches.",
+   "src": "https://create.fandom.com/wiki/Item_Vault",
+   "title": "Item Vault"
+  },
+  "create:experience_nugget": {
+   "text": "Nuggets of Experience have a 75% chance of outputting from ore crushing recipes.",
+   "src": "https://create.fandom.com/wiki/Nugget_of_Experience",
+   "title": "Nugget of Experience"
+  },
+  "create:metal_girder": {
+   "text": "Shafts can be placed inside placed Girders, working similarly to Shafts encased with Casing.",
+   "src": "https://create.fandom.com/wiki/Metal_Girder",
+   "title": "Metal Girder"
+  },
+  "create:large_water_wheel": {
+   "text": "The Large Water Wheel is a bigger version of the Water Wheel.",
+   "src": "https://create.fandom.com/wiki/Large_Water_Wheel",
+   "title": "Large Water Wheel"
+  },
+  "create:mechanical_roller": {
+   "text": "The Mechanical Roller can be used on Contraptions to clear and pave a path.",
+   "src": "https://create.fandom.com/wiki/Mechanical_Roller",
+   "title": "Mechanical Roller"
+  },
+  "create:item_hatch": {
+   "text": "The Item Hatch is used to deposit a player’s inventory into storage.",
+   "src": "https://create.fandom.com/wiki/Item_Hatch",
+   "title": "Item Hatch"
+  },
+  "create:rotation_speed_controller": {
+   "text": "The Rotation Speed Controller is a mechanical component that allows the player to precisely control rotational speed.",
+   "src": "https://create.fandom.com/wiki/Rotation_Speed_Controller",
+   "title": "Rotation Speed Controller"
+  },
+  "create:radial_chassis": {
+   "text": "Unlike Linear Chassis, the Radial Chassis connects to a radius of blocks around it rather than a straight line of blocks. This can be unwieldy if there are blocks nearby one would rather not connect to the Contraption.",
+   "src": "https://create.fandom.com/wiki/Radial_Chassis",
+   "title": "Radial Chassis"
+  },
+  "create:rose_quartz": {
+   "text": "Rose Quartz is a material used to create Polished Rose Quartz and the Rose Quartz Block.",
+   "src": "https://create.fandom.com/wiki/Rose_Quartz",
+   "title": "Rose Quartz"
+  },
+  "create:polished_rose_quartz": {
+   "text": "Polished Rose Quartz is an important crafting material used in the production of Electron Tubes. It can also be used to craft Rose Quartz Lamps, or its tiled decorative blocks.",
+   "src": "https://create.fandom.com/wiki/Polished_Rose_Quartz",
+   "title": "Polished Rose Quartz"
+  },
+  "create:powdered_obsidian": {
+   "text": "Powdered Obsidian is a material used to create Sturdy Sheet.",
+   "src": "https://create.fandom.com/wiki/Powdered_Obsidian",
+   "title": "Powdered Obsidian"
+  },
+  "create:sand_paper": {
+   "text": "Sand Paper is a tool used solely to create Polished Rose Quartz.",
+   "src": "https://create.fandom.com/wiki/Sand_Paper",
+   "title": "Sand Paper"
+  },
+  "create:refined_radiance": {
+   "text": "Refined Radiance is a crafting material derived from the Chromatic Compound and was previously used to craft the Wand Of Symmetry, Deforester, and the Radiant Casing.",
+   "src": "https://create.fandom.com/wiki/Refined_Radiance",
+   "title": "Refined Radiance"
+  },
+  "create:piston_extension_pole": {
+   "text": "The Piston Extension Pole is an extension for the Mechanical Piston",
+   "src": "https://create.fandom.com/wiki/Piston_Extension_Pole",
+   "title": "Piston Extension Pole"
+  },
+  "create:scoria": {
+   "text": "Scoria is found between Y -30 and 70 in layers alongside , , and . It also spawns in the between Y 40 and 90 alongside , , and .",
+   "src": "https://create.fandom.com/wiki/Scoria",
+   "title": "Scoria"
+  },
+  "create:portable_storage_interface": {
+   "text": "The Portable Storage Interface is a block that allows Item Transporters to directly interact with Contraption inventories.",
+   "src": "https://create.fandom.com/wiki/Portable_Storage_Interface",
+   "title": "Portable Storage Interface"
+  },
+  "create:rope_pulley": {
+   "text": "The Rope Pulley creates Contraptions much like a Mechanical Piston, but in only one direction and without the need for Piston Extension Poles.",
+   "src": "https://create.fandom.com/wiki/Rope_Pulley",
+   "title": "Rope Pulley"
+  },
+  "create:schematicannon": {
+   "text": "The Schematicannon is a special type of machine used to build structures with the use of Schematics. It is a useful contraption which is primarily used within Mode to deploy structures block-by-block, as the function of direct placement for Schematics are limited exclusively to Mode.",
+   "src": "https://create.fandom.com/wiki/Schematicannon",
+   "title": "Schematicannon"
+  },
+  "create:redstone_contact": {
+   "text": "Redstone Contacts allow Contraptions to convey redstone signals or activate Redstone Circuits.",
+   "src": "https://create.fandom.com/wiki/Redstone_Contact",
+   "title": "Redstone Contact"
+  },
+  "create:portable_fluid_interface": {
+   "text": "The Portable Fluid Interface is the fluid version of the Portable Storage Interface. It is used to insert or extract from the fluid inventory of a Contraption.",
+   "src": "https://create.fandom.com/wiki/Portable_Fluid_Interface",
+   "title": "Portable Fluid Interface"
+  },
+  "create:powered_latch": {
+   "text": "The Powered Latch emits a redstone signal that can be toggled on or off by other signals.",
+   "src": "https://create.fandom.com/wiki/Powered_Latch",
+   "title": "Powered Latch"
+  },
+  "create:redstone_link": {
+   "text": "The Redstone Link is used to send and receive redstone signals to other links.",
+   "src": "https://create.fandom.com/wiki/Redstone_Link",
+   "title": "Redstone Link"
+  },
+  "create:schematic_and_quill": {
+   "text": "A Schematic And Quill is used to save blueprints of a structure.",
+   "src": "https://create.fandom.com/wiki/Schematic_And_Quill",
+   "title": "Schematic And Quill"
+  },
+  "create:pulse_repeater": {
+   "text": "When powered, emits one short redstone pulse after a specified delay. The delay can be set in its Value Settings Screen accessed by holding right-click. It can be set to delay from 2 ticks to 60 minutes. The delay can also be copied and pasted onto other repeaters or Pulse Extenders by using a Clipboard.",
+   "src": "https://create.fandom.com/wiki/Pulse_Repeater",
+   "title": "Pulse Repeater"
+  },
+  "create:powered_toggle_latch": {
+   "text": "The Powered Latch emits a redstone signal that can be toggled on or off.",
+   "src": "https://create.fandom.com/wiki/Powered_Toggle_Latch",
+   "title": "Powered Toggle Latch"
+  },
+  "create:refined_radiance_casing": {
+   "text": "The Radiant Casing is a Casing block crafted with Refined Radiance and is a purely decorative block.",
+   "src": "https://create.fandom.com/wiki/Radiant_Casing",
+   "title": "Radiant Casing"
+  },
+  "create:scorchia": {
+   "text": "Scorchia is a decorative variant of Scoria, named after its ashy, scorched coloration.",
+   "src": "https://create.fandom.com/wiki/Scorchia",
+   "title": "Scorchia"
+  },
+  "create:potato_cannon": {
+   "text": "The Potato Cannon is a projectile weapon that uses various food items as ammunition.",
+   "src": "https://create.fandom.com/wiki/Potato_Cannon",
+   "title": "Potato Cannon"
+  },
+  "create:peculiar_bell": {
+   "text": "The Peculiar Bell is a decorative block that is also used to create the Haunted Bell.",
+   "src": "https://create.fandom.com/wiki/Peculiar_Bell",
+   "title": "Peculiar Bell"
+  },
+  "create:precision_mechanism": {
+   "text": "Let Deployers apply the items to a Golden Sheet in a Depot or a Mechanical Belt in the following order, and repeat five times.",
+   "src": "https://create.fandom.com/wiki/Precision_Mechanism",
+   "title": "Precision Mechanism"
+  },
+  "create:ochrum": {
+   "text": "Ochrum is a decorative block added by Create, named after its [https://en.wikipedia.org/wiki/Ochre ochre] color.",
+   "src": "https://create.fandom.com/wiki/Ochrum",
+   "title": "Ochrum"
+  },
+  "create:pulse_extender": {
+   "text": "When powered, extends a redstone pulse for a specified time, much like a . The time can be set in its Value Settings Screen accessed by holding right-click. It can be set to extend a signal for 2 ticks up to 60 minutes. The settings can also be copied and pasted onto other extenders or Pulse Repeaters by using a Clipboard.",
+   "src": "https://create.fandom.com/wiki/Pulse_Extender",
+   "title": "Pulse Extender"
+  },
+  "create:placard": {
+   "text": "The Placard is a decorative block used to display items. It can be considered Create's counterpart to the vanilla Item Frame.",
+   "src": "https://create.fandom.com/wiki/Placard",
+   "title": "Placard"
+  },
+  "create:rose_quartz_lamp": {
+   "text": "The lamp can be activated with a redstone pulse. They will continue to emit a redstone signal afterwards. If multiple Rose Quartz Lamps are adjacent, activating one lamp will turn off other lamps up to 16 blocks away. They will emit a signal depending on how far away the comparator is to the active lamp.",
+   "src": "https://create.fandom.com/wiki/Rose_Quartz_Lamp",
+   "title": "Rose Quartz Lamp"
+  },
+  "create:packager": {
+   "text": "The Packager is used to extract items from an attached storage block and place them in Cardboard Packages allowing the items to be transported, stored, or used as a set. Packagers can also extract items from cardboard packages and insert them into the attached storage.",
+   "src": "https://create.fandom.com/wiki/Packager",
+   "title": "Packager"
+  },
+  "create:package_frogport": {
+   "text": "Package Frogports are used to move Cardboard Packages from and to Chain Conveyors.",
+   "src": "https://create.fandom.com/wiki/Package_Frogport",
+   "title": "Package Frogport"
+  },
+  "create:pulse_timer": {
+   "text": "The Pulse Timer is used to pulse repeatedly at a set interval.",
+   "src": "https://create.fandom.com/wiki/Pulse_Timer",
+   "title": "Pulse Timer"
+  },
+  "create:redstone_requester": {
+   "text": "The Redstone Requester is used to request Cardboard Packages from linked Packagers.",
+   "src": "https://create.fandom.com/wiki/Redstone_Requester",
+   "title": "Redstone Requester"
+  },
+  "create:repackager": {
+   "text": "The Re-Packager is used to merge multiple Cardboard Packages that contain one recipe for a Mechanical Crafter.",
+   "src": "https://create.fandom.com/wiki/Re-Packager",
+   "title": "Re-Packager"
+  },
+  "create:shaft": {
+   "text": "The shaft is a basic mechanical component in Create. A shaft can be used to connect two mechanical components such that the rotation of one rotates the other, and shafts serve as the only blocks upon which Mechanical Belts can be placed.",
+   "src": "https://create.fandom.com/wiki/Shaft",
+   "title": "Shaft"
+  },
+  "create:tiled_glass": {
+   "text": "Tiled Glass can be used in recipes added by Create which normally use . It cannot be used in vanilla recipes.",
+   "src": "https://create.fandom.com/wiki/Tiled_Glass",
+   "title": "Tiled Glass"
+  },
+  "create:stressometer": {
+   "text": "The Stressometer is used to measure the amount of Stress on a Shaft. This stress is the \"load\" of the system.",
+   "src": "https://create.fandom.com/wiki/Stressometer",
+   "title": "Stressometer"
+  },
+  "create:shadow_steel": {
+   "text": "Shadow Steel is a crafting material derived from the Chromatic Compound and was previously used to craft the Shadow Steel tool set and the Shadow Casing.",
+   "src": "https://create.fandom.com/wiki/Shadow_Steel",
+   "title": "Shadow Steel"
+  },
+  "create:super_glue": {
+   "text": "Super Glue is an item the player applies to structures in Contraptions, to make them stick together.",
+   "src": "https://create.fandom.com/wiki/Super_Glue",
+   "title": "Super Glue"
+  },
+  "create:content_observer": {
+   "text": "The Smart Observer is a machine that emits a redstone signal dependent on the block or items inside a container in front of it.",
+   "src": "https://create.fandom.com/wiki/Smart_Observer",
+   "title": "Smart Observer"
+  },
+  "create:shadow_steel_casing": {
+   "text": "The Shadow Casing is a Casing block crafted with Shadow Steel and is a purely decorative block.",
+   "src": "https://create.fandom.com/wiki/Shadow_Casing",
+   "title": "Shadow Casing"
+  },
+  "create:turntable": {
+   "text": "When the bottom of the Turntable is powered with Rotational Force, the Turntable rotates and any on top of the Turntable, including players.",
+   "src": "https://create.fandom.com/wiki/Turntable",
+   "title": "Turntable"
+  },
+  "create:spout": {
+   "text": "The Spout is a block used for filling liquid containers such as bottles or buckets, or crafting with liquids.",
+   "src": "https://create.fandom.com/wiki/Spout",
+   "title": "Spout"
+  },
+  "create:sequenced_gearshift": {
+   "text": "The Sequenced Gearshift allows finer control over Rotational power, allowing multiple changes to the rotation over a period of time.",
+   "src": "https://create.fandom.com/wiki/Sequenced_Gearshift",
+   "title": "Sequenced Gearshift"
+  },
+  "create:sticker": {
+   "text": "The Sticker is used to stick and unstick things to moving Contraptions.",
+   "src": "https://create.fandom.com/wiki/Sticker",
+   "title": "Sticker"
+  },
+  "create:stockpile_switch": {
+   "text": "The Threshold Switch measures how full an inventory is and can emit a signal at adjustable thresholds.",
+   "src": "https://create.fandom.com/wiki/Threshold_Switch",
+   "title": "Threshold Switch"
+  },
+  "create:tree_fertilizer": {
+   "text": "Unlike , Tree Fertilizer only needs one application to grow a tree, no matter where the tree is. Tree Fertilizer can only be used on s.",
+   "src": "https://create.fandom.com/wiki/Tree_Fertilizer",
+   "title": "Tree Fertilizer"
+  },
+  "create:sweet_roll": {
+   "text": "To eat a sweet roll, press and hold while it is selected in the hotbar. Eating one restores hunger and 8.6 – roughly between the nutritional value of and .",
+   "src": "https://create.fandom.com/wiki/Sweet_Roll",
+   "title": "Sweet Roll"
+  },
+  "create:smart_fluid_pipe": {
+   "text": "Smart Fluid Pipes can be used to allow only a certain liquid to pass through them. This can be set by placing a bucket or bottle of the liquid in the Filter slot on the pipe.",
+   "src": "https://create.fandom.com/wiki/Smart_Fluid_Pipe",
+   "title": "Smart Fluid Pipe"
+  },
+  "create:speedometer": {
+   "text": "When connected to a component, the speed of the rotation is shown by a hand on the face of the Speedometer. The higher the hand is, the faster the rotation. By using Engineer's Goggles, this speed is quantified with a number.",
+   "src": "https://create.fandom.com/wiki/Speedometer",
+   "title": "Speedometer"
+  },
+  "create:track_signal": {
+   "text": "Train Signals are used to control the flow of Trains not driven by players.",
+   "src": "https://create.fandom.com/wiki/Train_Signal",
+   "title": "Train Signal"
+  },
+  "create:steam_whistle": {
+   "text": "The Steam Whistle can be placed on Fluid Tanks. The Tank must have a heat source beneath it for the Whistle to function. It can be activated by . Right click with a Whistle in hand to extend it. The Whistle can be extended up to 12 times, playing up to 13 notes per octave. a Wrench to change the octave; 3 octaves are available. Engineer's Goggles can be used to view the current note.",
+   "src": "https://create.fandom.com/wiki/Steam_Whistle",
+   "title": "Steam Whistle"
+  },
+  "create:schedule": {
+   "text": "Train Schedules are used to instruct non-player Train conductors.",
+   "src": "https://create.fandom.com/wiki/Train_Schedule",
+   "title": "Train Schedule"
+  },
+  "create:track": {
+   "text": "Right-click the ground to place a Train Track facing away from you. Train tracks can be placed in eight different directions corresponding to the closest of the four cardinal direction and 45° increments in between. Tracks may also be placed on the side of blocks that have no blocks immediately above them. These tracks will have a 45° vertical incline. Break tracks using any pickaxe or by right clicking with a wrench while sneaking. Breaking with any other item will cause a track to disappear.",
+   "src": "https://create.fandom.com/wiki/Train_Track",
+   "title": "Train Track"
+  },
+  "create:track_station": {
+   "text": "Train Stations are used to create, disassemble, and guide Trains.",
+   "src": "https://create.fandom.com/wiki/Train_Station",
+   "title": "Train Station"
+  },
+  "create:steam_engine": {
+   "text": "The Steam Engine is a block that provides Rotational Force. It outputs the highest Stress Unit (SU) capacity of all the survival-mode power-generating blocks. It converts the pressure caused by heating in a Fluid Tank into Rotational Force, allowing for large scale item production and multiple contraptions to be powered.",
+   "src": "https://create.fandom.com/wiki/Steam_Engine",
+   "title": "Steam Engine"
+  },
+  "create:controls": {
+   "text": "To assemble a Train, the train must have at least one set of controls that face forward relative to the Train Station the train is created at. If a non-player conductor is desired, a Blaze Burner or Seat must be placed directly behind the controls.",
+   "src": "https://create.fandom.com/wiki/Train_Controls",
+   "title": "Train Controls"
+  },
+  "create:track_observer": {
+   "text": "Right-click a Train Track and then place the Observer within 15 blocks.",
+   "src": "https://create.fandom.com/wiki/Train_Observer",
+   "title": "Train Observer"
+  },
+  "create:sturdy_sheet": {
+   "text": "{| class=\"wikitable\" !Name !Namespaced ID !Form !Translation key",
+   "src": "https://create.fandom.com/wiki/Sturdy_Sheet",
+   "title": "Sturdy Sheet"
+  },
+  "create:train_trapdoor": {
+   "text": "{| class=\"wikitable\" !Name !Namespaced ID !Form !Translation key",
+   "src": "https://create.fandom.com/wiki/Train_Trapdoor",
+   "title": "Train Trapdoor"
+  },
+  "create:stock_ticker": {
+   "text": "A Stock Ticker is used to request items from a Logistics Network.",
+   "src": "https://create.fandom.com/wiki/Stock_Ticker",
+   "title": "Stock Ticker"
+  },
+  "create:stock_link": {
+   "text": "A Stock Link exposes a storage system to a Logistics Network, transmitting an inventory list to each of the other devices on the same network. The stock link also receives requests to extract inventory and passes the list on to an attached Packager to execute.",
+   "src": "https://create.fandom.com/wiki/Stock_Link",
+   "title": "Stock Link"
+  },
+  "create:transmitter": {
+   "text": "The Transmitter is a crafting component used to craft link blocks.",
+   "src": "https://create.fandom.com/wiki/Transmitter",
+   "title": "Transmitter"
+  },
+  "create:water_wheel": {
+   "text": "The Water Wheel is a source of rotational power. It generates Rotational Force when water flows over it.",
+   "src": "https://create.fandom.com/wiki/Water_Wheel",
+   "title": "Water Wheel"
+  },
+  "create:wrench": {
+   "text": "The Wrench is a tool used to rotate, dismantle and configure components",
+   "src": "https://create.fandom.com/wiki/Wrench",
+   "title": "Wrench"
+  },
+  "create:white_sail": {
+   "text": "When attached to a rotating structure on a Windmill Bearing, the Windmill Sail will generate power with the same effectiveness as . At least 8 Windmill Sails are needed to initiate the rotation.",
+   "src": "https://create.fandom.com/wiki/Windmill_Sail",
+   "title": "Windmill Sail"
+  },
+  "create:windmill_bearing": {
+   "text": "The Windmill Bearing is a block used to create Windmills for power generation.",
+   "src": "https://create.fandom.com/wiki/Windmill_Bearing",
+   "title": "Windmill Bearing"
+  },
+  "create:wand_of_symmetry": {
+   "text": "The Wand Of Symmetry is a helpful building tool that mirrors blocks placed.",
+   "src": "https://create.fandom.com/wiki/Wand_Of_Symmetry",
+   "title": "Wand Of Symmetry"
+  },
+  "create:weighted_ejector": {
+   "text": "The Weighted Ejector flings items and entities to a targeted block up to 32 blocks away.",
+   "src": "https://create.fandom.com/wiki/Weighted_Ejector",
+   "title": "Weighted Ejector"
+  },
+  "create:zinc_nugget": {
+   "text": "Zinc nuggets are small pieces of Zinc that can be obtained through crafting a single zinc ingot. One zinc nugget is equal to a ninth of a zinc ingot. They are used to craft zinc ingots, Andesite Alloy and Package Filter.",
+   "src": "https://create.fandom.com/wiki/Zinc_Nugget",
+   "title": "Zinc Nugget"
+  },
+  "create:wheat_flour": {
+   "text": "Wheat Flour is a middle item in the crafting process of Dough.",
+   "src": "https://create.fandom.com/wiki/Wheat_Flour",
+   "title": "Wheat Flour"
+  },
+  "create:zinc_ingot": {
+   "text": "{| class=\"wikitable\" !Name !Namespaced ID !Form !Translation key",
+   "src": "https://create.fandom.com/wiki/Zinc_Ingot",
+   "title": "Zinc Ingot"
+  },
+  "create:zinc_ore": {
+   "text": "Zinc Ore is a block found underground. It can be processed into Zinc Ingots.",
+   "src": "https://create.fandom.com/wiki/Zinc_Ore",
+   "title": "Zinc Ore"
+  },
+  "create:veridium": {
+   "text": "Veridium is a decorative block added by Create, named after its green coloration.",
+   "src": "https://create.fandom.com/wiki/Veridium",
+   "title": "Veridium"
+  }
+ },
+ "orphans": {
+  "Blocks and Features": {
+   "text": "This page provides explanations of some of the main blocks and underlying concepts of Create.",
+   "src": "https://create.fandom.com/wiki/Blocks_and_Features"
+  },
+  "Brass": {
+   "text": "Brass is an alloy obtained by mixing and Zinc together with a Mechanical Mixer, Basin, and Blaze Burner. It is used primarily for crafting item sorting machines. Blocks of Brass can also be used as a beacon base.",
+   "src": "https://create.fandom.com/wiki/Brass"
+  },
+  "Casing": {
+   "text": "Casings are blocks used throughout many crafting recipes in Create, as well as for decoration and aesthetic purposes.",
+   "src": "https://create.fandom.com/wiki/Casing"
+  },
+  "Bracket": {
+   "text": "Brackets are decorative items used on Shafts, Cogwheels, and Fluid Pipes.",
+   "src": "https://create.fandom.com/wiki/Bracket"
+  },
+  "Bearing (disambiguation)": {
+   "text": "Bearings are blocks which have a rotating component which can be attached to blocks. There are three Bearings in the mod:",
+   "src": "https://create.fandom.com/wiki/Bearing_(disambiguation)"
+  },
+  "Advancements": {
+   "text": "{| class=\"article-table sortable mw-collapsible mw-collapsed\"",
+   "src": "https://create.fandom.com/wiki/Advancements"
+  },
+  "Adjustable Crate": {
+   "text": "Much like a , an Adjustable Crate placed next to another crate will form a larger crate equivalent in storage to two individual crates.",
+   "src": "https://create.fandom.com/wiki/Adjustable_Crate"
+  },
+  "Adjustable Repeater": {
+   "text": "For similar and updated functionality, see Pulse Repeater or Pulse Extender.",
+   "src": "https://create.fandom.com/wiki/Adjustable_Repeater"
+  },
+  "Andesite": {
+   "text": "Andesite is a naturally generating stone block that is necessary for crafting Andesite Alloys and can be used to craft various decorative blocks.",
+   "src": "https://create.fandom.com/wiki/Andesite"
+  },
+  "Block IDs": {
+   "text": "{| class=\"wikitable mw-collapsible\" style=\"margin: auto; width: 85%;\"",
+   "src": "https://create.fandom.com/wiki/Block_IDs"
+  },
+  "Block of Copper": {
+   "text": "This article is about the block. For the ore, see Copper Ore. For other forms of copper, see Copper.",
+   "src": "https://create.fandom.com/wiki/Block_of_Copper"
+  },
+  "Belt Observer": {
+   "text": "For similar functionality, see Brass Tunnel or Smart Observer.",
+   "src": "https://create.fandom.com/wiki/Belt_Observer"
+  },
+  "Blazing Tools": {
+   "text": "Much like the Gilded Quartz and Shadow Steel tool sets, this line of tools does not contain a hoe.",
+   "src": "https://create.fandom.com/wiki/Blazing_Tools"
+  },
+  "Calcite": {
+   "text": "Create adds new generation for . It spawns in layers between Y -30 and 70 alongside either Asurine, , and , or alongside Limestone and .",
+   "src": "https://create.fandom.com/wiki/Calcite"
+  },
+  "Build Order": {
+   "text": "Many of the new items introduced by the Create mod are constructed in part with other Create items. For example, a Shaft requires you to have first made Andesite Alloy. The table below categorizes the Create items into levels corresponding to the order in which items must be built. Building an item at level four will require one or more items from level three and potentially items from lower build levels as well as native Minecraft items. The asterisked items in the first column are used as components for other Create items at higher build order levels.",
+   "src": "https://create.fandom.com/wiki/Build_Order"
+  },
+  "Automating items": {
+   "text": "Some items can't be crafted normally in a mechanical crafter or a crafting table, and sometimes they need to be pressed or washed. Automation of items is a basic in game concept that needs to be mastered to move on. In create some items needs to be assembled on an Assembly Line. Lets say you want to make a Precision Mechanism. First you have to use a deployer to apply a cog on a gold sheet then apply a large cog then an iron nugget. Repeat 5 times and you will make the item.",
+   "src": "https://create.fandom.com/wiki/Automating_items"
+  },
+  "Cardboard Armor": {
+   "text": "Each Cardboard armor piece provides armor point, granting armor points in total.",
+   "src": "https://create.fandom.com/wiki/Cardboard_Armor"
+  },
+  "Blaze Brass": {
+   "text": "Blaze Brass was a crafting ingredient used to upgrade the Handheld Blockzapper.",
+   "src": "https://create.fandom.com/wiki/Blaze_Brass"
+  },
+  "Belt Support": {
+   "text": "The Belt Support is a purely decorative block used for hiding the bottom of Mechanical Belts. This block's functionality would later be replaced by Casings.",
+   "src": "https://create.fandom.com/wiki/Belt_Support"
+  },
+  "Brass Workshop": {
+   "text": "The brass workshop, unsurprisingly, allows you to create Brass Ingots which opens up quite a lot of capabilities such as automated planting, item sorting, advanced redstone circuits, ore processors, and elevators. It requires access to the Nether to obtain a .",
+   "src": "https://create.fandom.com/wiki/Brass_Workshop"
+  },
+  "Block of Coal": {
+   "text": "A block of coal, also known as a coal block, is a storage block, equivalent to nine coal, that can also be used as fuel.",
+   "src": "https://create.fandom.com/wiki/Block_of_Coal"
+  },
+  "Charcoal": {
+   "text": "Charcoal is an item obtained by smelting logs or wood. It is used as fuel, or for crafting torches and campfires. Unlike coal, charcoal cannot be traded with villagers or crafted into a block of coal. Coal and charcoal also cannot stack together. It can be used as a substitute for coal, as both charcoal and coal have an equivalent duration when smelted.",
+   "src": "https://create.fandom.com/wiki/Charcoal"
+  },
+  "Advanced Ore Processing": {
+   "text": "Learn to design and build your own large-scale ore processing facility. This tutorial covers the concepts and peculiarities of each step of the process. Along the way, you'll learn how to sort, buffer, and regulate the item flow between steps so your processing line stays efficient, unclogged, and fully automated.",
+   "src": "https://create.fandom.com/wiki/Advanced_Ore_Processing"
+  },
+  "Create Mod Wiki": {
+   "text": "__NOTOC__ __NOEDITSECTION__Welcome to the Minecraft Create Mod Wiki! articles since June 12th, 2019",
+   "src": "https://create.fandom.com/wiki/Create_Mod_Wiki"
+  },
+  "Create Mod Wiki:Policy": {
+   "text": "The Create Mod Wiki is an online source of information about the popular mod and related subjects. The wiki can be edited by anyone and is governed by the consensus of its users, derived by argument-supported, civil collaboration between them. The Create Mod Wiki has a set of rules all editors should normally follow.",
+   "src": "https://create.fandom.com/wiki/Create_Mod_Wiki%3APolicy"
+  },
+  "Copper": {
+   "text": "Copper is a material used to create fluid components and Brass. For generation conditions, see .",
+   "src": "https://create.fandom.com/wiki/Copper"
+  },
+  "Crafting Components": {
+   "text": "The Brass Hand, the Electron Tube, the Precision Mechanism, the Propeller, and the Whisk are all items which function solely as ingredients in crafting recipes for advanced mechanical components.",
+   "src": "https://create.fandom.com/wiki/Crafting_Components"
+  },
+  "Cobblestone": {
+   "text": "Crushing any normal ore between Crushing Wheels can give you 1 cobblestone with a 12% chance:",
+   "src": "https://create.fandom.com/wiki/Cobblestone"
+  },
+  "Crushed Brass": {
+   "text": "Crushed Brass is a crushed version of the material, Brass, and was primarily obtainable via heated mixing of Crushed Copper Ore and Crushed Zinc Ore.",
+   "src": "https://create.fandom.com/wiki/Crushed_Brass"
+  },
+  "Crushed Ores": {
+   "text": "If making a Precision Mechanism fails, there is a small chance to receive Crushed Gold Ore, thus making it renewable.",
+   "src": "https://create.fandom.com/wiki/Crushed_Ores"
+  },
+  "Contraption": {
+   "text": "Contraptions are that appear as customizable moving structures.",
+   "src": "https://create.fandom.com/wiki/Contraption"
+  },
+  "Copper Ore": {
+   "text": "Copper Ore is a block found underground. It can be processed into copper ingots which are used in a variety of recipes within the mod.",
+   "src": "https://create.fandom.com/wiki/Copper_Ore"
+  },
+  "Copper Ingot": {
+   "text": "This article is about the ingot between Create versions 0.2-0.4. For the ore, see Copper Ore.",
+   "src": "https://create.fandom.com/wiki/Copper_Ingot"
+  },
+  "Cocoa Jungle Log": {
+   "text": "The Cocoa Jungle Log was used before Contraptions could harvest without breaking them.",
+   "src": "https://create.fandom.com/wiki/Cocoa_Jungle_Log"
+  },
+  "Configuration": {
+   "text": "Create mod has multiple config options that can be used to adjust the Create experience. These settings can be changed in-game at any time through the pause or title screen menu.",
+   "src": "https://create.fandom.com/wiki/Configuration"
+  },
+  "Create Addon Mods": {
+   "text": "File:New Create Logo Background.png|thumb|Want to make your own Create addon? Here is a handy logo! File:Logo Wrench.png|thumb|Always wanted the Create mod Wrench on the logo, but can't find one? Here is the removed background wrench on the Create mod logo.",
+   "src": "https://create.fandom.com/wiki/Create_Addon_Mods"
+  },
+  "Circuits": {
+   "text": "Create adds several components that can be used in redstone circuits. These include the Redstone Contact, Redstone Link, Linked Controller, Pulse Repeater, Pulse Extender, Pulse Timer, Powered Latch, and Powered Toggle Latch. These components can make redstone circuits simpler and smaller as well as giving finer control over timing.",
+   "src": "https://create.fandom.com/wiki/Circuits"
+  },
+  "Copycat Block": {
+   "text": "Copycat Blocks can take on the appearance and properties of other blocks. They are generally used for decorative purposes, taking on the texture of another block while retaining the shape and size of narrow panels or steps.",
+   "src": "https://create.fandom.com/wiki/Copycat_Block"
+  },
+  "Copper Legacy Pack": {
+   "text": "Before Create , Create's copper looked a lot different, and there was a texture pack to make vanilla copper match it. Unfortunately, the release of Create , the textures were changed to match vanilla copper. If you preferred the look of Create's copper, there is a texture pack that changes it back that you can find right [https://modrinth.com/resourcepack/legacy-copper-post-production here]. You can also pair the pack with [https://modrinth.com/resourcepack/create-legacy-copper-continued this] to make more vanilla copper blocks and items match.",
+   "src": "https://create.fandom.com/wiki/Copper_Legacy_Pack"
+  },
+  "Create Steam ‘n‘ Rails": {
+   "text": "Work In Progress, If it doesn‘t fit here, I‘ll remove the Page.",
+   "src": "https://create.fandom.com/wiki/Create_Steam_%E2%80%98n%E2%80%98_Rails"
+  },
+  "Conductor": {
+   "text": "Conductors are special passive mobs in Create:Steam 'n' rails. They can be constructed by placing any conductor hat on an andesite casing; they can also be made using deployers.",
+   "src": "https://create.fandom.com/wiki/Conductor"
+  },
+  "Conductor Caps": {
+   "text": "Conductor Caps are a craftable item added with Create: Steam 'n rails.",
+   "src": "https://create.fandom.com/wiki/Conductor_Caps"
+  },
+  "Chorus Chrome": {
+   "text": "Chorus Chrome was a crafting ingredient that was used to craft the Creative Motor (previously known as the Motor) and was also used to upgrade the Handheld Blockzapper.",
+   "src": "https://create.fandom.com/wiki/Chorus_Chrome"
+  },
+  "Create Mod Wiki:Staff": {
+   "text": "{| class=\"wikitable staff-wikitable\" style=\"border: solid black 2px; text-align: center; font-weight: bold; width:100%\" !class=\"staff-wikitable-header\" style=\"font-size:20px; color: #ffbb00; background: #222200; padding: 10px\" colspan=\"4\"|https://static.wikia.nocookie.net/central/images/thumb/1/12/Badge-Admin.svg/40px-Badge-Admin.svg Administrators",
+   "src": "https://create.fandom.com/wiki/Create_Mod_Wiki%3AStaff"
+  },
+  "Coal": {
+   "text": "Coal is a mineral item mainly obtained from coal ore. It is primarily used for crafting torches and campfires, as well as fuel.",
+   "src": "https://create.fandom.com/wiki/Coal"
+  },
+  "Create Mod Wiki:Guides": {
+   "text": "This page contains various guides to assist new users on the Minecraft Create Mod Wiki In the articles below, users can find this wiki's rules, guidelines, formatting tips, in-game tutorials, and support.",
+   "src": "https://create.fandom.com/wiki/Create_Mod_Wiki%3AGuides"
+  },
+  "Coal (disambiguation)": {
+   "text": "Blaze Burners (can be powered by right clicking with coal): Blaze Burner",
+   "src": "https://create.fandom.com/wiki/Coal_(disambiguation)"
+  },
+  "Create Cosmonautics": {
+   "text": "The mod introduces various rocket engines designed for different flight requirements, resource-rich asteroids, orbital mechanics for celestial bodies, a dedicated space dimension, and the Moon. It also features the \"Sputnik\" probe, which enables both visual and functional programming (of course in Lua) for precise rocket control, as well as persistent loading for physics contraptions from Sable.",
+   "src": "https://create.fandom.com/wiki/Create_Cosmonautics"
+  },
+  "Getting started": {
+   "text": "The first of these materials that the player will obtain will likely be Iron, followed by Andesite Alloy. Copper and Zinc will come later, but Brass will not be made until access to the Nether is granted.",
+   "src": "https://create.fandom.com/wiki/Getting_started"
+  },
+  "Gold": {
+   "text": "Gold is a material generated as an ore in the world. Among its many functions, it is used as a crafting ingredient for Wrenches and Engineer's Goggles and is used in . Six forms of Gold exist: Blocks of Gold, Crushed Gold Ore, Gold Ingots, Gold Nuggets, Gold Ore, and Gold Sheets.",
+   "src": "https://create.fandom.com/wiki/Gold"
+  },
+  "Furnace Engine": {
+   "text": "The Furnace Engine was a Stress-generating block used to create Rotational Force when connected to any currently going through the process of smelting. As of of the Create Mod, this block has been retired, and can no longer be obtained in any way.",
+   "src": "https://create.fandom.com/wiki/Furnace_Engine"
+  },
+  "Funnel (disambiguation)": {
+   "text": "Funnels are blocks used to transfer items between inventories and belts or depots. There are two types of funnel and one removed type:",
+   "src": "https://create.fandom.com/wiki/Funnel_(disambiguation)"
+  },
+  "Handheld Blockzapper": {
+   "text": "The Handheld Blockzapper is a gun that can place blocks or replace Blocks from far away.",
+   "src": "https://create.fandom.com/wiki/Handheld_Blockzapper"
+  },
+  "Deforester": {
+   "text": "The Deforester was a Refined Radiance axe with a special ability.",
+   "src": "https://create.fandom.com/wiki/Deforester"
+  },
+  "Filter": {
+   "text": "Most machines have a built in filter used to determine how they treat inputs. List Filters are used to adjust the treatment of multiple items at once.",
+   "src": "https://create.fandom.com/wiki/Filter"
+  },
+  "Gabbro": {
+   "text": "Gabbro can also be used as a replacement to for some recipes.",
+   "src": "https://create.fandom.com/wiki/Gabbro"
+  },
+  "Diorite": {
+   "text": "Diorite is a decorative vanilla block. In Create, it can be used to make Andesite, a common crafting material in the mod.",
+   "src": "https://create.fandom.com/wiki/Diorite"
+  },
+  "Granite": {
+   "text": "{| class=\"wikitable\" !Name !Namespaced ID !Form !Translation key",
+   "src": "https://create.fandom.com/wiki/Granite"
+  },
+  "Diving Gear": {
+   "text": "Diving Gear is used with Copper Backtank for underwater mobility.",
+   "src": "https://create.fandom.com/wiki/Diving_Gear"
+  },
+  "Funnel (removed)": {
+   "text": "The Funnel is a removed block that was able to pickup and insert items into adjacent inventories. The Funnel's functionality would later be revised in version 0.3 and would be given to the Andesite Funnel and the Brass Funnel.",
+   "src": "https://create.fandom.com/wiki/Funnel_(removed)"
+  },
+  "Gilded Quartz Tools": {
+   "text": "This tool grants you a greater reach for breaking blocks or placing blocks from the off-hand.",
+   "src": "https://create.fandom.com/wiki/Gilded_Quartz_Tools"
+  },
+  "Extractor": {
+   "text": "Takes Items from an attached inventory and drops them onto the ground. Will not drop Items unless the space is clear. Can be assigned an item-stack as a filter. When Powered by Pauses the Extractor. Active Belt pulling Extractors can pull items from belts reinforced with Brass Casing. When the extractor is blocked, the belt will stall.",
+   "src": "https://create.fandom.com/wiki/Extractor"
+  },
+  "Deepslate": {
+   "text": "Deepslate is a stone type that generates below y=0 instead of and takes significantly longer to mine.",
+   "src": "https://create.fandom.com/wiki/Deepslate"
+  },
+  "Default Mod Compatibility": {
+   "text": "Work in progress page - the aim is to list the main mods from the link, and explain what the interactions are, possibly by linking to an as of yet non-existing section of a page of the block with special interactions. Please add on to this page. For now there are these links:",
+   "src": "https://create.fandom.com/wiki/Default_Mod_Compatibility"
+  },
+  "Dripstone": {
+   "text": "Please click the link [https://minecraft.fandom.com/wiki/Dripstone_Block here.]",
+   "src": "https://create.fandom.com/wiki/Dripstone"
+  },
+  "Iron Ingot": {
+   "text": "Iron Ingot is an ingot that generates in the . Among its many vanilla functions, it has a few interactions added by Create.",
+   "src": "https://create.fandom.com/wiki/Iron_Ingot"
+  },
+  "Kinetic Stress": {
+   "text": "Stress is a term used to describe the kinetic form of power used in Create, measured in Stress Units (SU).",
+   "src": "https://create.fandom.com/wiki/Kinetic_Stress"
+  },
+  "Integrated Circuit": {
+   "text": "The Integrated Circuit was an item used to craft the Rotation Speed Controller. It was removed in the Create 0.3.2 update.",
+   "src": "https://create.fandom.com/wiki/Integrated_Circuit"
+  },
+  "Lapis Sheet": {
+   "text": "Lapis Sheet was a material used to make the Integrated Circuit.",
+   "src": "https://create.fandom.com/wiki/Lapis_Sheet"
+  },
+  "Lava": {
+   "text": "Lava is a light emitting vanilla that can be found deep within the overworld and primarily in .",
+   "src": "https://create.fandom.com/wiki/Lava"
+  },
+  "Mysterious Conversion": {
+   "text": "Mysterious Conversion is a system of converting items into other items in unique ways.",
+   "src": "https://create.fandom.com/wiki/Mysterious_Conversion"
+  },
+  "Item IDs": {
+   "text": "{| class=\"wikitable mw-collapsible\" style=\"margin: auto; width: 85%;\"",
+   "src": "https://create.fandom.com/wiki/Item_IDs"
+  },
+  "Metal Ladder": {
+   "text": "Metal Ladders are decorative blocks. Like s, they are climbable on Contraptions.",
+   "src": "https://create.fandom.com/wiki/Metal_Ladder"
+  },
+  "Manual Item Application": {
+   "text": "Manual Item Application is a recipe type where an item is on a placed block.",
+   "src": "https://create.fandom.com/wiki/Manual_Item_Application"
+  },
+  "Making a train": {
+   "text": "This will tell you how to make a simple train and a VERY complex system that will take you between bases.",
+   "src": "https://create.fandom.com/wiki/Making_a_train"
+  },
+  "Netherite Diving Gear": {
+   "text": "When used with a full Netherite Backtank and , the wearer is immune to and .",
+   "src": "https://create.fandom.com/wiki/Netherite_Diving_Gear"
+  },
+  "Metal Scaffolding": {
+   "text": "Metal Scaffolding is placed much like , however, it is not affected by gravity and can extend out indefinitely. It also will not collapse if a supporting block is broken. Unsupported Metal Scaffolding is solid on every side; the player cannot pass through it.",
+   "src": "https://create.fandom.com/wiki/Metal_Scaffolding"
+  },
+  "Metal Bars": {
+   "text": "Metal Bars can be placed the same as . They can also be picked up by a Wrench on them.",
+   "src": "https://create.fandom.com/wiki/Metal_Bars"
+  },
+  "Melon and Pumpkin Farm": {
+   "text": "Although automated and farms can be made in vanilla Minecraft, Create makes them much easier to build. And Create can automatically craft back into whole melons for trading.",
+   "src": "https://create.fandom.com/wiki/Melon_and_Pumpkin_Farm"
+  },
+  "Logistics Network": {
+   "text": "A Logistics Network is a player-designed and -built system for managing bulk item inventories. In its most basic form, it allows a player to easily store bulk inventories of mixed items and later retrieve specific items from a selection list. Special tools like Packagers, Stock Links, Stock Tickers, Factory Gauges and Redstone Requesters allow highly customizable automation. Logistics networks can be used for creating virtual unified storage systems, operating merchandise shops, or running large complex factory processes.",
+   "src": "https://create.fandom.com/wiki/Logistics_Network"
+  },
+  "Missing Create Mod Versions": {
+   "text": "This page lists versions of Create that are currently assumed to be missing; i.e. there is definitive proof that these versions exist, however copies of said version are not available on any mod hosting sites, like [https://modrinth.com/mod/create Modrinth] or [https://www.curseforge.com/minecraft/mc-mods/create Curseforge]. Many of these entries are partially documented in the [https://wiki.createmod.net/users/changelogs Create Changelogs].",
+   "src": "https://create.fandom.com/wiki/Missing_Create_Mod_Versions"
+  },
+  "Khandayat": {
+   "text": "The term Khandayat refers to a ruler who governs and administers a vast territory/region, and a great warrior who rules a Khanda (region). Every Kshatriya and warrior community in Odisha is referred to as Khandayat, as mentioned in various Odia texts, inscriptions, genealogies, and ancient records. Khandayat is synonymous with Kshatriyas of Odisha. Khandayat is the local name for Kshatriyas in Odisha. Most of the zamindaris (landlord estates) in Odisha are in the possession of Khandayats. Khandayat",
+   "src": "https://create.fandom.com/wiki/Khandayat"
+  },
+  "List of automatable items": {
+   "text": "The Create mod has many items but not all are automatable. There is a difference between automatable and renewable resources. Renewable means that something can be made infinitely but might require player input. Automatable means that it can be made fully automatically without player action.",
+   "src": "https://create.fandom.com/wiki/List_of_automatable_items"
+  },
+  "LegoCraft Network": {
+   "text": "LegoCraft Network is a Pakistani Minecraft multiplayer network focused on survival gameplay, competitive game modes, community events and custom gameplay features. The network operates the Minecraft server at play.legocraft.net and is primarily aimed at players in Pakistan and surrounding regions. According to the network's official website, LegoCraft has operated since its first season and is currently in Season 19. The network's public Discord description states that it has been hosting Minecraft since 2015.",
+   "src": "https://create.fandom.com/wiki/LegoCraft_Network"
+  },
+  "Rotational Force": {
+   "text": "Rotational Force is what powers the various machines and the contraptions in the Create mod.",
+   "src": "https://create.fandom.com/wiki/Rotational_Force"
+  },
+  "Redstone Additions": {
+   "text": "Create adds several components that can be used in Redstone Circuits. These include the Redstone Contact, Redstone Link, Linked Controller, Pulse Repeater, Pulse Extender, Pulse Timer, Powered Latch, and Powered Toggle Latch. These components can make redstone circuits simpler and smaller as well as giving finer control over timing.",
+   "src": "https://create.fandom.com/wiki/Redstone_Additions"
+  },
+  "Seat": {
+   "text": "Seats are used to allow multiple entities to ride a Contraption.",
+   "src": "https://create.fandom.com/wiki/Seat"
+  },
+  "Pondering": {
+   "text": "Pondering is an in-game guide system that allows the player to quickly get information about Create blocks.",
+   "src": "https://create.fandom.com/wiki/Pondering"
+  },
+  "Sequenced Assembly": {
+   "text": "Sequenced Assembly is a mechanic that simulates a factory line for precision crafting. from and .]]",
+   "src": "https://create.fandom.com/wiki/Sequenced_Assembly"
+  },
+  "Randomizer": {
+   "text": "Randomizer is mechanism that dispenses different levels of signal randomly. Even though various variants of redstone randomizers existed, most of them had defects with compactness and regulation. Using Create modification, these defects can be fixed and modified as player wishes. So this page will help you construct your randomizer using simple components.",
+   "src": "https://create.fandom.com/wiki/Randomizer"
+  },
+  "Rose Quartz Block": {
+   "text": "The Rose Quartz Block, Rose Quartz Tiles, and Small Rose Quartz Tiles are decorative blocks made from Rose Quartz and Polished Rose Quartz.",
+   "src": "https://create.fandom.com/wiki/Rose_Quartz_Block"
+  },
+  "Placement Assist": {
+   "text": "Placement Assist is functionality added to certain blocks allowing for easier placement. Generally, it allows blocks to be placed on the sides of blocks without needing to target their sides. Hold the key to temporarily disable it. With placement assist, an icon will replace the crosshair, typically an arrow.",
+   "src": "https://create.fandom.com/wiki/Placement_Assist"
+  },
+  "Quality Tool Handle": {
+   "text": "The Quality Tool Handle is a stick-like item made of Zinc and is only used to craft the Gilded Quartz tool set and the Shadow Steel tool set.",
+   "src": "https://create.fandom.com/wiki/Quality_Tool_Handle"
+  },
+  "Recipe": {
+   "text": "Create has support for custom recipe types in data/(namespace)/recipes folder of a data pack.",
+   "src": "https://create.fandom.com/wiki/Recipe"
+  },
+  "Postbox": {
+   "text": "The Postbox can come in 16 different colors. It has a red flag much like the Train Station that is automatically raised when the Postbox has anything in its inventory.",
+   "src": "https://create.fandom.com/wiki/Postbox"
+  },
+  "Planks": {
+   "text": "Planks are blocks used to craft wooden blocks, such as Water Wheels, a Crafting Table, Windows, Beds, Cogwheels, Crushing Wheels, etc.",
+   "src": "https://create.fandom.com/wiki/Planks"
+  },
+  "Precision Workshop": {
+   "text": "The precision workshop gives you the tools to build just about anything in the Create mod. In addition to the bulk mixing provided by the Brass Workshop, the precision workshop enables you to build Precision Mechanisms, Crushing Wheels, and Train Tracks. Precision mechanisms allow you to build Rotation Speed Controllers, Train Controls, and other advanced devices. Crushing wheels open up a world of automated ore processing for Iron Farms, Nuggets of Experience and more. This design does not include bulk washing or vanilla automation such as bulk smelting.",
+   "src": "https://create.fandom.com/wiki/Precision_Workshop"
+  },
+  "Overview": {
+   "text": "Create is a Minecraft modification that reimagines automation through the use of Rotational Force, supplementing traditional redstone systems with a visually intuitive mechanical power network. Players generate and transmit kinetic energy to drive machines that move items, process materials, and construct dynamic contraptions. The mod also introduces fluid handling, enabling the transport and transformation of liquids using animated pumps, pipes, and spouts. A standout feature is its realistic train system, which allows players to build steam-powered locomotives, schedule routes, and…",
+   "src": "https://create.fandom.com/wiki/Overview"
+  },
+  "Quick Start Skill List": {
+   "text": "{|style=\"width:100%; border:1px solid #ccc; border-collapse:collapse;\" !style=\"border: 1px solid #ccc; padding: 8px; vertical-align: center; text-align: center; background-color: beige;\"|Task !style=\"border: 1px solid #ccc; padding: 8px; vertical-align: center; text-align: center; background-color: beige;\"|Purpose !style=\"border: 1px solid #ccc; padding: 8px; vertical-align: center; text-align: center; background-color: beige;\"|Steps",
+   "src": "https://create.fandom.com/wiki/Quick_Start_Skill_List"
+  },
+  "Reading Comprehension22": {
+   "text": "The Jackal and the Hyena is a traditional animal story about two animals who meet while looking for food. The story shows how cleverness can help solve problems, but it also teaches the importance of honesty and fairness.",
+   "src": "https://create.fandom.com/wiki/Reading_Comprehension22"
+  },
+  "Sheets": {
+   "text": "{| class=\"wikitable\" !Name !Namespaced ID !Form !Translation key",
+   "src": "https://create.fandom.com/wiki/Sheets"
+  },
+  "Tag": {
+   "text": "Tags is a vanilla minecraft feature expanded by Create. In , tags allow players to group , , , or together using JSON files.",
+   "src": "https://create.fandom.com/wiki/Tag"
+  },
+  "Toolbox": {
+   "text": "The Toolbox can hold up to 256 items per slot and has 8 slots. The inventory is retained when picked up. Players can press the toolbox keybind (Alt by default) to access the toolbox inventory from up to 10 blocks away. Retrieving an item in this manner causes a gold border with a red indicator on the top and bottom to appear. This red indicator becomes dark red when the toolbox is out of range.",
+   "src": "https://create.fandom.com/wiki/Toolbox"
+  },
+  "Transposer": {
+   "text": "Takes items from an attached Inventory and immediately puts them into the target inventory. Can be assigned an item-stack as a filter. When Powered by Pauses the Transposer. Active Belt pulling Transposers can pull items from belts reinforced with Brass Casing. When the Transposer is backed up, the belt will stall.",
+   "src": "https://create.fandom.com/wiki/Transposer"
+  },
+  "Shadow Steel Tools": {
+   "text": "The Garden Mattock functions as an axe, shovel, and hoe. Each tool can instantly mine their respective blocks at the cost of not dropping said block. The entities killed by the tools will drop extra experience instead of items.",
+   "src": "https://create.fandom.com/wiki/Shadow_Steel_Tools"
+  },
+  "Tuff": {
+   "text": "Alongside vanilla generation, generates in layers between Y -30 and 70 in the following patterns:",
+   "src": "https://create.fandom.com/wiki/Tuff"
+  },
+  "Train": {
+   "text": "Trains are Contraptions that travel on Train Tracks and are comprised of carriages carried on either one or two bogeys. Create Trains can be controlled by players riding on the train, and can pass through . Unlike vanilla minecarts, Trains can also go through unloaded chunks even when unmanned, and be controlled by Conductors.",
+   "src": "https://create.fandom.com/wiki/Train"
+  },
+  "Sliding Door": {
+   "text": "Sliding Doors will automatically close when a Contraption starts to move. On Trains, the doors will only open when arriving at a Train Station, and close when the Train departs. Behavior can be adjusted in Train Stations. When used with Elevator Pulleys, behavior can be adjusted in Elevator Contacts. Sliding doors can also be prevented from opening by onboard Contraption Controls filtered for them.",
+   "src": "https://create.fandom.com/wiki/Sliding_Door"
+  },
+  "Total Stress Unit Production": {
+   "text": "The Total Stress Unit Production is a formula which states that all stress-producing objects can have one total number of Su produced. It's a very easy formula:",
+   "src": "https://create.fandom.com/wiki/Total_Stress_Unit_Production"
+  },
+  "Train System": {
+   "text": "Through the use of Train Tracks and Train Signals, a functioning railroad network can be made using the Create Mod.",
+   "src": "https://create.fandom.com/wiki/Train_System"
+  },
+  "Tips & Tricks": {
+   "text": "Create is a huge and vast mod with endless possibilities, which is why some people overlook many features that might have saved them from doing extra work. Here are some tips and tricks to improve your experience with the create mod!",
+   "src": "https://create.fandom.com/wiki/Tips_%26_Tricks"
+  },
+  "Table Cloth": {
+   "text": "Right-click a Stock Keeper with the Table Cloth to open the UI. From the interface, add items to be sold on the Table Cloth, then click “Configure” to confirm. One Table Cloth can sell up to 9 different types of items at once.",
+   "src": "https://create.fandom.com/wiki/Table_Cloth"
+  },
+  "Starter Workshop": {
+   "text": "This starter workshop can be built with items sourced only from the . Even so, it packs a lot of power. With it you can build automated harvesting (though not replanting) of crop and tree farms and perform automated mining. You can also give your character important new capabilities and take advantage of a range of decorative elements.",
+   "src": "https://create.fandom.com/wiki/Starter_Workshop"
+  },
+  "Shelf": {
+   "text": "Not to be confused with the or the similar Table Cloth. The Shelf or the Shop Shelf as it is referred to as in the files, is an unimplemented block with ties to an unused \"economy\" system present within the files of the earliest versions of Create.",
+   "src": "https://create.fandom.com/wiki/Shelf"
+  },
+  "Stone": {
+   "text": "Stone is a block found underground in the Overworld or on the surface of mountains.",
+   "src": "https://create.fandom.com/wiki/Stone"
+  },
+  "Trang chủ": {
+   "text": "Chào mừng bạn đến với Minecraft Create Mod Wiki! articles since June 12th, 2019",
+   "src": "https://create.fandom.com/wiki/Trang_ch%E1%BB%A7"
+  },
+  "Track Switch": {
+   "text": "On the normal way, you could press \"A\" or \"S\" to switch on tracks directions, but the next item could help you to make more realistic your experience at switching tracks on the Create Mod.",
+   "src": "https://create.fandom.com/wiki/Track_Switch"
+  },
+  "TCBoG": {
+   "text": "TCBoG is a Gacha life drama, romance y show that was made by the creator, BronzyGonzy. TCBoG stands for, The Competition Battle of Gacha's. It was inspired by, BFDI, II, and The Music Freaks. The show had its reboot confirmed on, January 9th 2026 the contestants are: Belle,",
+   "src": "https://create.fandom.com/wiki/TCBoG"
+  },
+  "Windmill": {
+   "text": "scene for the Windmill Bearing.]] A windmill generates Rotational Force. It is composed of a Windmill Bearing (or Mechanical Bearing in pre 0.3 versions) and at least 8 sails or sail-like blocks. Due to the easy access to its components, the windmill along with the Water Wheel are the earliest automatic power generators in the game.",
+   "src": "https://create.fandom.com/wiki/Windmill"
+  },
+  "Zinc": {
+   "text": "Zinc is a material found in the . It spawns naturally as zinc ore and can be smelted into ingots or crushed into Crushed Zinc Ore.",
+   "src": "https://create.fandom.com/wiki/Zinc"
+  },
+  "Window": {
+   "text": "Windows are decorative blocks with wooden or iron frames with various patterns based on the material used for the frame. When stacked, the textures connect across blocks to form larger window patterns. Window blocks may be combined to craft Window Panes.",
+   "src": "https://create.fandom.com/wiki/Window"
+  },
+  "Tutorials": {
+   "text": "The list below contains tutorials describing various factors of Create.",
+   "src": "https://create.fandom.com/wiki/Tutorials"
+  },
+  "Tutorials/Tree Automation": {
+   "text": "Tree farms can provide many resources&mdash; of course, but also, (which can be composted for ). Oak trees can produce , and mangrove trees produce both , and .",
+   "src": "https://create.fandom.com/wiki/Tutorials%2FTree_Automation"
+  },
+  "Tutorials/Gold Ingot Automation": {
+   "text": "This tutorial will help you make an automatic setup for generating . It is very slow, but can be made faster with more components or higher Rotational Force.",
+   "src": "https://create.fandom.com/wiki/Tutorials%2FGold_Ingot_Automation"
+  },
+  "Valve Handle": {
+   "text": "The Valve Handle functions much like the Hand Crank, though the amount and direction it rotates with one can be adjusted in its Value Settings Screen. This may be useful for Contraptions that require a certain orientation to function. The direction of rotation can also be inverted from the Valve's settings by the Valve Handle instead of it.",
+   "src": "https://create.fandom.com/wiki/Valve_Handle"
+  },
+  "Tutorials/Iron Ingot Automation": {
+   "text": "This Tutorial shows how to create an iron farm. Iron can be farmed by grinding Cobblestone and washing the [https://minecraft.fandom.com/wiki/Gravel Gravel].",
+   "src": "https://create.fandom.com/wiki/Tutorials%2FIron_Ingot_Automation"
+  },
+  "Tutorials/Crop Automation": {
+   "text": "The Create mod can be used to automatically harvest and replant crops.",
+   "src": "https://create.fandom.com/wiki/Tutorials%2FCrop_Automation"
+  },
+  "Tutorials/Crafting Precision Mechanisms": {
+   "text": "The Precision Mechanism is an important component needed to construct useful items such as the Extendo Grip, Mechanical Arm, and Rotation Speed Controller. This tutorial will explain how to perform the sequenced assembly of a precision mechanism and illustrate the process with both a minimalist and a fully automated approach.",
+   "src": "https://create.fandom.com/wiki/Tutorials%2FCrafting_Precision_Mechanisms"
+  },
+  "Value Settings Screen": {
+   "text": ".]] The Value Settings Screen is used to adjust the settings of various blocks.",
+   "src": "https://create.fandom.com/wiki/Value_Settings_Screen"
+  },
+  "Tutorials/Trains": {
+   "text": "To start off, you're going to need some Train Track. Place this down in a line.",
+   "src": "https://create.fandom.com/wiki/Tutorials%2FTrains"
+  },
+  "Tutorials/Brass Production": {
+   "text": "Brass Ingots cannot be fully automated. The Copper Ingots required can only be obtained via vanilla Drowned farms, while the Zinc Ingots must be mined (manually or with a drill machine).",
+   "src": "https://create.fandom.com/wiki/Tutorials%2FBrass_Production"
+  },
+  "Tutorials/Andesite/Andesite Alloy Production": {
+   "text": "This method of producing Andesite Alloy is made for technical players. In the long run, this farm does not produce any by-products, but at the beginning it might have trouble getting all the resources because the wash recipes use probabilities, so it might not be a bad idea to back up the system at the beginning.",
+   "src": "https://create.fandom.com/wiki/Tutorials%2FAndesite%2FAndesite_Alloy_Production"
+  },
+  "Tutorials/Mining Contraptions": {
+   "text": "Mining contraptions automate the collection of ores in Minecraft. There are a great many ways to design a mining contraption. However, they all have a few things in common: a structure incorporating drills and chassis, a means of movement, a means of storing and offloading ore, and the risk of encountering hazards. This tutorial will first cover some of the foundational concepts behind these common issues, then provide some designs for mining contraptions.",
+   "src": "https://create.fandom.com/wiki/Tutorials%2FMining_Contraptions"
+  }
+ }
+}

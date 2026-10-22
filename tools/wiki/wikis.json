@@ -1,0 +1,33 @@
+{
+ "verified": "2026-10-22T23:44:12.167Z",
+ "wikis": {
+  "create": {
+   "host": "create.fandom.com",
+   "pages": 500,
+   "items": 775,
+   "name": "Create",
+   "verified": 81
+  },
+  "alexscaves": {
+   "host": "alexscaves.wiki.gg",
+   "pages": 500,
+   "items": 573,
+   "name": "Alex's Caves",
+   "verified": 256
+  },
+  "dungeonsdelight": {
+   "host": "dungeonsdelight.wiki.gg",
+   "pages": 34,
+   "items": 205,
+   "name": "Dungeon's Delight",
+   "verified": 10
+  },
+  "farmersdelight": {
+   "host": "farmersdelight.fandom.com",
+   "pages": 151,
+   "items": 187,
+   "name": "Farmer's Delight",
+   "verified": 105
+  }
+ }
+}
