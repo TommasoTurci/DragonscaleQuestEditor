@@ -384,7 +384,15 @@ details .inner{padding:0 11px 11px;display:flex;flex-direction:column;gap:11px}
   background:var(--panel-2);border:1px solid var(--line);border-radius:8px;padding:10px 12px;
   display:flex;flex-direction:column;gap:5px;
 }
+.modcard .mhead{display:flex;align-items:baseline;gap:8px}
 .modcard b{font-size:.9rem}
+.modcard .mid{font-size:.7rem;font-family:var(--mono);color:var(--muted)}
+.modcard .faint{color:var(--muted)}
+.modcard .small{font-size:.74rem}
+.modcard .mlinks{display:flex;flex-wrap:wrap;gap:10px}
+.modcard details{border:none;background:none}
+.modcard details>summary{padding:4px 0;font-size:.72rem;color:var(--muted)}
+.modcard details .inner{padding:8px 0 0}
 .modcard p{margin:0;font-size:.82rem;color:var(--muted);line-height:1.5}
 .modcard a{font-size:.74rem;color:var(--accent);font-family:var(--mono);text-decoration:none;word-break:break-all}
 .modcard a:hover{text-decoration:underline}
@@ -658,6 +666,7 @@ async function first() {
   // Warm the item list in the background: both the picker and the browser want
   // it, and neither should pause the first time it is opened.
   loadItems().catch(() => {});
+  api('/notes').then(n => { S.notes = n.notes || {}; }).catch(() => {});
 }
 
 /**
@@ -2328,22 +2337,8 @@ async function renderDetail(id) {
   // Which mod it came from, in that mod's author's own words. Short, but it is
   // the one description of a mod certain to be accurate, and it is usually the
   // difference between "what is this" and "oh, it is a Create thing".
-  const mod = S.mods[nsOf(id)];
-  if (mod) {
-    const card = document.createElement('div');
-    card.className = 'modcard';
-    card.innerHTML = '<b>' + esc(mod.name) + '</b>'
-      + (mod.description ? '<p>' + esc(mod.description) + '</p>' : '');
-    if (mod.url) {
-      const a = document.createElement('a');
-      a.href = mod.url;
-      a.target = '_blank';
-      a.rel = 'noreferrer';
-      a.textContent = shortUrl(mod.url);
-      card.append(a);
-    }
-    wrap.append(card);
-  }
+  const modId = nsOf(id);
+  if (S.mods[modId]) wrap.append(modCard(modId));
 
   // What the game itself thinks this is. c:ingots/steel says more about an item
   // than most sentences would, and it is the server's own answer, not a guess.
@@ -2455,6 +2450,84 @@ function renderNote(host, id) {
       banner('Set as the quest description.');
     }, 'btn'));
   }
+}
+
+/**
+ * Which mod an item came from, and what that mod is.
+ *
+ * Two layers. The mod's own `neoforge.mods.toml` description is certain but
+ * usually a slogan — "Technology that empowers the player" — so it sits
+ * underneath. On top goes a written summary with a link to the mod's actual
+ * documentation, which is the thing that tells you what you are looking at.
+ *
+ * These are notes for whoever is writing the book, not quest text: a player
+ * never sees them.
+ */
+function modCard(modId) {
+  const mod = S.mods[modId] || { name: modId };
+  const card = document.createElement('div');
+  card.className = 'modcard';
+
+  const head = document.createElement('div');
+  head.className = 'mhead';
+  head.innerHTML = '<b>' + esc(mod.name) + '</b>'
+    + '<span class="mid">' + esc(modId) + '</span>';
+  card.append(head);
+
+  const written = S.notes['mod:' + modId] || '';
+  const wiki = S.notes['modurl:' + modId] || '';
+
+  const p = document.createElement('p');
+  p.textContent = written || mod.description || 'Nothing written about this mod yet.';
+  if (!written) p.classList.add('faint');
+  card.append(p);
+
+  // The mod's own description, kept visible underneath once something better
+  // has been written over it, because the two can disagree and the author's is
+  // the one that is certainly about this version.
+  if (written && mod.description) {
+    const own = document.createElement('p');
+    own.className = 'faint small';
+    own.textContent = '“' + mod.description + '” — the mod’s own blurb';
+    card.append(own);
+  }
+
+  const links = document.createElement('div');
+  links.className = 'mlinks';
+  for (const [href, label] of [[wiki, 'wiki'], [mod.url, 'page']]) {
+    if (!href) continue;
+    const a = document.createElement('a');
+    a.href = href;
+    a.target = '_blank';
+    a.rel = 'noreferrer';
+    a.textContent = label + ': ' + shortUrl(href);
+    links.append(a);
+  }
+  if (links.children.length) card.append(links);
+
+  if (S.edit) {
+    const edit = document.createElement('details');
+    const s = document.createElement('summary');
+    s.innerHTML = '<span>edit mod notes</span>';
+    const inner = document.createElement('div');
+    inner.className = 'inner';
+    inner.append(field('about the mod', textBox(written,
+      v => saveNote('mod:' + modId, v, () => renderBrowse()), { area: true })));
+    inner.append(field('wiki or docs link', textBox(wiki,
+      v => saveNote('modurl:' + modId, v, () => renderBrowse()))));
+    edit.append(s, inner);
+    card.append(edit);
+  }
+  return card;
+}
+
+function saveNote(key, text, after) {
+  S.notes[key] = text;
+  return api('/note', {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ id: key, text })
+  }).then(() => { banner('Saved.'); if (after) after(); })
+    .catch(e => banner(e.message || 'Could not save that.', true));
 }
 
 const shortUrl = u => String(u).replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');

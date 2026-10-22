@@ -5,6 +5,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 import java.io.IOException;
+import java.io.UncheckedIOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -31,9 +32,42 @@ public final class Notes {
     private final Path file;
     private final Map<String, String> notes = new ConcurrentHashMap<>();
 
+    private final Path seed;
+
     public Notes(Path configDir) {
-        this.file = configDir.resolve("questbridge").resolve("notes.json");
+        Path dir = configDir.resolve("questbridge");
+        this.file = dir.resolve("notes.json");
+        this.seed = dir.resolve("notes.seed.json");
         load();
+        absorbSeed();
+    }
+
+    /**
+     * Notes delivered as a file rather than typed in — a batch of mod summaries,
+     * say — are dropped in as {@code notes.seed.json} and merged here.
+     *
+     * <p>Merged, not copied over: anything already written by hand wins, because
+     * the person who wrote it was looking at the thing. The seed is left on disk
+     * afterwards, so re-running against a newer one only ever adds what is new.
+     */
+    private void absorbSeed() {
+        if (!Files.exists(seed)) return;
+        try {
+            JsonObject root = JsonParser.parseString(Files.readString(seed)).getAsJsonObject();
+            JsonObject n = root.has("notes") ? root.getAsJsonObject("notes") : root;
+            int added = 0;
+            for (String key : n.keySet()) {
+                if (notes.containsKey(key)) continue;
+                notes.put(key, n.get(key).getAsString());
+                added++;
+            }
+            if (added > 0) {
+                save();
+                DragonscaleBridge.LOG.info("[questbridge] merged {} notes from {}", added, seed);
+            }
+        } catch (Exception e) {
+            DragonscaleBridge.LOG.warn("[questbridge] could not read {}: {}", seed, e.toString());
+        }
     }
 
     private void load() {

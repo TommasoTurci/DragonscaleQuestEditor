@@ -1,0 +1,39 @@
+{
+  "_comment": "Mod notes for the Dragonscale quest editor. Merged into notes.json on server start; anything already written by hand wins. Keys: mod:<id> is the summary, modurl:<id> is a documentation link. Instalment 1 of several.",
+  "notes": {
+    "mod:create": "The pack's backbone. Everything runs on rotation: a source (water wheel, windmill, steam engine) spins a network of shafts and cogs, and every machine draws from that. Two numbers govern it — speed (how fast) and stress (how much a network can carry before it stalls) — and most early frustration is a stress overload. Contraptions are the other half: pistons, bearings and carriages move assembled blocks as one object. Create teaches itself in game through Ponder, an animated demo on every component (hold W over an item in the inventory), which is a better reference than any wiki and worth pointing players at in a quest.",
+    "modurl:create": "https://create.fandom.com/wiki/",
+
+    "mod:createbigcannons": "A Create addon for artillery. Two families: big cannons, built as multiblocks from cast barrel sections and loaded by hand with powder and shot, and autocannons, which are smaller, fire fast, and take kinetic power from a Create network for loading and aiming. Needs Ritchie's Projectile Library. Worth knowing for quest design: cannons are genuinely dangerous to the person loading them, so a tutorial quest line should cover powder handling before it covers firing.",
+
+    "mod:create_potioneering": "A Create addon that extends the mod's processing into brewing and alchemy, so potion-making becomes something you automate with a contraption rather than do at a stand. Treat its items as Create machinery that happens to handle fluids and potions.",
+
+    "mod:quark": "A large collection of small vanilla-style additions by Vazkii — a few hundred features, each one something Mojang could plausibly have shipped. Building blocks (vertical slabs, extra stair and wall variants, framed glass, thatch), inventory conveniences (chest sorting, right-click to equip armour), a few automation blocks like the Chute, some new mobs and a couple of underground biomes. Everything is split into modules that can be switched off individually in the config, so if a Quark feature is unwanted it can simply be disabled rather than worked around. Requires Zeta on current versions.",
+
+    "mod:malum": "A dark magic mod built on harvesting souls. The loop: kill mobs with a scythe to release spirits, then spend those spirits as crafting reagents at a Spirit Altar. From there it opens into totems, the Spirit Crucible, soulwood and blight, and eventually the Weeping Well for the rarest materials. It ships its own in-game guide, the Encyclopedia Arcana, which is the authoritative reference and the thing to point a player at early — the first real quest step is usually 'find the ore, make the book'.",
+    "modurl:malum": "https://craftdownunder.co/guides/mods/malum",
+
+    "mod:slag": "A modular tool and metallurgy mod — smelting, alloying and tool assembly from parts. It is the metal-progression spine this pack uses alongside Create, so its materials show up as prerequisites for a lot else. No public wiki found; the in-game recipes are the reference.",
+
+    "mod:alexscaves": "Adds a handful of rare, elaborate cave biomes to the Overworld, each with its own blocks, mobs and mechanics: Magnetic Caves, Primordial Caves, Toxic Caves, Abyssal Chasm, Forlorn Hollows and Candy Cavity. They are deliberately hard to find — the intended entry point is an Underground Cabin, whose loot barrels contain cave tablets and the Cave Compendium, the mod's in-game guide. Each biome does heavy things with fog and lighting, and the author recommends against shaders. Requires Citadel.",
+    "modurl:alexscaves": "https://www.curseforge.com/minecraft/mc-mods/alexs-caves",
+
+    "mod:alexsmobs": "Roughly a hundred animals and monsters, each with bespoke models and real behaviour, spawning in biomes that suit them — land animals, sea life, and some Nether and End creatures. Most drop something craftable, which is what makes it quest material rather than just scenery. Requires Citadel.",
+
+    "mod:regions_unexplored": "A large biome mod — the author's own page says 64 new biomes, a third-party docs site counts 62 overworld plus 5 cave and 5 nether, so treat any exact number with suspicion. Overworld biomes can each be toggled individually in config/regions_unexplored-common.toml, which matters if a quest asks the player to find one. Mostly terrain, wood types and plants rather than mechanics.",
+    "modurl:regions_unexplored": "https://www.mintlify.com/UHQ-GAMES-MODS/RegionsUnexplored/biomes/caves",
+
+    "mod:irons_spellbooks": "A full spellcasting system: spells are organised into schools (Fire, Ice, Lightning, Holy, Ender, Blood, Evocation, Nature, Eldritch), cast from spellbooks, with armour sets matching each school. Around 70+ spells. Eldritch spells are locked behind research rather than craftable. Has a real official wiki, which is unusual here and worth linking from any quest about it.",
+    "modurl:irons_spellbooks": "https://iron.wiki/",
+
+    "mod:supplementaries": "Vanilla-plus decoration that mostly also does something: jars that store fluids or hold captured fireflies, signposts with editable arms, faucets, pedestals, globes, bellows, pulleys, sconces, planters. Over a hundred additions, all styled to look like things vanilla forgot. Requires Moonlight Library. Nearly everything can be switched off individually in its config.",
+
+    "mod:farmersdelight": "A gentle expansion of farming and cooking. Adds the Cooking Pot (needs a heat source under it — campfire, stove, lava), the Skillet, the Cutting Board and knives, plus a lot of crops and dishes. The cooking chain is a good early tutorial subject because every step is visible and nothing is automated.",
+
+    "mod:naturalist": "Ambient wildlife with real behaviour — bears, snakes, alligators, fireflies and more, with predators that actually hunt prey. Source counts for the number of animals vary wildly (24 'not counting variants' up to 'around fifty'), so do not quote a figure. Mostly atmosphere, though several animals drop usable items.",
+
+    "mod:another_furniture": "Furniture that stays vanilla-styled and vanilla-sized: chairs, tables, benches, shelves, shutters, flower boxes, stools, in every wood type. Purely decorative, which makes it good filler for building-themed quests — and it is the mod behind most of the tag-based item tasks already in the book.",
+
+    "mod:enderscape": "An End overhaul: new biomes, reworked strongholds and End cities, new lighting, skybox and fog. Source disagreement on the biome count (the mod's own page says four, a secondary site lists five by name), so check in game before writing a quest that names one. In active development, so details move between versions."
+  }
+}
