@@ -27,7 +27,10 @@ for (const file of fs.readdirSync(IN).filter(f => f.endsWith('.json'))) {
   const j = JSON.parse(fs.readFileSync(path.join(IN, file), 'utf8'));
   sources[j.ns] = { wiki: j.wiki, harvested: j.harvested, items: 0, topics: 0 };
   for (const [id, d] of Object.entries(j.docs ?? {})) {
-    docs[id] = { text: d.text, src: d.src, wiki: j.wiki };
+    // Keep how it was identified: a quote lifted from a page about something
+    // else is worth less trust than a page about this item, and the editor says so.
+    docs[id] = { text: d.text, src: d.src, wiki: d.wiki || j.wiki,
+                 ...(d.via ? { via: d.via, page: d.page } : {}) };
     sources[j.ns].items++;
   }
   // Vanilla's wiki covers the whole game, so its non-item pages are thousands of

@@ -405,6 +405,10 @@ details .inner{padding:0 11px 11px;display:flex;flex-direction:column;gap:11px}
 .wikidoc a{font-size:.72rem;color:var(--accent);text-decoration:none}
 .wikidoc a:hover{text-decoration:underline}
 .tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.tag.can{border-color:var(--ok);color:var(--ok)}
+.tag.faintchip{opacity:.65}
+.wikidoc.mention{border-left-color:var(--muted)}
+.wikidoc.mention h4{color:var(--muted)}
 .tag{
   font-size:.68rem;font-family:var(--mono);padding:3px 7px;border-radius:999px;
   background:var(--bg);border:1px solid var(--line);color:var(--muted);
@@ -2364,8 +2368,13 @@ async function renderDetail(id) {
   if (doc) {
     const d = document.createElement('div');
     d.className = 'wikidoc';
-    d.innerHTML = '<h4>From the ' + esc(doc.wiki) + ' wiki</h4>'
+    d.innerHTML = '<h4>' + (doc.via === 'mention'
+        ? 'Mentioned on ' + esc(doc.page || 'another page') + ' — ' + esc(doc.wiki)
+        : 'From the ' + esc(doc.wiki) + ' wiki') + '</h4>'
       + '<p>' + esc(doc.text) + '</p>';
+    // A quote lifted from a page about something else earns less trust than a
+    // page about this item, so it does not get to look the same.
+    if (doc.via === 'mention') d.classList.add('mention');
     const a2 = document.createElement('a');
     a2.href = doc.src; a2.target = '_blank'; a2.rel = 'noreferrer';
     a2.textContent = 'full page';
@@ -2414,6 +2423,7 @@ async function renderDetail(id) {
       t.append(row);
       info.append(t);
     }
+    if (meta.facts) info.append(factsBlock(meta.facts));
     S.notes[id] = meta.note || '';
     renderNote(noteBox, id);
   }).catch(() => renderNote(noteBox, id));
@@ -2445,6 +2455,42 @@ async function renderDetail(id) {
  * every quest that needs it. Which is also why it can be dropped straight into a
  * quest's description.
  */
+/**
+ * What the server itself can vouch for. Deliberately a list of capabilities
+ * rather than an explanation: it can tell that right-clicking an item does
+ * something, by seeing that the item's class takes the method over from the
+ * base class, but not what it does. That part only a wiki or a person knows.
+ */
+function factsBlock(f) {
+  const box = document.createElement('div');
+  box.innerHTML = '<h4>What the server knows</h4>';
+  const row = document.createElement('div');
+  row.className = 'tags';
+
+  const chip = (t, cls) => {
+    const s = document.createElement('span');
+    s.className = 'tag ' + (cls || '');
+    s.textContent = t;
+    row.append(s);
+  };
+
+  for (const d of f.does || []) chip(d, 'can');
+  if (f.food) chip('food: ' + f.food.nutrition + ' hunger, ' + f.food.saturation + ' sat');
+  if (f.tier) chip('tier ' + String(f.tier).split('.').pop());
+  if (f.armorSlot) chip(f.armorSlot + ' armour, ' + f.armor);
+  if (f.durability) chip(f.durability + ' durability');
+  if (f.placesBlock) chip('places a block');
+  if (f.enchantable) chip('enchantable');
+  if (f.fireResistant) chip('fire resistant');
+  if (f.stackSize && f.stackSize !== 64) chip('stacks to ' + f.stackSize);
+  if (f['class']) chip(f['class'], 'faintchip');
+  for (const t of f.creativeTabs || []) chip('tab: ' + nameOf(t), 'faintchip');
+
+  if (!row.children.length) return document.createTextNode('');
+  box.append(row);
+  return box;
+}
+
 function renderNote(host, id) {
   host.innerHTML = '';
   const label = document.createElement('label');

@@ -389,7 +389,10 @@ http.createServer(async (req, res) => {
     if (p === '/api/item') {
       const id = url.searchParams.get('id') || '';
       return json(res, 200, { id, mod: id.split(':')[0],
-        tags: ['c:example_tag', 'minecraft:another_tag'], note: mockNotes[id] || '' });
+        tags: ['c:example_tag', 'minecraft:another_tag'], note: mockNotes[id] || '',
+        facts: { class: 'ExampleItem', stackSize: 64, durability: 250, enchantable: true,
+                 does: ['right-click in the air', 'right-click on a block'],
+                 creativeTabs: ['minecraft:tools_and_utilities'] } });
     }
     if (p === '/api/notes') return json(res, 200, { notes: mockNotes, count: Object.keys(mockNotes).length });
     if (p === '/api/note') {

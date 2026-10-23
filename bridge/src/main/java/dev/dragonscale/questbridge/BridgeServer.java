@@ -274,6 +274,10 @@ public final class BridgeServer {
                         .ifPresent(h -> h.tags().forEach(t -> tags.add(t.location().toString())));
                 }
                 out.add("tags", tags);
+                if (rl != null) {
+                    var it = BuiltInRegistries.ITEM.getOptional(rl).orElse(null);
+                    if (it != null) out.add("facts", ItemFacts.of(new net.minecraft.world.item.ItemStack(it)));
+                }
                 out.addProperty("note", notes.get(id));
                 return out.toString();
             }).get();

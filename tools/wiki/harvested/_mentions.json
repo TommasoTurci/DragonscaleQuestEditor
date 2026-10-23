@@ -1,0 +1,1206 @@
+{
+ "wiki": "mentions",
+ "ns": "*",
+ "harvested": "2026-10-23T00:39:12.538Z",
+ "matched": 171,
+ "docs": {
+  "alexscaves:game_controller": {
+   "text": "They are the only source of the exclusive pottery sherds and the Game Controller.",
+   "src": "https://alexscaves.wiki.gg/wiki/Abyssal_Ruins",
+   "wiki": "alexscaves.wiki.gg",
+   "via": "mention",
+   "page": "Abyssal Ruins"
+  },
+  "alexscaves:abyssal_altar": {
+   "text": "They are made of Abyssmarine, and are different compared to other structures in the Abyssal Chasms, due to the fact that it is the only structure to include an Abyssal Altar on top.",
+   "src": "https://alexscaves.wiki.gg/wiki/Abyssal_Monolith",
+   "wiki": "alexscaves.wiki.gg",
+   "via": "mention",
+   "page": "Abyssal Monolith"
+  },
+  "alexscaves:serene_salad": {
+   "text": "They can be fed Serene Salad and ridden for a brief amount of time, during which they are capable of leveling the terrain with a hefty stomp.",
+   "src": "https://alexscaves.wiki.gg/wiki/Atlatitan",
+   "wiki": "alexscaves.wiki.gg",
+   "via": "mention",
+   "page": "Atlatitan"
+  },
+  "alexscaves:amber_monolith": {
+   "text": "Amber Monolith Pillars (referred to as alexscaves:amber_monolith in-game) are the natural spawning of Dinosaurs in the Primordial Caves.",
+   "src": "https://alexscaves.wiki.gg/wiki/Amber_Monolith_Pillar",
+   "wiki": "alexscaves.wiki.gg",
+   "via": "mention",
+   "page": "Amber Monolith Pillar"
+  },
+  "alexscaves:block_of_chocolate": {
+   "text": "Inside the biome, the terrain consists primarily of Blocks of Chocolate, Frosted Block of Chocolate, and Cake Layers, which make the biome…",
+   "src": "https://alexscaves.wiki.gg/wiki/Candy_Cavity",
+   "wiki": "alexscaves.wiki.gg",
+   "via": "mention",
+   "page": "Candy Cavity"
+  },
+  "alexscaves:purple_soda_bucket": {
+   "text": "A Bucket of Blue Sweetish Fish is a Blue Sweetish Fish inside a Bucket of Purple Soda.",
+   "src": "https://alexscaves.wiki.gg/wiki/Bucket_of_Blue_Sweetish_Fish",
+   "wiki": "alexscaves.wiki.gg",
+   "via": "mention",
+   "page": "Bucket of Blue Sweetish Fish"
+  },
+  "alexscaves:purple_soda": {
+   "text": "A Bucket of Green Sweetish Fish is a Green Sweetish Fish inside a Bucket of Purple Soda.",
+   "src": "https://alexscaves.wiki.gg/wiki/Bucket_of_Green_Sweetish_Fish",
+   "wiki": "alexscaves.wiki.gg",
+   "via": "mention",
+   "page": "Bucket of Green Sweetish Fish"
+  },
+  "alexscaves:disc_fragment_fusion": {
+   "text": "A Fusion Disc Fragment is a variant of disc fragment used to craft the Fusion Music Disc.",
+   "src": "https://alexscaves.wiki.gg/wiki/Fusion_Disc_Fragment",
+   "wiki": "alexscaves.wiki.gg",
+   "via": "mention",
+   "page": "Fusion Disc Fragment"
+  },
+  "alexscaves:music_disc_fusion": {
+   "text": "A Fusion Disc Fragment is a variant of disc fragment used to craft the Fusion Music Disc.",
+   "src": "https://alexscaves.wiki.gg/wiki/Fusion_Disc_Fragment",
+   "wiki": "alexscaves.wiki.gg",
+   "via": "mention",
+   "page": "Fusion Disc Fragment"
+  },
+  "alexscaves:music_disc_tasty": {
+   "text": "The Fusion Music Disc is another variant of music disc that is crafted from its matching disc fragments similarly to Music Disc 5.",
+   "src": "https://alexscaves.wiki.gg/wiki/Fusion_Music_Disc",
+   "wiki": "alexscaves.wiki.gg",
+   "via": "mention",
+   "page": "Fusion Music Disc"
+  },
+  "alexscaves:cloak_of_darkness": {
+   "text": "Darkness Incarnate is a status effect granted by the Hood & Cloak of Darkness that allows the player to fly similarly to creative flight, albeit much faster.",
+   "src": "https://alexscaves.wiki.gg/wiki/Darkness_Incarnate",
+   "wiki": "alexscaves.wiki.gg",
+   "via": "mention",
+   "page": "Darkness Incarnate"
+  },
+  "alexscaves:spelunkery_table": {
+   "text": "Once you have found a Spelunkery Table and some Cave Tablets, you can begin the process of researching the strange inscriptions on the tablet.",
+   "src": "https://alexscaves.wiki.gg/wiki/Guides%2FSpelunkery_Table_Research",
+   "wiki": "alexscaves.wiki.gg",
+   "via": "mention",
+   "page": "Guides/Spelunkery Table Research"
+  },
+  "alexscaves:cooked_lanternfish": {
+   "text": "Lanternfish is a food item and brewing ingredient that can be eaten or cooked in a furnace, smoker, or campfire to make Cooked Lanternfish.",
+   "src": "https://alexscaves.wiki.gg/wiki/Item%2FLanternfish",
+   "wiki": "alexscaves.wiki.gg",
+   "via": "mention",
+   "page": "Item/Lanternfish"
+  },
+  "alexscaves:sea_pig": {
+   "text": "A Sea Pig is an unsating food item that can be eaten by the player, at high risk of inflicting Hunger.",
+   "src": "https://alexscaves.wiki.gg/wiki/Item%2FSea_Pig",
+   "wiki": "alexscaves.wiki.gg",
+   "via": "mention",
+   "page": "Item/Sea Pig"
+  },
+  "alexscaves:candy_cane": {
+   "text": "They quickly burrow through blocks, and can be mounted by launching dual-wielded Candy Cane Hooks towards them.",
+   "src": "https://alexscaves.wiki.gg/wiki/Gum_Worm",
+   "wiki": "alexscaves.wiki.gg",
+   "via": "mention",
+   "page": "Gum Worm"
+  },
+  "alexscaves:cooked_tripodfish": {
+   "text": "Tripodfish is a food item that can be eaten or cooked in a furnace, smoker, or campfire to make Cooked Tripodfish.",
+   "src": "https://alexscaves.wiki.gg/wiki/Item%2FTripodfish",
+   "wiki": "alexscaves.wiki.gg",
+   "via": "mention",
+   "page": "Item/Tripodfish"
+  },
+  "alexscaves:conversion_crucible": {
+   "text": "They are the only place where the Conversion Crucible generates naturally.",
+   "src": "https://alexscaves.wiki.gg/wiki/Licowitch_Tower",
+   "wiki": "alexscaves.wiki.gg",
+   "via": "mention",
+   "page": "Licowitch Tower"
+  },
+  "alexscaves:primordial_helmet": {
+   "text": "The Primordial Armor Set consists of the Primordial Helmet, Primordial Tunic, and Primordial Pants. Unlike all other armor sets, this set does not include boots.",
+   "src": "https://alexscaves.wiki.gg/wiki/Primordial_Armor_Set",
+   "wiki": "alexscaves.wiki.gg",
+   "via": "mention",
+   "page": "Primordial Armor Set"
+  },
+  "alexscaves:primordial_tunic": {
+   "text": "The Primordial Armor Set consists of the Primordial Helmet, Primordial Tunic, and Primordial Pants. Unlike all other armor sets, this set does not include boots.",
+   "src": "https://alexscaves.wiki.gg/wiki/Primordial_Armor_Set",
+   "wiki": "alexscaves.wiki.gg",
+   "via": "mention",
+   "page": "Primordial Armor Set"
+  },
+  "alexscaves:primordial_pants": {
+   "text": "The Primordial Armor Set consists of the Primordial Helmet, Primordial Tunic, and Primordial Pants. Unlike all other armor sets, this set does not include boots.",
+   "src": "https://alexscaves.wiki.gg/wiki/Primordial_Armor_Set",
+   "wiki": "alexscaves.wiki.gg",
+   "via": "mention",
+   "page": "Primordial Armor Set"
+  },
+  "alexscaves:cooked_radgill": {
+   "text": "Radgill is a hazardous food item that can be eaten or cooked in a furnace, smoker, or campfire to make Cooked Radgill.",
+   "src": "https://alexscaves.wiki.gg/wiki/Radgill_(item)",
+   "wiki": "alexscaves.wiki.gg",
+   "via": "mention",
+   "page": "Radgill (item)"
+  },
+  "alexscaves:disc_fragment_tasty": {
+   "text": "A Tasty Disc Fragment is a variant of disc fragment used to craft the Tasty Music Disc.",
+   "src": "https://alexscaves.wiki.gg/wiki/Tasty_Disc_Fragment",
+   "wiki": "alexscaves.wiki.gg",
+   "via": "mention",
+   "page": "Tasty Disc Fragment"
+  },
+  "artifacts:rooted_boots": {
+   "text": "Includes the vanilla chest and wooden chests from Quark artifacts:rootedbootsgrass: Blocks that restore hunger with the Rooted Boots.",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Data-Pack-Format#blocks",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "Data-Pack-Format: Blocks"
+  },
+  "artifacts:kitty_slippers": {
+   "text": "artifacts:creepers: Entities that avoid players wearing the Kitty Slippers. Includes creepers from creeper overhaul by default",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Data-Pack-Format#entity-types",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "Data-Pack-Format: Entity Types"
+  },
+  "artifacts:antidote_vessel": {
+   "text": "artifacts:antidotevesselcancellable: The mob effects that can are affected by the Antidote Vessel",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Data-Pack-Format#mob-effects",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "Data-Pack-Format: Mob Effects"
+  },
+  "artifacts:strider_shoes": {
+   "text": "artifacts:ishotfloor: Damage types that are nullified by the Strider Shoes",
+   "src": "https://github.com/ochotonida/artifacts/wiki/Data-Pack-Format#damage-types",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "Data-Pack-Format: Damage Types"
+  },
+  "create:mechanical_mixer": {
+   "text": "Brass is an alloy obtained by mixing and Zinc together with a Mechanical Mixer, Basin, and Blaze Burner. It is used primarily for crafting item sorting machines.",
+   "src": "https://create.fandom.com/wiki/Brass",
+   "wiki": "create.fandom.com",
+   "via": "mention",
+   "page": "Brass"
+  },
+  "create:blaze_burner": {
+   "text": "Brass is an alloy obtained by mixing and Zinc together with a Mechanical Mixer, Basin, and Blaze Burner. It is used primarily for crafting item sorting machines.",
+   "src": "https://create.fandom.com/wiki/Brass",
+   "wiki": "create.fandom.com",
+   "via": "mention",
+   "page": "Brass"
+  },
+  "create:pulse_extender": {
+   "text": "For similar and updated functionality, see Pulse Repeater or Pulse Extender.",
+   "src": "https://create.fandom.com/wiki/Adjustable_Repeater",
+   "wiki": "create.fandom.com",
+   "via": "mention",
+   "page": "Adjustable Repeater"
+  },
+  "create:pulse_repeater": {
+   "text": "For similar and updated functionality, see Pulse Repeater or Pulse Extender.",
+   "src": "https://create.fandom.com/wiki/Adjustable_Repeater",
+   "wiki": "create.fandom.com",
+   "via": "mention",
+   "page": "Adjustable Repeater"
+  },
+  "create:shadow_steel": {
+   "text": "Much like the Gilded Quartz and Shadow Steel tool sets, this line of tools does not contain a hoe.",
+   "src": "https://create.fandom.com/wiki/Blazing_Tools",
+   "wiki": "create.fandom.com",
+   "via": "mention",
+   "page": "Blazing Tools"
+  },
+  "create:andesite_alloy": {
+   "text": "For example, a Shaft requires you to have first made Andesite Alloy. The table below categorizes the Create items into levels corresponding to the order in which items must be built.",
+   "src": "https://create.fandom.com/wiki/Build_Order",
+   "wiki": "create.fandom.com",
+   "via": "mention",
+   "page": "Build Order"
+  },
+  "create:precision_mechanism": {
+   "text": "Lets say you want to make a Precision Mechanism. First you have to use a deployer to apply a cog on a gold sheet then apply a large cog then an iron nugget.",
+   "src": "https://create.fandom.com/wiki/Automating_items",
+   "wiki": "create.fandom.com",
+   "via": "mention",
+   "page": "Automating items"
+  },
+  "create:electron_tube": {
+   "text": "The Brass Hand, the Electron Tube, the Precision Mechanism, the Propeller, and the Whisk are all items which function solely as ingredients in crafting recipes for advanced mechanical components.",
+   "src": "https://create.fandom.com/wiki/Crafting_Components",
+   "wiki": "create.fandom.com",
+   "via": "mention",
+   "page": "Crafting Components"
+  },
+  "create:brass_hand": {
+   "text": "The Brass Hand, the Electron Tube, the Precision Mechanism, the Propeller, and the Whisk are all items which function solely as ingredients in crafting recipes for advanced mechanical components.",
+   "src": "https://create.fandom.com/wiki/Crafting_Components",
+   "wiki": "create.fandom.com",
+   "via": "mention",
+   "page": "Crafting Components"
+  },
+  "create:zinc_ore": {
+   "text": "Crushed Brass is a crushed version of the material, Brass, and was primarily obtainable via heated mixing of Crushed Copper Ore and Crushed Zinc Ore.",
+   "src": "https://create.fandom.com/wiki/Crushed_Brass",
+   "wiki": "create.fandom.com",
+   "via": "mention",
+   "page": "Crushed Brass"
+  },
+  "create:creative_motor": {
+   "text": "Chorus Chrome was a crafting ingredient that was used to craft the Creative Motor (previously known as the Motor) and was also used to upgrade the Handheld Blockzapper.",
+   "src": "https://create.fandom.com/wiki/Chorus_Chrome",
+   "wiki": "create.fandom.com",
+   "via": "mention",
+   "page": "Chorus Chrome"
+  },
+  "create:goggles": {
+   "text": "Among its many functions, it is used as a crafting ingredient for Wrenches and Engineer's Goggles and is used in .",
+   "src": "https://create.fandom.com/wiki/Gold",
+   "wiki": "create.fandom.com",
+   "via": "mention",
+   "page": "Gold"
+  },
+  "create:andesite_funnel": {
+   "text": "The Funnel's functionality would later be revised in version 0.3 and would be given to the Andesite Funnel and the Brass Funnel.",
+   "src": "https://create.fandom.com/wiki/Funnel_(removed)",
+   "wiki": "create.fandom.com",
+   "via": "mention",
+   "page": "Funnel (removed)"
+  },
+  "create:brass_funnel": {
+   "text": "The Funnel's functionality would later be revised in version 0.3 and would be given to the Andesite Funnel and the Brass Funnel.",
+   "src": "https://create.fandom.com/wiki/Funnel_(removed)",
+   "wiki": "create.fandom.com",
+   "via": "mention",
+   "page": "Funnel (removed)"
+  },
+  "create:brass_casing": {
+   "text": "Active Belt pulling Extractors can pull items from belts reinforced with Brass Casing. When the extractor is blocked, the belt will stall.",
+   "src": "https://create.fandom.com/wiki/Extractor",
+   "wiki": "create.fandom.com",
+   "via": "mention",
+   "page": "Extractor"
+  },
+  "create:rotation_speed_controller": {
+   "text": "The Integrated Circuit was an item used to craft the Rotation Speed Controller. It was removed in the Create 0.3.2 update.",
+   "src": "https://create.fandom.com/wiki/Integrated_Circuit",
+   "wiki": "create.fandom.com",
+   "via": "mention",
+   "page": "Integrated Circuit"
+  },
+  "create:netherite_backtank": {
+   "text": "When used with a full Netherite Backtank and , the wearer is immune to and .",
+   "src": "https://create.fandom.com/wiki/Netherite_Diving_Gear",
+   "wiki": "create.fandom.com",
+   "via": "mention",
+   "page": "Netherite Diving Gear"
+  },
+  "create:track_station": {
+   "text": "It has a red flag much like the Train Station that is automatically raised when the Postbox has anything in its inventory.",
+   "src": "https://create.fandom.com/wiki/Postbox",
+   "wiki": "create.fandom.com",
+   "via": "mention",
+   "page": "Postbox"
+  },
+  "create:controls": {
+   "text": "Precision mechanisms allow you to build Rotation Speed Controllers, Train Controls, and other advanced devices.",
+   "src": "https://create.fandom.com/wiki/Precision_Workshop",
+   "wiki": "create.fandom.com",
+   "via": "mention",
+   "page": "Precision Workshop"
+  },
+  "create:contraption_controls": {
+   "text": "Sliding doors can also be prevented from opening by onboard Contraption Controls filtered for them.",
+   "src": "https://create.fandom.com/wiki/Sliding_Door",
+   "wiki": "create.fandom.com",
+   "via": "mention",
+   "page": "Sliding Door"
+  },
+  "create:mechanical_bearing": {
+   "text": "It is composed of a Windmill Bearing (or Mechanical Bearing in pre 0.3 versions) and at least 8 sails or sail-like blocks.",
+   "src": "https://create.fandom.com/wiki/Windmill",
+   "wiki": "create.fandom.com",
+   "via": "mention",
+   "page": "Windmill"
+  },
+  "create:windmill_bearing": {
+   "text": "scene for the Windmill Bearing.]] A windmill generates Rotational Force. It is composed of a Windmill Bearing (or Mechanical Bearing in pre 0.3 versions) and at least 8 sails or sail-like blocks.",
+   "src": "https://create.fandom.com/wiki/Windmill",
+   "wiki": "create.fandom.com",
+   "via": "mention",
+   "page": "Windmill"
+  },
+  "create:water_wheel": {
+   "text": "Due to the easy access to its components, the windmill along with the Water Wheel are the earliest automatic power generators in the game.",
+   "src": "https://create.fandom.com/wiki/Windmill",
+   "wiki": "create.fandom.com",
+   "via": "mention",
+   "page": "Windmill"
+  },
+  "create:hand_crank": {
+   "text": "The Valve Handle functions much like the Hand Crank, though the amount and direction it rotates with one can be adjusted in its Value Settings Screen.",
+   "src": "https://create.fandom.com/wiki/Valve_Handle",
+   "wiki": "create.fandom.com",
+   "via": "mention",
+   "page": "Valve Handle"
+  },
+  "create:track": {
+   "text": "To start off, you're going to need some Train Track. Place this down in a line.",
+   "src": "https://create.fandom.com/wiki/Tutorials%2FTrains",
+   "wiki": "create.fandom.com",
+   "via": "mention",
+   "page": "Tutorials/Trains"
+  },
+  "dashpanels:indicator_bulb": {
+   "text": "Switch getState() - returns true if the switch is on, false if otherwise setState(bool) - sets the state of the switch to the given value Control Lever getValue() - returns a value between 0-15 of the lever signal setValue(number) - sets the lever value to the given value Knob getAngle() - returns the angle of the knob between 0-360 getValue() - returns a value between 0-15 of the mapped angle of the knob setAngle(number) - sets the angle of the knob to the given value Indicator Bulb getState()…",
+   "src": "https://github.com/BoxxedDev/control-panels/wiki/ComputerCraft-Integration#module-specific-functions",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "ComputerCraft-Integration: Module specific functions"
+  },
+  "dashpanels:control_lever": {
+   "text": "Switch getState() - returns true if the switch is on, false if otherwise setState(bool) - sets the state of the switch to the given value Control Lever getValue() - returns a value between 0-15 of the lever signal setValue(number) - sets the lever value to the given value Knob getAngle() - returns the angle of the knob between 0-360 getValue() - returns a value between 0-15 of the mapped angle of the knob setAngle(number) - sets the angle of the knob to the given value Indicator Bulb getState()…",
+   "src": "https://github.com/BoxxedDev/control-panels/wiki/ComputerCraft-Integration#module-specific-functions",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "ComputerCraft-Integration: Module specific functions"
+  },
+  "enderscape:flanger_berry": {
+   "text": "Flanger Berry Vines grow from their caps, bearing Flanger Berries at their…",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Celestial-Grove#description",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "Celestial-Grove: Description"
+  },
+  "enderscape:corrupt_overgrowth": {
+   "text": "The surfaces and undersides of Corrupt Barrens are layered with Mirestone, often covered by Corrupt Overgrowth.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Corrupt-Barrens#description",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "Corrupt-Barrens: Description"
+  },
+  "enderscape:blinklight_vines_body": {
+   "text": "Murublight Chanterelles are found on the surface, while large Murublight Chanterelles and clusters of Blinklight Vines grow beneath.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Corrupt-Barrens#description",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "Corrupt-Barrens: Description"
+  },
+  "enderscape:drift_leggings": {
+   "text": "When worn, Drift Leggings provide 4 armor points, 2 armor toughness, +20% speed, +60% safe fall distance, -40% gravity, and reduced air resistance.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Drift-Leggings#usage",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "Drift-Leggings: Usage"
+  },
+  "enderscape:end_trial_spawner": {
+   "text": "| Item | Structure | Container | Quantity | Chance | |--------|------------|-----------|----------|--------| | End City Key | End City | End Trial Spawner | 1 | 50.0% |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/End-City-Key#generated-loot",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "End-City-Key: Generated Loot"
+  },
+  "enderscape:end_city_key": {
+   "text": "| Item | Structure | Container | Quantity | Chance | |--------|------------|-----------|----------|--------| | End City Key | End City | End Trial Spawner | 1 | 50.0% |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/End-City-Key#generated-loot",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "End-City-Key: Generated Loot"
+  },
+  "enderscape:end_vault": {
+   "text": "Using an end city key on an End Vault unlocks it, causing it to eject items and the end city key to be consumed.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/End-City-Key#usage",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "End-City-Key: Usage"
+  },
+  "enderscape:chorus_sprouts": {
+   "text": "Chorus Plants and Chorus Sprouts are common here, while Dry End Growth appears infrequently. End Cities, End Gateways, and Large End Gateways can generate in this biome.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/End-Highlands-%26-Midlands#description",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "End-Highlands-&-Midlands: Description"
+  },
+  "enderscape:dry_end_growth": {
+   "text": "Chorus Plants and Chorus Sprouts are common here, while Dry End Growth appears infrequently. End Cities, End Gateways, and Large End Gateways can generate in this biome.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/End-Highlands-%26-Midlands#description",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "End-Highlands-&-Midlands: Description"
+  },
+  "enderscape:polished_end_stone": {
+   "text": "Potentially conflicting blocks that Enderscape adds: End Stone slabs, stairs, and walls Polished End Stone, including slabs, stairs, and walls Purpur Walls and Chiseled Purpur",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/FAQ#building-blocks",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "FAQ: Building Blocks"
+  },
+  "enderscape:chiseled_purpur": {
+   "text": "Potentially conflicting blocks that Enderscape adds: End Stone slabs, stairs, and walls Polished End Stone, including slabs, stairs, and walls Purpur Walls and Chiseled Purpur",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/FAQ#building-blocks",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "FAQ: Building Blocks"
+  },
+  "enderscape:magnia_attractor": {
+   "text": "Magnia Attractor, which pulls items and experience orbs in a wide radius towards the player when fueled with…",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/FAQ#tools",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "FAQ: Tools"
+  },
+  "enderscape:ripe_flanger_berry_block": {
+   "text": "Flanger berries can be obtained by destroying a ripe Flanger Berry Block either by hand or shooting it with an arrow.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Flanger-Berry#obtaining",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "Flanger-Berry: Obtaining"
+  },
+  "enderscape:repulsive_magnia": {
+   "text": "Alluring Magnia appears on the surface, and Repulsive Magnia beneath. Arches of Alluring Magnia are often found, and occasional Magnia \"towers\" emerge from the surface, with stems of Repulsive Magnia leading to a bulb of Alluring Magnia surrounded by rings.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Magnia-Fields#description",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "Magnia-Fields: Description"
+  },
+  "enderscape:alluring_magnia": {
+   "text": "Alluring Magnia appears on the surface, and Repulsive Magnia beneath. Arches of Alluring Magnia are often found, and occasional Magnia \"towers\" emerge from the surface, with stems of Repulsive Magnia leading to a bulb of Alluring Magnia surrounded by rings.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Magnia-Fields#description",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "Magnia-Fields: Description"
+  },
+  "enderscape:music_disc_bliss": {
+   "text": "These chests are also the only source of the Music Disc \"vye - decay\".",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Mirestone-Ruins#description",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "Mirestone-Ruins: Description"
+  },
+  "enderscape:music_disc_decay": {
+   "text": "| Item | Stack Size | Chance per Roll | |-------------------------|-------------|-----------------| | Bone | 3–6 | 12.0% | | Chorus Fruit | 2–6 | 12.0% | | Bread | 2–4 | 8.0% | | Ender Pearl | 1–6 | 8.0% | | Murublight Shelf | 1–2 | 8.0% | | Gunpowder | 4–8 | 6.0% | | Leather | 4–8 | 6.0% | | Paper | 4–8 | 6.0% | | Sugar | 3–6 | 6.0% | | Flanger Berry | 2–8 | 3.0% | | Black Dye | 1–6 | 3.0% | | Music Disc (vye - decay)| 1 | 3.0% |",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Mirestone-Ruins#loot",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "Mirestone-Ruins: Loot"
+  },
+  "enderscape:shadoline_ore": {
+   "text": "Raw Shadoline can be obtained by mining Shadoline Ore without Silk Touch.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Raw-Shadoline#obtaining",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "Raw-Shadoline: Obtaining"
+  },
+  "enderscape:raw_shadoline": {
+   "text": "Raw Shadoline can be obtained by mining Shadoline Ore without Silk Touch.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Raw-Shadoline#obtaining",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "Raw-Shadoline: Obtaining"
+  },
+  "enderscape:end_stone_rubble_shield": {
+   "text": "When blocking with a Rubble Shield, moving and jumping triggers a dash in the direction you’re moving. Dashing gives you a significant horizontal speed boost, at the cost of 3 durability.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Rubble-Shield#dashing",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "Rubble-Shield: Dashing"
+  },
+  "enderscape:rubble_chitin": {
+   "text": "Rubblemites drop 5 experience points, 0-1 of their shell material, and have a 25% chance to drop Rubble Chitin.",
+   "src": "https://github.com/Penumbra-MC/Enderscape/wiki/Rubblemite#on-death",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "Rubblemite: On Death"
+  },
+  "farmersdelight:cooking_pot": {
+   "text": "Some foods can be created in a crafting table, while others require a Cooking Pot.",
+   "src": "https://farmersdelight.fandom.com/wiki/Finger_Foods",
+   "wiki": "farmersdelight.fandom.com",
+   "via": "mention",
+   "page": "Finger Foods"
+  },
+  "farmersdelight:organic_compost": {
+   "text": "Decomposition is the process in which Organic Compost blocks become Rich Soil.",
+   "src": "https://farmersdelight.fandom.com/wiki/Decomposition",
+   "wiki": "farmersdelight.fandom.com",
+   "via": "mention",
+   "page": "Decomposition"
+  },
+  "farmersdelight:rich_soil": {
+   "text": "Decomposition is the process in which Organic Compost blocks become Rich Soil.",
+   "src": "https://farmersdelight.fandom.com/wiki/Decomposition",
+   "wiki": "farmersdelight.fandom.com",
+   "via": "mention",
+   "page": "Decomposition"
+  },
+  "farmersdelight:brown_mushroom_colony": {
+   "text": "The Red & Brown Mushroom Colony is a part of the 18 crops of Farmer's Delight.",
+   "src": "https://farmersdelight.fandom.com/wiki/Mushroom_Colony",
+   "wiki": "farmersdelight.fandom.com",
+   "via": "mention",
+   "page": "Mushroom Colony"
+  },
+  "farmersdelight:sweet_berry_cheesecake": {
+   "text": "The Sweet Berry Cheesecake is a place-able food item added by the Farmer's Delight mod.",
+   "src": "https://farmersdelight.fandom.com/wiki/Sweet_Berry_Cheescake",
+   "wiki": "farmersdelight.fandom.com",
+   "via": "mention",
+   "page": "Sweet Berry Cheescake"
+  },
+  "starcatcher:tournament_stand": {
+   "text": "Trophy Models Tournament Stand UI Art Tournament Stand Model Tournament Overlay UI Secret Notes UI Art Fisherman's Hats Models Selling Bin UI Art Tackle Box UI Art Bobber Models Miscellaneous Item Sprite Tweaks",
+   "src": "https://github.com/wdiscute/starcatcher/wiki/Credits#daythemagpie",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "Credits: DayTheMagpie"
+  },
+  "starcatcher:tackle_box": {
+   "text": "Trophy Models Tournament Stand UI Art Tournament Stand Model Tournament Overlay UI Secret Notes UI Art Fisherman's Hats Models Selling Bin UI Art Tackle Box UI Art Bobber Models Miscellaneous Item Sprite Tweaks",
+   "src": "https://github.com/wdiscute/starcatcher/wiki/Credits#daythemagpie",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "Credits: DayTheMagpie"
+  },
+  "supplementaries:tater_in_a_jar": {
+   "text": "Sticks can now also be placed on the first stage of a tomato vine directly onto farmland Custom Configured mod menu, a slightly edited mod menu provided by the configured mod which just has some extra icons and eyecandies Custom Cloth Config and YACL mod menu, same story as with configured one but to a lesser extent Quark Tater in a Jar.",
+   "src": "https://github.com/MehVahdJukaar/Supplementaries/wiki/Mod-Integration#direct-integration-and-new-features",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "Mod-Integration: Direct Integration and new features"
+  },
+  "modular_backpacks:climbing_gear": {
+   "text": "Features Backpack Backpack with 9 slots of storage and 4 module slots Each module slotted shows visually on your backpack for you and others Dye and Trim support for backpacks Backpack dye color changes the color of its GUI Elytras, Create Goggles, Create Backtanks, Spyglasses, and Jukeboxes are supported in module slots 8 different modules Pouch standard storage module Farming Pot allows for portable crop growth Quiver stores arrows and imbues them with the effects of inserted suspicious stew…",
+   "src": "https://modrinth.com/mod/modular-backpacks",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Modular Backpacks (project page)"
+  },
+  "modular_backpacks:farming_pot": {
+   "text": "Features Backpack Backpack with 9 slots of storage and 4 module slots Each module slotted shows visually on your backpack for you and others Dye and Trim support for backpacks Backpack dye color changes the color of its GUI Elytras, Create Goggles, Create Backtanks, Spyglasses, and Jukeboxes are supported in module slots 8 different modules Pouch standard storage module Farming Pot allows for portable crop growth Quiver stores arrows and imbues them with the effects of inserted suspicious stew…",
+   "src": "https://modrinth.com/mod/modular-backpacks",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Modular Backpacks (project page)"
+  },
+  "modular_backpacks:cooking_pot": {
+   "text": "Features Backpack Backpack with 9 slots of storage and 4 module slots Each module slotted shows visually on your backpack for you and others Dye and Trim support for backpacks Backpack dye color changes the color of its GUI Elytras, Create Goggles, Create Backtanks, Spyglasses, and Jukeboxes are supported in module slots 8 different modules Pouch standard storage module Farming Pot allows for portable crop growth Quiver stores arrows and imbues them with the effects of inserted suspicious stew…",
+   "src": "https://modrinth.com/mod/modular-backpacks",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Modular Backpacks (project page)"
+  },
+  "modular_backpacks:echo_pouch": {
+   "text": "Features Backpack Backpack with 9 slots of storage and 4 module slots Each module slotted shows visually on your backpack for you and others Dye and Trim support for backpacks Backpack dye color changes the color of its GUI Elytras, Create Goggles, Create Backtanks, Spyglasses, and Jukeboxes are supported in module slots 8 different modules Pouch standard storage module Farming Pot allows for portable crop growth Quiver stores arrows and imbues them with the effects of inserted suspicious stew…",
+   "src": "https://modrinth.com/mod/modular-backpacks",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Modular Backpacks (project page)"
+  },
+  "quark:feeding_trough": {
+   "text": "Features Quark has over a hundred different modules to play with, but here's a small highlight reel of our favorites: Feeding Trough, for automatic animal breeding Pistons Push Tile Entities, just like in Bedrock Edition Japanese and Industrial style building blocks Variant versions for Bookshelves, Chests, and Ladders for all wood types Vertical Slabs, for all slabs already in the base game and Quark Advanced Camera Mode for fancy screenshots Toretoises, typo intended new underground animals…",
+   "src": "https://quarkmod.net/",
+   "wiki": "quarkmod.net",
+   "via": "mention",
+   "page": "Quark (project page)"
+  },
+  "quark:azalea_wood": {
+   "text": "Features Quark has over a hundred different modules to play with, but here's a small highlight reel of our favorites: Feeding Trough, for automatic animal breeding Pistons Push Tile Entities, just like in Bedrock Edition Japanese and Industrial style building blocks Variant versions for Bookshelves, Chests, and Ladders for all wood types Vertical Slabs, for all slabs already in the base game and Quark Advanced Camera Mode for fancy screenshots Toretoises, typo intended new underground animals…",
+   "src": "https://quarkmod.net/",
+   "wiki": "quarkmod.net",
+   "via": "mention",
+   "page": "Quark (project page)"
+  },
+  "alexscaves:cave_book": {
+   "text": "From there, you will find loot barrels with cave tablets and a Cave Compendium a guide book for Alex’s Caves that should provide you with all the knowledge needed to find and explore any biome added by the mod.",
+   "src": "https://alexscaves.wiki.gg/wiki/Main_Page",
+   "wiki": "alexscaves.wiki.gg",
+   "via": "mention",
+   "page": "Alex's Caves (project page)"
+  },
+  "burnt:extinguisher": {
+   "text": "After a short delay, the barrel will explode with blast damage and trigger the burn to surrounding blocks Craft or find the Fire Extinguisher to put out fires.",
+   "src": "https://modrinth.com/mod/burnt",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Burnt + Additions (project page)"
+  },
+  "alexsmobs:animal_dictionary": {
+   "text": "When joining a world with Alex's Mobs for the first time, the player will be given the Animal Dictionary . This is a very basic guide and documentation of each creature added by the mod, and should provide insight into uses for each of the mobs or their drops.",
+   "src": "https://modrinth.com/mod/alexs-mobs",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Alex's Mobs (project page)"
+  },
+  "alexsmobs:flying_fish": {
+   "text": "The new mobs currently added are as follows (fantastical mobs in blue, real world ones in black, boss mobs in red): <details <summary New Mobs...</summary In Release 1.0.0: Grizzly Bear Roadrunner Bone Serpent Gazelle Crocodile Fly Hummingbird Orca Sunbird Gorilla Crimson Mosquito Rattlesnake Endergrade Hammerhead Shark Lobster Komodo Dragon Capuchin Monkey Cave Centipede In Release 1.1.0: Warped Toad Moose In Release 1.2.0: Mimicube Raccoon Blobfish In Release 1.3.0: Seal Cockroach Shoebill In…",
+   "src": "https://modrinth.com/mod/alexs-mobs",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Alex's Mobs (project page)"
+  },
+  "alexsmobs:cosmic_cod": {
+   "text": "The new mobs currently added are as follows (fantastical mobs in blue, real world ones in black, boss mobs in red): <details <summary New Mobs...</summary In Release 1.0.0: Grizzly Bear Roadrunner Bone Serpent Gazelle Crocodile Fly Hummingbird Orca Sunbird Gorilla Crimson Mosquito Rattlesnake Endergrade Hammerhead Shark Lobster Komodo Dragon Capuchin Monkey Cave Centipede In Release 1.1.0: Warped Toad Moose In Release 1.2.0: Mimicube Raccoon Blobfish In Release 1.3.0: Seal Cockroach Shoebill In…",
+   "src": "https://modrinth.com/mod/alexs-mobs",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Alex's Mobs (project page)"
+  },
+  "create_potioneering:mixed_potion_block": {
+   "text": "Pump vanilla potion fluids through Create tanks, pipes, spouts, basins, mixers, and item drains to combine their effects into one Mixed Potion fluid.",
+   "src": "https://modrinth.com/mod/create-potioneering",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Create: Potioneering (project page)"
+  },
+  "kaleidoscope_tavern:molotov": {
+   "text": "Features 🍷 Complete multi stage brewing system with 7 quality levels 🍾 10+ types of drinks including Wine, Champagne, Whiskey, Vodka and more 🌿 Grape farming with wild grapevines, trellises, and a pressing tub 🪑 16 color sofas and bar stools (sit able) 🏠 Rich tavern decorations: bar counter, bar cabinet, string lights, paintings and more 📋 Writable chalkboard and sandwich board with text alignment options 🔥 Throwable Molotov Cocktail Images…",
+   "src": "https://modrinth.com/mod/kaleidoscopetavern",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Kaleidoscope Tavern (project page)"
+  },
+  "kaleidoscope_tavern:pressing_tub": {
+   "text": "Crush your harvest in the Pressing Tub , then fill a Barrel with juice and ingredients to start fermentation. Your brew's quality evolves over time through 7 levels : Level Quality 1 Undrinkable 2 Inferior 3 Common 4 Fine 5 Crafted 6 Exquisite 7 Vintage Once ready, attach a Tap to your barrel and extract the finished drink into a bottle.",
+   "src": "https://modrinth.com/mod/kaleidoscopetavern",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Kaleidoscope Tavern (project page)"
+  },
+  "fightsfrights:mimentis_claw": {
+   "text": "Mime Blocks / Reinforced Mimentis Claw — Mimentis claws can craft invisible Mime Blocks, as well as the Reinforced Mimentis Claw — a reusable, fully enchantable pickaxe version of the Mimentis Claw.",
+   "src": "https://modrinth.com/mod/fights-frights",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Fights&Frights (project page)"
+  },
+  "fightsfrights:deadsteel_scimitar": {
+   "text": "Can be given to Piglins, Illagers, and the undead by right clicking them with it. _Boss Items _ Ominous Gem — Shoots the General's projectiles; can be used to upgrade to the Deadsteel Scimitar, which applies Poison.",
+   "src": "https://modrinth.com/mod/fights-frights",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Fights&Frights (project page)"
+  },
+  "fightsfrights:peeping_hivestone": {
+   "text": "Peeping Hivestone — Found in the new \"Hive\" Nether biome; watchful creepy crawlies lie within. Can be mined without Silk Touch for random ore or bug rewards.",
+   "src": "https://modrinth.com/mod/fights-frights",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Fights&Frights (project page)"
+  },
+  "fightsfrights:redstone_display": {
+   "text": "Redstone Display — A 7 segment display showing the power of the strongest redstone line connected to it. Circuit Lever — Outputs different redstone strengths depending on player input (shift to decrease).",
+   "src": "https://modrinth.com/mod/fights-frights",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Fights&Frights (project page)"
+  },
+  "fightsfrights:ominous_essence": {
+   "text": "Ominous Essence — A concentrated version of the Ominous Bottle. Curses nearby mobs when drunk, or is used to craft Ominous Plating.",
+   "src": "https://modrinth.com/mod/fights-frights",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Fights&Frights (project page)"
+  },
+  "fightsfrights:banshaas_lungs": {
+   "text": "Banshaa's Lungs — The mind controlling scream can be consumed by the player or brewed into Maddening, Gazing, or Aversion potions.",
+   "src": "https://modrinth.com/mod/fights-frights",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Fights&Frights (project page)"
+  },
+  "fightsfrights:ominous_scepter": {
+   "text": "Ominous Scepter — Shoots projectiles when not fully charged. Charging it longer summons helpful \"Effigies\" that attack monsters.",
+   "src": "https://modrinth.com/mod/fights-frights",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Fights&Frights (project page)"
+  },
+  "fightsfrights:terrantula_leg": {
+   "text": "Offering them a Terrantula Leg or Gill may convince them to abandon their home and scatter. Grimmsquito: Disgusting warm biome farers.",
+   "src": "https://modrinth.com/mod/fights-frights",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Fights&Frights (project page)"
+  },
+  "fightsfrights:ominous_bottle": {
+   "text": "Ominous Bottle — Backported from later versions; can be crafted, or spat out along with milk, honey, or a Golden Tongue while under Bad Omen.",
+   "src": "https://modrinth.com/mod/fights-frights",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Fights&Frights (project page)"
+  },
+  "fightsfrights:charged_chili": {
+   "text": "Charged Flesh — Can be eaten for a speed boost at the cost of health, or crafted into Charged Chili for a bigger speed boost plus fire resistance.",
+   "src": "https://modrinth.com/mod/fights-frights",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Fights&Frights (project page)"
+  },
+  "fightsfrights:monster_salad": {
+   "text": "Monster Salad — A \"delicious\" monster meal combining every effect of its ingredients at once. Monstrous Plate — A copper alloy used to craft a variety of things, most notably an armor set that turns you into the monster.",
+   "src": "https://modrinth.com/mod/fights-frights",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Fights&Frights (project page)"
+  },
+  "fightsfrights:rotten_handle": {
+   "text": "Rotten Handle — Mostly a crafting ingredient, but can be eaten if you really hate yourself. Putrid Scythe — Not massive damage, but inflicts Poison on hit.",
+   "src": "https://modrinth.com/mod/fights-frights",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Fights&Frights (project page)"
+  },
+  "fightsfrights:blunt_javelin": {
+   "text": "Blunt Javelin — Made from Jelly. Deals no damage, but its knockback power is undeniable.",
+   "src": "https://modrinth.com/mod/fights-frights",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Fights&Frights (project page)"
+  },
+  "fightsfrights:mysteryblock": {
+   "text": "Mystery Block — You already know what this is. Antidote — Cures a viral infection contracted from the undead or raw meat.",
+   "src": "https://modrinth.com/mod/fights-frights",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Fights&Frights (project page)"
+  },
+  "fightsfrights:putrid_scythe_2": {
+   "text": "Putrid Scythe — Not massive damage, but inflicts Poison on hit. Also works as an iron hoe.",
+   "src": "https://modrinth.com/mod/fights-frights",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Fights&Frights (project page)"
+  },
+  "fightsfrights:golden_tongue": {
+   "text": "Golden Tongue — This air filled tongue can be consumed to levitate like a Scowl, with a curious glowing side effect.",
+   "src": "https://modrinth.com/mod/fights-frights",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Fights&Frights (project page)"
+  },
+  "fightsfrights:charged_flesh": {
+   "text": "Charged Flesh — Can be eaten for a speed boost at the cost of health, or crafted into Charged Chili for a bigger speed boost plus fire resistance.",
+   "src": "https://modrinth.com/mod/fights-frights",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Fights&Frights (project page)"
+  },
+  "fightsfrights:ravager_horn": {
+   "text": "Ravager Horn — Dropped by Ravagers. Can be played to gain temporary strength.",
+   "src": "https://modrinth.com/mod/fights-frights",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Fights&Frights (project page)"
+  },
+  "fightsfrights:ominous_tusk": {
+   "text": "Ominous Tusk — Explodes on use, immobilizing anyone caught in the blast. Also makes Piglins fear the player while it's in their inventory.",
+   "src": "https://modrinth.com/mod/fights-frights",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Fights&Frights (project page)"
+  },
+  "fightsfrights:charged_scrap": {
+   "text": "Thunder Core — Can be thrown to strike lightning at a distance, or used to craft Charged Flesh and Ominous Hexes.",
+   "src": "https://modrinth.com/mod/fights-frights",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Fights&Frights (project page)"
+  },
+  "fightsfrights:mimic_beetle": {
+   "text": "Mimic Beetle: Mimic Beetles are colonial organisms that inhabit certain ores. These small bugs work together to form a larger, more imposing organism to defend their home.",
+   "src": "https://modrinth.com/mod/fights-frights",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Fights&Frights (project page)"
+  },
+  "fightsfrights:pungent_soup": {
+   "text": "Pungent Soup — Made from a bone handle, a Gill, and a bowl — the world's worst tasting food, though your saturation will thank you.",
+   "src": "https://modrinth.com/mod/fights-frights",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Fights&Frights (project page)"
+  },
+  "fightsfrights:monster_pop": {
+   "text": "Monster Pop — Crafted from Golden Tongues and Jelly. When consumed, it reveals the location of nearby monsters.",
+   "src": "https://modrinth.com/mod/fights-frights",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Fights&Frights (project page)"
+  },
+  "fightsfrights:elder_spine": {
+   "text": "Elder Spine — Dropped by Elder Guardians. Can be brewed into \"Guardian's Strength\" (Grace + Conduit Power + Strength).",
+   "src": "https://modrinth.com/mod/fights-frights",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Fights&Frights (project page)"
+  },
+  "fightsfrights:poison_orb_item": {
+   "text": "Can be given to Piglins, Illagers, and the undead by right clicking them with it. _Boss Items _ Ominous Gem — Shoots the General's projectiles; can be used to upgrade to the Deadsteel Scimitar, which applies Poison.",
+   "src": "https://modrinth.com/mod/fights-frights",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Fights&Frights (project page)"
+  },
+  "fightsfrights:empty_hex": {
+   "text": "Empty Hex — An unfilled hex — perhaps it can be filled with something. Blunt Javelin — Made from Jelly.",
+   "src": "https://modrinth.com/mod/fights-frights",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Fights&Frights (project page)"
+  },
+  "fightsfrights:bug_dust": {
+   "text": "Mimentis Claw — Used to propel yourself forward or pull mobs closer; also an essential ingredient in Bug Dust.",
+   "src": "https://modrinth.com/mod/fights-frights",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Fights&Frights (project page)"
+  },
+  "create_dragons_plus:levitite_fragile_fluid_tank": {
+   "text": "Fragile Fluid Tank & Levitite Fragile Fluid Tank : Tank that breaks on impact. (Need Create: Simulated series ) Bulk Coloring & Bulk Freezing supports Create: Granished 's Fan Processing Recipes.",
+   "src": "https://modrinth.com/mod/create-dragons-plus",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Create: Dragons Plus (project page)"
+  },
+  "create_dragons_plus:dragon_breath": {
+   "text": "Bulk Ending : Use Dragon Head or Dragon's Breath (Fluid) with Encased Fan to infuse items with energy from The End.",
+   "src": "https://modrinth.com/mod/create-dragons-plus",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Create: Dragons Plus (project page)"
+  },
+  "create_dragons_plus:fluid_hatch": {
+   "text": "Quicksand is not a requirement for this feature anymore) Fluid Hatch : Like the Item Hatch, provides convinient take/deposit operation on Fluid Tanks.",
+   "src": "https://modrinth.com/mod/create-dragons-plus",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Create: Dragons Plus (project page)"
+  },
+  "createaddition:portable_energy_interface": {
+   "text": "Portable Energy Interface: Transfer energy to and from contraptions. Tesla Coil: Charges electric items, and can also be used to inflict damage to Players and Mobs.",
+   "src": "https://modrinth.com/mod/createaddition",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Create Crafts & Additions (project page)"
+  },
+  "createaddition:creative_energy": {
+   "text": "Creative Generator: Generates a limitless supply of Forge Energy. Connector & Wires: Wires for energy transfer.",
+   "src": "https://modrinth.com/mod/createaddition",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Create Crafts & Additions (project page)"
+  },
+  "createaddition:digital_adapter": {
+   "text": "Digital Adapter: Allows Computercraft computers to talk to various Create blocks (See API). Biomass: Pellet, Fuel.",
+   "src": "https://modrinth.com/mod/createaddition",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Create Crafts & Additions (project page)"
+  },
+  "createaddition:biomass_pellet": {
+   "text": "Biomass, Biomass Pellet, Sead Oil, and Bioethanol. Various wires, rods, spools, and other crafting components.",
+   "src": "https://modrinth.com/mod/createaddition",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Create Crafts & Additions (project page)"
+  },
+  "createaddition:redstone_relay": {
+   "text": "Redstone Relay: Controls energy flow with Redstone. Accumulator: Multiblock energy storage.",
+   "src": "https://modrinth.com/mod/createaddition",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Create Crafts & Additions (project page)"
+  },
+  "createaddition:diamond_grit": {
+   "text": "Diamond Grit Sandpaper. Straw: Applied to a Blaze Burner will give it the ability to burn liquid fuels.",
+   "src": "https://modrinth.com/mod/createaddition",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Create Crafts & Additions (project page)"
+  },
+  "createaddition:rolling_mill": {
+   "text": "To craft these items you need to make a Rolling Mill which is a kinetic machine that is used to make rods and wires.",
+   "src": "https://modrinth.com/mod/createaddition",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Create Crafts & Additions (project page)"
+  },
+  "createaddition:barbed_wire": {
+   "text": "Barbed Wire block. Biomass, Biomass Pellet, Sead Oil, and Bioethanol.",
+   "src": "https://modrinth.com/mod/createaddition",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Create Crafts & Additions (project page)"
+  },
+  "createaddition:tesla_coil": {
+   "text": "Tesla Coil: Charges electric items, and can also be used to inflict damage to Players and Mobs. Digital Adapter: Allows Computercraft computers to talk to various Create blocks (See API).",
+   "src": "https://modrinth.com/mod/createaddition",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Create Crafts & Additions (project page)"
+  },
+  "copycats:copycat_byte_panel": {
+   "text": "Bytes can be placed/dismantled individually, 8 of which forms a full block Copycat Byte Panel A quarter of a panel. 4 of which forms a full panel Copycat Board A 1 pixel thick panel.",
+   "src": "https://github.com/copycats-plus/copycats/wiki",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "Create: Copycats+ (project page)"
+  },
+  "copycats:copycat_board": {
+   "text": "Bytes can be placed/dismantled individually, 8 of which forms a full block Copycat Byte Panel A quarter of a panel. 4 of which forms a full panel Copycat Board A 1 pixel thick panel.",
+   "src": "https://github.com/copycats-plus/copycats/wiki",
+   "wiki": "github.com",
+   "via": "mention",
+   "page": "Create: Copycats+ (project page)"
+  },
+  "create_enchantment_industry:classic_blaze_enchanter": {
+   "text": "Old Blaze Enchanter of v1.0 has returned as an optional feature Classic Blaze Enchanter . Apotheosis series integration Bulk Salvaging .",
+   "src": "https://modrinth.com/mod/create-enchantment-industry",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Create: Enchantment Industry (project page)"
+  },
+  "create_enchantment_industry:mechanical_grindstone": {
+   "text": "Mechanical Grindstone : Fully automated Grindstone, with extra sanding function. Blaze Enchanter : Blaze as an smart enchanting table.",
+   "src": "https://modrinth.com/mod/create-enchantment-industry",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Create: Enchantment Industry (project page)"
+  },
+  "create_enchantment_industry:experience_lantern": {
+   "text": "Experience Lantern : Absorb experience, and also work on contraption. Deployer & Crushing Wheel Tweak : Kills of Deployer & Crushing Wheel drop experience nugget.",
+   "src": "https://modrinth.com/mod/create-enchantment-industry",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Create: Enchantment Industry (project page)"
+  },
+  "create_enchantment_industry:experience": {
+   "text": "We currently offer: Liquid Experience : High density experience that is easy to store and transport. Experience Hatch : Interact with fluid tank directly, with your own experience.",
+   "src": "https://modrinth.com/mod/create-enchantment-industry",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Create: Enchantment Industry (project page)"
+  },
+  "create_enchantment_industry:experience_hatch": {
+   "text": "Experience Hatch : Interact with fluid tank directly, with your own experience. Mechanical Grindstone : Fully automated Grindstone, with extra sanding function.",
+   "src": "https://modrinth.com/mod/create-enchantment-industry",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Create: Enchantment Industry (project page)"
+  },
+  "create_enchantment_industry:brass_bookshelf": {
+   "text": "Brass Bookshelf : A bookshelf with freely configurable stats. Crafting Bookshelf : Create ish Creative bookshelf.",
+   "src": "https://modrinth.com/mod/create-enchantment-industry",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Create: Enchantment Industry (project page)"
+  },
+  "create_enchantment_industry:blaze_forger": {
+   "text": "Blaze Forger : Blaze as an smart anvil. Printer : Copy your written book, enchanted book, name tag, train schedule and more.",
+   "src": "https://modrinth.com/mod/create-enchantment-industry",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Create: Enchantment Industry (project page)"
+  },
+  "create_enchantment_industry:gem_cutter": {
+   "text": "Gem Cutter : Processes gems to their highest quality. Affix Augmentor : Automated affix enhancement.",
+   "src": "https://modrinth.com/mod/create-enchantment-industry",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Create: Enchantment Industry (project page)"
+  },
+  "simpleradio:radiosmither": {
+   "text": "Features ❌ Unimplemented ✅ Implemented ❓ In Progress Status Feature ✅ Radio item that transmits voice packets ✅ Compile audio from nearby players as well ✅ Additive transceiving ✅ Radio block that can listen to frequencies and output audio from it ✅ Microphone block that transmits audio of every player nearby ✅ Packet transmission over frequencies instead of groups ✅ Radiosmithing Station where the player can customize a radio ✅ FM and AM transmission with benefits to each one ✅ Dynamic audio…",
+   "src": "https://simpleradio.codinglitch.com/wiki/",
+   "wiki": "simpleradio.codinglitch.com",
+   "via": "mention",
+   "page": "Simple Radio (project page)"
+  },
+  "redomesticate:deed_of_ownership": {
+   "text": "Deed of Ownership The Deed of Ownership is an item purchasable from the Animal Tamer villager. Right clicking on a tamed pet you own binds it to the deed.",
+   "src": "https://modrinth.com/mod/redomesticate",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Redomesticate (project page)"
+  },
+  "redomesticate:sinister_carrot": {
+   "text": "Rabbits only have 3 health by default and usually cannot attack (see: Sinister Carrot). To make them useful, Redomesticate reintroduces another removed feature: rabbits scare off Ravagers .",
+   "src": "https://modrinth.com/mod/redomesticate",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Redomesticate (project page)"
+  },
+  "redomesticate:rotten_apple": {
+   "text": "Rotten Apple & Sinister Carrot Rotten Apples have a chance to form if an apple item despawns on the ground (configurable).",
+   "src": "https://modrinth.com/mod/redomesticate",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Redomesticate (project page)"
+  },
+  "create_integrated_farming:lava_fishing_net": {
+   "text": "Lava Fishing Net : Extends Fishing Net automation to lava when one of Nether Depths Upgrade , Tide , Starcatch and Confluence is installed.",
+   "src": "https://modrinth.com/mod/create-integrated-farming",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Create: Integrated Farming (project page)"
+  },
+  "create_integrated_farming:vacuum_harvester": {
+   "text": "We currently offer: Vacuum Harvester : A rotational area harvester that collects and replants mature crops within a range.",
+   "src": "https://modrinth.com/mod/create-integrated-farming",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Create: Integrated Farming (project page)"
+  },
+  "irons_jewelry:jewelcrafting_station": {
+   "text": "Requires Iron's Lib, Atlas API, and Curios API About Jewelry Items can be crafted from a pattern at the Jewelcrafting Station block.",
+   "src": "https://modrinth.com/mod/irons-jewelry",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Iron's Gems 'n Jewelry (project page)"
+  },
+  "moreburners:electric_burner": {
+   "text": "If you stop the Ember supply, it will slowly lower in temperature to the No Heating state after the stored Ember is exhausted.</strong </p </div <h3 style=\"text align: center;\" Induction Heater</h3 <span style=\"text align: left;\" <strong You will need to add a mod capable of generating FE, as MoreBurner does not include any energy generating devices.</strong </span <div class=\"spoiler\" <p style=\"text align: left;\" <strong While wearing Engineer's Goggles, you can check the status of the…",
+   "src": "https://modrinth.com/mod/more-create-burners",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "More Create Burners (project page)"
+  },
+  "moreburners:nickel_coil": {
+   "text": "If you stop the Ember supply, it will slowly lower in temperature to the No Heating state after the stored Ember is exhausted.</strong </p </div <h3 style=\"text align: center;\" Induction Heater</h3 <span style=\"text align: left;\" <strong You will need to add a mod capable of generating FE, as MoreBurner does not include any energy generating devices.</strong </span <div class=\"spoiler\" <p style=\"text align: left;\" <strong While wearing Engineer's Goggles, you can check the status of the…",
+   "src": "https://modrinth.com/mod/more-create-burners",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "More Create Burners (project page)"
+  },
+  "moreburners:heat_converter": {
+   "text": "If you stop the Ember supply, it will slowly lower in temperature to the No Heating state after the stored Ember is exhausted.</strong </p </div <h3 style=\"text align: center;\" Induction Heater</h3 <span style=\"text align: left;\" <strong You will need to add a mod capable of generating FE, as MoreBurner does not include any energy generating devices.</strong </span <div class=\"spoiler\" <p style=\"text align: left;\" <strong While wearing Engineer's Goggles, you can check the status of the…",
+   "src": "https://modrinth.com/mod/more-create-burners",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "More Create Burners (project page)"
+  },
+  "moreburners:heat_upgrade": {
+   "text": "If you stop the Ember supply, it will slowly lower in temperature to the No Heating state after the stored Ember is exhausted.</strong </p </div <h3 style=\"text align: center;\" Induction Heater</h3 <span style=\"text align: left;\" <strong You will need to add a mod capable of generating FE, as MoreBurner does not include any energy generating devices.</strong </span <div class=\"spoiler\" <p style=\"text align: left;\" <strong While wearing Engineer's Goggles, you can check the status of the…",
+   "src": "https://modrinth.com/mod/more-create-burners",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "More Create Burners (project page)"
+  },
+  "moreburners:copper_coil": {
+   "text": "If you stop the Ember supply, it will slowly lower in temperature to the No Heating state after the stored Ember is exhausted.</strong </p </div <h3 style=\"text align: center;\" Induction Heater</h3 <span style=\"text align: left;\" <strong You will need to add a mod capable of generating FE, as MoreBurner does not include any energy generating devices.</strong </span <div class=\"spoiler\" <p style=\"text align: left;\" <strong While wearing Engineer's Goggles, you can check the status of the…",
+   "src": "https://modrinth.com/mod/more-create-burners",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "More Create Burners (project page)"
+  },
+  "simulatedcoasters:coaster_anchorpoint": {
+   "text": "Existing Features Roller Coaster Tracks / Track Anchorpoint Blocks Support for loops, inversions, chain lifts, and jumps Dyable tracks Carts / Cart Linking Rivets that hold sublevels together Balloons as a utility for moving assembled contraptions Planned Features Hydraulic launches Coaster stations More colors for balloons 2 wide cart bogeys !!",
+   "src": "https://modrinth.com/mod/create-coasters-simulated",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Create: Coasters Simulated (project page)"
+  },
+  "advancementframes:advancement_frame": {
+   "text": "The mod adds one item, the Advancement Frame, which can be crafted with an Emerald and some Sticks at any time.",
+   "src": "https://modrinth.com/mod/advancement-frames",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Advancement Frames (project page)"
+  },
+  "cbc_terminal_ballistics:framed_collapsible_copycat_armor_block": {
+   "text": "Armored copycat: Adds the Copycat Armor Layer and Framed Collapsible Copycat Armor Block. You can freely adjust their toughness with the Armor Upgrader item.",
+   "src": "https://modrinth.com/mod/cbc-terminal-ballistics",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "CBC: Terminal Ballistics (project page)"
+  },
+  "cbc_terminal_ballistics:copycat_armor_layer": {
+   "text": "Armored copycat: Adds the Copycat Armor Layer and Framed Collapsible Copycat Armor Block. You can freely adjust their toughness with the Armor Upgrader item.",
+   "src": "https://modrinth.com/mod/cbc-terminal-ballistics",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "CBC: Terminal Ballistics (project page)"
+  },
+  "cbc_terminal_ballistics:armor_upgrader": {
+   "text": "You can freely adjust their toughness with the Armor Upgrader item. Dependencies Main vs2.4 Mod Version Required : : : Create 6.0.8 Yes Copycats 3.0.4 Yes Create Big Cannons 5.10.2 Yes Valkyrien Skies 2.4.7 Optional CBC More Shells 0.2.2 Optional CBC Modern Warfare 0.0.7 Optional RHA 1.1.5 Optional S_A_B 1.4.3 Optional Legacy vs2.3 Mod Version Required : : : Create 0.5.1.j Yes Copycats 2.2.2 Yes Create Big Cannons 5.8.2 Yes Valkyrien Skies 2.3.0 beta.5 Optional CBC More Shells 0.2.2 Optional…",
+   "src": "https://modrinth.com/mod/cbc-terminal-ballistics",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "CBC: Terminal Ballistics (project page)"
+  },
+  "simulated_gauges:altitude_gauge": {
+   "text": "List of New Gauges: Altitude Gauge This gauge can read the height of its block in the world OR the air pressure of its position.",
+   "src": "https://modrinth.com/mod/simulated-gauges",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Simulated Gauges (project page)"
+  },
+  "simulated_gauges:velocity_gauge": {
+   "text": "Velocity Gauge This gauge can read the velocity of its block in the world separated into its X, Y, and Z axes.",
+   "src": "https://modrinth.com/mod/simulated-gauges",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Simulated Gauges (project page)"
+  },
+  "simulated_gauges:gimbal_gauge": {
+   "text": "Gimbal Gauge This gauge can read the orientation of its block in the world as Euler Angles separated into its X, Y, and Z axes.",
+   "src": "https://modrinth.com/mod/simulated-gauges",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Simulated Gauges (project page)"
+  },
+  "universaljewelry:breeze_ingot": {
+   "text": "Current mods this mod adds compatibility for: L_ender's Cataclysm (Crystallized Coral, Cursium, Essence of Storm, Ignitium, Witherite) Iron's Spells 'n Spellbooks (Divine Soulshard) Create (Experience Nugget, Rose Quartz) Vanilla (Echo Shard) Also adds 2 unique items: Blood Bone, crafted in an Alchemist Cauldron using Blood and a Bone (requires Iron's Spells) Breeze Ingot, crafted using Breeze Rods and an Iron Ingot",
+   "src": "https://modrinth.com/mod/universal-jewelry",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Universal Jewelry (project page)"
+  },
+  "farmerscontracts:contract_board": {
+   "text": "Place a Contract Board , choose an available food order, cook what the customer requested, and turn it in for a reward.",
+   "src": "https://modrinth.com/mod/farmers-delight-contracts-feasts",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Farmer's Delight: Contracts & Feasts (project page)"
+  },
+  "farmerscontracts:contract_box": {
+   "text": "Contract Box Accepted contracts can be delivered without carrying goods to the board in your inventory. Place a Contract Box, fill it with exactly the items the order needs, then seal it with the contract's ticket.",
+   "src": "https://modrinth.com/mod/farmers-delight-contracts-feasts",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Farmer's Delight: Contracts & Feasts (project page)"
+  },
+  "ponderer:miniature_projector": {
+   "text": "Ponder Projectors Two projector blocks : Provides a Miniature Projector and a Life Size Projector , projecting the Ponder scene associated with a source item into the world.",
+   "src": "https://modrinth.com/mod/the-ponderer",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Ponderer - 思索者 (project page)"
+  },
+  "scabbards:weapon_holster": {
+   "text": "Weapon Holster: The weapon holster is a small strap of leather designed to store tools of any size not simply limited to carrying swords!",
+   "src": "https://modrinth.com/mod/nimbus-scabbards",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Nimbu's: Scabbards (project page)"
+  },
+  "drivebywiretypewriter:typewriter_hub": {
+   "text": "What it does Adds a Typewriter Hub block. Right click it with an empty hand to start typing — your keypresses are broadcast as redstone signals on the Drive By Wire network, one channel per key.",
+   "src": "https://modrinth.com/mod/drive-by-wiretypewriter",
+   "wiki": "modrinth.com",
+   "via": "mention",
+   "page": "Drive-By-Wire:Typewriter (project page)"
+  }
+ },
+ "orphans": {}
+}
